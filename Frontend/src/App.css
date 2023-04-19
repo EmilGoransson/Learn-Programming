@@ -8,8 +8,12 @@
 }
 
 body{
+  height: 217px;
+  width: 117 px;
   background-color: blanchedalmond;
 }
+
+
 
 
 
@@ -105,34 +109,7 @@ body{
   border-radius: 5px;
 }
 
-/*.sidebar{
-  position:fixed;
-  top: 0;
-  left: -300px;
-  width: 300px;
-  height: 100%;
-  background-color: #f2f2f2;
-  transition: transform 0,3s ease-in-out;
-}
 
-.sidebar.open{
-  transform: translateX(300px);
-}
-
-.sidebar button{
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-.sidebar ul{
-  list-style: none;
-  padding: 0;
-  margin: 20px;
-}
-.sidebar li{
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-}*/
 .level{
   display: flex;
   align-items: center;
