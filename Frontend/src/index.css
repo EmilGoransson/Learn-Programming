@@ -14,4 +14,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.Code-Result {
+  background-color: #1e1e1e;
+ color :white;
+}
 

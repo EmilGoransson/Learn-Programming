@@ -4,9 +4,21 @@ import { API_KEY } from "../apiKey";
 import CodeRunnerView from "../View/codeRunnerView";
 import { useEffect } from "react";
 import Spinner from "react-bootstrap/Spinner";
+
 import Editor from "@monaco-editor/react";
 
+//TODO: make it so that the code shows that its loading (inside the component) & INTEGRATE TEST CASE(S) SOMEHOW!! pass via props?
+
 function CodeRunner(props) {
+  //Change this in order to change the prewritten text in the editor, TODO: so it comes from props
+  const PreMadeText = `
+class Progman
+{  
+    public static void main(String[] args) {
+        System.out.println("Does it work?")
+    }
+}`;
+
   const [code, setCode] = useState();
   const [data, setData] = useState("");
   const [compileCode, setCompileCode] = useState();
@@ -24,11 +36,6 @@ function CodeRunner(props) {
     },
     data: encodedParams,
   };
-  const editorRef = useRef(null);
-
-  function handleEditorDidMount(editor, monaco) {
-    editorRef.current = editor;
-  }
 
   const getCompilerOutput = async () => {
     try {
@@ -40,15 +47,18 @@ function CodeRunner(props) {
       console.log(err);
     }
   };
+  function handleEditorChange(value, event) {
+    console.log("here is the current model value:", value);
+  }
   function changeCodeACB(e) {
     setCode(e);
   }
   function onClick() {
-    console.log(code);
+    console.log("click" + code);
     setCompileCode(code);
   }
   function onChange(newValue) {
-    console.log("change", newValue);
+    setCode(newValue);
   }
   function setSearchQueryACB(e) {}
   useEffect(() => {
@@ -70,19 +80,14 @@ function CodeRunner(props) {
   }
   return (
     <div>
-      <Editor
-        height="45vh"
-        defaultLanguage="java"
-        defaultValue="// some comment"
-        onMount={handleEditorDidMount}
-      />
       <CodeRunnerView
         responseCode={data.Result}
         setCodeWritten={changeCodeACB}
-        codeData={code}
         onClickACB={onClick}
         error={data.Errors}
         loading={isLoading}
+        onChange={handleEditorChange}
+        preWrittenText={PreMadeText}
       />
     </div>
   );
