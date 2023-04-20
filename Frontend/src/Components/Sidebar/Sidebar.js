@@ -1,10 +1,12 @@
 import React from 'react';
+import logo from './image.png';
 import './Sidebar.css';
 import { slide as Menu } from 'react-burger-menu';
 
 export default props => {
   return (
     <Menu>
+      <img src={logo} alt='Logo' />
       <a className="menu-item" href="/profile">
         Profile
       </a>
