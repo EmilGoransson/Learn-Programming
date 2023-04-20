@@ -30,7 +30,7 @@ const ButtonContainer = (props) => {
         {buttonLabels.slice(0, 7).map((label) => {
           const [line1, line2] = label.split("\n");
           return (
-            <button onClick={handleClick}>
+            <button onClick={handleClick} className='button-lab'>
               <div>{line1}</div>
               <div>{line2}</div>
             </button>
@@ -41,7 +41,7 @@ const ButtonContainer = (props) => {
         {buttonLabels.slice(7, 14).map((label) => {
           const [line1, line2] = label.split("\n");
           return (
-            <button>
+            <button className='button-lab'>
               <div>{line1}</div>
               <div>{line2}</div>
             </button>
