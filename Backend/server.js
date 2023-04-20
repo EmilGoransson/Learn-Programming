@@ -1,14 +1,24 @@
-const wiki = require("./wiki.js");
 const express = require("express");
+const cors = require('cors');
 const app = express();
 const port = 3003;
+
+app.use(cors());
 
 app.get("/", function (req, res) {
     res.send("Hello World!");
 });
 
-app.listen(port, function () {
-  console.log(`Example app listening on port ${port}!`);
+app.get("/api", function (req, res) {
+  res.json({message: "Hello from server!"});
 });
 
-app.use("/wiki", wiki);
+app.get("/test", (req, res) => {
+  res.json({ message: "Button pushed!" });
+});
+
+app.listen(port, function () {
+  console.log("App listening on port ${port}!");
+});
+
+app.use(express.json());

@@ -7,6 +7,14 @@ import ButtonContainer from './ButtonContainer';
 import './ButtonContainer.css'
 
 function App() {
+
+  const [message, setMessage] = React.useState(null);
+  React.useEffect(() => {
+    fetch("http://localhost:3003/api")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message));
+  }, []);
+
   return (
     <div className="App" id="outer-container">
       <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
@@ -25,6 +33,7 @@ function App() {
         buttonLabels={['1 Class', '2 Method', 'Button 3', 'Button 4', 'Button 5', 'Button 6', 'Button 7', 'Button 8', 'Button 9', 'Button 10', 'Button 11', 'Button 12', 'Button 13', 'Button 14']}
       />
       <Progress/>
+      {message}
     </div>
   );
 }
