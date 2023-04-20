@@ -30,7 +30,8 @@ function CodeRunner(props) {
 class Progman
 {  
     public static void main(String[] args) {
-        System.out.println("Does it work?")
+        System.out.println("Hello World");
+        
     }
 }`;
   //Change this in order to change the prewritten text in the editor, TODO: so it comes from props maybe?
