@@ -1,22 +1,33 @@
-import React, { useRef, useState } from "react";
+/* READ ME!
+SETUP:
+the API_KEY is defined inside the file apiKey.js and is imported directly from the CodeRunner folder.
+Get the API-key here: https://rapidapi.com/abdheshnayak/api/code-compiler
+1. Sign up / register
+2. Go to https://rapidapi.com/abdheshnayak/api/code-compiler
+3. Press: Pricing
+4. Select "Basic"
+5. Now go to https://rapidapi.com/abdheshnayak/api/code-compiler and copy the X-RapidAPI-Key which can be found under "Code Snippet" to the right
+6. Paste the key in the apiKey.js file in the CodeRunner folder
+
+
+Component works in the following way.
+1. any input from System.in (scanner) in passed to the component via props.input
+2. a singular testcase is passed via props.testCases.
+3. Might have bugs! Test it so that the testcase actually works!
+4. In app.js use the component via <CodeRunner testCases={6} input={3} /> OR if you dont want input:
+<CodeRunner testCases={6} />
+ */
+//TODO: Add error management: timeout, 400, bad requests from API
+
+import React, { useState } from "react";
 import axios from "axios";
 import { API_KEY } from "../apiKey";
 import CodeRunnerView from "../View/codeRunnerView";
 import { useEffect } from "react";
 import Spinner from "react-bootstrap/Spinner";
-
-//TODO: make it so that the code shows that its loading (inside the component) & INTEGRATE TEST CASE(S) SOMEHOW!! pass via props?
-
 function CodeRunner(props) {
-  //Change this in order to change the prewritten text in the editor, TODO: so it comes from props
-  const [PreMadeText, setPreMadeText] = useState(`
-class Progman
-{  
-    public static void main(String[] args) {
-        System.out.println("Does it work?")
-    }
-}`);
-
+  //Change this in order to change the prewritten text in the editor, TODO: so it comes from props maybe?
+  const [PreMadeText, setPreMadeText] = useState(props.preText);
   const [code, setCode] = useState("");
   const [data, setData] = useState("");
   const [compileCode, setCompileCode] = useState();
@@ -44,6 +55,7 @@ class Progman
   const getCompilerOutput = async () => {
     try {
       setIsLoading(true);
+      //fetches the data from the API via a POST request
       const res = await axios.request(options).then((response) => {
         setData(response.data);
         console.log(response.data);
@@ -52,9 +64,9 @@ class Progman
 
         //Here the test cases are compared to the response from the API
         if (response.data.Result == props.testCases) {
-          setPassedTestOne("true");
+          setPassedTestOne("Passed");
         } else {
-          setPassedTestOne("false");
+          setPassedTestOne("Failed");
         }
         setIsLoading(false);
       });
@@ -87,7 +99,7 @@ class Progman
           className="position-fixed w-100 h-100 d-flex justify-content-center align-items-center"
           style={{ zIndex: 9999, backgroundColor: "rgba(255,255,255,0.5)" }}
         >
-          <Spinner animation="border" variant="primary" />
+          <Spinner animation="border" variant="secondary" />
         </div>
       )}
       <CodeRunnerView

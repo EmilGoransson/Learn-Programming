@@ -6,7 +6,21 @@ import Quiz from "react-quiz-component";
 import QuizComp from "./quiz";
 
 function App() {
-  return <CodeRunner testCases={6} input={3} />;
+  return (
+    <CodeRunner
+      testCases={6}
+      input={3}
+      preText={`
+class Progman
+{  
+
+    public static void main(String[] args) {
+        System.out.println("Does it work?");
+    }
+    
+}`}
+    />
+  );
 }
 
 export default App;
