@@ -1,4 +1,5 @@
-.App {
+
+/*.App {
   text-align: center;
 }
 
@@ -6,16 +7,6 @@
   height: 40vmin;
   pointer-events: none;
 }
-
-body{
-  height: 217px;
-  width: 117 px;
-  background-color: blanchedalmond;
-}
-
-
-
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -31,7 +22,7 @@ body{
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: blanchedalmond;
+  color: white;
 }
 
 .App-link {
@@ -46,94 +37,4 @@ body{
     transform: rotate(360deg);
   }
 }
-
-.rbtn{
-  background-color: gray;
-  color: aliceblue;
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-radius: 5px;
-}
-
-.Pbtn{
-  position: absolute;
-  left: 2cm;
-  top: 50px;
-  font-weight: bold;
-  background-color: beige;
-  color: burlywood;
-  font-size: medium;
-  width: 80px;
-  height: 30px;
-  border-radius: 5px;
-}
-
-.Lbtn{
-  position: absolute;
-  left: 2cm ;
-  top: 100px;
-  font-weight: bold;
-  background-color: beige;
-  color: burlywood;
-  font-size: medium;
-  width: 80px;
-  height: 30px;
-  border-radius: 5px;
-}
-
-.Tbtn{
-  position: absolute;
-  left: 2cm ;
-  top: 150px;
-  font-weight: bold;
-  background-color: beige;
-  color: burlywood;
-  font-size: medium;
-  width: 80px;
-  height: 30px;
-  border-radius: 5px;
-}
-
-.Ebtn{
-  position: absolute;
-  left: 2cm ;
-  top: 200px;
-  font-weight: bold;
-  background-color: beige;
-  color: burlywood;
-  font-size: medium;
-  width: 80px;
-  height: 30px;
-  border-radius: 5px;
-}
-
-
-.level{
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 30px;
-  background-color: #f2f2f2;
-  border-radius: 5px;
-  position:absolute;
-  top: 80px;
-  right: 20px;
-  width: 200px;
-  height: 150px;
-}
-
-.progress-bar{
-  height: 10%;
-  background-color: #18d51f;
-  border-radius: 5px;
-}
-
-.score{
-  margin-left: 10px;
-  font-weight: bold;
-  color: #333;
-}
-
-
+*/
