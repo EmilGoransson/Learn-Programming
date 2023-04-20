@@ -5,27 +5,31 @@ import CodeRunnerView from "../View/codeRunnerView";
 import { useEffect } from "react";
 import Spinner from "react-bootstrap/Spinner";
 
-import Editor from "@monaco-editor/react";
-
 //TODO: make it so that the code shows that its loading (inside the component) & INTEGRATE TEST CASE(S) SOMEHOW!! pass via props?
 
 function CodeRunner(props) {
   //Change this in order to change the prewritten text in the editor, TODO: so it comes from props
-  const PreMadeText = `
+  const [PreMadeText, setPreMadeText] = useState(`
 class Progman
 {  
     public static void main(String[] args) {
         System.out.println("Does it work?")
     }
-}`;
+}`);
 
-  const [code, setCode] = useState();
+  const [code, setCode] = useState("");
   const [data, setData] = useState("");
   const [compileCode, setCompileCode] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  const [passedTestOne, setPassedTestOne] = useState("");
+  const [hasRunitOnce, setHasRunitOnce] = useState(false);
   const encodedParams = new URLSearchParams();
   encodedParams.append("LanguageChoice", "4");
   encodedParams.append("Program", code);
-  let isLoading = false;
+  //SPECIFY THE "INPUT" HERE BY PASSING IT AS A PROP ex: <CodeRunner input="5" />
+  if (props.input) {
+    encodedParams.append("Input", props.input);
+  }
   const options = {
     method: "POST",
     url: "https://code-compiler.p.rapidapi.com/v2",
@@ -39,55 +43,63 @@ class Progman
 
   const getCompilerOutput = async () => {
     try {
+      setIsLoading(true);
       const res = await axios.request(options).then((response) => {
         setData(response.data);
         console.log(response.data);
+        console.log("response.data.Result " + response.data.Result);
+        console.log("props.testCases " + props.testCases);
+
+        //Here the test cases are compared to the response from the API
+        if (response.data.Result == props.testCases) {
+          setPassedTestOne("true");
+        } else {
+          setPassedTestOne("false");
+        }
+        setIsLoading(false);
       });
     } catch (err) {
       console.log(err);
     }
   };
-  function handleEditorChange(value, event) {
-    console.log("here is the current model value:", value);
-  }
+
   function changeCodeACB(e) {
     setCode(e);
   }
   function onClick() {
     console.log("click" + code);
+    setPreMadeText(code);
     setCompileCode(code);
   }
-  function onChange(newValue) {
-    setCode(newValue);
-  }
-  function setSearchQueryACB(e) {}
   useEffect(() => {
-    isLoading = true;
     if (compileCode === undefined) {
-      isLoading = false;
+      setIsLoading(false);
       setData({ Result: "", Errors: "" });
       return;
     }
     getCompilerOutput();
-    isLoading = false;
+    setHasRunitOnce(true);
   }, [compileCode]);
-  if (data === "" || isLoading) {
-    return (
-      <div>
-        <Spinner></Spinner>{" "}
-      </div>
-    );
-  }
   return (
     <div>
+      {isLoading && (
+        <div
+          className="position-fixed w-100 h-100 d-flex justify-content-center align-items-center"
+          style={{ zIndex: 9999, backgroundColor: "rgba(255,255,255,0.5)" }}
+        >
+          <Spinner animation="border" variant="primary" />
+        </div>
+      )}
       <CodeRunnerView
         responseCode={data.Result}
         setCodeWritten={changeCodeACB}
         onClickACB={onClick}
         error={data.Errors}
         loading={isLoading}
-        onChange={handleEditorChange}
         preWrittenText={PreMadeText}
+        input={props.input ? props.input : null}
+        testCasesPassed={[props.testCases, passedTestOne]}
+        hasRunItOnce={hasRunitOnce}
       />
     </div>
   );

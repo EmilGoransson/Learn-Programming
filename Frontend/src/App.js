@@ -6,7 +6,7 @@ import Quiz from "react-quiz-component";
 import QuizComp from "./quiz";
 
 function App() {
-  return <CodeRunner />;
+  return <CodeRunner testCases={6} input={3} />;
 }
 
 export default App;
