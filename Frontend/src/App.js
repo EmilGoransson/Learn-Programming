@@ -1,10 +1,10 @@
 import React from 'react';
-import Sidebar from './Sidebar';
-import Progress from './Progress'
-import './Progress.css';
+import Sidebar from './Components/Sidebar/Sidebar';
+import Progress from './Components/Sidebar/Progress'
+import './Components/Sidebar/Progress.css';
 import './App.css';
-import ButtonContainer from './ButtonContainer';
-import './ButtonContainer.css'
+import ButtonContainer from './Components/LevelRendering/ButtonContainer';
+import './Components/LevelRendering/ButtonContainer.css'
 
 function App() {
 
