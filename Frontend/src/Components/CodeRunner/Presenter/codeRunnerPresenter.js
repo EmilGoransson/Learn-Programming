@@ -26,8 +26,15 @@ import CodeRunnerView from "../View/codeRunnerView";
 import { useEffect } from "react";
 import Spinner from "react-bootstrap/Spinner";
 function CodeRunner(props) {
+  const string = `
+class Progman
+{  
+    public static void main(String[] args) {
+        System.out.println("Does it work?")
+    }
+}`;
   //Change this in order to change the prewritten text in the editor, TODO: so it comes from props maybe?
-  const [PreMadeText, setPreMadeText] = useState(props.preText);
+  const [PreMadeText, setPreMadeText] = useState(string);
   const [code, setCode] = useState("");
   const [data, setData] = useState("");
   const [compileCode, setCompileCode] = useState();
