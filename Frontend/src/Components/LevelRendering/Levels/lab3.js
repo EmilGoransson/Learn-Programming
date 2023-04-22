@@ -1,0 +1,16 @@
+export const lab3Levels=[
+    "1 Class",
+    "2 Method",
+    "Button 3",
+    "Button 4",
+    "Button 5",
+    "Button 6",
+    "Button 7",
+    "Button 8",
+    "Button 9",
+    "Button 10",
+    "Button 11",
+    "Button 12",
+    "Button 13",
+    "Button 14",
+]
