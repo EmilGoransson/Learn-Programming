@@ -1,27 +1,20 @@
 import React from 'react';
-import logo from './image.png';
 import './Sidebar.css';
-import { slide as Menu } from 'react-burger-menu';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faFlask, faBook, faPencilAlt, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { BrowserRouter, Routes, Route, Link, NavLink}  from "react-router-dom";
 
-export default props => {
+const Sidebar = () => {
   return (
-    <Menu>
-      <img src={logo} alt='Logo' />
-      <a className="menu-item" href="/profile">
-        Profile
-      </a>
-      <a className="menu-item" href="/labs">
-        Labs
-      </a>
-      <a className="menu-item" href="/exam">
-        Exam
-      </a>
-      <a className="menu-item" href="/theory">
-        Theory
-      </a>
-      <a className="menu-item" href="/about-us">
-        About us
-      </a>
-    </Menu>
+    <div className="sidenav">
+      <img src="https://i.imgur.com/xRGsOcG.png" alt="My Image" />
+      <NavLink to="/profile" activeClassName="active"><FontAwesomeIcon icon={faUser} /> Profile</NavLink>
+      <NavLink to="/labs" activeClassName="active"><FontAwesomeIcon icon={faFlask} /> Labs</NavLink>
+      <NavLink to="/exam" activeClassName="active"><FontAwesomeIcon icon={faBook} /> Previous Exams</NavLink>
+      <NavLink to="/theory" activeClassName="active"><FontAwesomeIcon icon={faPencilAlt} /> Theory</NavLink>
+      <NavLink to="/aboutus" activeClassName="active"><FontAwesomeIcon icon={faUsers} /> About us</NavLink>
+    </div>
   );
-};
+}
+
+export default Sidebar;

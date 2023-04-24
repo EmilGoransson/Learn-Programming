@@ -1,17 +1,48 @@
 .button-container {
+  position: relative;
+  left: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-bottom: 5%;
+  height: max-content;
+  width: max-content;
+}
+.button-container h2 {
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 2%;
+}
+
+.button-lab {
+  margin:2ex;
+  border-radius: 10%;
+  background-color: rgb(155, 215, 161);
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  height: 70px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.button-lab:hover {
+background-color: rgb(189, 228,
+ 203);
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 100px;
     right: 10%;
-  }
-  
-  .button-row {
-    display: flex;
-    justify-content: center;    
-  }
+}
 
-  .button-lab {
+.button-row {
+    display: flex;
+    justify-content: center;
+}
+
+.button-lab-green {
     padding: 10px;
     margin: 10px;
     border-radius: 10%;
@@ -23,4 +54,27 @@
     height: 70px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-
+.button-lab-gray {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10%;
+    background-color: gray;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 70px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.button-lab-yellow {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10%;
+    background-color: rgb(241, 237, 127);
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 70px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
