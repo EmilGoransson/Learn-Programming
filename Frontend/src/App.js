@@ -7,6 +7,12 @@ import { BrowserRouter, Routes, Route, Link, NavLink}  from "react-router-dom";
 
 import MainContent from './pages/MainContent';
 
+import Aboutus from './pages/aboutus';
+import Examn from './pages/exam';
+import Labs from './pages/labs';
+import Theory from './pages/theory';
+import Profile from './pages/profile';
+
 function App() {
 
   const [message, setMessage] = React.useState(null);
@@ -22,7 +28,17 @@ function App() {
       
       <Sidebar/>
       <main id="page-wrap">
-      <MainContent/>
+        <Routes>
+          <Route path ="/" element= {<MainContent/>} />
+    
+            <Route path="/aboutus" element={<Aboutus />} />
+            <Route path="/exam" element={<Examn />} />
+            <Route path="/labs" element={<Labs />} />
+            <Route path="/theory" element={<Theory />} />
+            <Route path="/profile" element={<Profile />} />
+            </Routes>
+        
+      
       </main>
       </div>
      
