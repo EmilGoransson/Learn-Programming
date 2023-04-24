@@ -15,6 +15,9 @@ import {lab1Levels} from "./Components/LevelRendering/Levels/lab1";
 import {lab2Levels} from "./Components/LevelRendering/Levels/lab2";
 import {lab3Levels} from "./Components/LevelRendering/Levels/lab3";
 import {mainString} from "./Components/CodeRunner/mainClassString";
+import {Routes, Route, BrowserRouter, Link, NavLink} from "react-router-dom";
+import MainContent from './pages/MainContent';
+
 
 
 
