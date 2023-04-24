@@ -2,6 +2,12 @@ import React from "react";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import "./Components/Sidebar/Progress.css";
 import "./App.css";
+
+
+import LoginPage from "./Components/LoginPage/LoginPage";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+
 import ButtonContainer from "./Components/LevelRendering/ButtonContainer";
 import "./Components/LevelRendering/ButtonContainer.css";
 import CodeRunner from "./Components/CodeRunner/Presenter/codeRunnerPresenter";
