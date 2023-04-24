@@ -27,26 +27,28 @@ const ButtonContainer = (props) => {
     <div className="button-container">
       <h2>{title}</h2>
       <div className="button-row">
-        {buttonLabels.slice(0, 7).map((label) => {
-          const [line1, line2] = label.split("\n");
-          return (
-            <button onClick={handleClick} className='button-lab'>
-              <div>{line1}</div>
-              <div>{line2}</div>
-            </button>
-          );
-        })}
+          {buttonLabels.slice(0, 7).map((label, index) => {
+              const [line1, line2] = label.split("\n");
+              const buttonId = `button-${index + 1}`;
+              return (
+                  <button onClick={handleClick} className='button-lab' key={buttonId}>
+                      <div>{line1}</div>
+                      <div>{line2}</div>
+                  </button>
+              );
+          })}
       </div>
       <div className="button-row">
-        {buttonLabels.slice(7, 14).map((label) => {
-          const [line1, line2] = label.split("\n");
-          return (
-            <button className='button-lab'>
-              <div>{line1}</div>
-              <div>{line2}</div>
-            </button>
-          );
-        })}
+          {buttonLabels.slice(7, 14).map((label, index) => {
+              const [line1, line2] = label.split("\n");
+              const buttonId = `button-${index + 8}`;
+              return (
+                  <button className='button-lab' key={buttonId}>
+                      <div>{line1}</div>
+                      <div>{line2}</div>
+                  </button>
+              );
+          })}
       </div>
       {message}
     </div>
