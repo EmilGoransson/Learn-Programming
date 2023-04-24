@@ -1,9 +1,5 @@
-
-
-
 import React from "react";
 import Sidebar from "./Components/Sidebar/Sidebar";
-import Progress from "./Components/Sidebar/Progress";
 import "./Components/Sidebar/Progress.css";
 import "./App.css";
 import ButtonContainer from "./Components/LevelRendering/ButtonContainer";
@@ -28,7 +24,6 @@ import Theory from './pages/theory';
 import Profile from './pages/profile';
 
 function App() {
-   
   const [message, setMessage] = React.useState(null);
   React.useEffect(() => {
     fetch("http://localhost:3003/api")
@@ -55,14 +50,10 @@ function App() {
       
       </main>
       </div>
-     
-      
-      {message}
-      
 
+      {message}
     </BrowserRouter>
   );
 }
 
 export default App;
-
