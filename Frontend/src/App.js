@@ -1,5 +1,6 @@
 
 
+
 import React from "react";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import Progress from "./Components/Sidebar/Progress";
@@ -16,43 +17,33 @@ import {lab3Levels} from "./Components/LevelRendering/Levels/lab3";
 import {mainString} from "./Components/CodeRunner/mainClassString";
 
 
+
 function App() {
-    const [message, setMessage] = React.useState(null);
-    React.useEffect(() => {
-        fetch("http://localhost:3003/api")
-            .then((res) => res.json())
-            .then((data) => setMessage(data.message));
-    }, []);
+   
+  const [message, setMessage] = React.useState(null);
+  React.useEffect(() => {
+    fetch("http://localhost:3003/api")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message));
+  }, []);
 
-    return (
+  return (
+    <BrowserRouter>
+    <div className="App" id="outer-container">
+      
+      <Sidebar/>
+      <main id="page-wrap">
+      <MainContent/>
+      </main>
+      </div>
+     
+      
+      {message}
+      
 
-        <div className="App" id="outer-container">
-            <div id="page-wrap" className="align-content-center"></div>
-            <QuizTemp></QuizTemp>
-
-
-            {/*} <ButtonContainer
-                title="Lab 1"
-                buttonLabels={lab1Levels}
-            />
-            <ButtonContainer
-                title="Lab 2"
-                buttonLabels={lab2Levels}
-            />
-            <ButtonContainer
-                title="Lab 3"
-                buttonLabels={lab3Levels}
-            />
-            <Progress/>
-            {message} */}
-            <CodeRunner input={3} testCases={6} preMadeText={mainString}/>
-            <CodeRunner input={1} testCases={5}/>
-
-        </div>
-
-
-    );
-
+    </BrowserRouter>
+  );
 }
 
 export default App;
+
