@@ -33,6 +33,7 @@ import { v4 as uuidv4 } from "uuid";
 
 function CodeRunner(props) {
   const incrementCurrentLevel = useLevelStore((state) => state.incrementLevel);
+  const currentLevel = useLevelStore((state) => state.currentLevel);
   const string = `
 class Progman
 {  
@@ -83,8 +84,7 @@ class Progman
 
         //Here the test cases are compared to the response from the API
         if (response.data.Result == props.testCases) {
-          console.log("Should increment" + props.shouldIncrement);
-          if (props.shouldIncrement) {
+          if (props.shouldIncrement && props.thisLevel === currentLevel) {
             incrementCurrentLevel();
           }
           setPassedTestOne("Passed");
