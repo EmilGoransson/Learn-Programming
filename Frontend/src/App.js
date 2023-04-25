@@ -12,11 +12,41 @@ import Profile from "./pages/profile";
 
 function App() {
   const [message, setMessage] = React.useState(null);
+  const [firstName, setFirstName] = React.useState(null);
+  const [JSONmessage, setJSONmessage] = React.useState(null);
   React.useEffect(() => {
     fetch("http://localhost:3003/api")
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
   }, []);
+
+  React.useEffect(() => {
+    fetch("http://localhost:3003/mypage")
+      .then((res) => res.json())
+      .then((data) => setJSONmessage(data.JSONmessage));
+  }, []);
+
+  //const userid = "1";
+  React.useEffect(() => {
+    fetch(`http://localhost:3003/users/:userId`)    //Change (wildcard) userID something like               : `http://localhost:3003/users/${userid}`
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json()
+      })
+      .then((data) => setFirstName(data.firstName))
+      .catch((error) => {
+        console.error("There was a problem with the fetch operation:", error);
+      })
+  }, []);
+
+  /*React.useEffect(() => {
+    fetch("http://localhost:3003/mypage")
+      .then((res) => res.json())
+      .then((data) => setJSONmessage(data.JSONmessage));
+      .then((data) => setTesting(data.testing));
+  }, []);*/
 
   return (
     <BrowserRouter>
@@ -28,7 +58,7 @@ function App() {
 
             <Route
               path="/aboutus"
-              element={<Aboutus hej="hej" title="test" />}
+              element={<Aboutus hej="hej" title="test" test={JSONmessage} firstN={firstName}/>}
             />
             <Route path="/exam" element={<Examn />} />
             <Route path="/labs" element={<MainContent />} />
