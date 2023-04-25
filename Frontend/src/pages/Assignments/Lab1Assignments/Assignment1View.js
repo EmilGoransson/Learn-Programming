@@ -62,6 +62,7 @@ function Lab1a1View(props) {
           preMadeText={props.preMadeText}
           input={3}
           shouldIncrement={true}
+          thisLevel={props.thisLevel}
         />
       </p>
       <div>
