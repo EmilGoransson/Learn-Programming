@@ -41,6 +41,30 @@ background-color: rgb(189, 228,
     display: flex;
     justify-content: center;
 }
+.button-lab-gray {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10%;
+    background-color: gray;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 70px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.button-lab-cyan {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10%;
+    color: black;
+    background-color: #a3d7cb;
+    border: none;
+    cursor: pointer;
+    width: 75px;
+    height: 47px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
 
 .button-lab-green {
     padding: 10px;
@@ -54,28 +78,26 @@ background-color: rgb(189, 228,
     height: 70px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-.next-button {
+.next-button-gray{
     padding: 10px;
     margin: 10px;
     border-radius: 10%;
-    color: white;
+    color: black;
+    background-color: gray;
     border: none;
     cursor: pointer;
-    width: 75px;
+    width: 85px;
     height: 47px;
-
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-.button-lab-gray {
-    padding: 10px;
-    margin: 10px;
+.next-button {
+    margin: 2px 5px 2px 2px;
     border-radius: 10%;
-    background-color: gray;
-    color: white;
+    color: black;
     border: none;
     cursor: pointer;
-    width: 100px;
-    height: 70px;
+    width: 85px;
+    height: 47px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 .button-lab-yellow {

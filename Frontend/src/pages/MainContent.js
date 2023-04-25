@@ -12,13 +12,18 @@ import { lab1Levels } from "../Components/LevelRendering/Levels/lab1";
 import { lab3Levels } from "../Components/LevelRendering/Levels/lab3";
 import ProgressStar from "../Components/ProgressInStar/Presenter/ProgressInStarPresenter";
 import Progress from "../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
+import Lab1 from "../Lab1";
 function MainContent() {
   return (
     <div>
       <div>
         <Progress></Progress>
         <ProgressStar></ProgressStar>
-        <ButtonContainer title="Lab 1" buttonLabels={lab1Levels} />
+        <ButtonContainer
+          title="Lab 1"
+          linkTitle="Lab1"
+          buttonLabels={lab1Levels}
+        />
 
         <ButtonContainer title="Lab 2" buttonLabels={lab2Levels} />
 
