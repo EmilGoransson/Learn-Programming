@@ -3,14 +3,15 @@ import "./ButtonContainer.css";
 import Button from "react-bootstrap/Button";
 import { BrowserRouter, Routes, Route, Link, NavLink, useParams}  from "react-router-dom";
 
+import { useStore } from "zustand";
+import useLevelStore from "../../Model/frontEndStore";
 
 const ButtonContainer = (props) => {
   //fetch from model
-  const currentLevel = 6;
+  const currentLevel = useLevelStore((state) => state.currentLevel);
   //hard-coded or db integration VIKTIGT ATT ÄNDRA OM VI ÄNDRAR ANTAL NIVÅER I VARJE LAB
   const lab1Amount = 14;
   const lab2Amount = 14;
-  const lab3Amount = 10;
   const labNumberTracker = props.buttonLabels[props.buttonLabels.length - 1];
 
   const [message, setMessage] = useState([]);

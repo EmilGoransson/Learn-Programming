@@ -6,6 +6,7 @@
     height: 100vh;
   }
   
+  /*Detta är för inputrutorna*/
   input {
     margin-bottom: 10px;
     padding: 10px;
@@ -17,6 +18,7 @@
     max-width: 400px;
   }
   
+  /*Detta är för självaste log in knappen*/
   button {
     padding: 10px;
     border-radius: 5px;
@@ -29,6 +31,13 @@
     max-width: 400px;
   }
 
+  /* Detta gör att knappen ser "Aktiv ut"*/
+  button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+  }
+
+  /*Detta är plats för loggan, kanske borde ändras på då den är typ lite liten*/
   img{
     position: absolute;
     top: 0;
@@ -37,4 +46,12 @@
     width: 100px;
     height: 200px;
   }
+  /*.logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1rem;
+    width: 100px;
+    height: 200px;
+  } */
   
