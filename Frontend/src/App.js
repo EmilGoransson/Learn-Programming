@@ -10,6 +10,8 @@ import Examn from "./pages/exam";
 import Theory from "./pages/theory";
 import Profile from "./pages/profile";
 import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assignment1Presenter";
+import LoginPage from "./Components/LoginPage/LoginPage";
+import CreateAccount from "./Components/CreateAccount/CreateAccount";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 
 function App() {
@@ -70,6 +72,8 @@ function App() {
                 />
               }
             />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/createaccount" element={<CreateAccount />} />
             
             <Route path="/exam" element={<Examn />} />
             <Route path="/labs" element={<MainContent />} />
