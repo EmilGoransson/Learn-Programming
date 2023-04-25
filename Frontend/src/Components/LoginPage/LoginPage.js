@@ -52,7 +52,7 @@ function LoginPage() {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '2rem' }}>
-        <img src={logo} alt="Logo" style={{ height: '10rem', width: '10rem', marginRight: '1rem' }} className='hej' />
+        <img src={logo} alt="Logo"  className='hej' />
       </div>  
       <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginLeft: '10rem', backgroundColor: '#f0f0f0' }}>
         <h2 style={{ alignSelf: 'flex-start' , fontFamily: 'Lora', fontWeight: 'bold', fontSize: '50px'}}>Log in</h2>
