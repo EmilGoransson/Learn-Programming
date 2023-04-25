@@ -62,6 +62,8 @@ function App() {
               path="/aboutus"
               element={<Aboutus hej="hej" title="test" test={JSONmessage} firstN={firstName}/>}
             />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/createaccount" element={<CreateAccount />} />
             <Route path="/exam" element={<Examn />} />
             <Route path="/labs" element={<MainContent />} />
             <Route path="/theory" element={<Theory />} />
