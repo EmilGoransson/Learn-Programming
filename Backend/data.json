@@ -1,0 +1,26 @@
+{
+    "JSONmessage": "This is a test message from JSON!",
+    "testing": "HAJ",
+    "users": [
+        {
+            "userId": 1,
+            "firstName": "Jennifer",
+            "lastName": "Su",
+            "email": "jennsu@kth.se"
+        },
+        {
+            "userId": 2,
+            "firstName": "Evelina",
+            "lastName": "Berg",
+            "email": "evelina@kth.se"
+        },
+        {
+            "userId": 3,
+            "firstName": "Rasmuss",
+            "lastName": "Brodin",
+            "email": "rasmuss@kth.se"
+        }
+
+    ]
+    
+}
