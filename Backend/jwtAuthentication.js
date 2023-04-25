@@ -1,16 +1,15 @@
-const router = require("express").Router
+const express = require('express');
+const router = express.Router();
 const pool = require("./dbConfig");
 const bcrypt = require("bcrypt");
 const jwtGenerator = require("./jwtGenerator");
 const authorization = require("./middleware/authorization")
 
 //register route
-router.post("/auth/register", async (req,res) => {
+router.post("/Signup", async (req,res) => {
     try{
         //1. destructure req.body (first_name, last_name, email, password)
-        console.log("gets here 1")
             const {first_name, email, last_name, password} = req.body;
-        console.log("gets here 2")
             //2. check if user exists
 
             //this is a temporary psql query that will be found in queries.js later on
@@ -41,7 +40,7 @@ router.post("/auth/register", async (req,res) => {
 
 
 //login route
-router.post("/auth/login", async (req,res) =>{
+router.post("/login", async (req,res) =>{
     try{
         let {email, password} = req.body;
         const login = await pool.query("SELECT email FROM student WHERE email = $1", [email]);

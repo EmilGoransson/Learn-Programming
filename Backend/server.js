@@ -11,10 +11,16 @@ app.use(express.json());
 
 
 //routes
-//app.use("/authentication", require("./jwtAuthentication"));
+app.use("/authentication", require("./jwtAuthentication"));
 app.use("/dashboard", require("./dashboard"));
 
+app.get("/dummy", function(req,res) {
+  res.sendFile(__dirname + "/dummy.html");
+})
 
+app.post("/dummy", (req,res)=>{
+  React.redirect("/login");
+})
 app.get("/", function (req, res) {
     res.send("Hello World!");
 });
