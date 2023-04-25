@@ -1,31 +1,7 @@
+import CodeRunner from "../../../Components/CodeRunner/Presenter/codeRunnerPresenter";
 import React from "react";
-import CodeRunner from "../../Components/CodeRunner/Presenter/codeRunnerPresenter";
-import Button from "react-bootstrap/Button";
-import useLevelStore from "../../Model/frontEndStore";
 
-//TODO: FIX SO THAT THE BUTTON IS GRAY IF DISABELED & check that it works!!, test so that current implementation works.
-
-function Method() {
-  const currentLevel = useLevelStore((state) => state.currentLevel);
-  const levelLab1 = useLevelStore((state) => state.levelsLab1);
-  const thisLevel = 2;
-  const [disabled, setDisabled] = React.useState(isDisabeled());
-
-  function isDisabeled() {
-    if (thisLevel > currentLevel) {
-      return true;
-    }
-  }
-  const PreMadeText = `
-class Progman
-{  
-    public static void main(String[] args) {
-        //declare two variables of the type int
-        
-        //print the sum of the two variables
-        
-    }
-}`;
+function Lab1a1View(props) {
   return (
     <div className="max-w-3xl mx-auto text-left py-8 px-4 text-sans">
       <h1 className="text-3xl font-bold mb-4">
@@ -83,23 +59,21 @@ class Progman
         <p>2. Print the result to the console.</p>
         <CodeRunner
           testCases={6}
-          preMadeText={PreMadeText}
+          preMadeText={props.preMadeText}
           input={3}
-          incrementLevel={true}
+          shouldIncrement={true}
+          thisLevel={props.thisLevel}
         />
       </p>
       <div>
         <button className="next-button bg-[#a3d7cb] text-black font-sans">
           Previous
         </button>
-        <button
-          className="next-button bg-[#a3d7cb] text-black font-sans"
-          disabled={disabled}
-        >
+        <button className={props.disabled[1]} disabled={props.disabled[0]}>
           Next
         </button>
       </div>
     </div>
   );
 }
-export default Method;
+export default Lab1a1View;

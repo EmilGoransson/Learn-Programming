@@ -1,5 +1,5 @@
 import React from "react";
-import Lab1a1View from "./1_View";
+import Lab1a1View from "./Assignment1View";
 import useLevelStore from "../../../Model/frontEndStore";
 import { useEffect } from "react";
 
@@ -10,7 +10,7 @@ function Lab1a1() {
   //update this variable if using this as template!!
   const thisLevel = 1;
 
-  const [disabled, setDisabled] = React.useState([true, "next-button-gray"]);
+  const [status, setStatus] = React.useState([true, "next-button-gray"]);
 
   const preMadeText = `
 class Progman
@@ -22,19 +22,23 @@ class Progman
         
     }
 }`;
-  function isDisabeled() {
+  function IsDisabled() {
     if (thisLevel >= currentLevel) {
-      return setDisabled([true, "next-button-gray "]);
+      setStatus([true, "next-button-gray"]);
     } else {
-      return setDisabled([false, "next-button-green "]);
+      setStatus([false, "button-lab-cyan "]);
     }
   }
   useEffect(() => {
-    setDisabled(isDisabeled());
-  }, []);
+    IsDisabled();
+  }, [status]);
 
   return (
-    <Lab1a1View preMadeText={preMadeText} disabeled={disabled}></Lab1a1View>
+    <Lab1a1View
+      preMadeText={preMadeText}
+      disabled={status}
+      thisLevel={thisLevel}
+    ></Lab1a1View>
   );
 }
 export default Lab1a1;

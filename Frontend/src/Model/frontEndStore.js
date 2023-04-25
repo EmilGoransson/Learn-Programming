@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 const useLevelStore = create((set) => ({
-  currentLevel: 45,
+  currentLevel: 1,
   levelsLab1: 14,
   levelsLab2: 14,
   levelsLab3: 14,

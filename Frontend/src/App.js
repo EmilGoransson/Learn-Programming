@@ -9,8 +9,7 @@ import Aboutus from "./pages/aboutus";
 import Examn from "./pages/exam";
 import Theory from "./pages/theory";
 import Profile from "./pages/profile";
-import Class from "./pages/Assignments/Class";
-import Method from "./pages/Assignments/Method";
+import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assignment1Presenter";
 
 function App() {
   const [message, setMessage] = React.useState(null);
@@ -28,19 +27,19 @@ function App() {
       .then((data) => setJSONmessage(data.JSONmessage));
   }, []);
 
-  //const userid = "1";
+  //const userid = "Lab1Assignments";
   React.useEffect(() => {
-    fetch(`http://localhost:3003/users/:userId`)    //Change (wildcard) userID something like               : `http://localhost:3003/users/${userid}`
+    fetch(`http://localhost:3003/users/:userId`) //Change (wildcard) userID something like               : `http://localhost:3003/users/${userid}`
       .then((res) => {
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
-        return res.json()
+        return res.json();
       })
       .then((data) => setFirstName(data.firstName))
       .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
-      })
+      });
   }, []);
 
   /*React.useEffect(() => {
@@ -60,7 +59,14 @@ function App() {
 
             <Route
               path="/aboutus"
-              element={<Aboutus hej="hej" title="test" test={JSONmessage} firstN={firstName}/>}
+              element={
+                <Aboutus
+                  hej="hej"
+                  title="test"
+                  test={JSONmessage}
+                  firstN={firstName}
+                />
+              }
             />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/createaccount" element={<CreateAccount />} />
@@ -68,11 +74,8 @@ function App() {
             <Route path="/labs" element={<MainContent />} />
             <Route path="/theory" element={<Theory />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/Lab1/1" Component={Class} />
-            <Route path="/Lab1/2" Component={Method} />
-
-
-
+            <Route path="/Lab1/1" Component={Lab1a1} />
+            <Route path="/Lab1/2" Component={Lab1a1} />
           </Routes>
         </main>
       </div>
