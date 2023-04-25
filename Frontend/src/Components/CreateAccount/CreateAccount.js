@@ -20,8 +20,9 @@ function CreateAccount() {
         },
         body: JSON.stringify({ firstName, lastName, email, password }),
       });
+      //Redirecta dem till login sidan och kanske displaya logga in typ
       if (response.ok) {
-        alert('Log in successful');
+        alert('Account created, please log in');
       } else {
         alert('Log in failed');
       }

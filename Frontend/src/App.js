@@ -9,6 +9,8 @@ import Aboutus from "./pages/aboutus";
 import Examn from "./pages/exam";
 import Theory from "./pages/theory";
 import Profile from "./pages/profile";
+import LoginPage from "./Components/LoginPage/LoginPage";
+import CreateAccount from "./Components/CreateAccount/CreateAccount";
 
 function App() {
   const [message, setMessage] = React.useState(null);
