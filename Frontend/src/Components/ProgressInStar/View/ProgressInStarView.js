@@ -11,7 +11,7 @@ function ProgressStarView(props) {
     });
   }
   return (
-    <div className="bg-[#9bd7a1] w-40 h-96 flex justify-center items-center pr-3 pt-4 font-sans rounded-xl shadow-xl">
+    <div className="bg-[#a3d7cb] fixed right-0 w-40 h-96 flex justify-center items-center pr-3 pt-4 font-sans rounded-xl shadow-lg top-2/3 transform -translate-y-1/2">
       <div className="flex flex-col">{renderStars()}</div>
     </div>
   );
