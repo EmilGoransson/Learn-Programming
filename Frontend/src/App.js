@@ -14,8 +14,8 @@ import Aboutus from "./pages/aboutus";
 import Examn from "./pages/exam";
 import Theory from "./pages/theory";
 import Profile from "./pages/profile";
-import Class from "./pages/lab1/Class";
-import Method from "./pages/lab1/Method";
+import Class from "./pages/Assignments/Class";
+import Method from "./pages/Assignments/Method";
 
 function App() {
   /*const [message, setMessage] = React.useState(null);
@@ -77,6 +77,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/Lab1/1" Component={Class} />
             <Route path="/Lab1/2" Component={Method} />
+
 
 
           </Routes>

@@ -5,10 +5,10 @@ import useLevelStore from "../../Model/frontEndStore";
 
 //TODO: FIX SO THAT THE BUTTON IS GRAY IF DISABELED & check that it works!!, test so that current implementation works.
 
-function Lab1a1() {
+function Method() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
   const levelLab1 = useLevelStore((state) => state.levelsLab1);
-  const thisLevel = 1;
+  const thisLevel = 2;
   const [disabled, setDisabled] = React.useState(isDisabeled());
 
   function isDisabeled() {
@@ -102,4 +102,4 @@ class Progman
     </div>
   );
 }
-export default Lab1a1;
+export default Method;
