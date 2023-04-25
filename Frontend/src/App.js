@@ -13,6 +13,7 @@ import Profile from "./pages/profile";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import CreateAccount from "./Components/CreateAccount/CreateAccount";
 
+import Lab1a1 from "./pages/Assignments/1/1_Presenter";
 
 function App() {
   const [message, setMessage] = React.useState(null);
@@ -70,8 +71,8 @@ function App() {
             <Route path="/labs" element={<MainContent />} />
             <Route path="/theory" element={<Theory />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/Lab1/1" Component={Class} />
-            <Route path="/Lab1/2" Component={Method} />
+            <Route path="/Lab1/1" Component={Lab1a1} />             
+            <Route path="/Lab1/2" Component={Lab1a1} />
 
 
 
