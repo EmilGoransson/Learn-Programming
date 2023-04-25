@@ -13,7 +13,7 @@ import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assignment1Presenter";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 
 function App() {
-  const noSidebarRoutes = ["/"];
+  const noSidebarRoutes = ["/", "/login", "/createaccount"];
   const [message, setMessage] = React.useState(null);
   const [firstName, setFirstName] = React.useState(null);
   const [JSONmessage, setJSONmessage] = React.useState(null);

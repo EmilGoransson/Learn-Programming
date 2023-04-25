@@ -16,7 +16,7 @@ function WelcomePage() {
           <Link to={`/login`}>
           <button className="login">Log In</button>
           </Link>
-          <Link to={`/signup`}>
+          <Link to={`/createaccount`}>
           <button className="signup">Sign Up</button>
           </Link>
         </div>
