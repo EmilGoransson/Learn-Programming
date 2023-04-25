@@ -1,6 +1,5 @@
 import React from "react";
 import Sidebar from "./Components/Sidebar/Sidebar";
-import "./Components/Sidebar/Progress.css";
 import "./App.css";
 import "./Components/LevelRendering/ButtonContainer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
