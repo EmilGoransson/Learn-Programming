@@ -83,7 +83,7 @@ function LoginPage() {
             > 
             Log in
           </button> 
-          <p style={{ marginTop: '1rem', alignSelf: 'center', fontFamily: 'Lora' }}>Don’t have an account? Click <a href="/Signup" style={{ color: '#0077FF', textDecoration: 'underline' }}>here</a> to get one.</p>
+          <p style={{ marginTop: '1rem', alignSelf: 'center', fontFamily: 'Lora' }}>Don’t have an account? Click <a href="/createaccount" style={{ color: '#0077FF', textDecoration: 'underline' }}>here</a> to get one.</p>
         </form>
       </div>
     </div>
