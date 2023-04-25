@@ -13,7 +13,7 @@ import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 const Sidebar = () => {
   return (
     <div className="sidenav shadow-xl">
-      <img src="https://i.imgur.com/xRGsOcG.png" alt="My Image" />
+      <img src="https://i.imgur.com/5sZenqF.png" alt="My Image" />
       <NavLink to="/profile" activeClassName="active">
         <FontAwesomeIcon icon={faUser} /> Profile
       </NavLink>
