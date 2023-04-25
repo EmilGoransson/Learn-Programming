@@ -1,11 +1,12 @@
 import React from "react";
 import ProgressBarView from "../View/currentProgressBarView";
+import useLevelStore from "../../../Model/frontEndStore";
 
 function Progress() {
+  const currentLevel = useLevelStore((state) => state.currentLevel);
   //fetch from model
   const numberOfLevels = 40;
   //hard-code unless cant be fetched from DB
-  const currentLevel = 10;
   //for progressbar
   const currentLevelPercentage = (currentLevel / numberOfLevels) * 100;
   return (
