@@ -13,7 +13,7 @@ function CodeRunnerView(props) {
   }
 
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="bg-[#a3d7cb] rounded-lg overflow-hidden">
       <div className="p-4">
         <Editor
           width="100%"
@@ -31,7 +31,7 @@ function CodeRunnerView(props) {
           Compile Code
         </Button>
       </div>
-      <div className="p-4 bg-gray-100 rounded-b-lg">
+      <div className="p-4 rounded-b-lg">
         {props.error && (
           <div className="code-runner-error mb-4">
             <Form.Label className="font-bold">Error:</Form.Label>
@@ -51,7 +51,10 @@ function CodeRunnerView(props) {
             />
           </div>
         )}
-        <div>Result: {props.testCasesPassed[1]}</div>
+        <div>
+          Result:{" "}
+          <span className={props.style}>{props.testCasesPassed[1]}</span>
+        </div>
       </div>
     </div>
   );

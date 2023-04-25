@@ -23,6 +23,18 @@
     height: 70px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+.next-button {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10%;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 75px;
+    height: 47px;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
 .button-lab-gray {
     padding: 10px;
     margin: 10px;
