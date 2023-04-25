@@ -1,5 +1,6 @@
 import React from "react";
 import ProgressStarView from "../View/ProgressInStarView";
+import useLevelStore from "../../../Model/frontEndStore";
 //might have to change const stars to use reactState
 
 function ProgressStar() {
@@ -7,7 +8,7 @@ function ProgressStar() {
   const litStar = "https://i.imgur.com/jVBGvSp.png";
   const star = "https://i.imgur.com/wa5f5VZ.png";
   //fetch from model
-  const currentLevel = 10;
+  const currentLevel = useLevelStore((state) => state.currentLevel);
   //Change here depending on the amount of levels in each lab (maybe fetch from db)
   const lab1Amount = 10;
   const lab2Amount = 10;

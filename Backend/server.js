@@ -3,6 +3,7 @@ const cors = require('cors');
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 const port = 3003;
+const fs = require('fs');
 
 //middleware
 app.use(cors());
@@ -16,6 +17,19 @@ app.use("/dashboard", require("./dashboard"));
 
 app.get("/", function (req, res) {
     res.send("Hello World!");
+});
+
+app.get('/mypage', (req, res) => {
+  const jsonData = JSON.parse(fs.readFileSync('./data.json', 'utf-8'));
+  res.send(jsonData);
+});
+
+app.get('/users/:userId', (req, res) => {
+  const userId = 1;/*req.params.userId;*/                               // get the userId parameter from the URL or session...
+  const userData = JSON.parse(fs.readFileSync('./data.json', 'utf-8')); // read the JSON data from the file
+  const user = userData.users.find((u) => u.userId === userId);         // find the user object with the specified ID
+  const firstName = user.firstName;                                     // access the firstName property of the user object
+  res.send({ firstName }); 
 });
 
 app.get("/api", function (req, res) {

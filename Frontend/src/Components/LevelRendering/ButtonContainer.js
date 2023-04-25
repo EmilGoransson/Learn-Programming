@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from "react";
 import "./ButtonContainer.css";
 import Button from "react-bootstrap/Button";
+import { BrowserRouter, Routes, Route, Link, NavLink, useParams}  from "react-router-dom";
+
+import { useStore } from "zustand";
+import useLevelStore from "../../Model/frontEndStore";
 
 const ButtonContainer = (props) => {
   //fetch from model
-  const currentLevel = 6;
+  const currentLevel = useLevelStore((state) => state.currentLevel);
   //hard-coded or db integration VIKTIGT ATT ÄNDRA OM VI ÄNDRAR ANTAL NIVÅER I VARJE LAB
   const lab1Amount = 14;
   const lab2Amount = 14;
-  const lab3Amount = 10;
   const labNumberTracker = props.buttonLabels[props.buttonLabels.length - 1];
 
   const [message, setMessage] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { title, buttonLabels } = props;
+  const { title, linkTitle, buttonLabels } = props;
   let counter = 0;
 
   //format data
@@ -30,10 +33,13 @@ const ButtonContainer = (props) => {
       .catch((error) => console.error(error));
   }, [loading]);
 */
+
   const handleClick = () => {
     //setLoading(true);
     console.log("button clicked");
   };
+
+  <a>{linkTitle}</a>
 
   return (
     <div className="button-container">
@@ -89,8 +95,8 @@ const ButtonContainer = (props) => {
           const disabled = "false";
 
           return (
+            <Link to={`/${linkTitle}/${index + 1}`}>
             <button
-              onClick={handleClick}
               className={color}
               key={buttonId}
               disabled={status}
@@ -98,7 +104,11 @@ const ButtonContainer = (props) => {
               <div>{number}</div>
               <div>{moduleName}</div>
             </button>
+            </Link>
           );
+          
+
+          
         })}
       </div>
       <div className="button-row">
@@ -146,12 +156,14 @@ const ButtonContainer = (props) => {
               break;
           }
 
-          const buttonId = `button-${index + 8}`;
+          const buttonId = 'button-${index + 8}';
           return (
+            <Link to={`/L${linkTitle}/${index + 8}`}>
             <button className={color} key={buttonId}>
               <div>{line1}</div>
               <div>{line2}</div>
             </button>
+            </Link>
           );
         })}
       </div>

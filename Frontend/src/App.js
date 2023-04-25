@@ -1,32 +1,62 @@
 import React from "react";
 import Sidebar from "./Components/Sidebar/Sidebar";
-import "./Components/Sidebar/Progress.css";
 import "./App.css";
-
-
-import LoginPage from "./Components/LoginPage/LoginPage";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-
-import ButtonContainer from "./Components/LevelRendering/ButtonContainer";
 import "./Components/LevelRendering/ButtonContainer.css";
-import CodeRunner from "./Components/CodeRunner/Presenter/codeRunnerPresenter";
 import "bootstrap/dist/css/bootstrap.min.css";
 import QuizTemp from "./Components/Quizes/quiz";
 import { lab1Levels } from "./Components/LevelRendering/Levels/lab1";
 import { lab2Levels } from "./Components/LevelRendering/Levels/lab2";
 import { lab3Levels } from "./Components/LevelRendering/Levels/lab3";
 import { mainString } from "./Components/CodeRunner/mainClassString";
+import { Routes, Route, BrowserRouter, Link, NavLink } from "react-router-dom";
 import MainContent from "./pages/MainContent";
+import Aboutus from "./pages/aboutus";
+import Examn from "./pages/exam";
+import Theory from "./pages/theory";
+import Profile from "./pages/profile";
+import Class from "./pages/lab1/Class";
+import Method from "./pages/lab1/Method";
 
 function App() {
   /*const [message, setMessage] = React.useState(null);
+  const [message, setMessage] = React.useState(null);
+  const [firstName, setFirstName] = React.useState(null);
+  const [JSONmessage, setJSONmessage] = React.useState(null);
   React.useEffect(() => {
     fetch("http://localhost:3003/api")
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
   }, []);
 */
+
+  React.useEffect(() => {
+    fetch("http://localhost:3003/mypage")
+      .then((res) => res.json())
+      .then((data) => setJSONmessage(data.JSONmessage));
+  }, []);
+
+  //const userid = "1";
+  React.useEffect(() => {
+    fetch(`http://localhost:3003/users/:userId`)    //Change (wildcard) userID something like               : `http://localhost:3003/users/${userid}`
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json()
+      })
+      .then((data) => setFirstName(data.firstName))
+      .catch((error) => {
+        console.error("There was a problem with the fetch operation:", error);
+      })
+  }, []);
+
+  /*React.useEffect(() => {
+    fetch("http://localhost:3003/mypage")
+      .then((res) => res.json())
+      .then((data) => setJSONmessage(data.JSONmessage));
+      .then((data) => setTesting(data.testing));
+  }, []);*/
+
   return (
     <LoginPage></LoginPage>
     /*
@@ -34,7 +64,22 @@ function App() {
       <div className="App" id="outer-container">
         <Sidebar />
         <main id="page-wrap">
-          <MainContent />
+          <Routes>
+            <Route path="/" element={<MainContent />} />
+
+            <Route
+              path="/aboutus"
+              element={<Aboutus hej="hej" title="test" test={JSONmessage} firstN={firstName}/>}
+            />
+            <Route path="/exam" element={<Examn />} />
+            <Route path="/labs" element={<MainContent />} />
+            <Route path="/theory" element={<Theory />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/Lab1/1" Component={Class} />
+            <Route path="/Lab1/2" Component={Method} />
+
+
+          </Routes>
         </main>
       </div>
 
