@@ -16,7 +16,7 @@ const ButtonContainer = (props) => {
 
   const [message, setMessage] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { title, buttonLabels } = props;
+  const { title, linkTitle, buttonLabels } = props;
   let counter = 0;
 
   //format data
@@ -38,6 +38,8 @@ const ButtonContainer = (props) => {
     //setLoading(true);
     console.log("button clicked");
   };
+
+  <a>{linkTitle}</a>
 
   return (
     <div className="button-container">
@@ -93,7 +95,7 @@ const ButtonContainer = (props) => {
           const disabled = "false";
 
           return (
-            <Link to={`/Button${index + 1}`}>
+            <Link to={`/${linkTitle}/${index + 1}`}>
             <button
               className={color}
               key={buttonId}
@@ -156,7 +158,7 @@ const ButtonContainer = (props) => {
 
           const buttonId = 'button-${index + 8}';
           return (
-            <Link to={`/Button${index + 8}`}>
+            <Link to={`/L${linkTitle}/${index + 8}`}>
             <button className={color} key={buttonId}>
               <div>{line1}</div>
               <div>{line2}</div>

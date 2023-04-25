@@ -9,7 +9,8 @@ import Aboutus from "./pages/aboutus";
 import Examn from "./pages/exam";
 import Theory from "./pages/theory";
 import Profile from "./pages/profile";
-import Button1 from "./pages/lab1/Button1";
+import Class from "./pages/lab1/Class";
+import Method from "./pages/lab1/Method";
 
 function App() {
   const [message, setMessage] = React.useState(null);
@@ -65,7 +66,9 @@ function App() {
             <Route path="/labs" element={<MainContent />} />
             <Route path="/theory" element={<Theory />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/button1" Component={Button1} />
+            <Route path="/Lab1/1" Component={Class} />
+            <Route path="/Lab1/2" Component={Method} />
+
 
           </Routes>
         </main>
