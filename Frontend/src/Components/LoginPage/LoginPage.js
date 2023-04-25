@@ -32,12 +32,12 @@ function LoginPage() {
         // Handle successful authentication
         // The server should set a session cookie on a successful login
         // You can check if the user is logged in by checking if this cookie is present
-        alert('Login successful');
+        alert('Log in successful');
       } else {
         // Handle login error
         //Här hamnar man om man inte får ett 200 ok meddelande, just nu skriver den bara ut login failed men vi vill nog
         //redirecta igen till loginsidan och typ skriva något i stil med "incorrect username or password, please try again"
-        alert('Login failed');
+        alert('Log in failed');
       }
     } catch (error) {
       // Handle network error
@@ -48,16 +48,17 @@ function LoginPage() {
 //Här under på Don't have an account har jag gjort någon fusklänk till signuppage, den leder dock typ bara til
 //login igen. Så det är lite knas. Finns dock ingen signup page än. Men när signup page finns så borde vi
 //redirecta here länken så den leder till signup och inte till login igen. Vet dock inte själv hur det kan fixas
+// border: '1px solid gray'
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '2rem' }}>
-        <img src={logo} alt="Logo" style={{ height: '4rem', marginRight: '1rem' }} />
+        <img src={logo} alt="Logo" style={{ height: '10rem', width: '10rem', marginRight: '1rem' }} />
       </div>  
-      <div style={{ border: '1px solid gray', padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginLeft: '2rem', backgroundColor: '#f0f0f0' }}>
-        <h2 style={{ alignSelf: 'flex-start' }}>Login</h2>
+      <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginLeft: '10rem', backgroundColor: '#f0f0f0' }}>
+        <h2 style={{ alignSelf: 'flex-start' , fontFamily: 'Lora', fontWeight: 'bold', fontSize: '50px'}}>Log in</h2>
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '1rem' }}>
           <label style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <span style={{ marginBottom: '0.5rem' }}>E-mail:</span>  
+            <span style={{ marginBottom: '0.5rem', fontFamily: 'Lora'}}>E-mail:</span>  
             <input
               type="text"
               value={email}
@@ -66,12 +67,12 @@ function LoginPage() {
             />
           </label>
           <label style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <span style={{ marginBottom: '0.5rem' }}>Password:</span>
+            <span style={{ marginBottom: '0.5rem', fontFamily: 'Lora' }}>Password:</span>
             <input
               type="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
-              style={{ width: '100%' }}
+              style={{ width: '100%'}}
             />
           </label>
           <button
@@ -83,11 +84,13 @@ function LoginPage() {
               borderRadius: '0.25rem',
               border: 'none',
               cursor: 'pointer',
+              fontFamily: 'Lora',
+              fontSize: '25px',
             }}
           >
-            Login
+            Log in
           </button>
-          <p style={{ marginTop: '1rem', alignSelf: 'center' }}>Don’t have an account? Click <a href="/Signup" style={{ color: '#0077FF', textDecoration: 'underline' }}>here</a> to get one.</p>
+          <p style={{ marginTop: '1rem', alignSelf: 'center', fontFamily: 'Lora' }}>Don’t have an account? Click <a href="/Signup" style={{ color: '#0077FF', textDecoration: 'underline' }}>here</a> to get one.</p>
         </form>
       </div>
     </div>
