@@ -10,8 +10,10 @@ import Examn from "./pages/exam";
 import Theory from "./pages/theory";
 import Profile from "./pages/profile";
 import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assignment1Presenter";
+import WelcomePage from "./pages/WelcomePage/WelcomePage";
 
 function App() {
+  const noSidebarRoutes = ["/"];
   const [message, setMessage] = React.useState(null);
   const [firstName, setFirstName] = React.useState(null);
   const [JSONmessage, setJSONmessage] = React.useState(null);
@@ -52,10 +54,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App" id="outer-container">
-        <Sidebar />
+        {!noSidebarRoutes.includes(window.location.pathname) && <Sidebar />}
         <main id="page-wrap">
           <Routes>
-            <Route path="/" element={<MainContent />} />
+            <Route path="" element={<WelcomePage />} />
 
             <Route
               path="/aboutus"
@@ -68,12 +70,15 @@ function App() {
                 />
               }
             />
+            
             <Route path="/exam" element={<Examn />} />
             <Route path="/labs" element={<MainContent />} />
             <Route path="/theory" element={<Theory />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/Lab1/1" Component={Lab1a1} />
             <Route path="/Lab1/2" Component={Lab1a1} />
+            <Route path="/labs" Component={WelcomePage} />
+
           </Routes>
         </main>
       </div>

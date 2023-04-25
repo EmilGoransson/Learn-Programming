@@ -1,0 +1,64 @@
+.WelcomePage header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .logo {
+    height: 150px;
+
+  }
+
+  .WelcomePage main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .WelcomePage h1 {
+    font-size: 84px;
+    color: rgba(255, 166, 0, 0.74);
+    margin-bottom: 10px;
+  }
+
+  .WelcomePage p1 {
+    font-size: 50px;
+    color: rgba(255, 166, 0, 0.74);
+    margin-bottom: 20px;
+  }
+
+  .WelcomePage p {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 70%;
+  }
+
+  .WelcomePage .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .WelcomePage button {
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+
+  .WelcomePage .login {
+    background-color: green;
+    color: white;
+    border: none;
+  }
+
+  .WelcomePage .signup {
+    background-color: blue;
+    color: white;
+    border: none;
+  }
