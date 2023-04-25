@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./ButtonContainer.css";
 import Button from "react-bootstrap/Button";
+import { BrowserRouter, Routes, Route, Link, NavLink, useParams}  from "react-router-dom";
+
 
 const ButtonContainer = (props) => {
   //fetch from model
@@ -30,6 +32,7 @@ const ButtonContainer = (props) => {
       .catch((error) => console.error(error));
   }, [loading]);
 */
+
   const handleClick = () => {
     //setLoading(true);
     console.log("button clicked");
@@ -89,8 +92,8 @@ const ButtonContainer = (props) => {
           const disabled = "false";
 
           return (
+            <Link to={`/Button${index + 1}`}>
             <button
-              onClick={handleClick}
               className={color}
               key={buttonId}
               disabled={status}
@@ -98,7 +101,11 @@ const ButtonContainer = (props) => {
               <div>{number}</div>
               <div>{moduleName}</div>
             </button>
+            </Link>
           );
+          
+
+          
         })}
       </div>
       <div className="button-row">
@@ -146,12 +153,14 @@ const ButtonContainer = (props) => {
               break;
           }
 
-          const buttonId = `button-${index + 8}`;
+          const buttonId = 'button-${index + 8}';
           return (
+            <Link to={`/Button${index + 8}`}>
             <button className={color} key={buttonId}>
               <div>{line1}</div>
               <div>{line2}</div>
             </button>
+            </Link>
           );
         })}
       </div>
