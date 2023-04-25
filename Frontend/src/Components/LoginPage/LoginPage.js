@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
-import logo from './image.png';
+import logo from './gamlaloggan.png';
 import { Link } from 'react-router-dom';
 
 function LoginPage() {
@@ -52,7 +52,7 @@ function LoginPage() {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '2rem' }}>
-        <img src={logo} alt="Logo" style={{ height: '10rem', width: '10rem', marginRight: '1rem' }} />
+        <img src={logo} alt="Logo" style={{ height: '10rem', width: '10rem', marginRight: '1rem' }} className='hej' />
       </div>  
       <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginLeft: '10rem', backgroundColor: '#f0f0f0' }}>
         <h2 style={{ alignSelf: 'flex-start' , fontFamily: 'Lora', fontWeight: 'bold', fontSize: '50px'}}>Log in</h2>
@@ -64,6 +64,7 @@ function LoginPage() {
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               style={{ width: '100%' }}
+              className='ruta' 
             />
           </label>
           <label style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
@@ -73,23 +74,15 @@ function LoginPage() {
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               style={{ width: '100%'}}
+              className='ruta' 
             />
           </label>
           <button
             type="submit" 
-            style={{
-              padding: '0.5rem 1rem',
-              backgroundColor: '#0077FF',
-              color: 'white',
-              borderRadius: '0.25rem',
-              border: 'none',
-              cursor: 'pointer',
-              fontFamily: 'Lora',
-              fontSize: '25px',
-            }}
-          >
+            className='loginbutton' 
+            > 
             Log in
-          </button>
+          </button> 
           <p style={{ marginTop: '1rem', alignSelf: 'center', fontFamily: 'Lora' }}>Don’t have an account? Click <a href="/Signup" style={{ color: '#0077FF', textDecoration: 'underline' }}>here</a> to get one.</p>
         </form>
       </div>
