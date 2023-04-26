@@ -32,60 +32,56 @@ function CreateAccount() {
   }; 
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '2rem' }}>
-        <img src={logo} alt="Logo"  className='hej' />
+    <div className="container">
+      <div className="hej">
+        <img src={logo} alt="Logo" className="hej" />
       </div>  
-      <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginLeft: '10rem', backgroundColor: '#f0f0f0' }}>
-        <h2 style={{ alignSelf: 'flex-start' , fontFamily: 'Lora', fontWeight: 'bold', fontSize: '50px'}}>Register</h2>
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '1rem' }}>
-          <label style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <span style={{ marginBottom: '0.5rem', fontFamily: 'Lora'}}>First name:</span>  
+      <div className="form-container">
+        <h2 className="heading">Register</h2>
+        <form onSubmit={handleSubmit} className="form">
+          <label className="form-label">
+            <span className="form-label-text">First name:</span>  
             <input
               type="text"
               value={firstName}
               onChange={(event) => setFirstName(event.target.value)}
-              style={{ width: '100%' }}
-              className='ruta' 
+              className="ruta"
             />
           </label>
-          <label style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <span style={{ marginBottom: '0.5rem', fontFamily: 'Lora'}}>Last name:</span>  
+          <label className="form-label">
+            <span className="form-label-text">Last name:</span>  
             <input
               type="text"
               value={lastName}
               onChange={(event) => setLastName(event.target.value)}
-              style={{ width: '100%' }}
-              className='ruta' 
+              className="ruta"
             />
           </label>
-          <label style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <span style={{ marginBottom: '0.5rem', fontFamily: 'Lora'}}>E-mail:</span>  
+          <label className="form-label">
+            <span className="form-label-text">E-mail:</span>  
             <input
               type="text"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              style={{ width: '100%' }}
-              className='ruta' 
+              className="ruta"
             />
           </label>
-          <label style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <span style={{ marginBottom: '0.5rem', fontFamily: 'Lora' }}>Password:</span>
+          <label className="form-label">
+            <span className="form-label-text">Password:</span>
             <input
               type="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
-              style={{ width: '100%' }}
-              className='ruta' 
-              />
-             </label>
+              className="ruta"
+            />
+          </label>
           <button
             type="submit" 
-            className='loginbutton' 
-            > 
+            className="loginbutton" 
+          > 
             Create Account
           </button> 
-          <p style={{ marginTop: '1rem', alignSelf: 'center', fontFamily: 'Lora' }}>Already have an account? Click <a href="/login" style={{ color: '#0077FF', textDecoration: 'underline' }}>here</a> to log in.</p>
+          <p className="form-text">Already have an account? Click <a href="/login" className="form-link">here</a> to log in.</p>
         </form>
       </div>
     </div>
