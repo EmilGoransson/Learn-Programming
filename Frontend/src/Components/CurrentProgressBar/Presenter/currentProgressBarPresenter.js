@@ -3,9 +3,10 @@ import ProgressBarView from "../View/currentProgressBarView";
 import useLevelStore from "../../../Model/frontEndStore";
 
 function Progress() {
+  const totalLevels = useLevelStore((state) => state.totalLevels);
   //maybe change to local file idk
-  const litStar = "https://i.imgur.com/2HZJWia.png";
-  const star = "https://i.imgur.com/LInSggl.png";
+  const litStar = "https://i.imgur.com/PO5mEkq.png";
+  const star = "https://i.imgur.com/qtoAhpa.png";
   //fetch from model
   const currentLevel = useLevelStore((state) => state.currentLevel);
   //Change here depending on the amount of levels in each lab (maybe fetch from db)
@@ -13,6 +14,14 @@ function Progress() {
   const lab2Amount = 10;
   const lab3Amount = 10;
   //calculates which stars should be lit
+  //array of stars
+
+  //fetch from model
+  const numberOfLevels = 40;
+  //hard-code unless cant be fetched from DB
+  //for progressbar
+  const currentLevelPercentage = (currentLevel / numberOfLevels) * 100;
+
   function isLit(labAmount) {
     if (currentLevel >= labAmount) {
       return litStar;
@@ -26,15 +35,11 @@ function Progress() {
     isLit(lab1Amount + lab2Amount),
     isLit(lab1Amount + lab2Amount + lab3Amount),
   ];
-  //fetch from model
-  const numberOfLevels = 40;
-  //hard-code unless cant be fetched from DB
-  //for progressbar
-  const currentLevelPercentage = (currentLevel / numberOfLevels) * 100;
   return (
     <ProgressBarView
       level={currentLevel}
       progress={currentLevelPercentage}
+      totalLevels={totalLevels}
       stars={stars}
     />
   );
