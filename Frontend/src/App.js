@@ -5,7 +5,7 @@ import "./Components/LevelRendering/ButtonContainer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, BrowserRouter, Link, NavLink } from "react-router-dom";
 import MainContent from "./pages/MainContent";
-import Aboutus from "./pages/aboutus";
+import Aboutus from "./pages/aboutus/aboutus";
 import Examn from "./pages/exam";
 import Theory from "./pages/theory";
 import Profile from "./pages/profile";
@@ -15,7 +15,7 @@ import CreateAccount from "./Components/CreateAccount/CreateAccount";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 
 function App() {
-  const noSidebarRoutes = ["/", "/login", "/createaccount"];
+  const noSidebarRoutes = ["/", "/login", "/createaccount","/logout"];
   const [message, setMessage] = React.useState(null);
   const [firstName, setFirstName] = React.useState(null);
   const [JSONmessage, setJSONmessage] = React.useState(null);
@@ -61,8 +61,7 @@ function App() {
           <Routes>
             <Route path="" element={<WelcomePage />} />
 
-            <Route
-              path="/aboutus"
+            <Route path="/aboutus"
               element={
                 <Aboutus
                   hej="hej"
@@ -74,6 +73,8 @@ function App() {
             />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/createaccount" element={<CreateAccount />} />
+            <Route path="/logout" element={<WelcomePage/>}  />
+            
             <Route path="/exam" element={<Examn />} />
             <Route path="/labs" element={<MainContent />} />
             <Route path="/theory" element={<Theory />} />
@@ -81,6 +82,7 @@ function App() {
             <Route path="/Lab1/1" Component={Lab1a1} />
             <Route path="/Lab1/2" Component={Lab1a1} />
             <Route path="/labs" Component={WelcomePage} />
+            
 
           </Routes>
         </main>
