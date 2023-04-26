@@ -20,7 +20,9 @@ app.get('/users/:userId', (req, res) => {
   const userData = JSON.parse(fs.readFileSync('./data.json', 'utf-8')); // read the JSON data from the file
   const user = userData.users.find((u) => u.userId === userId);         // find the user object with the specified ID
   const firstName = user.firstName;                                     // access the firstName property of the user object
-  res.send({ firstName }); 
+  const lastName = user.lastName;
+  const email = user.email;
+  res.send( {firstName, lastName, email} ); 
 });
 
 app.get("/api", function (req, res) {
