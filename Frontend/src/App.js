@@ -74,7 +74,6 @@ function App() {
             />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/createaccount" element={<CreateAccount />} />
-            
             <Route path="/exam" element={<Examn />} />
             <Route path="/labs" element={<MainContent />} />
             <Route path="/theory" element={<Theory />} />

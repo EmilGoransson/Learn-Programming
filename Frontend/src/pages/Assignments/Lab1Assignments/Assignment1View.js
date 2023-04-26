@@ -1,5 +1,6 @@
 import CodeRunner from "../../../Components/CodeRunner/Presenter/codeRunnerPresenter";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Lab1a1View(props) {
   return (
@@ -66,12 +67,18 @@ function Lab1a1View(props) {
         />
       </p>
       <div>
+        <Link to={`/labs`}>
         <button className="next-button bg-[#a3d7cb] text-black font-sans">
           Previous
         </button>
+        </Link>
+        <Link to={`/Lab1/2`}>
         <button className={props.disabled[1]} disabled={props.disabled[0]}>
           Next
         </button>
+        </Link>
+
+      
       </div>
     </div>
   );
