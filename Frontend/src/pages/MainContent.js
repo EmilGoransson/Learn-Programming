@@ -19,12 +19,12 @@ function MainContent(){
         
       />
       <ButtonContainer
-        title="Lab2"
+        title="Lab 2"
         buttonLabels={lab2Levels}
         linkTitle="Lab2"
       />
       <ButtonContainer
-        title="Lab3"
+        title="Lab 3"
         buttonLabels={lab3Levels}
         linkTitle="Lab3"
       />

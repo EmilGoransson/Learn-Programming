@@ -56,6 +56,7 @@ function LoginPage() {
         <img src={logo} alt="Logo"  className='hej' />
       </div>  
       <h2 style={{ alignSelf: 'flex-start'}}>Log in</h2>
+      <br></br>
       <form onSubmit={handleSubmit}>
         <label>
           <span>E-mail:</span>  
