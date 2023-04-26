@@ -18,12 +18,13 @@ function App() {
   // Checks for generated token in browser session local storage
   const checkAuthenticated = async () => {
     try{
-      const res = await fetch("http://localhost:3003/authentication/login", {
+      const res = await fetch("http://localhost:3003/authentication/verify", {
       metod: "POST",
-      header: {jwt_token: localStorage.token} // Tries to find local token
+      header: {token: localStorage.token} // Tries to find local token
       });
 
       const parseRespone = await res.json();
+      console.log(res)
       // if the header respone is true (token exists or not)
       // If found - user is authenticated.
       parseRespone === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
@@ -55,10 +56,7 @@ function App() {
             <Route path="/labs" element={<MainContent />} />
             <Route path="/theory" element={<Theory />} />
             <Route path="/profile" element={<Profile />} />
-            <Route
-              path="/login"
-              element={<LoginPage setAuth={setAuth} isAuthenticated={isAuthenticated} />}
-            />
+            <Route path="/login" render={props => isAuthenticated ? (<LoginPage {...props} setAuth={setAuth}/>) : (<Navigate to="/"/>)}/>
             <Route path="/register" element ={<SignupPage/>}/>
             <Route path="/Lab1/1" Component={Class} />
             <Route path="/Lab1/2" Component={Method} />

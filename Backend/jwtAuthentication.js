@@ -48,12 +48,12 @@ router.post("/login", async (req,res) =>{
             return res.status(401).send("Incorrect Email or Password");
         }
         console.log(user.rows)
-        //const validPassword = await bcrypt.compare(password, user.rows[0].password);
-        //console.log(validPassword);
+        const validPassword = await bcrypt.compare(password, user.rows[0].password);
+        console.log(validPassword);
 
-       // if(!validPassword){
-        //    return res.status(401).send("Incorrect Email or Password");
-      //  }
+        if(!validPassword){
+            return res.status(401).send("Incorrect Email or Password");
+        }
         const token = jwtGenerator(user.rows[2]);
         res.json({ token });
         console.log(token);
@@ -63,7 +63,7 @@ router.post("/login", async (req,res) =>{
         res.status(500).send("Server Error");
     }
 })
-
+//verify token
 router.get("/verify", authorization, async (req,res) =>{
     try{
         res.json(true)

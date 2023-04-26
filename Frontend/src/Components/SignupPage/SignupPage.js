@@ -1,7 +1,8 @@
 import { parse } from "@fortawesome/fontawesome-svg-core";
 import React, { Fragment, useState } from "react";
+import { toast } from "react-toastify"
 import "./SignupPage.css";
-const SignupPage = (setAuth) => {
+const SignupPage = ({setAuth}) => {
   const [inputs, setInputs] = useState({
     email: "",
     firstName: "",
@@ -27,18 +28,23 @@ const SignupPage = (setAuth) => {
           body: JSON.stringify(body),
         }
       );
-      console.log(response);
 
       const parseRespone = await response.json();
-      console.log(parseRespone);
-
-      localStorage.setItem("token", parseRespone.token);
-
-      setAuth(true);
+      
+      if(parseRespone.token){
+        localStorage.setItem("token", parseRespone.token);
+        setAuth(true);
+        toast.success("Register Sucessfully")
+      }
+      else{
+        toast.error(parseRespone);
+      }
     } catch (error) {
       console.error(error.message);
     }
   };
+
+
   return (
     <Fragment>
       <div className="container">
