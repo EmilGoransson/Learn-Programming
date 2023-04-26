@@ -19,7 +19,7 @@ const Login = ({ setAuth }) => {
     try {
       const body = { email, password };
       const response = await fetch(
-        "http://localhost:5000/authentication/login",
+        "http://localhost:3003/authentication/login",
         {
           method: "POST",
           headers: {
@@ -52,6 +52,7 @@ const Login = ({ setAuth }) => {
           type="text"
           name="email"
           value={email}
+          placeholder='E-mail'
           onChange={e => onChange(e)}
           className="form-control my-3"
         />
@@ -59,10 +60,11 @@ const Login = ({ setAuth }) => {
           type="password"
           name="password"
           value={password}
+          placeholder='Password'
           onChange={e => onChange(e)}
           className="form-control my-3"
         />
-        <button class="btn btn-success btn-block">Submit</button>
+        <button type="submit" className="loginbutton">Submit</button>
       </form>
       <Link to="/register">register</Link>
     </Fragment>

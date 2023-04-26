@@ -12,20 +12,23 @@ const SignupPage = (setAuth) => {
   })
   const {email, firstName, lastName, password} = inputs;
 
-  const onChange = (e) => {
-    setInputs({...inputs, [e.target.firstName]
-    : e.target.value})
+  const onChange = e => {
+    setInputs({...inputs, [e.target.name]: e.target.value})
   }
 
   const onSubmitForm = async (e) => {
     e.preventDefault()
     try {
       const body = {email, firstName, lastName, password}
-      const response = await fetch("http://localhost:3003/Signup",{ 
-      Method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(body)
-    });
+      console.log(body)
+      const response = await fetch("http://localhost:3003/authentication/Signup",{ 
+        method: 'POST',
+        headers: {'Content-type': 'application/json'},
+        body: JSON.stringify(body)
+      }
+      );
+      console.log(response)
+
 
     const parseRespone = await response.json();
     console.log(parseRespone);
@@ -44,32 +47,36 @@ const SignupPage = (setAuth) => {
         <input 
         type = "email"
         name = "email"
-        placeholder='email'
-        value = {email}
+        placeholder='Email'
         onChange={e => onChange(e)}
+        value = {email}
+        className='form-control my-3'
         ></input>
         <input 
         type = "firstName"
         name = "firstName"
-        placeholder='firstName'
-        value = {firstName}
+        placeholder='First Name'
         onChange={e => onChange(e)}
+        value = {firstName}
+        className='form-control my-3'
         ></input>
         <input 
         type = "lastName"
         name = "lastName"
-        placeholder='lastName'
-        value = {lastName}
+        placeholder='Last Name'
         onChange={e => onChange(e)}
+        value = {lastName}
+        className='form-control my-3'
         ></input>
         <input 
-        type = "Password"
-        name = "Password"
+        type = "password"
+        name = "password"
         placeholder='Password'
-        value = {password}
         onChange={e => onChange(e)}
+        value = {password}
+        className='form-control my-3'
         ></input>
-      <button className='btn btn-success btn-black' >Submit</button>
+      <button type="submit" className='btn btn-success btn-black' >Submit</button>
       </form>
 
     </Fragment>
