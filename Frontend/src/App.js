@@ -14,6 +14,8 @@ import LoginPage from "./Components/LoginPage/LoginPage";
 import CreateAccount from "./Components/CreateAccount/CreateAccount";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import { useEffect, useState } from "react";
+import Scrollingbar from "./Components/scrolling bar/scrollingbar";
+
 
 function App() {
   const noSidebarRoutes = ["/", "/login", "/createaccount","/logout"];
@@ -59,10 +61,15 @@ function App() {
   };
 
   useEffect(() => {
+    const body = document.body;
+    const sidebar = document.querySelector(".sidenav");
+  
     if (darkMode) {
-      document.body.classList.add("dark");
+      body.classList.add("dark");
+      sidebar.classList.add("dark");
     } else {
-      document.body.classList.remove("dark");
+      body.classList.remove("dark");
+      sidebar.classList.remove("dark");
     }
   }, [darkMode]);
 
@@ -71,7 +78,7 @@ function App() {
     <BrowserRouter>
       <div className={`App ${darkMode ? "dark" : ""}`} id="outer-container">
         <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
-        {!noSidebarRoutes.includes(window.location.pathname) && <Sidebar />}
+        {!noSidebarRoutes.includes(window.location.pathname) && (<Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} />)}
         <main id="page-wrap">
           <Routes>
             <Route path="" element={<WelcomePage />} />
@@ -89,10 +96,11 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/createaccount" element={<CreateAccount />} />
             <Route path="/logout" element={<WelcomePage/>}  />
+            <Route path="/Arrays" element={<Theory/>}/>
             
             <Route path="/exam" element={<Examn />} />
             <Route path="/labs" element={<MainContent />} />
-            <Route path="/theory" element={<Theory />} />
+            <Route path="/theory" element={< Scrollingbar />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/Lab1/1" Component={Lab1a1} />
             <Route path="/Lab1/2" Component={Lab1a1} />

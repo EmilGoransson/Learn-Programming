@@ -3,6 +3,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    margin-top: 0%;
+
 
   }
 
@@ -11,48 +13,58 @@
 
   }
 
-  .Theory main {
+  .Theory  {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding: 20px;
+    left: 25%;
 
   }
 
   .Theory h1 {
-    font-size:48px;
+    font-size:38px;
     color: rgba(0, 0, 0);
     margin-top: 0;
     font-family:"Lora";
-    text-align: center;
+    text-align: left;
+    margin-left: 20%;
+    
+   
 
 
   }
   .Theory h2 {
-    font-size:36px;
+    font-size:28px;
     color: rgba(0, 0, 0);
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
     font-family:"Lora";
-    text-align: center;
+    text-align: left;
+    margin-left: 20%;
+    
 
   }
   .Theory h3 {
-    font-size:36px;
+    font-size:30px;
     color: rgba(0, 0, 0);
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     font-family:"Lora";
-    text-align: center;
+    text-align: left;
+    margin-left: 20%;
+    
 
   }
   .Theory p {
-    font-size: 24px;
-    text-align: center;
+    font-size: 20px;
+    text-align: left;
     color: rgba(0, 0, 0);
     margin: auto;
     width: 55%;
     font-family:"Lora";
+    margin-left: 20%;
+ 
   }
  
 
@@ -63,4 +75,7 @@
     margin: auto;
     width: 55%;
     font-family:"Lora";
+    margin-left: 20%;
+    
+   
   }

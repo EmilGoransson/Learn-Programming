@@ -44,5 +44,7 @@
 }
 
 .sidenav.dark{
-  background-color: #000000;
+  background-color: #333;
+  color: #fff;
+  border-right-color: #555;
 }
