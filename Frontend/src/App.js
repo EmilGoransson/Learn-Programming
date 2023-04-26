@@ -3,7 +3,7 @@ import Sidebar from "./Components/Sidebar/Sidebar";
 import "./App.css";
 import "./Components/LevelRendering/ButtonContainer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate, useNavigate } from "react-router-dom";
 import MainContent from "./pages/MainContent";
 import Aboutus from "./pages/aboutus";
 import Examn from "./pages/exam";
@@ -37,54 +37,15 @@ function App() {
     checkAuthenticated();  
   }, [])
   // Default state of authentication is false
-  const[isAuthenticated, setIsAuthenticated] = React.useState(true);
+  const[isAuthenticated, setIsAuthenticated] = React.useState(false);
 
   const setAuth = (boolean) => {
     setIsAuthenticated(boolean);
   }
-/*
-  const [message, setMessage] = React.useState(null);
-  const [firstName, setFirstName] = React.useState(null);
-  const [JSONmessage, setJSONmessage] = React.useState(null);
-  React.useEffect(() => {
-    fetch("http://localhost:3003/api")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
-  }, []);
-*/
-/*
-  React.useEffect(() => {
-    fetch("http://localhost:3003/mypage")
-      .then((res) => res.json())
-      .then((data) => setJSONmessage(data.JSONmessage));
-  }, []);
-*//*
-  //const userid = "1";
-  React.useEffect(() => {
-    fetch(`http://localhost:3003/users/:userId`)    //Change (wildcard) userID something like               : `http://localhost:3003/users/${userid}`
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return res.json()
-      })
-      .then((data) => setFirstName(data.firstName))
-      .catch((error) => {
-        console.error("There was a problem with the fetch operation:", error);
-      })
-  }, []);
-*/
-  /*React.useEffect(() => {
-    fetch("http://localhost:3003/auth/login")
-      .then((res) => res.json())
-      .then((data) => setJSONmessage(data.JSONmessage));
-      }, 
-      []);
-
-*/
+  
   return (
     
-   <BrowserRouter>
+    <BrowserRouter>
       <Fragment className="App" id="outer-container">
         <main id="page-wrap">
           <Routes>
@@ -94,7 +55,10 @@ function App() {
             <Route path="/labs" element={<MainContent />} />
             <Route path="/theory" element={<Theory />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/login" element ={<LoginPage/>}/>
+            <Route
+              path="/login"
+              element={<LoginPage setAuth={setAuth} isAuthenticated={isAuthenticated} />}
+            />
             <Route path="/register" element ={<SignupPage/>}/>
             <Route path="/Lab1/1" Component={Class} />
             <Route path="/Lab1/2" Component={Method} />
