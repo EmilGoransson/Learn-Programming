@@ -1,6 +1,18 @@
 
+body {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+body.dark {
+  --background-color: #222222;
+  --text-color: #ffffff;
+}
+
 .App {
   text-align: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .App-logo {

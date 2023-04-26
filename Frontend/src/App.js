@@ -13,12 +13,14 @@ import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assignment1Presenter";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import CreateAccount from "./Components/CreateAccount/CreateAccount";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
+import { useEffect, useState } from "react";
 
 function App() {
   const noSidebarRoutes = ["/", "/login", "/createaccount","/logout"];
   const [message, setMessage] = React.useState(null);
   const [firstName, setFirstName] = React.useState(null);
   const [JSONmessage, setJSONmessage] = React.useState(null);
+  const[darkMode,setDarkMode]=useState(false);
   React.useEffect(() => {
     fetch("http://localhost:3003/api")
       .then((res) => res.json())
@@ -52,10 +54,23 @@ function App() {
       .then((data) => setJSONmessage(data.JSONmessage));
       .then((data) => setTesting(data.testing));
   }, []);*/
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   return (
+    
     <BrowserRouter>
-      <div className="App" id="outer-container">
+      <div className={`App ${darkMode ? "dark" : ""}`} id="outer-container">
+        <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
         {!noSidebarRoutes.includes(window.location.pathname) && <Sidebar />}
         <main id="page-wrap">
           <Routes>
