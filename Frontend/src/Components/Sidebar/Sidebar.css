@@ -1,4 +1,7 @@
 .sidenav {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
   height: 100%; 
   width: 15%; 
   position: fixed; 
@@ -11,29 +14,24 @@
 }
 
 .sidenav a {
+  display: flex;
+  align-items: center;
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 170%;
+  font-family: lora;
   color: #000000;
-  display: block;
   border-bottom: 1px solid #ddd;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   text-align: left;
+}
 
+.sidenav a svg {
+  margin-right: 10px; 
 }
 
 .sidenav a:hover {
   color: #959393;
-}
-
-.main {
-  margin-left: 160px; 
-  padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
 }
 
 .sidenav img {
@@ -44,3 +42,4 @@
   max-width: 200px;
   padding: 20px;
 }
+
