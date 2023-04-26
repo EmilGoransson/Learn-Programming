@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, BrowserRouter, Link, NavLink } from "react-router-dom";
 import MainContent from "./pages/MainContent";
 import Aboutus from "./pages/aboutus/aboutus";
-import Examn from "./pages/exam";
+import Exam from "./pages/exam";
 import Theory from "./pages/theory";
 import Profile from "./pages/profile";
 import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assignment1Presenter";
@@ -75,9 +75,10 @@ function App() {
             <Route path="/createaccount" element={<CreateAccount />} />
             <Route path="/logout" element={<WelcomePage/>}  />
             
-            <Route path="/exam" element={<Examn />} />
+            <Route path="/exam" element={<Exam />} />
             <Route path="/labs" element={<MainContent />} />
             <Route path="/theory" element={<Theory />} />
+            <Route path="/theory/showtheory" element={<Theory />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/Lab1/1" Component={Lab1a1} />
             <Route path="/Lab1/2" Component={Lab1a1} />

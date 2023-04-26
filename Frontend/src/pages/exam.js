@@ -1,4 +1,4 @@
-const Examn =()=>{
-    return<h1> examn</h1>;
+const Exam =()=>{
+    return<h1> Exam</h1>;
 };
-export default Examn;
+export default Exam

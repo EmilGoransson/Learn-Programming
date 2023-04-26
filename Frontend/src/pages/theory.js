@@ -4,10 +4,11 @@ import "./theory.css";
 
 function Theory() {
     return (
+      
       <div className="Theory">
+        <h1>Theory</h1>
         <img src="https://i.imgur.com/5sZenqF.png" className='logo' />
         <div className="theory-header">
-          <h1>Theory</h1>
         </div>
         <h3 className="text-3xl font-bold mb-4">
           Introduction to Methods in Java
