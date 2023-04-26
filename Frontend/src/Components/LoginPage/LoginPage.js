@@ -50,43 +50,42 @@ function LoginPage() {
 //redirecta here länken så den leder till signup och inte till login igen. Vet dock inte själv hur det kan fixas
 // border: '1px solid gray'
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+    <div class="container">
+    <div class="form-container">
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '2rem' }}>
         <img src={logo} alt="Logo"  className='hej' />
       </div>  
-      <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginLeft: '10rem', backgroundColor: '#f0f0f0' }}>
-        <h2 style={{ alignSelf: 'flex-start' , fontFamily: 'Lora', fontWeight: 'bold', fontSize: '50px'}}>Log in</h2>
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '1rem' }}>
-          <label style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <span style={{ marginBottom: '0.5rem', fontFamily: 'Lora'}}>E-mail:</span>  
-            <input
-              type="text"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              style={{ width: '100%' }}
-              className='ruta' 
-            />
-          </label>
-          <label style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <span style={{ marginBottom: '0.5rem', fontFamily: 'Lora' }}>Password:</span>
-            <input
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              style={{ width: '100%'}}
-              className='ruta' 
-            />
-          </label>
-          <button
-            type="submit" 
-            className='loginbutton' 
-            > 
-            Log in
-          </button> 
-          <p style={{ marginTop: '1rem', alignSelf: 'center', fontFamily: 'Lora' }}>Don’t have an account? Click <a href="/createaccount" style={{ color: '#0077FF', textDecoration: 'underline' }}>here</a> to get one.</p>
-        </form>
-      </div>
+      <h2 style={{ alignSelf: 'flex-start'}}>Log in</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          <span>E-mail:</span>  
+          <input
+            type="text"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            className='ruta' 
+          />
+        </label>
+        <label>
+          <span>Password:</span>
+          <input
+            type="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            className='ruta' 
+          />
+        </label>
+        <button
+          type="submit" 
+          className='loginbutton' 
+        > 
+          Log in
+        </button> 
+        <p>Don’t have an account? Click <a href="/createaccount">here</a> to get one.</p>
+      </form>
     </div>
+  </div>
+  
   );
 }
 
