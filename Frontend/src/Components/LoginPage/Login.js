@@ -1,20 +1,20 @@
 import React, { Fragment, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
-import './LoginPage.css';
+import "./LoginPage.css";
 import { toast } from "react-toastify";
 
 const Login = ({ setAuth }) => {
   const [inputs, setInputs] = useState({
     email: "",
-    password: ""
+    password: "",
   });
 
   const { email, password } = inputs;
 
-  const onChange = e =>
+  const onChange = (e) =>
     setInputs({ ...inputs, [e.target.name]: e.target.value });
 
-  const onSubmitForm = async e => {
+  const onSubmitForm = async (e) => {
     e.preventDefault();
     try {
       const body = { email, password };
@@ -23,9 +23,9 @@ const Login = ({ setAuth }) => {
         {
           method: "POST",
           headers: {
-            "Content-type": "application/json"
+            "Content-type": "application/json",
           },
-          body: JSON.stringify(body)
+          body: JSON.stringify(body),
         }
       );
 
@@ -46,27 +46,46 @@ const Login = ({ setAuth }) => {
 
   return (
     <Fragment>
-      <h1 className="mt-5 text-center">Login</h1>
-      <form onSubmit={onSubmitForm}>
-        <input
-          type="text"
-          name="email"
-          value={email}
-          placeholder='E-mail'
-          onChange={e => onChange(e)}
-          className="form-control my-3"
-        />
-        <input
-          type="password"
-          name="password"
-          value={password}
-          placeholder='Password'
-          onChange={e => onChange(e)}
-          className="form-control my-3"
-        />
-        <button type="submit" className="loginbutton">Submit</button>
-      </form>
-      <Link to="/register">register</Link>
+      <div class="container">
+        <div class="form-container">
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "2rem",
+            }}
+          >
+            {/*<img src={logo} alt="Logo" className="hej" />*/}
+          </div>
+          <h2 style={{ alignSelf: "flex-start" }}>Log in</h2>
+          <br></br>
+          <form onSubmit={onSubmitForm}>
+            <input
+              type="text"
+              name="email"
+              value={email}
+              placeholder="E-mail"
+              onChange={(e) => onChange(e)}
+              className="ruta"
+            />
+            <input
+              type="password"
+              name="password"
+              value={password}
+              placeholder="Password"
+              onChange={(e) => onChange(e)}
+              className="ruta"
+            />
+            <button type="submit" className="loginbutton">
+              Log in
+            </button>
+          </form>
+          <p>
+            Don’t have an account? Click <a href="/register">here</a> to get
+            one.
+          </p>
+        </div>
+      </div>
     </Fragment>
   );
 };

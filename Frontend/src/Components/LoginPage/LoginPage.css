@@ -1,59 +1,84 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  /*Detta är för inputrutorna*/
-  .ruta {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  
- 
-  /*Detta är för självaste log in knappen*/
-   .loginbutton {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 25px;
-    cursor: pointer;
-    width: 100%;
-    max-width: 400px;
-    font-family: 'Lora';
-  }
-  .loginbutton:hover {
-    background-color: #61a7f3;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
+.ruta {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  width: 100%;
+  max-width: 800px;
+  min-width: 325px;
+}
 
+.loginbutton {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 400px;
+  font-family: "Lora";
+}
 
-  /*Detta är plats för loggan, kanske borde ändras på då den är typ lite liten*/
-  .hej{
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 1rem;
-    width: 100px;
-    height: 200px;
-  }
-  /*.logo{
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 1rem;
-    width: 100px;
-    height: 200px;
-  } */
-  
+.loginbutton:hover {
+  background-color: #61a7f3;
+}
+
+.hej {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10%;
+  width: 200px;
+  height: 200px;
+}
+
+.form-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10rem;
+  background-color: #f0f0f0;
+}
+
+.form-container h2 {
+  align-self: flex-start;
+  font-family: "Lora";
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.form-container label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: "Lora";
+}
+
+.form-container label span {
+  margin-bottom: 0.5rem;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: 100%;
+}
