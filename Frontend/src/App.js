@@ -13,12 +13,16 @@ import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assignment1Presenter";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import CreateAccount from "./Components/CreateAccount/CreateAccount";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
+import { useEffect, useState } from "react";
+import Scrollingbar from "./Components/scrolling bar/scrollingbar";
+
 
 function App() {
   const noSidebarRoutes = ["/", "/login", "/createaccount","/logout"];
   const [message, setMessage] = React.useState(null);
   const [firstName, setFirstName] = React.useState(null);
   const [JSONmessage, setJSONmessage] = React.useState(null);
+  const[darkMode,setDarkMode]=useState(false);
   React.useEffect(() => {
     fetch("http://localhost:3003/api")
       .then((res) => res.json())
@@ -52,11 +56,29 @@ function App() {
       .then((data) => setJSONmessage(data.JSONmessage));
       .then((data) => setTesting(data.testing));
   }, []);*/
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  useEffect(() => {
+    const body = document.body;
+    const sidebar = document.querySelector(".sidenav");
+  
+    if (darkMode) {
+      body.classList.add("dark");
+      sidebar.classList.add("dark");
+    } else {
+      body.classList.remove("dark");
+      sidebar.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   return (
+    
     <BrowserRouter>
-      <div className="App" id="outer-container">
-        {!noSidebarRoutes.includes(window.location.pathname) && <Sidebar />}
+      <div className={`App ${darkMode ? "dark" : ""}`} id="outer-container">
+        <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+        {!noSidebarRoutes.includes(window.location.pathname) && (<Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} />)}
         <main id="page-wrap">
           <Routes>
             <Route path="" element={<WelcomePage />} />
@@ -74,11 +96,11 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/createaccount" element={<CreateAccount />} />
             <Route path="/logout" element={<WelcomePage/>}  />
+            <Route path="/Arrays" element={<Theory/>}/>
             
             <Route path="/exam" element={<Exam />} />
             <Route path="/labs" element={<MainContent />} />
-            <Route path="/theory" element={<Theory />} />
-            <Route path="/theory/showtheory" element={<Theory />} />
+            <Route path="/theory" element={< Scrollingbar />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/Lab1/1" Component={Lab1a1} />
             <Route path="/Lab1/2" Component={Lab1a1} />

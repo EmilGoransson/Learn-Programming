@@ -43,3 +43,8 @@
   padding: 20px;
 }
 
+.sidenav.dark{
+  background-color: #333;
+  color: #fff;
+  border-right-color: #555;
+}
