@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 const Profile = (props) => {
   const {firstN, lastN, mail} = props;
-  const star = "https://i.imgur.com/2HZJWia.png";
+  const litstar = "https://i.imgur.com/PO5mEkq.png";
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -22,7 +22,7 @@ const Profile = (props) => {
       <div className="profile-container">
         <div className="level-container">
             <p className="levelText">LEVEL</p>
-            <img src={star} className="profile-level-star" alt="star" />
+            <img src={litstar} className="profile-level-star"/>
         </div>
         <p className="profile-firstlastname">
           {firstN} {lastN}
