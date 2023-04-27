@@ -1,6 +1,5 @@
 import React from "react";
 import "./Sidebar.css";
-
 import {NavLink } from "react-router-dom";
 import { ReactComponent as LogoUser } from "./user.svg"
 import { ReactComponent as LogoLab } from "./terminal.svg"
