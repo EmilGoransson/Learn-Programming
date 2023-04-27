@@ -8,12 +8,21 @@ const useLevelStore = create((set) => ({
   totalLevels: 42,
   avatar: "https://i.imgur.com/PjqWEth.png",
   name: "John Doe",
+  pinnedTheory: ["Arrays", "Methods", "Variables", "For-loop", "If-loop"],
 
   addPinned: (newPinned) => {
     set((state) => {
       return { favorite: [...state.favorite, newPinned] };
     });
   },
+  removePinned: (removePinned) => {
+    set((state) => {
+      return {
+        favorite: state.pinnedTheory.filter((item) => item !== removePinned),
+      };
+    });
+  },
+
   incrementLevel: () =>
     set((state) => ({ currentLevel: state.currentLevel + 1 })),
 }));

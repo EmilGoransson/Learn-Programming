@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './CreateAccount.css';
-import logo from './gamlaloggan.png';
 import { Link } from 'react-router-dom';
 
 function CreateAccount() {
@@ -34,7 +33,7 @@ function CreateAccount() {
   return (
     <div className="container">
       <div className="hej">
-        <img src={logo} alt="Logo" className="hej" />
+      <img src="https://i.imgur.com/csg65HH.png" className='hej' />
       </div>  
       <div className="form-container">
         <h2 className="heading">Register</h2>

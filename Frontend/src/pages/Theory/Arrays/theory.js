@@ -3,7 +3,7 @@ import "./theory.css";
 
 function Theory() {
   return (
-    <div className="Theory mt-20">
+    <div className="Theory mt-20 ">
       <div className="theory-header">
         <h3 className="text-3xl font-bold mb-4">
           Introduction to Methods in Java
@@ -101,7 +101,7 @@ function Theory() {
       <pre className="bg-gray-100 rounded-md p-4 mb-4">
         <code className="text-sm font-mono">System.out.println(myNumber);</code>
       </pre>
-      <p className="mb-4">
+      <p className="mb-6 pb-40">
         This will print the value of <code>myNumber</code> (in this case,{" "}
         <code>42</code>) to the console.
       </p>

@@ -73,7 +73,7 @@ const Quiz = (props) => {
   const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
 
   return (
-    <div className="quiz-container" restartKey="12">
+    <div className="quiz-container rounded-3xl" restartKey="12">
       {!showResult ? (
         <div>
           <div>

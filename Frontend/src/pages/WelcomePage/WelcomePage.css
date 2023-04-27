@@ -19,14 +19,14 @@
 
   .WelcomePage h1 {
     font-size: 84px;
-    color: rgba(255, 166, 0, 0.74);
+    color: #d63384;
     margin-bottom: 10px;
     font-family: 'Lora';
   }
 
   .WelcomePage h2 {
     font-size: 50px;
-    color: rgba(255, 166, 0, 0.74);
+    color: #d63384;
     margin-bottom: 20px;
     font-family: 'Lora';
   }
@@ -37,6 +37,7 @@
     margin-bottom: 20px;
     width: 70%;
     font-family: 'Lora';
+    color:  #CECECE;;
   }
 
   .WelcomePage .buttons {
@@ -56,13 +57,21 @@
   }
 
   .WelcomePage .login {
-    background-color: rgb(155, 215, 161);
-    color: white;
+    background-color: #2DCB6C;
+    color: black;
     border: none;
   }
+.WelcomePage .login:hover {
+  background-color: #b9dec8;
+}
 
   .WelcomePage .signup {
-    background-color: rgb(107, 201, 248);
-    color: white;
+    background-color: #d63384;
+    color: black;
     border: none;
   }
+.WelcomePage .signup:hover {
+  background-color: #e897be;
+  color: black;
+  border: none;
+}

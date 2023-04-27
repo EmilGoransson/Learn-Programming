@@ -23,8 +23,8 @@
   padding: 10px;
   border-radius: 5px;
   border: none;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #2DCB6C;
+  color: black;
   font-size: 25px;
   cursor: pointer;
   width: 100%;
@@ -33,7 +33,7 @@
 }
 
 .loginbutton:hover {
-  background-color: #61a7f3;
+  background-color: #b9dec8;
 }
 
 /*Detta är plats för loggan, kanske borde ändras på då den är typ lite liten*/
