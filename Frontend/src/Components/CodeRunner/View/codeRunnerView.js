@@ -1,6 +1,7 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Editor from "@monaco-editor/react";
+import "./codeRunnerView.css";
 
 function CodeRunnerView(props) {
   //gets the code from the editor (realtime) and returns it to the presenter
@@ -13,11 +14,11 @@ function CodeRunnerView(props) {
   }
 
   return (
-    <div className="bg-[#a3d7cb] rounded-lg overflow-hidden">
+    <div className="bg-[#1B2432] rounded-lg overflow-hidden">
       <div className="p-4">
         <Editor
           width="100%"
-          theme="vs-light"
+          theme="vs-dark"
           height="45vh"
           defaultLanguage="java"
           defaultValue={props.preWrittenText}
@@ -26,7 +27,7 @@ function CodeRunnerView(props) {
         <Button
           variant="secondary"
           onClick={onClickACB}
-          className="mt-4 bg-blue-600 hover:bg-blue-700 text-gray-100 rounded py-2 px-3"
+          className="mt-4 compile-button hover:bg-blue-700 text-gray-100 rounded py-2 px-3"
         >
           Compile Code
         </Button>

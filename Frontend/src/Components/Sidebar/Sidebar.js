@@ -1,31 +1,49 @@
 import React from "react";
 import "./Sidebar.css";
-import {NavLink } from "react-router-dom";
-import { ReactComponent as LogoUser } from "./user.svg"
-import { ReactComponent as LogoLab } from "./terminal.svg"
-import { ReactComponent as LogoExam } from "./edit-2.svg"
-import { ReactComponent as LogoTheory } from "./book.svg"
-import { ReactComponent as LogoUs } from "./users.svg"
+import { NavLink } from "react-router-dom";
+import { ReactComponent as LogoUser } from "./user.svg";
+import { ReactComponent as LogoLab } from "./terminal.svg";
+import { ReactComponent as LogoExam } from "./edit-2.svg";
+import { ReactComponent as LogoTheory } from "./book.svg";
+import { ReactComponent as LogoUs } from "./users.svg";
 
 const Sidebar = () => {
   return (
-    <div className="sidenav">
-      <img src="https://i.imgur.com/5sZenqF.png" alt="My Image" />
+    <div className="sidenav mt-10 bg-[1B2432] rounded-3xl pb-96">
+      {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+      <div className="nav-Image -mt-6">
+        <img
+          src="https://i.imgur.com/uxlXb2Q.png"
+          className=""
+          alt="My Image"
+        />
+      </div>
       <NavLink to="/labs" activeClassName="active">
-        <LogoLab/> Labs
+        <div className="sidebar-Item align-middle d-flex gap-2 align-items-center pr-3 pl-3 rounded-3xl">
+          <LogoLab />
+          <span>Overview</span>
+        </div>
       </NavLink>
       <NavLink to="/exam" activeClassName="active">
-        <LogoExam/> Exams
+        <div className="sidebar-Item align-middle d-flex gap-2 align-items-center pr-10 pl-3 rounded-3xl">
+          <LogoExam /> Exams
+        </div>
       </NavLink>
       <NavLink to="/theory" activeClassName="active">
-        <LogoTheory/> Theory
+        <div className="sidebar-Item align-middle d-flex gap-2 align-items-center pr-10 pl-3 rounded-3xl">
+          <LogoTheory /> Theory
+        </div>
       </NavLink>
       <NavLink to="/profile" activeClassName="active">
-        <LogoUser/> 
-        Profile
+        <div className="sidebar-Item align-middle d-flex gap-2 align-items-center pr-10 pl-3 rounded-3xl">
+          <LogoUser />
+          Profile
+        </div>
       </NavLink>
       <NavLink to="/aboutus" activeClassName="active">
-        <LogoUs/> About us
+        <div className="sidebar-Item align-middle d-flex gap-2 align-items-center pr-8 pl-3 rounded-3xl">
+          <LogoUs /> Contact
+        </div>
       </NavLink>
     </div>
   );
