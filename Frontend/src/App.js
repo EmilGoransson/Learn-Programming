@@ -12,9 +12,6 @@ import Profile from "./pages/profile";
 import SignupPage from "./Components/SignupPage/SignupPage";
 import Login from "./Components/LoginPage/Login";
 import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assignment1Presenter";
-import Lab1a2 from "./pages/Assignments/Lab1Assignments/Assignment2Presenter";
-import LoginPage from "./Components/LoginPage/LoginPage";
-import CreateAccount from "./Components/CreateAccount/CreateAccount";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
   
   function App() {
@@ -27,21 +24,14 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
         metod: "POST",
         headers: {token: localStorage.token} // Tries to find local token
         });
-  
         const parseRespone = await res.json();
-  
         // if the header respone is true (token exists or not)
         // If found - user is authenticated.
         parseRespone === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
       }
-      catch(error){
-        console.error(error.message);
-      }
-    };
+      catch(error){console.error(error.message);}};
   
-    useEffect(() => {
-      checkAuthenticated();
-    }, [])
+    useEffect(() => {checkAuthenticated()}, [])
     // Default state of authentication is false
     const[isAuthenticated, setIsAuthenticated] = React.useState(false);
   
@@ -98,8 +88,8 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-
-  /*useEffect(() => {
+/*
+  useEffect(() => {
     const body = document.body;
     const sidebar = document.querySelector(".sidenav");
   
@@ -110,8 +100,8 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
       body.classList.remove("dark");
       sidebar.classList.remove("dark");
     }
-  }, [darkMode]); */
-
+  }, [darkMode]);
+*/
   return (
     
     

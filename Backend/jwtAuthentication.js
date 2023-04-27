@@ -20,7 +20,6 @@ router.post("/Signup", async (req,res) => {
         //3. if user not exists -> encrypt password
             const salt = await bcrypt.genSalt(10);
             const encryptedPassword = await bcrypt.hash(password, salt);
-            console.log(encryptedPassword);
         //4. insert user into DB
             //This is a temporary psql query that will be in queries.js later on
             let new_user = await pool.query("INSERT INTO student(first_name, last_name, email, password) VALUES($1,$2,$3,$4)", 
@@ -39,7 +38,6 @@ router.post("/Signup", async (req,res) => {
 
 //login route
 router.post("/login", async (req,res) =>{
-    console.log("/login")
     try{
         let {email, password} = req.body;
         const user = await pool.query("SELECT * FROM student WHERE email = $1", [email]);
@@ -47,18 +45,43 @@ router.post("/login", async (req,res) =>{
             return res.status(401).send("Incorrect Email or Password");
         }
         const validPassword = await bcrypt.compare(password, user.rows[0].password);
-        console.log("Password is " + validPassword)
         if(!validPassword){
             return res.status(401).send("Incorrect Email or Password");
         }
+
+        const cLevel = await pool.query("SELECT s_id, current_level, first_name from student where email = $1", [email])
+        currentLevel = cLevel.rows[0].current_level;
+        userName = cLevel.rows[0].first_name;
+        id = cLevel.rows[0].s_id;
+
         const token = jwtGenerator(user.rows[2]);
-        res.json({ token });
-        console.log(token);
+        res.json({ token, currentLevel, userName, id});
+        console.log("User " + id + " logged in successfully");
     }
     catch(err){
         console.error(err.message);
         res.status(500).send("Server Error");
     }
+})
+
+
+router.post("/profile", authorization, async(req,res) =>{
+
+    const remove = pool.query("DELETE FROM student WHERE s_id = $1", [s_id])
+})
+
+router.post("/profile", authorization, async(req,res) =>{
+
+    let {email, password, firstName, lastName} = req.body;
+        const salt = await bcrypt.genSalt(10);
+        const encryptedPassword = await bcrypt.hash(password, salt);
+
+
+
+    const changes = pool.query(
+        "UPDATE student SET email = $1, SET password = $2, SET first_name = $3, SET last_name = $4;",
+        [email, encryptedPassword, firstName, lastName]
+    )
 })
 //verify token
 router.get("/verify", authorization, async (req,res) =>{

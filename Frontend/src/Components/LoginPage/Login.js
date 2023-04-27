@@ -2,8 +2,10 @@ import React, { Fragment, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import "./LoginPage.css";
 import { toast } from "react-toastify";
+import useLevelStore from "../../Model/frontEndStore";
 
 const Login = ({ setAuth }) => {
+  const getLevel = useLevelStore(state => state.getLevel);
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -32,13 +34,18 @@ const Login = ({ setAuth }) => {
       const parseRes = await response.json();
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
+        localStorage.setItem("id", parseRes.id)
+        localStorage.setItem("name", parseRes.userName)
         setAuth(true);
         toast.success("Logged in Successfully");
       } else {
         setAuth(false);
         toast.error(parseRes);
       }
-    } catch (err) {
+
+      getLevel(Number(parseRes.currentLevel));
+      //getLevel(5);
+} catch (err) {
       console.error(err.message);
     }
   };

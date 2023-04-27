@@ -6,6 +6,8 @@ import { ReactComponent as Mail } from "./mail.svg";
 function Aboutus() {
   const handleLogoutClick = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("id");
+    localStorage.removeItem("name");
     window.location.reload();
   };
   return (
