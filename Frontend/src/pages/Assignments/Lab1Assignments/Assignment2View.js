@@ -68,7 +68,7 @@ function Lab1a2View(props) {
       To pass the exercise you need to:
       <p>
         <br></br>
-        <p>1. Declare a String "Hello" and "World" in the main method.</p>
+        <p>1. Declare two Strings, "Hello" and "World" in the main method.</p>
         <p>2. Print the result of the method call to Words to the console.</p>
         <CodeRunner
           testCases={"HelloWorld"}
