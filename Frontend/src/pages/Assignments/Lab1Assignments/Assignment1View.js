@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Lab1a1View(props) {
   return (
-    <div style={{ marginLeft: "15%" }}>
+    <div style={{ marginLeft: "15%", fontFamily: "Lora" }}>
     <div className="max-w-3xl mx-auto text-left py-8 px-4 text-sans">
       <h1 className="text-3xl font-bold mb-4">
         Introduction to Variables in Java

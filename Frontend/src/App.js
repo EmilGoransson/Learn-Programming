@@ -14,6 +14,9 @@ import Lab1a2 from "./pages/Assignments/Lab1Assignments/Assignment2Presenter";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import CreateAccount from "./Components/CreateAccount/CreateAccount";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
+import { useEffect, useState } from "react";
+import Scrollingbar from "./Components/scrolling bar/scrollingbar";
+
 
 function App() {
   const noSidebarRoutes = ["/", "/login", "/createaccount","/logout"];
@@ -22,6 +25,7 @@ function App() {
   const [lastName, setLastName] = React.useState(null);
   const [email, setEmail] = React.useState(null);
   const [JSONmessage, setJSONmessage] = React.useState(null);
+  const[darkMode,setDarkMode]=useState(false);
   
   React.useEffect(() => {
     Promise.all([
@@ -37,10 +41,56 @@ function App() {
     });
   }, []);
 
+  React.useEffect(() => {
+    fetch("http://localhost:3003/mypage")
+      .then((res) => res.json())
+      .then((data) => setJSONmessage(data.JSONmessage));
+  }, []);
+
+  //const userid = "Lab1Assignments";
+  React.useEffect(() => {
+    fetch(`http://localhost:3003/users/:userId`) //Change (wildcard) userID something like               : `http://localhost:3003/users/${userid}`
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json();
+      })
+      .then((data) => setFirstName(data.firstName))
+      .catch((error) => {
+        console.error("There was a problem with the fetch operation:", error);
+      });
+  }, []);
+
+  /*React.useEffect(() => {
+    fetch("http://localhost:3003/mypage")
+      .then((res) => res.json())
+      .then((data) => setJSONmessage(data.JSONmessage));
+      .then((data) => setTesting(data.testing));
+  }, []);*/
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  useEffect(() => {
+    const body = document.body;
+    const sidebar = document.querySelector(".sidenav");
+  
+    if (darkMode) {
+      body.classList.add("dark");
+      sidebar.classList.add("dark");
+    } else {
+      body.classList.remove("dark");
+      sidebar.classList.remove("dark");
+    }
+  }, [darkMode]);
+
   return (
+    
     <BrowserRouter>
-      <div className="App" id="outer-container">
-        {!noSidebarRoutes.includes(window.location.pathname) && <Sidebar />}
+      <div className={`App ${darkMode ? "dark" : ""}`} id="outer-container">
+        <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+        {!noSidebarRoutes.includes(window.location.pathname) && (<Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} />)}
         <main id="page-wrap">
           <Routes>
             <Route path="" element={<WelcomePage />} />
@@ -58,9 +108,13 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/createaccount" element={<CreateAccount />} />
             <Route path="/logout" element={<WelcomePage/>}  />
+            <Route path="/Arrays" element={[<Theory />, <Scrollingbar />]} />
+
             
             <Route path="/exam" element={<Examn />} />
             <Route path="/labs" element={<MainContent />} />
+            <Route path="/theory" element={[< Scrollingbar/> ,<Theory/>]} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/theory" element={<Theory />} />
             <Route path="/profile" element={<Profile firstN={firstName} lastN={lastName} mail={email}/>} />
             <Route path="/Lab1/1" Component={Lab1a1} />
