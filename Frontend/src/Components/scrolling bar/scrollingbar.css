@@ -1,12 +1,13 @@
   
+  
   .sidebar {
     width: 200px;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     right: 74%;
     top: 0;
     background-color: #f1f1f1;
-    overflow-y: auto;
+    overflow-y: scroll;
   }
   
   .content {
@@ -28,4 +29,3 @@
   li:last-child {
     border-bottom: none;
   }
-  

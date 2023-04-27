@@ -105,7 +105,7 @@ function App() {
             <Route path="/Lab1/1" Component={Lab1a1} />
             <Route path="/Lab1/2" Component={Lab1a1} />
             <Route path="/labs" Component={WelcomePage} />
-            
+        
 
           </Routes>
         </main>
