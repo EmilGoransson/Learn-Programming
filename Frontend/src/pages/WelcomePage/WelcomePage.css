@@ -61,9 +61,17 @@
     color: black;
     border: none;
   }
+.WelcomePage .login:hover {
+  background-color: #b9dec8;
+}
 
   .WelcomePage .signup {
     background-color: #d63384;
     color: black;
     border: none;
   }
+.WelcomePage .signup:hover {
+  background-color: #e897be;
+  color: black;
+  border: none;
+}

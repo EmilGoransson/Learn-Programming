@@ -53,7 +53,7 @@ function LoginPage() {
   // border: '1px solid gray'
   return (
     <div class="container">
-      <div class="form-container bg-lightBlueGray">
+      <div class="form-container bg-lightBlueGray rounded-2xl">
         <div
           style={{
             display: "flex",
