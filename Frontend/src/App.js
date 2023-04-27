@@ -49,6 +49,7 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
   const [lastName, setLastName] = React.useState(null);
   const [email, setEmail] = React.useState(null);
   const [JSONmessage, setJSONmessage] = React.useState(null);
+  const[darkMode,setDarkMode]=useState(false);
   
   React.useEffect(() => {
     Promise.all([
@@ -64,7 +65,52 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
     });
   }, []);
 
+  React.useEffect(() => {
+    fetch("http://localhost:3003/mypage")
+      .then((res) => res.json())
+      .then((data) => setJSONmessage(data.JSONmessage));
+  }, []);
+
+  //const userid = "Lab1Assignments";
+  React.useEffect(() => {
+    fetch(`http://localhost:3003/users/:userId`) //Change (wildcard) userID something like               : `http://localhost:3003/users/${userid}`
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json();
+      })
+      .then((data) => setFirstName(data.firstName))
+      .catch((error) => {
+        console.error("There was a problem with the fetch operation:", error);
+      });
+  }, []);
+
+  /*React.useEffect(() => {
+    fetch("http://localhost:3003/mypage")
+      .then((res) => res.json())
+      .then((data) => setJSONmessage(data.JSONmessage));
+      .then((data) => setTesting(data.testing));
+  }, []);*/
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  useEffect(() => {
+    const body = document.body;
+    const sidebar = document.querySelector(".sidenav");
+  
+    if (darkMode) {
+      body.classList.add("dark");
+      sidebar.classList.add("dark");
+    } else {
+      body.classList.remove("dark");
+      sidebar.classList.remove("dark");
+    }
+  }, [darkMode]);
+
   return (
+    
     
     <BrowserRouter>
     <div className="App" id="outer-container">
