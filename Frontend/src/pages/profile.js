@@ -22,7 +22,7 @@ const Profile = (props) => {
       <div className="profile-container">
         <div className="level-container">
             <p className="levelText">LEVEL</p>
-            <img src={star} className="profile-level-star" alt="star" />
+            <img src={star} className="profile-level-star"/>
         </div>
         <p className="profile-firstlastname">
           {firstN} {lastN}
