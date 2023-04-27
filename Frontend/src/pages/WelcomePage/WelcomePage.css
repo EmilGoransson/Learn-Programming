@@ -19,14 +19,14 @@
 
   .WelcomePage h1 {
     font-size: 84px;
-    color: rgba(255, 166, 0, 0.74);
+    color: #d63384;
     margin-bottom: 10px;
     font-family: 'Lora';
   }
 
   .WelcomePage h2 {
     font-size: 50px;
-    color: rgba(255, 166, 0, 0.74);
+    color: #d63384;
     margin-bottom: 20px;
     font-family: 'Lora';
   }
@@ -57,13 +57,13 @@
   }
 
   .WelcomePage .login {
-    background-color: rgb(66, 143, 74);
+    background-color: #2DCB6C;
     color: white;
     border: none;
   }
 
   .WelcomePage .signup {
-    background-color: rgb(69, 160, 206);
+    background-color: #d63384;
     color: white;
     border: none;
   }

@@ -7,7 +7,7 @@ import "./Assignment2View.css";
 function Lab1a2View(props) {
   return (
     <div className="mt-20">
-      <div className="max-w-3xl mx-auto text-left py-8 px-4 text-sans text-textGray">
+      <div className="max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
         <h1 className="text-3xl font-bold mb-4">Methods</h1>
         <p className="mb-4">
           Methods, also known as functions, are a fundamental concept in
@@ -83,7 +83,7 @@ function Lab1a2View(props) {
         </p>
         <div>
           <Link to={`/Lab1/1`}>
-            <button className="next-button bg-[#a3d7cb] text-black font-sans">
+            <button className="next-button bg-[#a3d7cb] text-black">
               Prev
             </button>
           </Link>
