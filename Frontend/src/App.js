@@ -10,6 +10,7 @@ import Examn from "./pages/exam";
 import Theory from "./pages/theory";
 import Profile from "./pages/profile";
 import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assignment1Presenter";
+import Lab1a2 from "./pages/Assignments/Lab1Assignments/Assignment2Presenter";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import CreateAccount from "./Components/CreateAccount/CreateAccount";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
@@ -117,7 +118,7 @@ function App() {
             <Route path="/theory" element={<Theory />} />
             <Route path="/profile" element={<Profile firstN={firstName} lastN={lastName} mail={email}/>} />
             <Route path="/Lab1/1" Component={Lab1a1} />
-            <Route path="/Lab1/2" Component={Lab1a1} />
+            <Route path="/Lab1/2" Component={Lab1a2} />
             <Route path="/labs" Component={WelcomePage} />
             
 
