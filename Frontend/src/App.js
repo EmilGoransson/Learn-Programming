@@ -96,11 +96,12 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/createaccount" element={<CreateAccount />} />
             <Route path="/logout" element={<WelcomePage/>}  />
-            <Route path="/Arrays" element={<Theory/>}/>
+            <Route path="/Arrays" element={[<Theory />, <Scrollingbar />]} />
+
             
             <Route path="/exam" element={<Examn />} />
             <Route path="/labs" element={<MainContent />} />
-            <Route path="/theory" element={< Scrollingbar />} />
+            <Route path="/theory" element={[< Scrollingbar/> ,<Theory/>]} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/Lab1/1" Component={Lab1a1} />
             <Route path="/Lab1/2" Component={Lab1a1} />

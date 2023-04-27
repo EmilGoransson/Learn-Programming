@@ -1,13 +1,6 @@
 import React from "react";
 import "./Sidebar.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faLaptop,
-  faBook,
-  faPencil,
-  faUsers,
-} from "@fortawesome/free-solid-svg-icons";
+
 import {NavLink } from "react-router-dom";
 import { ReactComponent as LogoUser } from "./user.svg"
 import { ReactComponent as LogoLab } from "./terminal.svg"
