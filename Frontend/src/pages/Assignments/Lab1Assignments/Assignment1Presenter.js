@@ -6,7 +6,8 @@ import { useEffect } from "react";
 function Lab1a1() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
   const levelLab1 = useLevelStore((state) => state.levelsLab1);
-
+  const pinnedTheory = useLevelStore((state) => state.pinnedTheory);
+  const addPinned = useLevelStore((state) => state.addPinned);
   //update this variable if using this as template!!
   const thisLevel = 1;
 

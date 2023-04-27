@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100;200;300;400;500;600;700;800&display=swap");
 
-body {
-  font-family: "Anek Malayalam", sans-serif;
-  background: linear-gradient(90.04deg, #ffffff, #ffffff 99.96%);
-  color: #11052c;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0 30px;
-}
 
 .quiz-container {
   max-width: 500px;

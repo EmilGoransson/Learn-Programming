@@ -22,13 +22,4 @@ code {
   box-sizing: border-box;
 }
 
-#page-wrap {
-  padding-bottom: 0;
-  padding-top: 0;
-}
-
-.Code-Result {
-  background-color: #2DCB6C;
- color :black ;
-}
 
