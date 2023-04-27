@@ -6,6 +6,7 @@
   height: 100vh;
 }
 
+/*Detta är för inputrutorna*/
 .ruta {
   margin-bottom: 10px;
   padding: 10px;
@@ -17,6 +18,7 @@
   max-width: 400px;
 }
 
+/*Detta är för själva log in knappen*/
 .loginbutton {
   padding: 10px;
   border-radius: 5px;
@@ -34,16 +36,25 @@
   background-color: #61a7f3;
 }
 
+/*Detta är plats för loggan, kanske borde ändras på då den är typ lite liten*/
 .hej{
   position: absolute;
   top: 0;
   left: 0;
-  margin: 10%;
+  margin: 1rem;
   width: 200px;
   height: 200px;
 }
 
-.form-container {
+/* Ny CSS för registreringsformulär */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-form {
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -52,32 +63,43 @@
   background-color: #f0f0f0;
 }
 
-.form-container h2 {
+.register-form h2 {
   align-self: flex-start;
   font-family: 'Lora';
   font-weight: bold;
   font-size: 50px;
 }
 
-.form-container form {
+.register-form form {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 1rem;
 }
 
-.form-container label {
+.register-form label {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   font-family: 'Lora';
 }
 
-.form-container label span {
+.register-form label span {
   margin-bottom: 0.5rem;
 }
 
-.form-container input[type='text'],
-.form-container input[type='password'] {
+.register-form input[type="text"],
+.register-form input[type="password"] {
   width: 100%;
+}
+
+.register-form p {
+  margin-top: 1rem;
+  align-self: center;
+  font-family: 'Lora';
+}
+
+.register-form a {
+  color: #0077FF;
+  text-decoration: underline;
 }

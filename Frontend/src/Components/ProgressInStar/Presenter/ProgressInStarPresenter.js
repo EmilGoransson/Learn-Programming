@@ -5,8 +5,8 @@ import useLevelStore from "../../../Model/frontEndStore";
 
 function ProgressStar() {
   //maybe change to local file idk
-  const litStar = "https://i.imgur.com/jVBGvSp.png";
-  const star = "https://i.imgur.com/wa5f5VZ.png";
+  const litStar = "https://i.imgur.com/2HZJWia.png";
+  const star = "https://i.imgur.com/LInSggl.png";
   //fetch from model
   const currentLevel = useLevelStore((state) => state.currentLevel);
   //Change here depending on the amount of levels in each lab (maybe fetch from db)
