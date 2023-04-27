@@ -1,10 +1,14 @@
+body{
+    font-family: 'Lora';
+}
+
 .profile-container {
     display: block;
     width: 1000px;
     height: 300px;
     background-color: rgb(221, 242, 244);
     margin-left: 300px;
-    margin-top:60px;
+    margin-top: 60px;
     border-radius: 15px;
     
     /*display: flex;
@@ -30,27 +34,41 @@
 .profile-firstlastname {
     font-size: 50px;
     padding-top: 80px;
+    align-self: center;
+    margin-top: -300px;
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+.profile-mail {
+    margin-left: -80px;
+    font-weight: bold;
 }
 
 .level-container {
     display: block;
-    width: 300px;
+    width: 200px;
     height: 300px;
-    background-color: rgb(221, 242, 244);
-    margin-left: 650px;
-    margin-top:40px;
+    /*background-color: blue;*/
+    /*position: relative;*/
+    margin-left: 100px;
+    margin-top: 60px;
     border-radius: 15px;
 }
 
 .levelText {
-    font-size: 30px;
+    position: absolute;
+    font-size: 15px;
     padding-top: 30px;
+    margin-top: 70px;
+    margin-left: 76px;
 }
 
 .profile-level-star {
     width: 200px;
-    height: 200px;
-    margin: auto;
+    height: 240px;
+    /*margin: auto;*/
+    padding-top: 40px;
 }
 
 .delete-account-button {
@@ -63,8 +81,71 @@
     border: none;
     cursor: pointer;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
-    float: right;
-    margin-right: -420px;
+    
+    margin-left: 155px;
     margin-top: 30px;
+    margin-bottom: 30px;
+   
+}
+
+.edit-profile-container {
+    width: 800px;
+    height: 500px;
+    margin-top: 40px;
+    margin-left: 400px;
+    border-radius: 15px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-heading {
+    font-size: 25px;
+    float: left;
+    margin-top: 30px;
+    margin-left: 30px;
+    font-weight: bold;
+}
+
+.profile-label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 200px;
+    font-weight: bold;
+}
+
+.profile-label-text {
+    margin-left: 10px;
+}
+
+.inputSquare {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.saveButton {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    max-width: 400px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+    margin-top: 20px;
+}
+
+.saveButton:hover {
+    background-color: #61a7f3;
 }
   
