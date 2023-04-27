@@ -35,12 +35,12 @@
 }
 
 .hej{
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 10%;
-  width: 200px;
-  height: 200px;
+  display: block;
+  margin:  20px;
+  margin-bottom: 70px;
+  width: 80%;
+  max-width: 200px;
+  padding: 20px;
 }
 
 .form-container {

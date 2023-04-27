@@ -37,6 +37,7 @@
     margin-bottom: 20px;
     width: 70%;
     font-family: 'Lora';
+    color:  #CECECE;;
   }
 
   .WelcomePage .buttons {
@@ -56,13 +57,13 @@
   }
 
   .WelcomePage .login {
-    background-color: rgb(155, 215, 161);
+    background-color: rgb(66, 143, 74);
     color: white;
     border: none;
   }
 
   .WelcomePage .signup {
-    background-color: rgb(107, 201, 248);
+    background-color: rgb(69, 160, 206);
     color: white;
     border: none;
   }

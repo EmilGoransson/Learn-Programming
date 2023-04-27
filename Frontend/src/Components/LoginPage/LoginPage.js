@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
-import logo from './gamlaloggan.png';
 import { Link } from 'react-router-dom';
 
 function LoginPage() {
@@ -53,7 +52,7 @@ function LoginPage() {
     <div class="container">
     <div class="form-container">
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '2rem' }}>
-        <img src={logo} alt="Logo"  className='hej' />
+       <img src="https://i.imgur.com/csg65HH.png" className='hej' />
       </div>  
       <h2 style={{ alignSelf: 'flex-start'}}>Log in</h2>
       <br></br>

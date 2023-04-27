@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, BrowserRouter, Link, NavLink } from "react-router-dom";
 import MainContent from "./pages/MainContent";
 import Aboutus from "./pages/Aboutus/aboutus";
-import Examn from "./pages/exam";
+import Exam from "./pages/exam";
 import Theory from "./pages/Theory/Arrays/theory";
 import Profile from "./pages/profile";
 import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assign1/Assignment1Presenter";
@@ -19,6 +19,7 @@ import RightSideBar from "./Components/rightSideBar/rightSideBarPresenter";
 import CurrentProgressBarPresenter from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import { useEffect, useState } from "react";
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
+import PinnedList from "./Components/PinnedList/PinnedList";
 
 function App() {
   const noSidebarRoutes = ["/", "/login", "/createaccount", "/logout"];
@@ -96,6 +97,7 @@ function App() {
             {" "}
             <TopBar></TopBar>
             <RightSideBar></RightSideBar>
+            <PinnedList></PinnedList>
             <CurrentProgressBarPresenter></CurrentProgressBarPresenter>
             <Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} />
           </div>
@@ -120,9 +122,9 @@ function App() {
             <Route path="/logout" element={<WelcomePage />} />
             <Route path="/Arrays" element={[<Theory />]} />
 
-            <Route path="/exam" element={<Examn />} />
+            <Route path="/exam" element={<Exam />} />
             <Route path="/labs" element={<MainContent />} />
-            <Route path="/theory" element={[<Scrollingbar />, <Theory />]} />
+            <Route path="/theory" element={[<Theory />]} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/theory" element={<Theory />} />
             <Route
