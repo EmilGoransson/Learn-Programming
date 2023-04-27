@@ -13,7 +13,7 @@ const Sidebar = () => {
       {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
       <div className="nav-Image -mt-6">
         <img
-          src="https://i.imgur.com/uxlXb2Q.png"
+          src="https://i.imgur.com/xj9BUtI.png"
           className=""
           alt="My Image"
         />

@@ -27,7 +27,7 @@ function CodeRunnerView(props) {
         <Button
           variant="secondary"
           onClick={onClickACB}
-          className="mt-4 compile-button hover:bg-blue-700 text-gray-100 rounded py-2 px-3"
+          className="mt-4 compile-button hover:bg-blue-700 text-gray-100 rounded py-2 px-3 text-black"
         >
           Compile Code
         </Button>
