@@ -37,7 +37,7 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
     };
   
     useEffect(() => {
-      checkAuthenticated();  
+      checkAuthenticated();
     }, [])
     // Default state of authentication is false
     const[isAuthenticated, setIsAuthenticated] = React.useState(false);
@@ -95,7 +95,7 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-
+/*
   useEffect(() => {
     const body = document.body;
     const sidebar = document.querySelector(".sidenav");
@@ -108,7 +108,7 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
       sidebar.classList.remove("dark");
     }
   }, [darkMode]);
-
+*/
   return (
     
     
@@ -117,13 +117,15 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
     {!noSidebarRoutes.includes(window.location.pathname) && <Sidebar />}
       <main id="page-wrap">
         <Routes>
-          <Route path="" element={<WelcomePage />} />
-          <Route path="/createaccount" element={!isAuthenticated ? <SignupPage setAuth={setAuth}/> : <Navigate to="/"/>} />
+          <Route path="/" element={<WelcomePage/>}/>
+          <Route path="/createaccount" element={!isAuthenticated ? <SignupPage setAuth={setAuth}/> : <Navigate to="/main"/>} />
           <Route path="/main" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
           <Route path="/exam" element={isAuthenticated ? <Examn setAuth={setAuth}/> : <Navigate to="/login"/>}/>
           <Route path="/labs" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
           <Route path="/theory" element={isAuthenticated ? <Theory setAuth={setAuth}/> : <Navigate to="/login"/>}/>
+          <Route path="/profile" element={isAuthenticated ? <Profile setAuth={setAuth}/> : <Navigate to="/login"/>}/>
           <Route path="/login" element={!isAuthenticated ? <Login setAuth={setAuth} /> : <Navigate to="/main" />}/>
+          <Route path="/aboutus" element={isAuthenticated ? <Aboutus setAuth={setAuth} /> : <Navigate to="/login" />}/>
         </Routes>
       </main>
     </div>

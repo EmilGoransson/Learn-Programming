@@ -42,7 +42,6 @@ const Login = ({ setAuth }) => {
       console.error(err.message);
     }
   };
-
   return (
     <Fragment>
       <div class="container">

@@ -41,9 +41,10 @@ const SignupPage = ({setAuth}) => {
       console.error(error.message);
     }
   };
-  
-  
-  const errorVar = false;
+  const refreshOnClick = () => {
+    window.location.reload();
+  };
+
   return (
     <Fragment>
       <div className="container">
@@ -89,10 +90,7 @@ const SignupPage = ({setAuth}) => {
             <button type="submit" className="loginbutton">
               Create Account
             </button>
-            <div>
-              {errorVar}
-            </div>
-            <p className="form-text">
+             <p className="form-text">
               Already have an account? Click{" "}
               <a href="/login" className="form-link">
                 here

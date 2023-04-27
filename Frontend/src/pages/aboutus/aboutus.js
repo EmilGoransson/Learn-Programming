@@ -6,6 +6,7 @@ import { ReactComponent as Mail } from "./mail.svg";
 function Aboutus() {
   const handleLogoutClick = () => {
     localStorage.removeItem("token");
+    window.location.reload();
   };
   return (
     <div className="Aboutus">
@@ -29,13 +30,11 @@ function Aboutus() {
          </div>
         
         <div className="buttons"> 
-          <Link to={`/logout`}>
           <button className="logout" onClick={handleLogoutClick }>
             
             Log out
           
           </button>
-          </Link>
   
         </div>
 
