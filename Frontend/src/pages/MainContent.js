@@ -22,16 +22,19 @@ function MainContent() {
         title="Lab 1"
         buttonLabels={lab1Levels}
         linkTitle="Lab1"
+        labNumber="1"
       />
       <ButtonContainer
-        title="Lab2"
+        title="Lab 2"
         buttonLabels={lab2Levels}
         linkTitle="Lab2"
+        labNumber="2"
       />
       <ButtonContainer
-        title="Lab3"
+        title="Lab 3"
         buttonLabels={lab3Levels}
         linkTitle="Lab3"
+        labNumber="3"
       />
     </div>
   );

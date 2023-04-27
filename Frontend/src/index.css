@@ -14,8 +14,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  color: #2DCB6C;
+
 }
 * {
+
   box-sizing: border-box;
 }
 
@@ -25,7 +28,7 @@ code {
 }
 
 .Code-Result {
-  background-color: #1e1e1e;
- color :white;
+  background-color: #2DCB6C;
+ color :black ;
 }
 
