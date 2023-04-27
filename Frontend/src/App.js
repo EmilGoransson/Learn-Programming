@@ -12,6 +12,9 @@ import Profile from "./pages/profile";
 import SignupPage from "./Components/SignupPage/SignupPage";
 import Login from "./Components/LoginPage/Login";
 import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assignment1Presenter";
+import Lab1a2 from "./pages/Assignments/Lab1Assignments/Assignment2Presenter";
+import LoginPage from "./Components/LoginPage/LoginPage";
+import CreateAccount from "./Components/CreateAccount/CreateAccount";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
   
   function App() {
@@ -95,8 +98,8 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-/*
-  useEffect(() => {
+
+  /*useEffect(() => {
     const body = document.body;
     const sidebar = document.querySelector(".sidenav");
   
@@ -107,8 +110,8 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
       body.classList.remove("dark");
       sidebar.classList.remove("dark");
     }
-  }, [darkMode]);
-*/
+  }, [darkMode]); */
+
   return (
     
     

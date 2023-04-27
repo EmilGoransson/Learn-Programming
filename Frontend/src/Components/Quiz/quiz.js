@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { quiz } from "./Data/sprintdemo";
+import { quiz } from "./Data/MethodQuiz";
 import "./quiz.css";
 
 /*
