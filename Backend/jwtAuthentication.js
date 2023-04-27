@@ -42,15 +42,12 @@ router.post("/login", async (req,res) =>{
     console.log("/login")
     try{
         let {email, password} = req.body;
-        console.log(email, password)
         const user = await pool.query("SELECT * FROM student WHERE email = $1", [email]);
         if(user.rows.length === 0){
             return res.status(401).send("Incorrect Email or Password");
         }
-        console.log(user.rows)
         const validPassword = await bcrypt.compare(password, user.rows[0].password);
-        console.log(validPassword);
-
+        console.log("Password is " + validPassword)
         if(!validPassword){
             return res.status(401).send("Incorrect Email or Password");
         }

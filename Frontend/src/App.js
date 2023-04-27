@@ -3,7 +3,7 @@ import Sidebar from "./Components/Sidebar/Sidebar";
 import "./App.css";
 import "./Components/LevelRendering/ButtonContainer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Routes, Route, BrowserRouter, Navigate, useNavigate } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate} from "react-router-dom";
 import MainContent from "./pages/MainContent";
 import Aboutus from "./pages/aboutus";
 import Examn from "./pages/exam";
@@ -13,6 +13,7 @@ import Class from "./pages/Assignments/Class";
 import Method from "./pages/Assignments/Method";
 import LoginPage from "./Components/LoginPage/Login";
 import SignupPage from "./Components/SignupPage/SignupPage";
+import Login from "./Components/LoginPage/Login";
 
 function App() {
   // Checks for generated token in browser session local storage
@@ -20,11 +21,11 @@ function App() {
     try{
       const res = await fetch("http://localhost:3003/authentication/verify", {
       metod: "POST",
-      header: {token: localStorage.token} // Tries to find local token
+      headers: {token: localStorage.token} // Tries to find local token
       });
 
       const parseRespone = await res.json();
-      console.log(res)
+
       // if the header respone is true (token exists or not)
       // If found - user is authenticated.
       parseRespone === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
@@ -47,26 +48,21 @@ function App() {
   return (
     
     <BrowserRouter>
-      <Fragment className="App" id="outer-container">
-        <main id="page-wrap">
-          <Routes>
-            <Route path="/" element={<MainContent />} />
+    <div className="App" id="outer-container">
+      <main id="page-wrap">
+        <Routes>
+          <Route path="/register" element={!isAuthenticated ? <SignupPage setAuth={setAuth}/> : <Navigate to="/"/>} />
+          <Route path="/" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
+          <Route path="/exam" element={isAuthenticated ? <Examn setAuth={setAuth}/> : <Navigate to="/login"/>}/>
+          <Route path="/labs" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
+          <Route path="/theory" element={isAuthenticated ? <Theory setAuth={setAuth}/> : <Navigate to="/login"/>}/>
+          <Route path="/login" element={!isAuthenticated ? <LoginPage setAuth={setAuth} /> : <Navigate to="/" />}/>
+        </Routes>
+      </main>
+    </div>
 
-            <Route path="/exam" element={<Examn />} />
-            <Route path="/labs" element={<MainContent />} />
-            <Route path="/theory" element={<Theory />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/login" render={props => isAuthenticated ? (<LoginPage {...props} setAuth={setAuth}/>) : (<Navigate to="/"/>)}/>
-            <Route path="/register" element ={<SignupPage/>}/>
-            <Route path="/Lab1/1" Component={Class} />
-            <Route path="/Lab1/2" Component={Method} />
-          </Routes>
-        </main>
-      </Fragment  >
-
-
-    </BrowserRouter>
-  );
+    
+  </BrowserRouter>)
 }
 
 export default App;

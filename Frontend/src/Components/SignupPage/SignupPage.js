@@ -19,8 +19,7 @@ const SignupPage = ({setAuth}) => {
     e.preventDefault();
     try {
       const body = { email, firstName, lastName, password };
-      console.log(body);
-      const response = await fetch(
+        const response = await fetch(
         "http://localhost:3003/authentication/Signup",
         {
           method: "POST",
