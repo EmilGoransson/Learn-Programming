@@ -1,14 +1,15 @@
 import React from "react";
-import Lab1a2View from "./Assignment2View";
-import useLevelStore from "../../../Model/frontEndStore";
+import Lab1a1View from "./Assignment1View";
+import useLevelStore from "../../../../Model/frontEndStore";
 import { useEffect } from "react";
 
-function Lab1a2() {
-  const currentLevel = useLevelStore((state) => state.currentLeve2);
-  const levelLab2 = useLevelStore((state) => state.levelsLab2);
-
+function Lab1a1() {
+  const currentLevel = useLevelStore((state) => state.currentLevel);
+  const levelLab1 = useLevelStore((state) => state.levelsLab1);
+  const pinnedTheory = useLevelStore((state) => state.pinnedTheory);
+  const addPinned = useLevelStore((state) => state.addPinned);
   //update this variable if using this as template!!
-  const thisLevel = 2;
+  const thisLevel = 1;
 
   const [status, setStatus] = React.useState([true, "next-button-gray"]);
 
@@ -16,17 +17,11 @@ function Lab1a2() {
 class Progman
 {  
     public static void main(String[] args) {
-        //declare two variables of the type String
+        //declare two variables of the type int
         
-        
-        // Call the Words method
-
-
         //print the sum of the two variables
         
     }
-
-    //Declare your method here
 }`;
   function IsDisabled() {
     if (thisLevel >= currentLevel) {
@@ -40,11 +35,11 @@ class Progman
   }, [status]);
 
   return (
-    <Lab1a2View
+    <Lab1a1View
       preMadeText={preMadeText}
       disabled={status}
       thisLevel={thisLevel}
-    ></Lab1a2View>
+    ></Lab1a1View>
   );
 }
-export default Lab1a2;
+export default Lab1a1;

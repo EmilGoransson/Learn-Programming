@@ -5,51 +5,37 @@ import "./Components/LevelRendering/ButtonContainer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, BrowserRouter, Navigate} from "react-router-dom";
 import MainContent from "./pages/MainContent";
-import Aboutus from "./pages/aboutus/aboutus";
-import Examn from "./pages/exam";
-import Theory from "./pages/theory";
+import Aboutus from "./pages/Aboutus/aboutus";
+import Exam from "./pages/exam";
+import Theory from "./pages/Theory/Arrays/theory";
 import Profile from "./pages/profile";
-import SignupPage from "./Components/SignupPage/SignupPage";
-import Login from "./Components/LoginPage/Login";
-import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assignment1Presenter";
+import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assign1/Assignment1Presenter";
+import Lab1a2 from "./pages/Assignments/Lab1Assignments/Assign2/Assignment2Presenter";
+import LoginPage from "./Components/LoginPage/LoginPage";
+import CreateAccount from "./Components/CreateAccount/CreateAccount";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
-  
-  function App() {
-    const noSidebarRoutes = ["/", "/createaccount","/logout"];
-    const [message, setMessage] = React.useState(null);
-    // Checks for generated token in browser session local storage
-    const checkAuthenticated = async () => {
-      try{
-        const res = await fetch("http://localhost:3003/authentication/verify", {
-        metod: "POST",
-        headers: {token: localStorage.token} // Tries to find local token
-        });
-        const parseRespone = await res.json();
-        // if the header respone is true (token exists or not)
-        // If found - user is authenticated.
-        parseRespone === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
-      }
-      catch(error){console.error(error.message);}};
-  
-    useEffect(() => {checkAuthenticated()}, [])
-    // Default state of authentication is false
-    const[isAuthenticated, setIsAuthenticated] = React.useState(false);
-  
-    const setAuth = (boolean) => {
-      setIsAuthenticated(boolean);
-    }
+import TopBar from "./Components/topBar/topBarPresenter";
+import RightSideBar from "./Components/rightSideBar/rightSideBarPresenter";
+import CurrentProgressBarPresenter from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
+import { useEffect, useState } from "react";
+import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
+import PinnedList from "./Components/PinnedList/PinnedList";
+
+function App() {
+  const noSidebarRoutes = ["/", "/login", "/createaccount", "/logout"];
+  const [message, setMessage] = React.useState(null);
   const [firstName, setFirstName] = React.useState(null);
   const [lastName, setLastName] = React.useState(null);
   const [email, setEmail] = React.useState(null);
   const [JSONmessage, setJSONmessage] = React.useState(null);
-  const[darkMode,setDarkMode]=useState(false);
-  
+  const [darkMode, setDarkMode] = useState(false);
+
   React.useEffect(() => {
     Promise.all([
-      fetch(`http://localhost:3003/users/:userId`).then((res) => res.json()),   //Change (wildcard) userID something like: `http://localhost:3003/users/${userid}`
+      fetch(`http://localhost:3003/users/:userId`).then((res) => res.json()), //Change (wildcard) userID something like: `http://localhost:3003/users/${userid}`
       fetch("http://localhost:3003/mypage").then((res) => res.json()),
       //fetch("http://localhost:3003/api").then((res) => res.json())
-    ]).then(([data1, data2, data3]) => { 
+    ]).then(([data1, data2, data3]) => {
       setFirstName(data1.firstName);
       setLastName(data1.lastName);
       setEmail(data1.email);
@@ -92,7 +78,7 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
   useEffect(() => {
     const body = document.body;
     const sidebar = document.querySelector(".sidenav");
-  
+
     if (darkMode) {
       body.classList.add("dark");
       sidebar.classList.add("dark");

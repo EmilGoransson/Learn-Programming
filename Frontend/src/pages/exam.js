@@ -1,4 +1,9 @@
-const Examn =()=>{
-    return<h1> examn</h1>;
+const Exam = () => {
+  return (
+    <div className="bg-lightBlueGray w-screen h-screen">
+      {" "}
+      <div>test</div>
+    </div>
+  );
 };
-export default Examn;
+export default Exam;
