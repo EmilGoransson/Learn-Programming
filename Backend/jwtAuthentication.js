@@ -14,7 +14,7 @@ router.post("/Signup", async (req,res) => {
             //this is a temporary psql query that will be found in queries.js later on
             const user =  await pool.query("SELECT * FROM student WHERE email = $1", [email]);
             if(user.rows.length > 0){
-                return res.status(401).send("User already exists");
+                return res.status(409).json({error: "User already exists"});
             }
             
         //3. if user not exists -> encrypt password

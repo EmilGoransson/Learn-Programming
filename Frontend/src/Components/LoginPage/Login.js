@@ -80,7 +80,7 @@ const Login = ({ setAuth }) => {
             </button>
           </form>
           <p>
-            Don’t have an account? Click <a href="/register">here</a> to get
+            Don’t have an account? Click <a href="/createaccount">here</a> to get
             one.
           </p>
         </div>

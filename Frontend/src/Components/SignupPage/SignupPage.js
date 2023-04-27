@@ -10,7 +10,7 @@ const SignupPage = ({setAuth}) => {
     password: "",
   });
   const { email, firstName, lastName, password } = inputs;
-
+ 
   const onChange = (e) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
   };
@@ -29,7 +29,6 @@ const SignupPage = ({setAuth}) => {
       );
 
       const parseRespone = await response.json();
-      
       if(parseRespone.token){
         localStorage.setItem("token", parseRespone.token);
         setAuth(true);
@@ -42,8 +41,9 @@ const SignupPage = ({setAuth}) => {
       console.error(error.message);
     }
   };
-
-
+  
+  
+  const errorVar = false;
   return (
     <Fragment>
       <div className="container">
@@ -89,7 +89,9 @@ const SignupPage = ({setAuth}) => {
             <button type="submit" className="loginbutton">
               Create Account
             </button>
-
+            <div>
+              {errorVar}
+            </div>
             <p className="form-text">
               Already have an account? Click{" "}
               <a href="/login" className="form-link">
