@@ -19,6 +19,7 @@ import RightSideBar from "./Components/rightSideBar/rightSideBarPresenter";
 import CurrentProgressBarPresenter from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import { useEffect, useState } from "react";
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
+import PinnedList from "./Components/PinnedList/PinnedList";
 
 function App() {
   const noSidebarRoutes = ["/", "/login", "/createaccount", "/logout"];
@@ -96,6 +97,7 @@ function App() {
             {" "}
             <TopBar></TopBar>
             <RightSideBar></RightSideBar>
+            <PinnedList></PinnedList>
             <CurrentProgressBarPresenter></CurrentProgressBarPresenter>
             <Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} />
           </div>

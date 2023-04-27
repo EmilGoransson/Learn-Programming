@@ -1,6 +1,6 @@
 .Pinned-container{
     background-color: #1B2432;
-    border-radius: 10px;
+    border-radius: 0.75rem;
     font-family: lara;
     justify-content: center;
     align-items: center;
@@ -11,6 +11,8 @@
     position: fixed;
     height: max-content;
     width: 10%;
+    padding-right: 3px;
+    padding-top: 10px;
 }
 
 .Pinned-title{
@@ -22,6 +24,7 @@
 
 .Pinned-list{
     color: #CECECE;
+    text-align: left;
 }
 
 .x-button {
