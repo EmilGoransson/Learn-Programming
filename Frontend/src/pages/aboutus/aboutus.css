@@ -1,86 +1,91 @@
+
+
+.Aboutus {
+  margin-left: 15%;
+}
+
 .Aboutus header {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-  }
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
 
 
-  .Aboutus main {
-    margin-top: 10%;
-    margin-left: 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
+.Aboutus main {
+  margin-top: 10%;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 70%;
+}
 
-  .Aboutus h1 {
-    font-size: 30px;
-    color: rgba(15, 15, 18, 0.74);
-    margin-right: 5%;
-    font-weight: bold;
-    font-family: "Lora";
-    width: 55%;
-   
-  }
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-  }
+.Aboutus h1 {
+  font-size: 30px;
+  color: rgba(15, 15, 18, 0.74);
+  margin-right: 5%;
+  font-weight: bold;
+  font-family: "Lora";
+  width: 55%;
+  margin-bottom: 2%;
+}
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   
-  .mail-container {
-    text-align: center;
-    margin-top: 10%;
-    margin-right: 35%;
-  }
+}
+
+.mail-container {
+  text-align: center;
+  margin-top: 10%;
+  margin-right: 35%;
+}
+
+.mail {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+}
+
+.mail-text {
+  margin-top: 10px;
+}
+
+
+
+
+.Aboutus p {
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 20px;
+  width: 80%;
+  font-weight: semibold;
+  font-family: "Lora";
   
-  .mail {
-    display: block;
-    width: 20px;
-    height: 20px;
-    margin: 0 auto;
-  }
-  
-  .mail-text {
-    margin-top: 10px;
-  }
-  
+}
 
- 
+.Aboutus .buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 
-  .Aboutus p {
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 20px;
-    width: 70%;
-    font-weight: semibold;
-    font-family: "Lora";
-    width: 55%;
-  }
+.Aboutus button {
+  font-size: 24px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+}
 
-  .Aboutus .buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  .Aboutus button {
-    font-size: 24px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin: 10px;
-    cursor: pointer;
-  }
-
-  .Aboutus .logout {
-    background-color:rgba(255,66,6,15%);
-    color: black;
-    border: none;
-  }
-
-  
+.Aboutus .logout {
+  background-color:#004e64;
+  color: rgb(255, 255, 255);
+  border: none;
+}
