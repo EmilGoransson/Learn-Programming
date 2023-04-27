@@ -1,52 +1,26 @@
-.Theory header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-color: #CECECE;
-
-}
-
-.logo {
-  height: 150px;
-
-}
 
 .Theory main {
   display: flex;
   flex-direction: column;
-  align-items: left;
-  padding: 20px;
   color: #CECECE;
-
 }
-
 .Theory h1 {
   font-size:48px;
   color: #CECECE;
   margin-top: 0;
-  font-family:"Lora";
-  text-align: left;
-
-
+  text-align: center;
 }
 .Theory h2 {
   font-size:36px;
   color: #CECECE;
   margin-top: 10px;
   margin-bottom: 10px;
-  font-family:"Lora";
-  text-align: left;
-
+  text-align: center;
 }
 .Theory h3 {
   font-size:36px;
   color: #CECECE;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-family:"Lora";
-  text-align: left;
-
+  text-align: center;
 }
 .Theory p {
   font-size: 24px;
@@ -54,7 +28,6 @@ color: #CECECE;
   color:#CECECE;
   margin: auto;
   width: 55%;
-  font-family:"Lora";
 }
 
 
@@ -64,7 +37,6 @@ color: #CECECE;
   margin: auto;
   width: 55%;
   color: #CECECE;
-  font-family:"Lora";
 }
 .Theory pre{
   background: #1B2432;
