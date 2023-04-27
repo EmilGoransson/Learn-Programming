@@ -7,6 +7,7 @@ const Scrollingbar = () => {
     <div className="sidebar">
       <ul>
         <li>
+        <li>Theory</li>
         <NavLink to= "/Arrays" activeClassName ="active">
             Arrays
         </NavLink>
