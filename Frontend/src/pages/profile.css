@@ -6,6 +6,7 @@
     margin-left: 300px;
     margin-top:60px;
     border-radius: 15px;
+    font-family: 'Lora';
     
     /*display: flex;
     flex-direction: column;
@@ -25,11 +26,13 @@
     float: right;
     margin-right: 40px;
     margin-top: 30px;
+    font-family: 'Lora';
 }
 
 .profile-firstlastname {
     font-size: 50px;
     padding-top: 80px;
+    font-family: 'Lora';
 }
 
 .level-container {
@@ -40,11 +43,13 @@
     margin-left: 650px;
     margin-top:40px;
     border-radius: 15px;
+    font-family: 'Lora';
 }
 
 .levelText {
     font-size: 30px;
     padding-top: 30px;
+    font-family: 'Lora';
 }
 
 .profile-level-star {
@@ -66,5 +71,6 @@
     float: right;
     margin-right: -420px;
     margin-top: 30px;
+    font-family: 'Lora';
 }
   
