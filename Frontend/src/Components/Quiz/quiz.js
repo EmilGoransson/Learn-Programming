@@ -37,7 +37,7 @@ const Quiz = (props) => {
       selectedAnswer
         ? {
             ...prev,
-            score: prev.score + 5,
+            score: prev.score + 1,
             correctAnswers: prev.correctAnswers + 1,
             resultCounter: prev.resultCounter + 1,
             answerList: [
@@ -110,15 +110,14 @@ const Quiz = (props) => {
       ) : (
         <div className="result">
           <h1>Result</h1>
-          <p>
-            Total Score:&nbsp;<span>{result.score}</span>&emsp;&emsp; Total
-            Questions: <span>{questions.length}</span>
-          </p>
+          <h4 className="result-totalScoreText">
+            Total Score: <span className="result-scoreNbr">{result.score}</span> / <span className="result-totalQuestionNbr">{questions.length}</span>
+          </h4>
           <p>
             Question 1:
             <span>
               {" "}
-              {result.answerList[1] === 1 ? (
+              {result.answerList[0] === 1 ? (
                 "Passed"
               ) : (
                 <span className="failed-text">Failed</span>
