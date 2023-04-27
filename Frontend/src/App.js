@@ -71,7 +71,7 @@ function App() {
     setDarkMode(!darkMode);
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     const body = document.body;
     const sidebar = document.querySelector(".sidenav");
   
@@ -82,7 +82,7 @@ function App() {
       body.classList.remove("dark");
       sidebar.classList.remove("dark");
     }
-  }, [darkMode]);
+  }, [darkMode]); */
 
   return (
     
