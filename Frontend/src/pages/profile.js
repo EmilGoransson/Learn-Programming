@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 const Profile = (props) => {
   const {firstN, lastN, mail} = props;
-  const star = "https://i.imgur.com/2HZJWia.png";
+  const star = "https://i.imgur.com/PO5mEkq.png";
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
