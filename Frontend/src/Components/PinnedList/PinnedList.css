@@ -1,0 +1,33 @@
+.Pinned-container{
+    background-color: #1B2432;
+    border-radius: 10px;
+    font-family: lara;
+    justify-content: center;
+    align-items: center;
+    right: 30px;
+    bottom: 160px;    
+    top: calc(2/3 * 100%);
+    transform: translateY(-50%);
+    position: fixed;
+    height: max-content;
+    width: 10%;
+}
+
+.Pinned-title{
+    display: inline-block;
+    border-bottom: 7px solid #141B26;
+    color: #CECECE;
+
+}
+
+.Pinned-list{
+    color: #CECECE;
+}
+
+.x-button {
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.5rem;
+    display: inline-block;
+    text-align: left;
+  }

@@ -8,14 +8,19 @@ const useLevelStore = create((set) => ({
   totalLevels: 42,
   avatar: "https://i.imgur.com/PjqWEth.png",
   name: "John Doe",
+  pinnedTheory: ["String", "variable", "hej", "tja"],
+
 
   addPinned: (newPinned) => {
     set((state) => {
       return { favorite: [...state.favorite, newPinned] };
     });
   },
+
   incrementLevel: () =>
     set((state) => ({ currentLevel: state.currentLevel + 1 })),
 }));
+
+
 
 export default useLevelStore;
