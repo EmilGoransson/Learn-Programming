@@ -19,6 +19,7 @@
     align-items: flex-start;
     padding: 20px;
     left: 25%;
+    margin-left: 20%;
 
   }
 
@@ -35,8 +36,9 @@
 
   }
   .Theory h2 {
-    font-size:28px;
+    font-size:24px;
     color: rgba(0, 0, 0);
+    font-weight: bold;
     margin-top: 0;
     margin-bottom: 0;
     font-family:"Lora";
@@ -46,7 +48,8 @@
 
   }
   .Theory h3 {
-    font-size:30px;
+    font-size:36px;
+    font-weight: bold;
     color: rgba(0, 0, 0);
     margin-top: 0px;
     margin-bottom: 0px;
@@ -68,14 +71,51 @@
   }
  
 
-  .Theory pre {
-    font-size: 24px;
-    text-align: center;
-    color: rgba(0, 0, 0);
-    margin: auto;
-    width: 55%;
-    font-family:"Lora";
-    margin-left: 20%;
-    
-   
-  }
+
+
+.Theory h2 {
+  font-size:24px;
+  color: rgba(0, 0, 0);
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family:"Lora";
+  text-align: left;
+  margin-left: 20%;
+  
+
+}
+.Theory h3 {
+  font-size:36px;
+  font-weight: bold;
+  color: rgba(0, 0, 0);
+  
+  font-family:"Lora";
+  text-align: left;
+  margin-left: 20%;
+  
+
+}
+.Theory p {
+  font-size: 20px;
+  text-align: left;
+  color: rgba(0, 0, 0);
+  margin: auto;
+  width: 55%;
+  font-family:"Lora";
+  margin-left: 20%;
+
+}
+
+
+.Theory pre {
+  font-size: 24px;
+  text-align: center;
+  color: rgba(0, 0, 0);
+  margin: auto;
+  width: 55%;
+  font-family:"Lora";
+  margin-left: 20%;
+  
+ 
+}
