@@ -1,4 +1,3 @@
-import { parse } from "@fortawesome/fontawesome-svg-core";
 import React, { Fragment, useState } from "react";
 import { toast } from "react-toastify"
 import "./SignupPage.css";
