@@ -10,6 +10,7 @@ import Exam from "./pages/exam";
 import Theory from "./pages/theory";
 import Profile from "./pages/profile";
 import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assignment1Presenter";
+import Lab1a2 from "./pages/Assignments/Lab1Assignments/Assignment2Presenter";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import CreateAccount from "./Components/CreateAccount/CreateAccount";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
@@ -60,7 +61,7 @@ function App() {
     setDarkMode(!darkMode);
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     const body = document.body;
     const sidebar = document.querySelector(".sidenav");
   
@@ -71,7 +72,7 @@ function App() {
       body.classList.remove("dark");
       sidebar.classList.remove("dark");
     }
-  }, [darkMode]);
+  }, [darkMode]); */
 
   return (
     
@@ -103,7 +104,7 @@ function App() {
             <Route path="/arrays" element={< Scrollingbar />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/Lab1/1" Component={Lab1a1} />
-            <Route path="/Lab1/2" Component={Lab1a1} />
+            <Route path="/Lab1/2" Component={Lab1a2} />
             <Route path="/labs" Component={WelcomePage} />
         
 

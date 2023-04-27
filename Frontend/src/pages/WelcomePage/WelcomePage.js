@@ -8,7 +8,7 @@ function WelcomePage() {
       <img src="https://i.imgur.com/5sZenqF.png" className='logo' />
       <main>
         <h1>Welcome!</h1>
-        <p1>Are you ready to code?</p1>
+        <h2>Are you ready to code?</h2>
         <p> This web course is carefully designed to prepare the students for the programming assignments in ID1018.
              The web course includes both theory on different programming subjects and also practice tests where the 
              students get to practice coding.</p>
