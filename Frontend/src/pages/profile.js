@@ -49,7 +49,7 @@ const Profile = (props) => {
               />
             </label>
             <label className="profile-label">
-              <span className="profile-label-text">Chamge last name</span>  
+              <span className="profile-label-text">Change last name</span>  
               <input
                 type="text"
                 value={lastName}
