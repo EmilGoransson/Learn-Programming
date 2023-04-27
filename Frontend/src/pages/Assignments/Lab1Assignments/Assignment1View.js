@@ -1,11 +1,10 @@
 import CodeRunner from "../../../Components/CodeRunner/Presenter/codeRunnerPresenter";
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "./Assignment1View.css";
 function Lab1a1View(props) {
   return (
-    <div style={{ marginLeft: "15%", fontFamily: "Lora" }}>
-    <div className="max-w-3xl mx-auto text-left py-8 px-4 text-sans">
+    <div className="max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
       <h1 className="text-3xl font-bold mb-4">
         Introduction to Variables in Java
       </h1>
@@ -21,7 +20,7 @@ function Lab1a1View(props) {
         example, to declare a variable of type <code>int</code> with the name{" "}
         <code>myNumber</code>, we would write:
       </p>
-      <pre className="bg-gray-100 rounded-md p-4 mb-4">
+      <pre className="pre-Code rounded-md p-4 mb-4">
         <code className="text-sm font-mono">int myNumber;</code>
       </pre>
       <p className="mb-4">
@@ -29,7 +28,7 @@ function Lab1a1View(props) {
         <code>myNumber</code>. We can also initialize the variable with a value
         at the time of declaration:
       </p>
-      <pre className="bg-gray-100 rounded-md p-4 mb-4">
+      <pre className="pre-Code bg-gray-100 rounded-md p-4 mb-4">
         <code className="text-sm font-mono">int myNumber = 42;</code>
       </pre>
       <p className="mb-4">
@@ -42,7 +41,7 @@ function Lab1a1View(props) {
         program. For example, we can print the value of <code>myNumber</code> to
         the console:
       </p>
-      <pre className="bg-gray-100 rounded-md p-4 mb-4">
+      <pre className="pre-Code rounded-md p-4 mb-4">
         <code className="text-sm font-mono">System.out.println(myNumber);</code>
       </pre>
       <p className="mb-4">
@@ -69,21 +68,15 @@ function Lab1a1View(props) {
       </p>
       <div>
         <Link to={`/labs`}>
-        <button className="next-button bg-[#a3d7cb] text-black font-sans">
-          Previous
-        </button>
+          <button className="next-button text-black">Prev</button>
         </Link>
         <Link to={`/Lab1/2`}>
-        <button className={props.disabled[1]} disabled={props.disabled[0]}>
-          Next
-        </button>
+          <button className={props.disabled[1]} disabled={props.disabled[0]}>
+            Next
+          </button>
         </Link>
-
-      
       </div>
-    </div>
     </div>
   );
 }
 export default Lab1a1View;
-
