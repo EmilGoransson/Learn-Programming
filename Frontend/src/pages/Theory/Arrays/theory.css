@@ -15,7 +15,7 @@ color: #CECECE;
 .Theory main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   padding: 20px;
   color: #CECECE;
 
@@ -26,7 +26,7 @@ color: #CECECE;
   color: #CECECE;
   margin-top: 0;
   font-family:"Lora";
-  text-align: center;
+  text-align: left;
 
 
 }
@@ -36,7 +36,7 @@ color: #CECECE;
   margin-top: 10px;
   margin-bottom: 10px;
   font-family:"Lora";
-  text-align: center;
+  text-align: left;
 
 }
 .Theory h3 {
@@ -45,12 +45,12 @@ color: #CECECE;
   margin-top: 10px;
   margin-bottom: 10px;
   font-family:"Lora";
-  text-align: center;
+  text-align: left;
 
 }
 .Theory p {
   font-size: 24px;
-  text-align: center;
+  text-align: left;
   color:#CECECE;
   margin: auto;
   width: 55%;
@@ -60,7 +60,7 @@ color: #CECECE;
 
 .Theory pre {
   font-size: 24px;
-  text-align: center;
+  text-align: left;
   margin: auto;
   width: 55%;
   color: #CECECE;

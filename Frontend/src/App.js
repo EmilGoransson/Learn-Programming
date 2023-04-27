@@ -5,12 +5,12 @@ import "./Components/LevelRendering/ButtonContainer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, BrowserRouter, Link, NavLink } from "react-router-dom";
 import MainContent from "./pages/MainContent";
-import Aboutus from "./pages/aboutus/aboutus";
+import Aboutus from "./pages/Aboutus/aboutus";
 import Examn from "./pages/exam";
-import Theory from "./pages/theory";
+import Theory from "./pages/Theory/Arrays/theory";
 import Profile from "./pages/profile";
-import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assignment1Presenter";
-import Lab1a2 from "./pages/Assignments/Lab1Assignments/Assignment2Presenter";
+import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assign1/Assignment1Presenter";
+import Lab1a2 from "./pages/Assignments/Lab1Assignments/Assign2/Assignment2Presenter";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import CreateAccount from "./Components/CreateAccount/CreateAccount";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
@@ -18,7 +18,7 @@ import TopBar from "./Components/topBar/topBarPresenter";
 import RightSideBar from "./Components/rightSideBar/rightSideBarPresenter";
 import CurrentProgressBarPresenter from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import { useEffect, useState } from "react";
-import Scrollingbar from "./Components/scrolling bar/scrollingbar";
+import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 
 function App() {
   const noSidebarRoutes = ["/", "/login", "/createaccount", "/logout"];
@@ -118,7 +118,7 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/createaccount" element={<CreateAccount />} />
             <Route path="/logout" element={<WelcomePage />} />
-            <Route path="/Arrays" element={[<Theory />, <Scrollingbar />]} />
+            <Route path="/Arrays" element={[<Theory />]} />
 
             <Route path="/exam" element={<Examn />} />
             <Route path="/labs" element={<MainContent />} />

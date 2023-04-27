@@ -1,4 +1,4 @@
-import CodeRunner from "../../../Components/CodeRunner/Presenter/codeRunnerPresenter";
+import CodeRunner from "../../../../Components/CodeRunner/Presenter/codeRunnerPresenter";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Assignment1View.css";
@@ -28,7 +28,7 @@ function Lab1a1View(props) {
         <code>myNumber</code>. We can also initialize the variable with a value
         at the time of declaration:
       </p>
-      <pre className="pre-Code bg-gray-100 rounded-md p-4 mb-4">
+      <pre className="pre-Code rounded-md p-4 mb-4">
         <code className="text-sm font-mono">int myNumber = 42;</code>
       </pre>
       <p className="mb-4">
