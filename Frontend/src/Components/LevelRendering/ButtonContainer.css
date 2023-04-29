@@ -1,38 +1,60 @@
 .button-container {
-  position: relative;
-  left: 5%;
-  display: flex;
-  flex-direction: column;
-  height: max-content;
-  width: max-content;
+    position: relative;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    width: max-content;
     background-color: #1B2432;
 }
+
 .button-container h2 {
-  color: #CECECE;
-  font-size: 24px;
-  font-weight: bold;
-  text-align: left;
-  margin-left: 2%;
+    color: #CECECE;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 2%;
 }
 
 .button-lab {
-  margin:2ex;
-  border-radius: 10%;
-  background-color: rgb(155, 215, 161);
-  border: none;
-  cursor: pointer;
-  width: 100px;
-  height: 70px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 2ex;
+    border-radius: 10%;
+    background-color: rgb(155, 215, 161);
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 70px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-.button-lab:hover {
-background-color: rgb(189, 228,
- 203);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 100px;
-    right: 10%;
+
+
+.zoom-out {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    margin: 20px;
+    width: 180px;
+    height: 50px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    border: none;
+}
+
+.zoom-out:hover {
+    transform: scale(1.1);
+
+}
+
+.zoom-out--green:hover {
+    background-color: rgb(91, 194, 132);
+}
+
+.zoom-out--yellow:hover {
+    background-color: #fdff9f;
 }
 
 .button-row {
@@ -40,6 +62,7 @@ background-color: rgb(189, 228,
     justify-content: center;
     font-family: 'Lora';
 }
+
 .button-lab-gray {
     padding: 10px;
     margin: 10px;
@@ -50,8 +73,9 @@ background-color: rgb(189, 228,
     cursor: pointer;
     width: 80px;
     height: 50px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
 .button-lab-cyan {
     padding: 10px;
     margin: 10px;
@@ -62,7 +86,7 @@ background-color: rgb(189, 228,
     cursor: pointer;
     width: 75px;
     height: 47px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .button-lab-green {
@@ -76,7 +100,8 @@ background-color: rgb(189, 228,
     width: 80px;
     height: 50px;
 }
-.next-button-gray{
+
+.next-button-gray {
     padding: 10px;
     margin: 10px;
     border-radius: 25%;
@@ -87,6 +112,7 @@ background-color: rgb(189, 228,
     width: 80px;
     height: 50px;
 }
+
 .next-button {
     padding: 10px;
     margin: 10px;
@@ -97,8 +123,9 @@ background-color: rgb(189, 228,
     cursor: pointer;
     width: 75px;
     height: 47px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
 .button-lab-yellow {
     padding: 10px;
     margin: 10px;
@@ -109,5 +136,5 @@ background-color: rgb(189, 228,
     cursor: pointer;
     width: 80px;
     height: 50px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
