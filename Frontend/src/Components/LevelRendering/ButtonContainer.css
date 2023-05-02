@@ -4,10 +4,10 @@
 }
 .button-container h2 {
     color: #CECECE;
-    font-size: 100%;
+    font-size: 2vw;
     font-weight: bold;
     text-align: left;
-    margin-left: 2%;
+    margin-left: 4%;
 }
 
 .zoom-out {
@@ -28,7 +28,6 @@
 
 .zoom-out:hover {
     transform: scale(1.1);
-
 }
 
 .zoom-out--green:hover {
@@ -46,8 +45,8 @@
 }
 
 .button-lab-gray {
-    padding: 10px;
-    margin: 10px;
+    padding: 0.3vw;
+    margin: 0.5vw;
     border-radius: 25%;
     background-color: #403F4C;
     color: black;
@@ -55,10 +54,10 @@
     cursor: pointer;
     width: 7vw;
     height: 4vw;
-    min-height: 40px;
+    min-height: 30px;
     min-width: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    font-size: 100%;
+    font-size: 1.5vw;
 }
 
 .button-lab-green {
@@ -71,7 +70,7 @@
     cursor: pointer;
     width: 7vw;
     height: 4vw;
-    min-height: 40px;
+    min-height: 30px;
     min-width: 20px;
     font-size: 100%;
 }
