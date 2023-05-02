@@ -138,13 +138,14 @@ function App() {
           <Route path="/main" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
           <Route path="/exam" element={isAuthenticated ? <Exam setAuth={setAuth}/> : <Navigate to="/login"/>}/>
           <Route path="/labs" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
-          <Route path="/theory" element={isAuthenticated ? <Theory setAuth={setAuth}/> : <Navigate to="/login"/>}/>
+          <Route path="/theory" element={ isAuthenticated ? ( <div> <Theory setAuth={setAuth} /> <Scrollingbar /> </div> ) : (<Navigate to="/login" /> ) }/>
           <Route path="/profile" element={isAuthenticated ? <Profile setAuth={setAuth}/> : <Navigate to="/login"/>}/>
           <Route path="/login" element={!isAuthenticated ? <Login setAuth={setAuth} /> : <Navigate to="/main" />}/>
           <Route path="/aboutus" element={isAuthenticated ? <Aboutus setAuth={setAuth} /> : <Navigate to="/login" />}/>
           <Route path="/Lab1/1" Component={Lab1a1}/>
           <Route path="/Lab1/2" Component={Lab1a2} />
           <Route path="/labs" Component={WelcomePage} />
+          <Route path="/Arrays" element={[< Scrollingbar/> ,<Theory/>]}/>
         </Routes>
       </main>
     </div>
