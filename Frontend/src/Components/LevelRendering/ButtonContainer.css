@@ -56,7 +56,7 @@
     width: 7vw;
     height: 4vw;
     min-height: 40px;
-    min-width: 40px;
+    min-width: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     font-size: 100%;
 }
@@ -69,10 +69,10 @@
     color: black;
     border: none;
     cursor: pointer;
-    width: 6vw;
-    height: 5vh;
+    width: 7vw;
+    height: 4vw;
     min-height: 40px;
-    min-width: 40px;
+    min-width: 20px;
     font-size: 100%;
 }
 
@@ -84,10 +84,10 @@
     color: black;
     border: none;
     cursor: pointer;
-    width: 6vw;
-    height: 5vh;
+    width: 7vw;
+    height: 4vw;
     min-height: 40px;
-    min-width: 40px;
+    min-width: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     font-size: 100%;
 
