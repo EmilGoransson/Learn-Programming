@@ -24,6 +24,7 @@ const Profile = (props) => {
       <div className="profile-container">
         <div className="level-container">
             <p className="levelText">LEVEL</p>
+
             <p className="levelNumber">{currentLevel}</p>
             <img src={litstar} className="profile-level-star"/>
         </div>

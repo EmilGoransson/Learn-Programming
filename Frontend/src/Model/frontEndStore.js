@@ -1,10 +1,17 @@
 import { create } from "zustand";
 
 const useLevelStore = create((set) => ({
-  currentLevel: 29,
+  currentLevel: 1,
   levelsLab1: 14,
   levelsLab2: 14,
   levelsLab3: 14,
+
+  getName: (userName) => (
+    set(() => ({userName: userName}))
+  ),
+  getLevel: (cLevel) => (
+    set(() => ({currentLevel: cLevel}))
+  ),
   totalLevels: 42,
   avatar: "https://i.imgur.com/PjqWEth.png",
   name: "John Doe",
@@ -13,13 +20,16 @@ const useLevelStore = create((set) => ({
 
   addPinned: (newPinned) => {
     set((state) => {
-      return { favorite: [...state.favorite, newPinned] };
+      return { pinnedTheory: [...state.pinnedTheory, newPinned] };
     });
   },
   removePinned: (removePinned) => {
+    console.log("removePinned", removePinned);
     set((state) => {
       return {
-        favorite: state.pinnedTheory.filter((item) => item !== removePinned),
+        pinnedTheory: state.pinnedTheory.filter(
+          (item) => item !== removePinned
+        ),
       };
     });
   },
