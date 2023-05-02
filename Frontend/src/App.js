@@ -17,7 +17,7 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import TopBar from "./Components/topBar/topBarPresenter";
 import RightSideBar from "./Components/rightSideBar/rightSideBarPresenter";
 import CurrentProgressBarPresenter from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
-import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
+import Scrollingbar from "./Components/Scrollingbar";
 import PinnedList from "./Components/PinnedList/PinnedList";
 
 function App() {
@@ -146,7 +146,7 @@ function App() {
           <Route path="/Lab1/1" Component={Lab1a1}/>
           <Route path="/Lab1/2" Component={Lab1a2} />
           <Route path="/labs" Component={WelcomePage} />
-          <Route path="/Arrays" element={[< Scrollingbar/> ,<Theory/>]}/>
+         
         </Routes>
       </main>
     </div>
