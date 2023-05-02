@@ -142,6 +142,7 @@ function App() {
           <Route path="/profile" element={isAuthenticated ? <Profile setAuth={setAuth}/> : <Navigate to="/login"/>}/>
           <Route path="/login" element={!isAuthenticated ? <Login setAuth={setAuth} /> : <Navigate to="/main" />}/>
           <Route path="/aboutus" element={isAuthenticated ? <Aboutus setAuth={setAuth} /> : <Navigate to="/login" />}/>
+          <Route path="/Arrays" element={<Theory/>}/>
           <Route path="/Lab1/1" Component={Lab1a1}/>
           <Route path="/Lab1/2" Component={Lab1a2} />
           <Route path="/labs" Component={WelcomePage} />

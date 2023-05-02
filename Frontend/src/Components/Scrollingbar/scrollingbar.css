@@ -8,11 +8,11 @@
   scrollbar-width: none;  /* Firefox */
 }
   .sidebar {
-    width: 200px;
+    width: 15vh;
     height: 100vh;
     position: fixed;
-    right: 74%;
-    top: 0;
+    right: 78%;
+    top: 8%;
     background-color: #f1f1f1;
     overflow-y: auto;
   }
@@ -31,9 +31,21 @@
   li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
+    color: white;
   }
   
   li:last-child {
     border-bottom: none;
+  }
+  .custom-bg-color {
+    background-color: rgb(27, 25, 25);
+  }
+ 
+  .my-link {
+    color: rgb(229, 74, 169);
+  }
+  
+  .white-text {
+    color: white;
   }
   

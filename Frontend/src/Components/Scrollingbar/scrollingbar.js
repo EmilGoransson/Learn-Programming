@@ -6,72 +6,78 @@ const Scrollingbar = () => {
   return (
     <div className="sidebar no-scroll-bar">
       <ul>
-        <div className="bg-lightBlueGray  text-textGray">
-          <li>
-            <li>Theory</li>
-            <NavLink to="/Arrays" activeClassName="active">
-              Arrays
-            </NavLink>
-          </li>
+      <div className="custom-bg-color text-textGray">
+
+      <li className="white-text">Theory</li>
+           
+           
+      
 
           <li>
-          <NavLink to="/Varibels" activeClassName="active">
+            <NavLink to="/Arrays" activeClassName="active" className="my-link">
+              Arrays
+            </NavLink>
+          </li>
+         
+          <li>
+          <NavLink to="/Varibels" activeClassName="active"className="my-link">
+              Arrays
+            </NavLink>
+          </li>
+         
+          <li>
+          <NavLink to="/Item3" activeClassName="active"className="my-link">
               Arrays
             </NavLink>
           </li>
           <li>
-          <NavLink to="/Item3" activeClassName="active">
+          <NavLink to="/Item4" activeClassName="active"className="my-link">
               Arrays
             </NavLink>
           </li>
           <li>
-          <NavLink to="/Item4" activeClassName="active">
+          <NavLink to="/Item 5" activeClassName="active"className="my-link">
               Arrays
             </NavLink>
           </li>
           <li>
-          <NavLink to="/Item 5" activeClassName="active">
+          <NavLink to="/Item6" activeClassName="active"className="my-link">
               Arrays
             </NavLink>
           </li>
           <li>
-          <NavLink to="/Item6" activeClassName="active">
+          <NavLink to="/Item7" activeClassName="active"className="my-link">
               Arrays
             </NavLink>
           </li>
           <li>
-          <NavLink to="/Item7" activeClassName="active">
+          <NavLink to="/Item8" activeClassName="active"className="my-link">
               Arrays
             </NavLink>
           </li>
-          <li>
-          <NavLink to="/Item8" activeClassName="active">
-              Arrays
-            </NavLink>
-          </li>
-          <li><NavLink to="/Item9" activeClassName="active">
+          <li><NavLink to="/Item9" activeClassName="active"className="my-link">
               Arrays
             </NavLink>
           </li>
           
           <li>
-          <NavLink to="/item10" activeClassName="active">
+          <NavLink to="/item10" activeClassName="active"className="my-link">
               Arrays
             </NavLink>
           </li>
           <li>
-          <NavLink to="/item11" activeClassName="active">
+          <NavLink to="/item11" activeClassName="active"className="my-link">
               Arrays
             </NavLink>
           </li>
           <li>
-          <NavLink to="/item12" activeClassName="active">
+          <NavLink to="/item12" activeClassName="active"className="my-link">
               Arrays
             </NavLink>
           </li>
 
           <li>
-            <NavLink to="/item13" activeClassName="active">
+            <NavLink to="/item13" activeClassName="active"className="my-link">
               Arrays
             </NavLink>
 
