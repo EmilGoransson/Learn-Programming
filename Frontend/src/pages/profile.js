@@ -1,13 +1,15 @@
 import "./profile.css";
 import React, { useState } from 'react';
+import useLevelStore from '../Model/frontEndStore';
 
 const Profile = (props) => {
-  const {firstN, lastN, mail} = props;
-  const star = "https://i.imgur.com/PO5mEkq.png";
+  //const {firstN, lastN, mail} = props;
+  const litstar = "https://i.imgur.com/PO5mEkq.png";
+  const { currentLevel, name, email } = useLevelStore();
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
+  const [ setEmail] = useState('');
   const [password, setPassword] = useState('');
   const handleSubmit = async (event) => {
     alert("I am an alert box!");
@@ -22,13 +24,15 @@ const Profile = (props) => {
       <div className="profile-container">
         <div className="level-container">
             <p className="levelText">LEVEL</p>
-            <img src={star} className="profile-level-star"/>
+
+            <p className="levelNumber">{currentLevel}</p>
+            <img src={litstar} className="profile-level-star"/>
         </div>
         <p className="profile-firstlastname">
-          {firstN} {lastN}
+          {name}
         </p>
         <p className="profile-mail">
-          {mail}
+          {email}
         </p>
         {/*<button className="edit-button">Edit Profile</button>*/}
       </div>
