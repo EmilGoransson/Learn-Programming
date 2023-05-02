@@ -59,7 +59,7 @@ const ButtonContainer = (props) => {
     return (
         <div className="pt-20 ">
             <div
-                className=" rounded-3xl flex items-center justify-center ml-80  position-relative align-items-flex- w-1/2  ">
+                className=" rounded-3xl flex items-center justify-center position-relative align-items-flex-">
                 <div className="button-container rounded-2xl pl-10 pr-10 pt-3 pb-3 mt-3">
                     <h2 className="text-[CECECE] flex justify-between">
                         <span>{title}</span>

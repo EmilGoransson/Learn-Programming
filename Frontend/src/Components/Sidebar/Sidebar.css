@@ -9,17 +9,24 @@
     background-color: #141B26;
     overflow-x: hidden;
     padding-top: 20px;
+    text-overflow: ellipsis;
+    line-height: 1.2em;
 }
+
+
 
 .sidenav a {
     display: flex;
     align-items: center;
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 110%;
+    font-size: 1.6vw;
     color: #CECECE;
     margin-bottom: 25px;
     text-align: left;
+    text-overflow: ellipsis;
+    line-height: 2em;
+
 }
 
 .nav-Image {
@@ -29,7 +36,8 @@
 .sidebar-Item {
     background: #1B2432;
     transition: all 0.3s ease 0s;
-
+    overflow: hidden;
+    min-height: 5vh;
 }
 
 .sidebar-Item:hover {
@@ -45,6 +53,7 @@
     color: rgb(45, 203, 108);
 }
 
+
 .sidenav img {
     display: block;
     margin: 20px;
@@ -54,8 +63,10 @@
     padding: 20px;
 }
 
+/*
 .sidenav.dark {
     background-color: #333;
     color: #fff;
     border-right-color: #555;
 }
+*/
