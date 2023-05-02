@@ -12,13 +12,7 @@ import PinnedList from "../Components/PinnedList/PinnedList";
 function MainContent() {
   return (
     <div>
-      <div>
-        <RightSideBar></RightSideBar>
-        <Progress />
-        {/*<ProgressStar />*/}
-        <PinnedList/>
-      </div>
-      <TopBar></TopBar>
+      <div></div>
 
       <ButtonContainer
         title="Lab 1"

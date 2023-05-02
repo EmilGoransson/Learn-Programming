@@ -13,16 +13,17 @@ function PinnedList() {
   }
 
   return (
-    <div className="Pinned-container">
-      <h2 className="Pinned-title">Pinned</h2>
-      <ul>
+    <div className="Pinned-container h-80 -mt-32 w-40 rounded-xl">
+      <h2 className="Pinned-title rounded-sm">Pinned</h2>
+      <ul className="ui-test">
         {pinnedTheory.map((item) => (
           <li className="Pinned-list" key={item}>
             {item}
             <img
               src={xbutton}
-              className="x-button"
-              onClick={removeItem(item)}
+              className="x-button cursor-click"
+              style={{ cursor: "pointer" }}
+              onClick={() => removeItem(item)}
             />
           </li>
         ))}
