@@ -1,13 +1,7 @@
-.button-container {
-    position: relative;
-    left: 5%;
-    display: flex;
-    flex-direction: column;
-    height: max-content;
-    width: max-content;
-    background-color: #1B2432;
+.button-container{
+    background-color: #1b2432;
+    margin-left: 50vw;
 }
-
 .button-container h2 {
     color: #CECECE;
     font-size: 24px;
@@ -15,18 +9,6 @@
     text-align: left;
     margin-left: 2%;
 }
-
-.button-lab {
-    margin: 2ex;
-    border-radius: 10%;
-    background-color: rgb(155, 215, 161);
-    border: none;
-    cursor: pointer;
-    width: 100px;
-    height: 70px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
 
 .zoom-out {
     display: inline-block;
@@ -71,21 +53,8 @@
     color: black;
     border: none;
     cursor: pointer;
-    width: 80px;
-    height: 50px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.button-lab-cyan {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10%;
-    color: black;
-    background-color: #2DCB6C;
-    border: none;
-    cursor: pointer;
-    width: 75px;
-    height: 47px;
+    width: 6vw;
+    height: 5vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -97,10 +66,24 @@
     color: black;
     border: none;
     cursor: pointer;
-    width: 80px;
-    height: 50px;
+    width: 6vw;
+    height: 5vh;
 }
 
+.button-lab-yellow {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 25%;
+    background-color: #F6FA4D;
+    color: black;
+    border: none;
+    cursor: pointer;
+    width: 6vw;
+    height: 5vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* button used in the labs */
 .next-button-gray {
     padding: 10px;
     margin: 10px;
@@ -126,15 +109,33 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.button-lab-yellow {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 25%;
-    background-color: #F6FA4D;
-    color: black;
+/* this does not change anything 
+.button-lab {
+    margin: 2ex;
+    border-radius: 10%;
+    background-color: rgb(155, 215, 161);
     border: none;
     cursor: pointer;
-    width: 80px;
-    height: 50px;
+    width: 100px;
+    height: 70px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
+.button-container {
+    background-color: #1B2432;
+}
+
+.button-lab-cyan {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10%;
+    color: black;
+    background-color: #2DCB6C;
+    border: none;
+    cursor: pointer;
+    width: 6vw;
+    height: 5vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+*/
