@@ -71,8 +71,8 @@
     flex-direction: column;
     justify-content: flex-start;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 15%;
+    top: 10%;
   }
   
   .Aboutus button {
