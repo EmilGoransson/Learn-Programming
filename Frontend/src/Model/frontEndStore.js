@@ -15,6 +15,12 @@ const useLevelStore = create((set) => ({
       return { pinnedTheory: [...state.pinnedTheory, newPinned] };
     });
   },
+  setName: (name) => {
+    console.log(name);
+    set(() => ({
+      name: name,
+    }));
+  },
   removePinned: (removePinned) => {
     console.log("removePinned", removePinned);
     set((state) => {

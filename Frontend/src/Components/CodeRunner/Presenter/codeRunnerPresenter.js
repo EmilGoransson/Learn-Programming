@@ -1,6 +1,6 @@
 /* READ ME!
 
-TLDR: <CodeRunner input={2] testCases={6} shouldIncrement={true] />
+TLDR: <CodeRunner input1={2] input2={3} testCases={6} testCase2={3} shouldIncrement={true] />
 SETUP:
 the API_KEY is defined inside the file apiKey.js and is imported directly from the CodeRunner folder.
 Get the API-key here: https://rapidapi.com/abdheshnayak/api/code-compiler
@@ -32,6 +32,9 @@ import useLevelStore from "../../../Model/frontEndStore";
 import { v4 as uuidv4 } from "uuid";
 
 function CodeRunner(props) {
+  const checkMark = "https://i.imgur.com/EC4wJV8.png";
+  const crossMark = "https://i.imgur.com/vZIJZoz.png";
+  console.log(props);
   const incrementCurrentLevel = useLevelStore((state) => state.incrementLevel);
   const currentLevel = useLevelStore((state) => state.currentLevel);
   const string = `
@@ -48,19 +51,32 @@ class Progman
   );
   const [code, setCode] = useState("");
   const [data, setData] = useState("");
+  const [data2, setData2] = useState("");
   const [compileCode, setCompileCode] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [passedTestOne, setPassedTestOne] = useState("");
+  const [passedTest2, setPassedTest2] = useState("");
   const [hasRunitOnce, setHasRunitOnce] = useState(false);
-  const [style, setStyle] = useState("text-red-500 font-bold");
-  const id = uuidv4();
+  const [style, setStyle] = useState("");
+  const [style2, setStyle2] = useState("text-red-500 font-bold");
+  const [bothStyle, setBothStyle] = useState("");
+  const [bothMessage, setBothMessage] = useState("");
+
   const encodedParams = new URLSearchParams();
   encodedParams.append("LanguageChoice", "4");
   encodedParams.append("Program", code);
-  //SPECIFY THE "INPUT" HERE BY PASSING IT AS A PROP ex: <CodeRunner input="5" />
-  if (props.input) {
-    encodedParams.append("Input", props.input);
+  if (props.input1) {
+    encodedParams.append("Input", props.input1);
   }
+
+  const encodedParams2 = new URLSearchParams();
+  encodedParams2.append("LanguageChoice", "4");
+  encodedParams2.append("Program", code);
+  if (props.input2) {
+    encodedParams2.append("Input", props.input2);
+  }
+  //SPECIFY THE "INPUT" HERE BY PASSING IT AS A PROP ex: <CodeRunner input="5" />
+
   const options = {
     method: "POST",
     url: "https://code-compiler.p.rapidapi.com/v2",
@@ -71,31 +87,70 @@ class Progman
     },
     data: encodedParams,
   };
+  const options2 = {
+    method: "POST",
+    url: "https://code-compiler.p.rapidapi.com/v2",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded",
+      "X-RapidAPI-Key": API_KEY,
+      "X-RapidAPI-Host": "code-compiler.p.rapidapi.com",
+    },
+    data: encodedParams2,
+  };
+  if (!props.testCase2) {
+  }
 
   const getCompilerOutput = async () => {
-    try {
-      setIsLoading(true);
-      //fetches the data from the API via a POST request
-      const res = await axios.request(options).then((response) => {
+    let count = 0;
+    setIsLoading(true);
+    //fetches the data from the API via a POST request
+    const res = await axios
+      .request(options)
+      .then((response) => {
         setData(response.data);
-        console.log(response.data);
-        console.log("response.data.Result " + response.data.Result);
-        console.log("props.testCases " + props.testCases);
-
         //Here the test cases are compared to the response from the API
         if (response.data.Result == props.testCases) {
           if (props.shouldIncrement && props.thisLevel === currentLevel) {
             incrementCurrentLevel();
           }
           setPassedTestOne("Passed");
-          setStyle("text-green-500 font-bold");
+          setStyle("text-ourGreen font-bold");
+          count++;
         } else {
+          console.log("failed");
           setPassedTestOne("Failed");
+          setStyle("text-redColor font-bold");
         }
-        setIsLoading(false);
+        if (!props.testCase2) {
+          setIsLoading(false);
+        }
+      })
+      .catch(async (error) => {
+        console.log(error);
+      })
+      .then(async () => {
+        if (props.testCase2) {
+          const res2 = await axios.request(options2).then((response) => {
+            setData2(response.data);
+            //Here the test cases are compared to the response from the API
+            if (response.data.Result == props.testCase2) {
+              setPassedTest2("Passed");
+              setStyle2("text-ourGreen font-bold");
+              count++;
+            } else {
+              setPassedTest2("Failed");
+              setStyle2("text-redColor font-bold");
+            }
+            setIsLoading(false);
+          });
+        }
       });
-    } catch (err) {
-      console.log(err);
+    if (count == 2) {
+      setBothStyle("text-ourGreen font-bold");
+      setBothMessage("Both tests passed!");
+    } else {
+      setBothStyle("text-redColor font-bold");
+      setBothMessage("One or more tests failed!");
     }
   };
 
@@ -119,26 +174,42 @@ class Progman
     setHasRunitOnce(true);
   }, [compileCode]);
   return (
-    <div id={id}>
+    <div className="position-relative">
       {isLoading && (
         <div
-          className="position-absolute w-100 h-100 d-flex justify-content-center align-items-center"
-          style={{ zIndex: 9999, backgroundColor: "rgba(255,255,255,0.5)" }}
+          className="rounded-xl position-absolute w-100 h-100 d-flex justify-content-center align-items-center"
+          style={{ zIndex: 10, backgroundColor: "#282b2e91" }}
         >
           <Spinner animation="border" variant="secondary" />
         </div>
       )}
       <CodeRunnerView
         responseCode={data.Result}
+        responseCode2={
+          props.testCase2
+            ? data2.Result // Pass responseCode2 only if props.testCase2 exists
+            : null // Pass null if props.testCase2 doesn't exist
+        }
         setCodeWritten={changeCodeACB}
         onClickACB={onClick}
         error={data.Errors}
         loading={isLoading}
         preWrittenText={PreMadeText}
-        input={props.input ? props.input : null}
-        testCasesPassed={[props.testCases, passedTestOne]}
+        input={props.input1 ? props.input1 : null}
+        testCasesPassed={
+          props.testCase2
+            ? [props.testCases, passedTestOne, props.testCase2, passedTest2]
+            : [props.testCases, passedTestOne]
+        }
         hasRunItOnce={hasRunitOnce}
         style={style}
+        style2={
+          props.testCase2
+            ? style2 // Pass style2 only if props.testCase2 exists
+            : null // Pass null if props.testCase2 doesn't exist
+        }
+        bothStyles={bothStyle}
+        bothStyleMessage={bothMessage}
       />
     </div>
   );

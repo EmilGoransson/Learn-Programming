@@ -20,6 +20,7 @@ import CurrentProgressBarPresenter from "./Components/CurrentProgressBar/Present
 import { useEffect, useState } from "react";
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 import PinnedList from "./Components/PinnedList/PinnedList";
+import useLevelStore from "./Model/frontEndStore";
 
 function App() {
   const noSidebarRoutes = ["/", "/login", "/createaccount", "/logout"];
@@ -29,6 +30,7 @@ function App() {
   const [email, setEmail] = React.useState(null);
   const [JSONmessage, setJSONmessage] = React.useState(null);
   const [darkMode, setDarkMode] = useState(false);
+  const setName = useLevelStore((state) => state.setName);
 
   React.useEffect(() => {
     Promise.all([
@@ -63,6 +65,7 @@ function App() {
       .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
       });
+    setName("test");
   }, []);
 
   /*React.useEffect(() => {

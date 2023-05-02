@@ -59,9 +59,11 @@ function Lab1a1View(props) {
         <p>1. Declare two variables which when added should equal 6</p>
         <p>2. Print the result to the console.</p>
         <CodeRunner
-          testCases={6}
+          testCases={3}
+          testCase2={6}
           preMadeText={props.preMadeText}
-          input={3}
+          input1={1}
+          input2={2}
           shouldIncrement={true}
           thisLevel={props.thisLevel}
         />

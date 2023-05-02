@@ -14,9 +14,11 @@ function Lab1a1() {
   const [status, setStatus] = React.useState([true, "next-button-gray"]);
 
   const preMadeText = `
+  import java.util.Scanner;  // Import the Scanner class
 class Progman
 {  
     public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
         //declare two variables of the type int
         
         //print the sum of the two variables
@@ -32,7 +34,7 @@ class Progman
   }
   useEffect(() => {
     IsDisabled();
-  }, [status]);
+  }, [currentLevel]);
 
   return (
     <Lab1a1View

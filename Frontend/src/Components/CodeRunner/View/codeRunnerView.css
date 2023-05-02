@@ -1,3 +1,12 @@
 .compile-button{
     background-color: #2DCB6C;
+    transition: all 0.3s ease 0s;
+}
+
+.compile-button:hover {
+    transform: scale(1.03);
+}
+
+.compile-button:hover {
+    background-color: rgb(91, 194, 132);
 }
