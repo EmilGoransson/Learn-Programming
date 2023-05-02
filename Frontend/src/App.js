@@ -79,7 +79,7 @@ function App() {
 
   //const userid = "Lab1Assignments";
   React.useEffect(() => {
-    fetch(`http://localhost:3003/users/:userId`) //Change (wildcard) userID something like               : `http://localhost:3003/users/${userid}`
+    fetch(`http://130.229.172.67:3003/users/:userId`) //Change (wildcard) userID something like               : `http://localhost:3003/users/${userid}`
       .then((res) => {
         if (!res.ok) {
           throw new Error("Network response was not ok");
