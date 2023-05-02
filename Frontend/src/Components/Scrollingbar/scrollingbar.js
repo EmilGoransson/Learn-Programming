@@ -14,25 +14,105 @@ const Scrollingbar = () => {
             </NavLink>
           </li>
 
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-          <li>Item 5</li>
-          <li>Item 6</li>
-          <li>Item 7</li>
-          <li>Item 8</li>
-          <li>Item 9</li>
-          <li>Item 10</li>
-          <li>Item 11</li>
-          <li>Item 12</li>
-          <li>Item 13</li>
-          <li>Item 14</li>
-          <li>Item 15</li>
-          <li>Item 16</li>
-          <li>Item 17</li>
-          <li>Item 18</li>
-          <li>Item 19</li>
-          <li>Item 20</li>
+          <li>
+          <NavLink to="/Varibels" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+          <li>
+          <NavLink to="/Item3" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+          <li>
+          <NavLink to="/Item4" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+          <li>
+          <NavLink to="/Item 5" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+          <li>
+          <NavLink to="/Item6" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+          <li>
+          <NavLink to="/Item7" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+          <li>
+          <NavLink to="/Item8" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+          <li><NavLink to="/Item9" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+          
+          <li>
+          <NavLink to="/item10" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+          <li>
+          <NavLink to="/item11" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+          <li>
+          <NavLink to="/item12" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/item13" activeClassName="active">
+              Arrays
+            </NavLink>
+
+          </li>
+          <li>
+          <NavLink to="/item14" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+          <li>
+          <NavLink to="/item15" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+          <li>
+          <NavLink to="/item16" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+          <li>
+          <NavLink to="/item17" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+          <li>
+          <NavLink to="/item18" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
+          <li>
+          <NavLink to="/item19" activeClassName="active">
+              Arrays
+            </NavLink>
+
+          </li>
+
+          <li>
+          <NavLink to="/item20" activeClassName="active">
+              Arrays
+            </NavLink>
+          </li>
         </div>
       </ul>
     </div>
