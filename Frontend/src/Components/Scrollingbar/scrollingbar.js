@@ -9,7 +9,7 @@ const Scrollingbar = () => {
         <div className="bg-custom-color  text-textGray" >
         <li className="Title"> Theory </li>
           <li>
-          <NavLink to="/Variabels" activeClassName="active"className="my-Link">
+          <NavLink to="/Arrays" activeClassName="active"className="my-Link">
               Arrays
             </NavLink>
           </li>
