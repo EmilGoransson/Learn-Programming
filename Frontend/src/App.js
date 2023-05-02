@@ -1,9 +1,9 @@
-import React, {Fragment, useState, useEffect}from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import "./App.css";
 import "./Components/LevelRendering/ButtonContainer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Routes, Route, BrowserRouter, Navigate} from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import MainContent from "./pages/MainContent";
 import Aboutus from "./pages/Aboutus/aboutus";
 import Exam from "./pages/exam";
@@ -19,44 +19,49 @@ import RightSideBar from "./Components/rightSideBar/rightSideBarPresenter";
 import CurrentProgressBarPresenter from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 import PinnedList from "./Components/PinnedList/PinnedList";
+import getInfo from "./getInfo";
 
 function App() {
   const noSidebarRoutes = ["/", "/createaccount", "/logout"];
   const [darkMode, setDarkMode] = useState(false);
 
-   const checkAuthenticated = async() => {
-    try{
-      const res = await fetch("http://130.229.172.67:3003/authentication/verify", {
-      metod: "POST",
-      headers: {token: localStorage.token} // Tries to find local token
-      });
+  const checkAuthenticated = async () => {
+    try {
+      const res = await fetch(
+        "http://130.229.172.67:3003/authentication/verify",
+        {
+          metod: "POST",
+          headers: { token: localStorage.token }, // Tries to find local token
+        }
+      );
 
       const parseRespone = await res.json();
 
       // if the header respone is true (token exists or not)
       // If found - user is authenticated.
-      parseRespone === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
-    }
-    catch(error){
+      parseRespone === true
+        ? setIsAuthenticated(true)
+        : setIsAuthenticated(false);
+    } catch (error) {
       console.error(error.message);
     }
   };
-    useEffect(() => {
-      checkAuthenticated();
-      if(isAuthenticated){
-        
-      }
-    }, [])
-    // Default state of authentication is false
-    const[isAuthenticated, setIsAuthenticated] = React.useState(false);
-  
-    const setAuth = (boolean) => {
-      setIsAuthenticated(boolean)
+  useEffect(() => {
+    checkAuthenticated();
+    if (isAuthenticated) {
+      const info = getInfo();
     }
+  }, []);
+  // Default state of authentication is false
+  const [isAuthenticated, setIsAuthenticated] = React.useState(false);
+
+  const setAuth = (boolean) => {
+    setIsAuthenticated(boolean);
+  };
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-/*
+  /*
   useEffect(() => {
     const body = document.body;
     const sidebar = document.querySelector(".sidenav");
@@ -71,10 +76,8 @@ function App() {
   }, [darkMode]);
 */
   return (
-    
-    
     <BrowserRouter>
-        <div className={`App ${darkMode ? "dark" : ""}`} id="outer-container">
+      <div className={`App ${darkMode ? "dark" : ""}`} id="outer-container">
         <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
         {!noSidebarRoutes.includes(window.location.pathname) && (
           <div>
@@ -84,28 +87,100 @@ function App() {
             <PinnedList></PinnedList>
             <CurrentProgressBarPresenter></CurrentProgressBarPresenter>
             <Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} />
-          </div>)}
+          </div>
+        )}
 
-      <main id="page-wrap">
-        <Routes>
-          <Route path="/" element={<WelcomePage/>}/>
-          <Route path="/createaccount" element={!isAuthenticated ? <CreateAccount setAuth={setAuth}/> : <Navigate to="/main"/>} />
-          <Route path="/main" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
-          <Route path="/exam" element={isAuthenticated ? <Exam setAuth={setAuth}/> : <Navigate to="/login"/>}/>
-          <Route path="/labs" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
-          <Route path="/theory" element={isAuthenticated ? <Theory setAuth={setAuth}/> : <Navigate to="/login"/>}/>
-          <Route path="/profile" element={isAuthenticated ? <Profile setAuth={setAuth}/> : <Navigate to="/login"/>}/>
-          <Route path="/login" element={!isAuthenticated ? <Login setAuth={setAuth} /> : <Navigate to="/main" />}/>
-          <Route path="/aboutus" element={isAuthenticated ? <Aboutus setAuth={setAuth} /> : <Navigate to="/login" />}/>
-          <Route path="/Lab1/1" Component={Lab1a1}/>
-          <Route path="/Lab1/2" Component={Lab1a2} />
-          <Route path="/labs" Component={WelcomePage} />
-        </Routes>
-      </main>
-    </div>
-
-    
-  </BrowserRouter>)
+        <main id="page-wrap">
+          <Routes>
+            <Route path="/" element={<WelcomePage />} />
+            <Route
+              path="/createaccount"
+              element={
+                !isAuthenticated ? (
+                  <CreateAccount setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/main" />
+                )
+              }
+            />
+            <Route
+              path="/main"
+              element={
+                isAuthenticated ? (
+                  <MainContent setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/exam"
+              element={
+                isAuthenticated ? (
+                  <Exam setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/labs"
+              element={
+                isAuthenticated ? (
+                  <MainContent setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/theory"
+              element={
+                isAuthenticated ? (
+                  <Theory setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                isAuthenticated ? (
+                  <Profile setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                !isAuthenticated ? (
+                  <Login setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/main" />
+                )
+              }
+            />
+            <Route
+              path="/aboutus"
+              element={
+                isAuthenticated ? (
+                  <Aboutus setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route path="/Lab1/1" Component={Lab1a1} />
+            <Route path="/Lab1/2" Component={Lab1a2} />
+            <Route path="/labs" Component={WelcomePage} />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
