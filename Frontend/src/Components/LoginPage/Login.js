@@ -50,49 +50,49 @@ const Login = ({ setAuth }) => {
     }
   };
   return (
-    <div class="container">
-      <div class="form-container bg-lightBlueGray rounded-2xl">
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginBottom: "2rem",
-          }}
-        >
-          <img src="https://i.imgur.com/csg65HH.png" className="hej" />
-        </div>
-        <h2 style={{ alignSelf: "flex-start" }}>Log in</h2>
-        <br></br>
-        <form onSubmit={onSubmitForm}>
-          <label>
-            <span>E-mail:</span>
+    <Fragment>
+      <div class="container">
+        <div class="form-container">
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "2rem",
+            }}
+          >
+            {/*<img src={logo} alt="Logo" className="hej" />*/}
+          </div>
+          <h2 style={{ alignSelf: "flex-start" }}>Log in</h2>
+          <br></br>
+          <form onSubmit={onSubmitForm}>
             <input
               type="text"
+              name="email"
               value={email}
+              placeholder="E-mail"
               onChange={(e) => onChange(e)}
               className="ruta"
             />
-          </label>
-          <label>
-            <span>Password:</span>
             <input
               type="password"
+              name="password"
               value={password}
+              placeholder="Password"
               onChange={(e) => onChange(e)}
               className="ruta"
             />
-          </label>
-          <button type="submit" className="loginbutton">
-            Log in
-          </button>
+            <button type="submit" className="loginbutton">
+              Log in
+            </button>
+          </form>
           <p>
-            Don’t have an account? Click <a href="/createaccount">here</a> to
-            get one.
+            Don’t have an account? Click <a href="/createaccount">here</a> to get
+            one.
           </p>
-        </form>
+        </div>
       </div>
-    </div>
+    </Fragment>
   );
-}
+};
 
 export default Login;

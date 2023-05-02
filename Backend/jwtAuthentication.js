@@ -24,7 +24,7 @@ router.post("/Signup", async (req,res) => {
             //This is a temporary psql query that will be in queries.js later on
             let new_user = await pool.query("INSERT INTO student(first_name, last_name, email, password) VALUES($1,$2,$3,$4)", 
             [firstName, lastName, email, encryptedPassword]);
-
+            console.log("User Created: " + firstName + " " + lastName);
         //5. generate JWT token
         const token = jwtGenerator(user.rows[2]);
         res.json({token})
@@ -56,7 +56,7 @@ router.post("/login", async (req,res) =>{
 
         const token = jwtGenerator(user.rows[2]);
         res.json({ token, currentLevel, userName, id});
-        console.log("User " + id + " logged in successfully");
+        console.log("User " + userName + " id " + id + " logged in successfully");
     }
     catch(err){
         console.error(err.message);
