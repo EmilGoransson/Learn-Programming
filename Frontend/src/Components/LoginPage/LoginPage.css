@@ -15,7 +15,6 @@
   font-size: 16px;
   width: 100%;
   max-width: 400px;
-  color: #1B2432;
 }
 
 .loginbutton {
@@ -23,7 +22,7 @@
   border-radius: 5px;
   border: none;
   background-color: #007bff;
-  color: #2DCB6C;
+  color: #fff;
   font-size: 25px;
   cursor: pointer;
   width: 100%;
@@ -32,16 +31,16 @@
 }
 
 .loginbutton:hover {
-  background-color: #b9dec8;
+  background-color: #61a7f3;
 }
 
 .hej{
-  display: block;
-  margin:  20px;
-  margin-bottom: 70px;
-  width: 80%;
-  max-width: 200px;
-  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10%;
+  width: 200px;
+  height: 200px;
 }
 
 .form-container {
@@ -50,8 +49,7 @@
   flex-direction: column;
   align-items: flex-start;
   margin-left: 10rem;
-  background-color: #1B2432;
-  text-color: white;
+  background-color: #f0f0f0;
 }
 
 .form-container h2 {
@@ -59,7 +57,6 @@
   font-family: 'Lora';
   font-weight: bold;
   font-size: 50px;
-  color: #CECECE;
 }
 
 .form-container form {
@@ -67,7 +64,6 @@
   flex-direction: column;
   align-items: stretch;
   gap: 1rem;
-  color: #CECECE;
 }
 
 .form-container label {

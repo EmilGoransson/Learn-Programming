@@ -31,7 +31,7 @@ function App() {
       const checkAuthenticated = async() => {
 
       try{
-        const res = await fetch("http://localhost:3003/authentication/verify", {
+        const res = await fetch("http://130.229.172.67:3003/authentication/verify", {
         metod: "POST",
         headers: {token: localStorage.token} // Tries to find local token
         });

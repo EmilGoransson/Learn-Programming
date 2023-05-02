@@ -19,7 +19,7 @@ const SignupPage = ({setAuth}) => {
     try {
       const body = { email, firstName, lastName, password };
         const response = await fetch(
-        "http://localhost:3003/authentication/Signup",
+        "http://130.229.172.67:3003/authentication/Signup",
         {
           method: "POST",
           headers: { "Content-type": "application/json" },
