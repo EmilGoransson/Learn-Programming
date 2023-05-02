@@ -83,39 +83,39 @@ const Scrollingbar = () => {
 
           </li>
           <li>
-          <NavLink to="/item14" activeClassName="active">
+          <NavLink to="/item14" activeClassName="active"className="my-Link">
               Arrays
             </NavLink>
           </li>
           <li>
-          <NavLink to="/item15" activeClassName="active">
+          <NavLink to="/item15" activeClassName="active"className="my-Link">
               Arrays
             </NavLink>
           </li>
           <li>
-          <NavLink to="/item16" activeClassName="active">
+          <NavLink to="/item16" activeClassName="active"className="my-Link">
               Arrays
             </NavLink>
           </li>
           <li>
-          <NavLink to="/item17" activeClassName="active">
+          <NavLink to="/item17" activeClassName="active"className="my-Link">
               Arrays
             </NavLink>
           </li>
           <li>
-          <NavLink to="/item18" activeClassName="active">
+          <NavLink to="/item18" activeClassName="active"className="my-Link">
               Arrays
             </NavLink>
           </li>
           <li>
-          <NavLink to="/item19" activeClassName="active">
+          <NavLink to="/item19" activeClassName="active"className="my-Link">
               Arrays
             </NavLink>
 
           </li>
 
           <li>
-          <NavLink to="/item20" activeClassName="active">
+          <NavLink to="/item20" activeClassName="active"className="my-Link">
               Arrays
             </NavLink>
           </li>

@@ -9,10 +9,12 @@
 }
   .sidebar {
     width: 15vh;
+    width: 15vh;
     height: 100vh;
     position: fixed;
     right: 78%;
     top: 8%;
+    
     background-color: #f1f1f1;
     overflow-y: auto;
   }
@@ -30,6 +32,7 @@
   
   li {
     padding: 10px;
+    border-bottom: 0% solid #ddd;
     border-bottom: 1px solid #ddd;
     color: white;
   }
