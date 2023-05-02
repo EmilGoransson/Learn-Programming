@@ -32,6 +32,10 @@ import useLevelStore from "../../../Model/frontEndStore";
 import { v4 as uuidv4 } from "uuid";
 
 function CodeRunner(props) {
+  const setName = useLevelStore((state) => state.setName);
+  function setNameTest() {
+    setName("test");
+  }
   const incrementCurrentLevel = useLevelStore((state) => state.incrementLevel);
   const currentLevel = useLevelStore((state) => state.currentLevel);
   const string = `
@@ -140,6 +144,9 @@ class Progman
         hasRunItOnce={hasRunitOnce}
         style={style}
       />
+       <button className="btn btn-primary" onClick={setNameTest}>
+        SETNAME
+      </button>
     </div>
   );
 }

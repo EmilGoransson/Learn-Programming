@@ -1,9 +1,11 @@
+
 const express = require('express');
 const router = express.Router();
 const pool = require("./dbConfig");
 const bcrypt = require("bcrypt");
 const jwtGenerator = require("./jwtGenerator");
 const authorization = require("./middleware/authorization")
+const decode = require("./middleware/decode_token")
 
 //register route
 router.post("/Signup", async (req,res) => {
@@ -28,6 +30,7 @@ router.post("/Signup", async (req,res) => {
         //5. generate JWT token
         const token = jwtGenerator(user.rows[2]);
         res.json({token})
+        
     }
     catch(err){
         console.error(err.message);
@@ -49,14 +52,18 @@ router.post("/login", async (req,res) =>{
             return res.status(401).send("Incorrect Email or Password");
         }
 
-        const cLevel = await pool.query("SELECT s_id, current_level, first_name from student where email = $1", [email])
+        const cLevel = await pool.query("SELECT s_id, current_level, first_name, last_name from student where email = $1", [email])
         currentLevel = cLevel.rows[0].current_level;
-        userName = cLevel.rows[0].first_name;
+        firstName = cLevel.rows[0].first_name;
+        lastName = cLevel.rows[0].last_name;
         id = cLevel.rows[0].s_id;
 
-        const token = jwtGenerator(user.rows[2]);
-        res.json({ token, currentLevel, userName, id});
-        console.log("User " + userName + " id " + id + " logged in successfully");
+        const token = jwtGenerator(Number(id));
+        
+        console.log(decode(token).user.id)
+
+        res.json({ token, currentLevel, firstName, lastName, id });
+        console.log("User: " + firstName  + " " + lastName + "\nid: " + id + " logged in successfully\n");
     }
     catch(err){
         console.error(err.message);

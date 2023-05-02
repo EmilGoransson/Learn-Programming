@@ -1,18 +1,17 @@
 import React, { Fragment, useState } from "react";
-import { Link, Redirect } from "react-router-dom";
 import "./LoginPage.css";
-import { toast } from "react-toastify";
 import useLevelStore from "../../Model/frontEndStore";
 
 const Login = ({ setAuth }) => {
-  const getLevel = useLevelStore(state => state.getLevel);
+  const setLevel = useLevelStore(state => state.setLevel);
+  const setName = useLevelStore(state => state.setName);
+  const setID = useLevelStore(state => state.setID);
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
   });
-
   const { email, password } = inputs;
-
+  
   const onChange = (e) =>
     setInputs({ ...inputs, [e.target.name]: e.target.value });
 
@@ -34,20 +33,18 @@ const Login = ({ setAuth }) => {
       const parseRes = await response.json();
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
-        localStorage.setItem("id", parseRes.id)
-        localStorage.setItem("name", parseRes.userName)
+        setLevel(Number(parseRes.currentLevel));
+        const name = String(parseRes.firstName) + " " + String(parseRes.lastName);
+        setName(String(name));
+        setID(Number(parseRes.id));
         setAuth(true);
-        toast.success("Logged in Successfully");
       } else {
         setAuth(false);
-        toast.error(parseRes);
       }
 
-      getLevel(Number(parseRes.currentLevel));
-      //getLevel(5);
 } catch (err) {
-      console.error(err.message);
-    }
+  console.error(err.message);
+}
   };
   return (
     <Fragment>

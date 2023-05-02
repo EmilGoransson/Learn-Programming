@@ -6,15 +6,20 @@ const useLevelStore = create((set) => ({
   levelsLab2: 14,
   levelsLab3: 14,
 
-  getName: (userName) => (
-    set(() => ({userName: userName}))
-  ),
-  getLevel: (cLevel) => (
+  name: "John Doe",
+  setName: (name) => { 
+    set(() => ({
+      name: name,
+    }));
+  },
+  setLevel: (cLevel) => { 
     set(() => ({currentLevel: cLevel}))
+    },
+  setID: (id) => (
+    set(() => ({id: id}))
   ),
   totalLevels: 42,
   avatar: "https://i.imgur.com/PjqWEth.png",
-  name: "John Doe",
   email: "johndoe@kth.se",
   pinnedTheory: ["Arrays", "Methods", "Variables", "For-loop", "If-loop"],
 

@@ -34,7 +34,7 @@ function Aboutus() {
                 </div>
 
                 <div className="buttons">
-                    <Link to={`/logout`}>
+                    <Link to={`/login`}>
                         <button className="logout" onClick={handleLogoutClick}>
                             Log out
                         </button>

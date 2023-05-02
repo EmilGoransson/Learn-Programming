@@ -52,7 +52,6 @@ const ButtonContainer = (props) => {
         //setLoading(true);
         console.log("button clicked");
     };
-    console.log(stars);
 
     <a>{linkTitle}</a>;
 
