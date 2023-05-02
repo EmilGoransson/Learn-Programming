@@ -21,7 +21,7 @@ import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 import PinnedList from "./Components/PinnedList/PinnedList";
 
 function App() {
-  const noSidebarRoutes = ["/", "/login", "/createaccount", "/logout"];
+  const noSidebarRoutes = ["/", "/createaccount", "/logout"];
   const [message, setMessage] = React.useState(null);
   const [firstName, setFirstName] = React.useState(null);
   const [lastName, setLastName] = React.useState(null);

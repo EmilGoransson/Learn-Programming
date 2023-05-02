@@ -8,12 +8,14 @@ import Progress from "../Components/CurrentProgressBar/Presenter/currentProgress
 import RightSideBar from "../Components/rightSideBar/rightSideBarPresenter";
 import TopBar from "../Components/topBar/topBarPresenter";
 import PinnedList from "../Components/PinnedList/PinnedList";
+import Sidebar from "../Components/Sidebar/Sidebar";
 
 function MainContent() {
   return (
     <div>
       <div>
         <RightSideBar></RightSideBar>
+        <Sidebar></Sidebar>
         <Progress />
         {/*<ProgressStar />*/}
         <PinnedList/>
