@@ -6,60 +6,24 @@
   height: 100vh;
 }
 
-.ruta {
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  font-size: 16px;
-  width: 100%;
-  max-width: 400px;
-  color: #1B2432;
-}
-
-.loginbutton {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #007bff;
-  color: #2DCB6C;
-  font-size: 25px;
-  cursor: pointer;
-  width: 100%;
-  max-width: 400px;
-  font-family: 'Lora';
-}
-
-.loginbutton:hover {
-  background-color: #b9dec8;
-}
-
-.hej{
-  display: block;
-  margin:  20px;
-  margin-bottom: 70px;
-  width: 80%;
-  max-width: 200px;
-  padding: 20px;
-}
-
 .form-container {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-left: 10rem;
+  align-items: center;
+  justify-content: center;
   background-color: #1B2432;
-  text-color: white;
+  color: white;
 }
 
 .form-container h2 {
-  align-self: flex-start;
+  align-self: center;
   font-family: 'Lora';
   font-weight: bold;
   font-size: 50px;
   color: #CECECE;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .form-container form {
@@ -67,7 +31,8 @@
   flex-direction: column;
   align-items: stretch;
   gap: 1rem;
-  color: #CECECE;
+  color: #000000;
+  width:80%;
 }
 
 .form-container label {
@@ -75,6 +40,7 @@
   flex-direction: column;
   align-items: flex-start;
   font-family: 'Lora';
+  
 }
 
 .form-container label span {
@@ -84,4 +50,5 @@
 .form-container input[type='text'],
 .form-container input[type='password'] {
   width: 100%;
+  max-width: 400px;
 }

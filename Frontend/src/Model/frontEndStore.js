@@ -5,9 +5,17 @@ const useLevelStore = create((set) => ({
   levelsLab1: 14,
   levelsLab2: 14,
   levelsLab3: 14,
+
+  getName: (userName) => (
+    set(() => ({userName: userName}))
+  ),
+  getLevel: (cLevel) => (
+    set(() => ({currentLevel: cLevel}))
+  ),
   totalLevels: 42,
   avatar: "https://i.imgur.com/PjqWEth.png",
   name: "John Doe",
+  email: "johndoe@kth.se",
   pinnedTheory: ["Arrays", "Methods", "Variables", "For-loop", "If-loop"],
 
   addPinned: (newPinned) => {

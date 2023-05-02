@@ -1,18 +1,19 @@
 .Pinned-container{
     background-color: #1B2432;
     justify-content: center;
-    right: 30px;
-    bottom: 160px;
+    right: 2vw;
+    bottom: 10vh;
     top: calc(2/3 * 100%);
     position: fixed;
     padding-top: 10px;
+    width: 10vw;
+    height: fit-content;
 }
 
 .Pinned-title{
     display: inline-block;
     border-bottom: 7px solid #141B26;
     color: #CECECE;
-
 }
 
 .Pinned-list{
