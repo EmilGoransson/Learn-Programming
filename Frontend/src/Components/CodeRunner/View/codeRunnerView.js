@@ -2,7 +2,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Editor from "@monaco-editor/react";
 import "./codeRunnerView.css";
-import { table } from "table";
+//import { table } from "table";
 import { Table } from "react-bootstrap";
 
 function CodeRunnerView(props) {
