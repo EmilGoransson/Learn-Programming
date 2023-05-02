@@ -15,6 +15,7 @@ const useLevelStore = create((set) => ({
   totalLevels: 42,
   avatar: "https://i.imgur.com/PjqWEth.png",
   name: "John Doe",
+  email: "johndoe@kth.se",
   pinnedTheory: ["Arrays", "Methods", "Variables", "For-loop", "If-loop"],
 
   addPinned: (newPinned) => {
