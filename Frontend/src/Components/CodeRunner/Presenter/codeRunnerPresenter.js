@@ -32,10 +32,6 @@ import useLevelStore from "../../../Model/frontEndStore";
 import { v4 as uuidv4 } from "uuid";
 
 function CodeRunner(props) {
-  const setName = useLevelStore((state) => state.setName);
-  function setNameTest() {
-    setName("test");
-  }
   const checkMark = "https://i.imgur.com/EC4wJV8.png";
   const crossMark = "https://i.imgur.com/vZIJZoz.png";
   console.log(props);
@@ -223,9 +219,6 @@ class Progman
         bothStyles={bothStyle}
         bothStyleMessage={bothMessage}
       />
-       <button className="btn btn-primary" onClick={setNameTest}>
-        SETNAME
-      </button>
     </div>
   );
 }
