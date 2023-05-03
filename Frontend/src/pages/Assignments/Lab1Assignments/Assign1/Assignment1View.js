@@ -2,10 +2,13 @@ import CodeRunner from "../../../../Components/CodeRunner/Presenter/codeRunnerPr
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Assignment1View.css";
+import Button from "react-bootstrap/Button";
+import { ReactComponent as LogoBookmark } from "../../bookmark.svg";
+
 function Lab1a1View(props) {
   return (
-    <div className="Lab-page">
-    <div className="max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
+    <div className="max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE] ">
+      <LogoBookmark className="text-textGray h-6 w-6" />
       <h1 className="text-3xl font-bold mb-4">
         Introduction to Variables in Java
       </h1>
@@ -79,7 +82,6 @@ function Lab1a1View(props) {
           </button>
         </Link>
       </div>
-    </div>
     </div>
   );
 }

@@ -112,9 +112,6 @@ class Progman
         setData(response.data);
         //Here the test cases are compared to the response from the API
         if (response.data.Result == props.testCases) {
-          if (props.shouldIncrement && props.thisLevel === currentLevel) {
-            incrementCurrentLevel();
-          }
           setPassedTestOne("Passed");
           setStyle("text-ourGreen font-bold");
           count++;
@@ -147,18 +144,18 @@ class Progman
           });
         }
       });
-    console.log("count" + count);
-    console.log("count == 1 " + Number(count) === 1);
-    console.log("testcase2" + !props.testCase2);
-    console.log(
-      "props.testCase2 === undefined " + props.testCase2 === undefined
-    );
     if (count == 1 && !props.testCase2) {
       setBothStyle("text-ourGreen font-bold");
       setBothMessage("Test passed!");
+      if (props.shouldIncrement && props.thisLevel === currentLevel) {
+        incrementCurrentLevel();
+      }
     } else if (count == 2) {
       setBothStyle("text-ourGreen font-bold");
       setBothMessage("Both tests passed!");
+      if (props.shouldIncrement && props.thisLevel === currentLevel) {
+        incrementCurrentLevel();
+      }
     } else {
       setBothStyle("text-redColor font-bold");
       setBothMessage("One or more tests failed!");
