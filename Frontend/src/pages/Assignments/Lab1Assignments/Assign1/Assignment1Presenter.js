@@ -9,6 +9,7 @@ function Lab1a1() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
   const addPinned = useLevelStore((state) => state.addPinned);
   const getPinned = useLevelStore((state) => state.pinnedTheory);
+  const removePinned = useLevelStore((state) => state.removePinned);
   //update this variable if using this as template!!
   const contentName = "Variables";
   const thisLevel = 1;
@@ -45,6 +46,9 @@ class Progman
   function addToPinned() {
     if (!getPinned.includes(contentName)) {
       addPinned(contentName);
+    }
+    if (getPinned.includes(contentName)) {
+      removePinned(contentName);
     }
   }
   function IsDisabled() {
