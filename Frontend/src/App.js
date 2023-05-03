@@ -20,6 +20,7 @@ import CurrentProgressBarPresenter from "./Components/CurrentProgressBar/Present
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 import PinnedList from "./Components/PinnedList/PinnedList";
 import Logoutbutton from "./Logoutbutton";
+import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 
 function App() {
   const noSidebarRoutes = ["/", "/createaccount", "/logout"];
@@ -147,7 +148,7 @@ function App() {
          
           <Route path="/Arrays" element={[< Scrollingbar/> ,<Theory/>]}/>
          
-          <Route path="/Lab1/1" Component={Lab1a1}/>
+          <Route path="/Lab1/1" element={[< Lab1a1/> ,<Sidebar/>,<TopBar/>,<PinnedList/>,<RightSideBar/>,<Progress/>,<Scrollingbar/>]}/>
          
           <Route path="/Lab1/2" Component={Lab1a2} />
           <Route path="/labs" Component={WelcomePage} />
