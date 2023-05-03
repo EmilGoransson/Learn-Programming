@@ -4,7 +4,6 @@ const pool = require("./dbConfig");
 const bcrypt = require("bcrypt");
 const jwtGenerator = require("./jwtGenerator");
 const authorization = require("./middleware/authorization");
-const decode = require("../Frontend/src/decode_token");
 
 //register route
 router.post("/Signup", async (req, res) => {
@@ -65,7 +64,6 @@ router.post("/login", async (req, res) => {
 
     const token = jwtGenerator(Number(id), firstName, lastName, currentLevel);
 
-    console.log(decode(token).user);
 
     res.json({ token, currentLevel, firstName, lastName, id });
     console.log(
@@ -83,27 +81,6 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.get("/getinfo", async (request, response) => {
-  let { id } = request.body;
-  const identification = await pool.query(
-    "SELECT first_name, last_name, current_level FROM student where s_id = $1",
-    [id]
-  );
-  currentLevel = identification.rows[0].current_level;
-  firstName = identification.rows[0].first_name;
-  lastName = identification.rows[0].last_name;
-  res.json({ currentLevel, firstName, lastName });
-  console.log(
-    "Got info for user : " +
-      id +
-      "\nCurrent Level: " +
-      currentLevel +
-      "\nFirst name: " +
-      firstName +
-      "\nLast name: " +
-      lastName
-  );
-});
 
 router.post("/profile", authorization, async (req, res) => {
   const remove = pool.query("DELETE FROM student WHERE s_id = $1", [s_id]);
