@@ -1,105 +1,94 @@
+
+
 .Aboutus {
-    margin-left: 0%;
-    font-family: 'Lora';
-    }
-  
-  .Aboutus header {
-    display: flex;
-    align-items: center;
-    padding: 2%;
-  }
-  
-  
-  .Aboutus main {
-    margin-top: -10%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2%;
-    max-width: 960px;
-    width: 100%;
-    color: #cecece;
-  }
-  
-  .Aboutus h1 {
+  margin-left: 15%;
+  font-family: 'Lora';
+}
 
-    font-size: 2em;
-    color: #CECECE;
-    margin-right: 5%;
-    margin-left: 5%;
-    font-weight: bold;
-    font-family: "Lora";
-    width: 100%;
-    margin-bottom: 2%;
+.Aboutus header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
 
-  }
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-  }
-  
-  .mail-container {
-    text-align: center;
-    margin-top: 10%;
-    margin-right: 0%;
-  }
-  
-  .mail {
-    display: block;
-    width: 1.5em;
-    height: 1.5em;
-    margin: 0 auto;
-  }
-  
-  .mail-text {
-    margin-top: 1em;
-  }
-  
-  
-  
-  
-  .Aboutus p {
-    font-size: 1em;
-    text-align: left;
-    margin-bottom: 2%;
-    margin-left: -4%;
-    margin-right: 6%;
-    width: 75%;
-    font-weight: semibold;
-    font-family: "Lora";
-    
-  }
-  
-  .Aboutus .buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  
-    right: 15%;
-    top: 0;
-  }
-  
-  .Aboutus button {
-    font-size: 1.2em;
-    width: 100%;
-    height: 2.5em;
-    
-    border-radius: 0.25em;
-    margin: 1em;
-    cursor: pointer;
-    
-  }
-  
-  .Aboutus .logout {
-    background-color:#004e64;
-    color: rgb(255, 255, 255);
-    border: none;
-  }
 
-  .logout:hover {
-    background: #194d5b;
-  }
+.Aboutus main {
+  margin-top: 10%;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 70%;
+}
+
+.Aboutus h1 {
+  font-size: 30px;
+  color: #CECECE;
+  margin-right: 5%;
+  font-weight: bold;
+  font-family: "Lora";
+  width: 55%;
+  margin-bottom: 2%;
+}
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.mail-container {
+  text-align: center;
+  margin-top: 10%;
+  margin-right: 35%;
+}
+
+.mail {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  color: #CECECE;
+}
+
+.mail-text {
+  margin-top: 10px;
+}
+
+
+
+
+.Aboutus p {
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 20px;
+  width: 80%;
+  font-weight: semibold;
+  font-family: "Lora";
+  color: #CECECE;
+  
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: absolute;
+  right: 15%;
+  top: 10%;
+}
+
+.buttons {
+  font-size: 24px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.logout {
+  background-color:#004e64;
+  color: rgb(255, 255, 255);
+  border: none;
+}
