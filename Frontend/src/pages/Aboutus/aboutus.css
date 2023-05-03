@@ -1,12 +1,7 @@
 .Aboutus {
     margin-left: 0%;
     font-family: 'Lora';
-    text-align: center;
-    color: #cecece;
-  height: 100vh;
-  padding-top: 17.5%;
-  padding-left: 10%;
-  }
+    }
   
   .Aboutus header {
     display: flex;
@@ -83,9 +78,9 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    position: absolute;
-    right: 17.5%;
-    top: 10%;
+  
+    right: 15%;
+    top: 0;
   }
   
   .Aboutus button {
@@ -96,6 +91,7 @@
     border-radius: 0.25em;
     margin: 1em;
     cursor: pointer;
+    
   }
   
   .Aboutus .logout {
