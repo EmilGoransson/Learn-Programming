@@ -5,10 +5,10 @@ import { useEffect } from "react";
 
 function Lab1a1() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
-  const levelLab1 = useLevelStore((state) => state.levelsLab1);
-  const pinnedTheory = useLevelStore((state) => state.pinnedTheory);
   const addPinned = useLevelStore((state) => state.addPinned);
+  const getPinned = useLevelStore((state) => state.pinnedTheory);
   //update this variable if using this as template!!
+  const contentName = "Variables";
   const thisLevel = 1;
 
   const [status, setStatus] = React.useState([true, "next-button-gray"]);
@@ -25,6 +25,11 @@ class Progman
         
     }
 }`;
+  function addToPinned() {
+    if (!getPinned.includes(contentName)) {
+      addPinned(contentName);
+    }
+  }
   function IsDisabled() {
     if (thisLevel >= currentLevel) {
       setStatus([true, "next-button-gray"]);
@@ -38,6 +43,7 @@ class Progman
 
   return (
     <Lab1a1View
+      addPinned={addToPinned}
       preMadeText={preMadeText}
       disabled={status}
       thisLevel={thisLevel}

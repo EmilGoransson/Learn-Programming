@@ -37,7 +37,7 @@ class Progman
   }
   useEffect(() => {
     IsDisabled();
-  }, [status]);
+  }, [currentLevel]);
 
   return (
     <div></div>
