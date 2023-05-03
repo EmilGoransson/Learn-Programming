@@ -17,7 +17,6 @@ function Exam (){
       </div>
       <TopBar></TopBar>
     <div className="bg-lightBlueGray w-screen h-screen">
-      {" "}
       <div>test</div>
     </div>
     </div>

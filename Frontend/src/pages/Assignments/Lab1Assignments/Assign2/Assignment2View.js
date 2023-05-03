@@ -83,9 +83,7 @@ function Lab1a2View(props) {
         </p>
         <div>
           <Link to={`/Lab1/1`}>
-            <button className="next-button bg-[#a3d7cb] text-black">
-              Prev
-            </button>
+          <button className="next-button text-black">Prev</button>
           </Link>
           <Link to={`/Lab1/3`}>
             <button className={props.disabled[1]} disabled={props.disabled[0]}>

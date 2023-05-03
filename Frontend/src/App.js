@@ -1,9 +1,9 @@
-import React, {Fragment, useState, useEffect}from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import "./App.css";
 import "./Components/LevelRendering/ButtonContainer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Routes, Route, BrowserRouter, Navigate} from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import MainContent from "./pages/MainContent";
 import Aboutus from "./pages/Aboutus/aboutus";
 import Exam from "./pages/exam";
@@ -21,6 +21,7 @@ import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 import PinnedList from "./Components/PinnedList/PinnedList";
 import Logoutbutton from "./Logoutbutton";
 import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
+import useLevelStore from "./Model/frontEndStore";
 
 function App() {
   const noSidebarRoutes = ["/", "/createaccount", "/logout"];
@@ -30,35 +31,40 @@ function App() {
   const [email, setEmail] = React.useState(null);
   const [JSONmessage, setJSONmessage] = React.useState(null);
   const [darkMode, setDarkMode] = useState(false);
-      const checkAuthenticated = async() => {
+  const checkAuthenticated = async () => {
+    try {
+      const res = await fetch(
+        "http://130.229.172.67:3003/authentication/verify",
+        {
+          metod: "POST",
+          headers: { token: localStorage.token }, // Tries to find local token
+        }
+      );
 
-      try{
-        const res = await fetch("http://130.229.172.67:3003/authentication/verify", {
-        metod: "POST",
-        headers: {token: localStorage.token} // Tries to find local token
-        });
-  
-        const parseRespone = await res.json();
-  
-        // if the header respone is true (token exists or not)
-        // If found - user is authenticated.
-        parseRespone === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
-      }
-      catch(error){
-        console.error(error.message);
-      }
-    };
-  
-    useEffect(() => {
-      checkAuthenticated();
-    }, [])
-    useEffect(() => {checkAuthenticated()}, [])
-    // Default state of authentication is false
-    const[isAuthenticated, setIsAuthenticated] = React.useState(false);
-  
-    const setAuth = (boolean) => {
-      setIsAuthenticated(boolean)
+      const parseRespone = await res.json();
+
+      // if the header respone is true (token exists or not)
+      // If found - user is authenticated.
+      parseRespone === true
+        ? setIsAuthenticated(true)
+        : setIsAuthenticated(false);
+    } catch (error) {
+      console.error(error.message);
     }
+  };
+
+  useEffect(() => {
+    checkAuthenticated();
+  }, []);
+  useEffect(() => {
+    checkAuthenticated();
+  }, []);
+  // Default state of authentication is false
+  const [isAuthenticated, setIsAuthenticated] = React.useState(false);
+
+  const setAuth = (boolean) => {
+    setIsAuthenticated(boolean);
+  };
   React.useEffect(() => {
     Promise.all([
       fetch(`http://localhost:3003/users/:userId`).then((res) => res.json()), //Change (wildcard) userID something like: `http://localhost:3003/users/${userid}`
@@ -103,7 +109,7 @@ function App() {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-/*
+  /*
   useEffect(() => {
     const body = document.body;
     const sidebar = document.querySelector(".sidenav");
@@ -118,30 +124,28 @@ function App() {
   }, [darkMode]);
 */
   return (
-    
-    
     <BrowserRouter>
-        <div className={`App ${darkMode ? "dark" : ""}`} id="outer-container">
+      <div className={`App ${darkMode ? "dark" : ""}`} id="outer-container">
         <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
-       
+        {!noSidebarRoutes.includes(window.location.pathname) && (
+          <div>
+            {" "}
+            <TopBar></TopBar>
+            <RightSideBar></RightSideBar>
+            <PinnedList></PinnedList>
+            <CurrentProgressBarPresenter></CurrentProgressBarPresenter>
+            <Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} />
+          </div>)}
 
       <main id="page-wrap">
         <Routes>
           <Route path="/" element={<WelcomePage/>}/>
           <Route path="/createaccount" element={!isAuthenticated ? <CreateAccount setAuth={setAuth}/> : <Navigate to="/main"/>} />
-          
-          <Route path="/main" element={isAuthenticated ? (<div> <MainContent setAuth={setAuth}/> <TopBar/> <RightSideBar/> <PinnedList/> <CurrentProgressBarPresenter/>  
-          <Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} /> </div>) : (<Navigate to="/login"/>)}/>
-          
-          
-          <Route path="/exam" element= {isAuthenticated ? <Exam setAuth={setAuth}/> : <Navigate to="/login"/>}/>
-         
-          <Route path="/labs" element={isAuthenticated ?  <MainContent setAuth={setAuth}/>  :<Navigate to="/login"/>}/>
-          
-          <Route path="/theory" element={ isAuthenticated ?  <Theory setAuth={setAuth} /> : <Navigate to="/login" /> }/>
-          
-          <Route path="/profile" element= {isAuthenticated ? <Profile setAuth={setAuth}/> :<Navigate to="/login"/>}/>
-         
+          <Route path="/main" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
+          <Route path="/exam" element={isAuthenticated ? <Exam setAuth={setAuth}/> : <Navigate to="/login"/>}/>
+          <Route path="/labs" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
+          <Route path="/theory" element={ isAuthenticated ? ( <div> <Theory setAuth={setAuth} /> <Scrollingbar /> </div> ) : (<Navigate to="/login" /> ) }/>
+          <Route path="/profile" element={isAuthenticated ? <Profile setAuth={setAuth}/> : <Navigate to="/login"/>}/>
           <Route path="/login" element={!isAuthenticated ? <Login setAuth={setAuth} /> : <Navigate to="/main" />}/>
          
           <Route path="/aboutus" element={isAuthenticated ?  <Aboutus setAuth={setAuth} />: <Navigate to="/login" />}/>
@@ -152,8 +156,7 @@ function App() {
          
           <Route path="/Lab1/2" Component={Lab1a2} />
           <Route path="/labs" Component={WelcomePage} />
-          <Route path="/logout" element ={<WelcomePage/>}/>
-         
+          <Route path="/Arrays" element={[< Scrollingbar/> ,<Theory/>]}/>
         </Routes>
       </main>
     </div>
