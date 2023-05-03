@@ -19,7 +19,8 @@ import RightSideBar from "./Components/rightSideBar/rightSideBarPresenter";
 import CurrentProgressBarPresenter from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 import PinnedList from "./Components/PinnedList/PinnedList";
-import getInfo from "./getInfo";
+import decode from "./decode_token";
+import useLevelStore from "./Model/frontEndStore";
 
 function App() {
   const noSidebarRoutes = ["/", "/createaccount", "/logout"];
@@ -46,12 +47,29 @@ function App() {
       console.error(error.message);
     }
   };
+
+  //Set functions for model
+  const setLevel = useLevelStore(state => state.setLevel);
+  const setName = useLevelStore(state => state.setName);
+  const setID = useLevelStore(state => state.setID);
   useEffect(() => {
     checkAuthenticated();
     if (isAuthenticated) {
-      const info = getInfo();
+      //gets information about user from token
+      const first = decode(localStorage.token).user.firstName;
+      const last = decode(localStorage.token).user.lastName;
+      const id = decode(localStorage.token).user.id;
+      const level = decode(localStorage.token).user.currentLevel;
+
+      //sets correct level, name and ID in model for current user decoded token
+      const name = String(first) + " " + String(last);
+      setLevel(Number(level));
+      setName(String(name));
+      setID(Number(id));
+    
+      console.log("All info from token:\n First Name: "  + first + "\n Last Name: " + last + "\n ID: " + id + "\n Current Level: " + level);
     }
-  }, []);
+  });
   // Default state of authentication is false
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
 

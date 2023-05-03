@@ -4,7 +4,7 @@ const pool = require("./dbConfig");
 const bcrypt = require("bcrypt");
 const jwtGenerator = require("./jwtGenerator");
 const authorization = require("./middleware/authorization");
-const decode = require("./middleware/decode_token");
+const decode = require("../Frontend/src/decode_token");
 
 //register route
 router.post("/Signup", async (req, res) => {
@@ -31,7 +31,7 @@ router.post("/Signup", async (req, res) => {
     );
     console.log("User Created: " + firstName + " " + lastName);
     //5. generate JWT token
-    const token = jwtGenerator(user.rows[2]);
+    const token = jwtGenerator(new_user.rows[0]);
     res.json({ token });
   } catch (err) {
     console.error(err.message);
@@ -63,9 +63,9 @@ router.post("/login", async (req, res) => {
     lastName = cLevel.rows[0].last_name;
     id = cLevel.rows[0].s_id;
 
-    const token = jwtGenerator(Number(id));
+    const token = jwtGenerator(Number(id), firstName, lastName, currentLevel);
 
-    console.log(decode(token).user.id);
+    console.log(decode(token).user);
 
     res.json({ token, currentLevel, firstName, lastName, id });
     console.log(

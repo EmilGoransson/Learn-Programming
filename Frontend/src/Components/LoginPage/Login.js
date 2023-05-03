@@ -1,11 +1,8 @@
 import React, { Fragment, useState } from "react";
 import "./LoginPage.css";
-import useLevelStore from "../../Model/frontEndStore";
+
 
 const Login = ({ setAuth }) => {
-  const setLevel = useLevelStore(state => state.setLevel);
-  const setName = useLevelStore(state => state.setName);
-  const setID = useLevelStore(state => state.setID);
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -33,10 +30,6 @@ const Login = ({ setAuth }) => {
       const parseRes = await response.json();
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
-        setLevel(Number(parseRes.currentLevel));
-        const name = String(parseRes.firstName) + " " + String(parseRes.lastName);
-        setName(String(name));
-        setID(Number(parseRes.id));
         setAuth(true);
       } else {
         setAuth(false);
