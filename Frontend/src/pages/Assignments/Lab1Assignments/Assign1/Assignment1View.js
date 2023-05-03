@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./Assignment1View.css";
 function Lab1a1View(props) {
   return (
+    <div className="Lab-page">
     <div className="max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
       <h1 className="text-3xl font-bold mb-4">
         Introduction to Variables in Java
@@ -78,6 +79,7 @@ function Lab1a1View(props) {
           </button>
         </Link>
       </div>
+    </div>
     </div>
   );
 }

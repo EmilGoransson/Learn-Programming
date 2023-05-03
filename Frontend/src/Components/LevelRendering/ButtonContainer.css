@@ -98,7 +98,7 @@
 .next-button-gray {
     padding: 10px;
     margin: 10px;
-    border-radius: 25%;
+    border-radius: 10%;
     color: black;
     background-color: gray;
     border: none;
@@ -115,8 +115,8 @@
     background-color: #2DCB6C;
     border: none;
     cursor: pointer;
-    width: 75px;
-    height: 47px;
+    width: 80px;
+    height: 50px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -133,7 +133,6 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* this does not change anything 
 .button-lab {
     margin: 2ex;
     border-radius: 10%;
@@ -144,6 +143,8 @@
     height: 70px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
+/* this does not change anything 
 
 .button-container {
     background-color: #1B2432;
