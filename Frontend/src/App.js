@@ -25,7 +25,6 @@ import useLevelStore from "./Model/frontEndStore";
 import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 
 function App() {
-  const noSidebarRoutes = ["/", "/createaccount", "/logout"];
   const [darkMode, setDarkMode] = useState(false);
 
   const checkAuthenticated = async () => {
