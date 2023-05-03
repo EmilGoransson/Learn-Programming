@@ -79,20 +79,11 @@ function App() {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-  /*
+  
   useEffect(() => {
     const body = document.body;
-    const sidebar = document.querySelector(".sidenav");
-
-    if (darkMode) {
-      body.classList.add("dark");
-      sidebar.classList.add("dark");
-    } else {
-      body.classList.remove("dark");
-      sidebar.classList.remove("dark");
-    }
-  }, [darkMode]);
-*/
+    const sidebar = document.querySelector(".sidenav")});
+  
   return (
     <BrowserRouter>
       <div className={`App ${darkMode ? "dark" : ""}`} id="outer-container">
