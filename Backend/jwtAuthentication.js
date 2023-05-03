@@ -4,7 +4,8 @@ const pool = require("./dbConfig");
 const bcrypt = require("bcrypt");
 const jwtGenerator = require("./jwtGenerator");
 const authorization = require("./middleware/authorization");
-
+const bodyParser = require("body-parser");
+router.use(bodyParser.json());
 //register route
 router.post("/Signup", async (req, res) => {
   try {
@@ -111,15 +112,20 @@ router.get("/remove", async (req, res) => {
 
 router.post("/edit", authorization, async (req, res) => {
   try{
-
-    let {id, email, password, firstName, lastName } = req.body;
+    const id = headers.id;
+    let { email, password, firstName, lastName } = req.body;
     const salt = await bcrypt.genSalt(10);
     const encryptedPassword = await bcrypt.hash(password, salt);
+    console.log("\nPreparing credential update for user: " + id)
+    const old = pool.query(
+      "SELECT first_name, last_name, email FROM student where s_id = $1", [id]
+    );
     //Update DB with new account credientials 
     const changes = pool.query(
       "UPDATE student SET email = $1, SET password = $2, SET first_name = $3, SET last_name = $4 where s_id = $5;",
       [email, encryptedPassword, firstName, lastName, id]
       );
+      console.log("\nUpdated user: " + id + "\n"+ old.first_name +  " -> " + firstName +"\n" + old.last_name + "->" + lastName + "\n" + email +  " -> " + old.email)
     }catch(error){
       console.error(error);
       res.status(500).send("Server Error");
@@ -131,7 +137,7 @@ router.get("/verify", authorization, async (req, res) => {
   try {
     res.json(true);
   } catch (err) {
-    console.error(err.message);
+    console.log(err);
     res.status(500).send("Server Error");
   }
 });

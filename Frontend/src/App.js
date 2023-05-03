@@ -31,8 +31,8 @@ function App() {
       const res = await fetch(
         "http://130.229.172.67:3003/authentication/verify",
         {
-          method: "POST",
-          headers: { token: localStorage.token }, // Tries to find local token
+          metod: "POST",
+          headers: {token : localStorage.token},
         }
       );
 

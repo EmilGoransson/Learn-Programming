@@ -7,7 +7,6 @@ const port = 3003;
 app.use(cors());
 app.use(express.json());
 
-
 //routes
 app.use("/authentication", require("./jwtAuthentication"));
 

@@ -4,16 +4,28 @@ import useLevelStore from '../Model/frontEndStore';
 import decode from "../decode_token"
 
 const Profile = (props) => {
-  //const {firstN, lastN, mail} = props;
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: "",
+  });
+  const { email, password } = inputs;
   const litstar = "https://i.imgur.com/PO5mEkq.png";
-  const { currentLevel, name, email } = useLevelStore();
-
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [ setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const handleSubmit = async (event) => {
     alert("I am an alert box!");
+  }
+  const onChange = (e) =>
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
+
+  const updateAccount = async (e) => {
+    console.log("trying to update credentials for user: " + decode(localStorage.token).user.firstName + decode(localStorage.token).user.lastName)
+    var id = decode(localStorage.token).user.id;
+    const res = await fetch("http://130.229.172.67:3003/authentication/edit", {
+      method: "POST",
+      header: "plain/text",
+      headers: {id: id},
+      body: JSON.stringify()
+    })
+    console.log("Successfully updated user credentials");
   }
 
   const handleDelete = async (event) => {
@@ -59,7 +71,7 @@ const Profile = (props) => {
               <input
                 type="text"
                 value={firstName}
-                onChange={(event) => setFirstName(event.target.value)}
+                onChange={(e) => onChange(e)}
                 className="inputSquare"
               />
             </label>
@@ -68,7 +80,7 @@ const Profile = (props) => {
               <input
                 type="text"
                 value={lastName}
-                onChange={(event) => setLastName(event.target.value)}
+                onChange={(e) => onChange(e)}
                 className="inputSquare"
               />
             </label>
@@ -77,7 +89,7 @@ const Profile = (props) => {
               <input
                 type="text"
                 value={email}
-                onChange={(event) => setEmail(event.target.value)}
+                onChange={(e) => onChange(e)}
                 className="inputSquare"
               />
             </label>
@@ -86,11 +98,11 @@ const Profile = (props) => {
               <input
                 type="password"
                 value={password}
-                onChange={(event) => setPassword(event.target.value)}
+                onChange={(e) => onChange(e)}
                 className="inputSquare"
               />
             </label>
-            <button
+            <button onClick={updateAccount}
               type="submit" 
               className="saveButton" 
             > 
