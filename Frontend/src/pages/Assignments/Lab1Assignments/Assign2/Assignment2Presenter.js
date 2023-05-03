@@ -40,12 +40,13 @@ class Progman
   }, [currentLevel]);
 
   return (
-    <div></div>
-    /*<Lab1a2View
-      preMadeText={preMadeText}
-      disabled={status}
-      thisLevel={thisLevel}
-    ></Lab1a2View>*/
+    <div>
+      <Lab1a2View
+        preMadeText={preMadeText}
+        disabled={status}
+        thisLevel={thisLevel}
+      ></Lab1a2View>
+    </div>
   );
 }
 export default Lab1a2;
