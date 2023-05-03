@@ -83,7 +83,7 @@ router.post("/login", async (req, res) => {
 });
 
 
-router.get("/remove", async (req, res) => {
+router.get("/remove", authorization, async (req, res) => {
   try{
     const  id  = req.headers.id;
     console.log(req.headers.id);
@@ -112,20 +112,25 @@ router.get("/remove", async (req, res) => {
 
 router.post("/edit", authorization, async (req, res) => {
   try{
-    const id = headers.id;
-    let { email, password, firstName, lastName } = req.body;
+    const id = Number(req.headers.id);
+    let { firstName, lastName, email, password } = req.body;
+
     const salt = await bcrypt.genSalt(10);
     const encryptedPassword = await bcrypt.hash(password, salt);
-    console.log("\nPreparing credential update for user: " + id)
-    const old = pool.query(
-      "SELECT first_name, last_name, email FROM student where s_id = $1", [id]
+    console.log("\nPreparing credential update for user: " + id + "\n")
+    const old = await pool.query(
+      "SELECT first_name, last_name, email, current_level FROM student where s_id = $1", [id]
     );
     //Update DB with new account credientials 
-    const changes = pool.query(
-      "UPDATE student SET email = $1, SET password = $2, SET first_name = $3, SET last_name = $4 where s_id = $5;",
+    await pool.query(
+      "UPDATE student SET email = $1, password = $2, first_name = $3, last_name = $4 WHERE s_id = $5;",
       [email, encryptedPassword, firstName, lastName, id]
       );
-      console.log("\nUpdated user: " + id + "\n"+ old.first_name +  " -> " + firstName +"\n" + old.last_name + "->" + lastName + "\n" + email +  " -> " + old.email)
+      console.log("\nUpdated user: " + id + "\n"+ old.rows[0].first_name +  " --> " + firstName +"\n" + old.rows[0].last_name + " --> " + lastName + "\n" + old.rows[0].email +  " --> " + email + "\n")
+      
+      const token = jwtGenerator(id, firstName, lastName, old.rows[0].current_level);
+      console.log("Updated user new token: " + token);
+      res.json({ token })
     }catch(error){
       console.error(error);
       res.status(500).send("Server Error");
