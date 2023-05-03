@@ -117,7 +117,7 @@ const Scrollingbar = () => {
               Arrays
             </NavLink>
           </li>
-        </div>
+          </div>
       </ul>
     </div>
   );

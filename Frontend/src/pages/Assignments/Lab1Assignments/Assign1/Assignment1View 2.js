@@ -2,15 +2,9 @@ import CodeRunner from "../../../../Components/CodeRunner/Presenter/codeRunnerPr
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Assignment1View.css";
-import Button from "react-bootstrap/Button";
-import { ReactComponent as LogoBookmark } from "../../bookmark.svg";
-
 function Lab1a1View(props) {
   return (
-    <div className="max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE] ">
-      <a onClick={props.addPinned} style={{ cursor: "pointer" }}>
-        {props.svg}
-      </a>
+    <div className="max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
       <h1 className="text-3xl font-bold mb-4">
         Introduction to Variables in Java
       </h1>
@@ -65,11 +59,9 @@ function Lab1a1View(props) {
         <p>1. Declare two variables which when added should equal 6</p>
         <p>2. Print the result to the console.</p>
         <CodeRunner
-          testCases={3}
-          testCase2={6}
+          testCases={6}
           preMadeText={props.preMadeText}
-          input1={1}
-          input2={2}
+          input={3}
           shouldIncrement={true}
           thisLevel={props.thisLevel}
         />
