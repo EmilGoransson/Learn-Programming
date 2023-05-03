@@ -20,6 +20,7 @@ import CurrentProgressBarPresenter from "./Components/CurrentProgressBar/Present
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 import PinnedList from "./Components/PinnedList/PinnedList";
 import Logoutbutton from "./Logoutbutton";
+import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import useLevelStore from "./Model/frontEndStore";
 
 function App() {
@@ -134,29 +135,118 @@ function App() {
             <PinnedList></PinnedList>
             <CurrentProgressBarPresenter></CurrentProgressBarPresenter>
             <Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} />
-          </div>)}
+          </div>
+        )}
 
-      <main id="page-wrap">
-        <Routes>
-          <Route path="/" element={<WelcomePage/>}/>
-          <Route path="/createaccount" element={!isAuthenticated ? <CreateAccount setAuth={setAuth}/> : <Navigate to="/main"/>} />
-          <Route path="/main" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
-          <Route path="/exam" element={isAuthenticated ? <Exam setAuth={setAuth}/> : <Navigate to="/login"/>}/>
-          <Route path="/labs" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
-          <Route path="/theory" element={ isAuthenticated ? ( <div> <Theory setAuth={setAuth} /> <Scrollingbar /> </div> ) : (<Navigate to="/login" /> ) }/>
-          <Route path="/profile" element={isAuthenticated ? <Profile setAuth={setAuth}/> : <Navigate to="/login"/>}/>
-          <Route path="/login" element={!isAuthenticated ? <Login setAuth={setAuth} /> : <Navigate to="/main" />}/>
-          <Route path="/aboutus" element={isAuthenticated ? <Aboutus setAuth={setAuth} /> : <Navigate to="/login" />}/>
-          <Route path="/Lab1/1" Component={Lab1a1}/>
-          <Route path="/Lab1/2" Component={Lab1a2} />
-          <Route path="/labs" Component={WelcomePage} />
-          <Route path="/Arrays" element={[< Scrollingbar/> ,<Theory/>]}/>
-        </Routes>
-      </main>
-    </div>
+        <main id="page-wrap">
+          <Routes>
+            <Route path="/" element={<WelcomePage />} />
+            <Route
+              path="/createaccount"
+              element={
+                !isAuthenticated ? (
+                  <CreateAccount setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/main" />
+                )
+              }
+            />
+            <Route
+              path="/main"
+              element={
+                isAuthenticated ? (
+                  <MainContent setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/exam"
+              element={
+                isAuthenticated ? (
+                  <Exam setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/labs"
+              element={
+                isAuthenticated ? (
+                  <MainContent setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/theory"
+              element={
+                isAuthenticated ? (
+                  <div>
+                    {" "}
+                    <Theory setAuth={setAuth} /> <Scrollingbar />{" "}
+                  </div>
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                isAuthenticated ? (
+                  <Profile setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                !isAuthenticated ? (
+                  <Login setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/main" />
+                )
+              }
+            />
 
-    
-  </BrowserRouter>)
+            <Route
+              path="/aboutus"
+              element={
+                isAuthenticated ? (
+                  <Aboutus setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+
+            <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
+
+            <Route
+              path="/Lab1/1"
+              element={[
+                <Lab1a1 />,
+                <Sidebar />,
+                <TopBar />,
+                <PinnedList />,
+                <RightSideBar />,
+                <Progress />,
+              ]}
+            />
+
+            <Route path="/Lab1/2" Component={Lab1a2} />
+            <Route path="/labs" Component={WelcomePage} />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;

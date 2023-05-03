@@ -9,7 +9,7 @@ function Lab1a1View(props) {
   return (
     <div className="max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE] ">
       <a onClick={props.addPinned} style={{ cursor: "pointer" }}>
-        {props.svg}
+        <LogoBookmark className="text-textGray h-6 w-6" />
       </a>
       <h1 className="text-3xl font-bold mb-4">
         Introduction to Variables in Java

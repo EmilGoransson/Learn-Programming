@@ -1,123 +1,42 @@
 import React from "react";
 import "./scrollingbar.css";
 import { NavLink } from "react-router-dom";
-
+import { lab1Levels } from "../LevelRendering/Levels/lab1";
+import { lab2Levels } from "../LevelRendering/Levels/lab2";
+import { lab3Levels } from "../LevelRendering/Levels/lab3";
 const Scrollingbar = () => {
+  function renderLevels(labImport) {
+    const currentLevel = labImport.slice(-1)[0];
+
+    return labImport.map((label, index) => {
+      const [_, string] = label.split("\n");
+      return (
+        <li key={index}>
+          <NavLink
+            to={`/theory/Lab${currentLevel}/${index + 1}`}
+            activeClassName="active"
+            className="my-link"
+          >
+            {string}
+          </NavLink>
+        </li>
+      );
+    });
+  }
+
   return (
     <div className="sidebar no-scroll-bar">
       <ul>
-      <div className="bg-custom-color text-textGray">
+        <div className="bg-custom-color text-textGray">
+          Lab 1{renderLevels(lab1Levels)}
+        </div>
 
-      <li className="white-text">Theory</li>
-           
-  
-          <li>
-            <NavLink to="/Arrays" activeClassName="active" className="my-link">
-              Arrays
-            </NavLink>
-          </li>
-         
-          <li>
-          <NavLink to="/Varibels" activeClassName="active"className="my-link">
-              Arrays
-            </NavLink>
-          </li>
-         
-          <li>
-          <NavLink to="/Item3" activeClassName="active"className="my-link">
-              Arrays
-            </NavLink>
-          </li>
-          <li>
-          <NavLink to="/Item4" activeClassName="active"className="my-link">
-              Arrays
-            </NavLink>
-          </li>
-          <li>
-          <NavLink to="/Item 5" activeClassName="active"className="my-link">
-              Arrays
-            </NavLink>
-          </li>
-          <li>
-          <NavLink to="/Item6" activeClassName="active"className="my-link">
-              Arrays
-            </NavLink>
-          </li>
-          <li>
-          <NavLink to="/Item7" activeClassName="active"className="my-link">
-              Arrays
-            </NavLink>
-          </li>
-          <li>
-          <NavLink to="/Item8" activeClassName="active"className="my-link">
-              Arrays
-            </NavLink>
-          </li>
-          <li><NavLink to="/Item9" activeClassName="active"className="my-link">
-              Arrays
-            </NavLink>
-          </li>
-          
-          <li>
-          <NavLink to="/item10" activeClassName="active"className="my-link">
-              Arrays
-            </NavLink>
-          </li>
-          <li>
-          <NavLink to="/item11" activeClassName="active"className="my-link">
-              Arrays
-            </NavLink>
-          </li>
-          <li>
-          <NavLink to="/item12" activeClassName="active"className="my-link">
-              Arrays
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/item13" activeClassName="active"className="my-link">
-              Arrays
-            </NavLink>
-
-          </li>
-          <li>
-          <NavLink to="/item14" activeClassName="active"className="my-Link">
-              Arrays
-            </NavLink>
-          </li>
-          <li>
-          <NavLink to="/item15" activeClassName="active"className="my-Link">
-              Arrays
-            </NavLink>
-          </li>
-          <li>
-          <NavLink to="/item16" activeClassName="active"className="my-Link">
-              Arrays
-            </NavLink>
-          </li>
-          <li>
-          <NavLink to="/item17" activeClassName="active"className="my-Link">
-              Arrays
-            </NavLink>
-          </li>
-          <li>
-          <NavLink to="/item18" activeClassName="active"className="my-Link">
-              Arrays
-            </NavLink>
-          </li>
-          <li>
-          <NavLink to="/item19" activeClassName="active"className="my-Link">
-              Arrays
-            </NavLink>
-
-          </li>
-
-          <li>
-          <NavLink to="/item20" activeClassName="active"className="my-Link">
-              Arrays
-            </NavLink>
-          </li>
-          </div>
+        <div className="bg-custom-color text-textGray">
+          Lab 2 {renderLevels(lab2Levels)}
+        </div>
+        <div className="bg-custom-color text-textGray">
+          Lab 3 {renderLevels(lab3Levels)}
+        </div>
       </ul>
     </div>
   );
