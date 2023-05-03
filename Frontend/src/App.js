@@ -17,8 +17,9 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import TopBar from "./Components/topBar/topBarPresenter";
 import RightSideBar from "./Components/rightSideBar/rightSideBarPresenter";
 import CurrentProgressBarPresenter from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
-import Scrollingbar from "./Components/Scrollingbar";
+import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 import PinnedList from "./Components/PinnedList/PinnedList";
+import Logoutbutton from "./Logoutbutton";
 
 function App() {
   const noSidebarRoutes = ["/", "/createaccount", "/logout"];
@@ -121,31 +122,36 @@ function App() {
     <BrowserRouter>
         <div className={`App ${darkMode ? "dark" : ""}`} id="outer-container">
         <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
-        {!noSidebarRoutes.includes(window.location.pathname) && (
-          <div>
-            {" "}
-            <TopBar></TopBar>
-            <RightSideBar></RightSideBar>
-            <PinnedList></PinnedList>
-            <CurrentProgressBarPresenter></CurrentProgressBarPresenter>
-            <Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} />
-          </div>)}
+       
 
       <main id="page-wrap">
         <Routes>
           <Route path="/" element={<WelcomePage/>}/>
           <Route path="/createaccount" element={!isAuthenticated ? <CreateAccount setAuth={setAuth}/> : <Navigate to="/main"/>} />
-          <Route path="/main" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
-          <Route path="/exam" element={isAuthenticated ? <Exam setAuth={setAuth}/> : <Navigate to="/login"/>}/>
-          <Route path="/labs" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
-          <Route path="/theory" element={ isAuthenticated ? ( <div> <Theory setAuth={setAuth} /> <Scrollingbar /> </div> ) : (<Navigate to="/login" /> ) }/>
-          <Route path="/profile" element={isAuthenticated ? <Profile setAuth={setAuth}/> : <Navigate to="/login"/>}/>
+          
+          <Route path="/main" element={isAuthenticated ? (<div> <MainContent setAuth={setAuth}/> <TopBar/> <RightSideBar/> <PinnedList/> <CurrentProgressBarPresenter/>  
+          <Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} /> </div>) : (<Navigate to="/login"/>)}/>
+          
+          
+          <Route path="/exam" element= {isAuthenticated ? <Exam setAuth={setAuth}/> : <Navigate to="/login"/>}/>
+         
+          <Route path="/labs" element={isAuthenticated ?  <MainContent setAuth={setAuth}/>  :<Navigate to="/login"/>}/>
+          
+          <Route path="/theory" element={ isAuthenticated ?  <Theory setAuth={setAuth} /> : <Navigate to="/login" /> }/>
+          
+          <Route path="/profile" element= {isAuthenticated ? <Profile setAuth={setAuth}/> :<Navigate to="/login"/>}/>
+         
           <Route path="/login" element={!isAuthenticated ? <Login setAuth={setAuth} /> : <Navigate to="/main" />}/>
-          <Route path="/aboutus" element={isAuthenticated ? <Aboutus setAuth={setAuth} /> : <Navigate to="/login" />}/>
+         
+          <Route path="/aboutus" element={isAuthenticated ?  <Aboutus setAuth={setAuth} />: <Navigate to="/login" />}/>
+         
           <Route path="/Arrays" element={[< Scrollingbar/> ,<Theory/>]}/>
+         
           <Route path="/Lab1/1" Component={Lab1a1}/>
+         
           <Route path="/Lab1/2" Component={Lab1a2} />
           <Route path="/labs" Component={WelcomePage} />
+          <Route path="/logout" element ={<WelcomePage/>}/>
          
         </Routes>
       </main>

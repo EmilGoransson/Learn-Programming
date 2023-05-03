@@ -1,14 +1,33 @@
 import React from 'react';
 import "./theory.css";
+import RightSideBar from "../Components/Sidebar/leftSideBar";
+import Sidebar from "../Components/Sidebar/Sidebar";
+import Progress from "../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
+import PinnedList from "../Components/PinnedList/PinnedList";
+import TopBar from "../Components/topBar/topBarPresenter";
 
 
 function Theory() {
     return (
+      <div>
+      <div>
+    <TopBar/>
+ <RightSideBar/>
+ <Sidebar/>
+ <Progress />
+ <PinnedList/>
+
+ </div>  
       <div className="Theory">
-       
+      
+   
+
+
       
        
         <h3 className="text-3xl font-bold mb-4">
+      
+
           Introduction to Methods in Java
         </h3>
         <p className="mb-4">
@@ -51,11 +70,16 @@ function Theory() {
         <pre className="bg-gray-100 rounded-md p-4 mb-4">
           <code className="text-sm font-mono">System.out.println(myNumber);</code>
         </pre>
+        
         <p className="mb-4">
           This will print the value of <code>myNumber</code> (in this case,{" "}
           <code>42</code>) to the console.
         </p>
       </div>
+      </div>
+    
+      
+      
     );
   }
   

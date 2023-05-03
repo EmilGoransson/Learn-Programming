@@ -2,12 +2,22 @@ import React from "react";
 import {Link} from "react-router-dom";
 import "./aboutus.css";
 import {ReactComponent as Mail} from "./mail.svg";
+import TopBar from "../../Components/topBar/topBarPresenter";
+import RightSideBar from "../../Components/rightSideBar/rightSideBarPresenter";
+import PinnedList from "../../Components/PinnedList/PinnedList";
+import Progress from "../../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
+import Sidebar from "../../Components/Sidebar/Sidebar";
 
 function Aboutus() {
     const handleLogoutClick = () => {
         localStorage.removeItem("token");
     };
     return (
+        <div> <TopBar></TopBar>
+        <RightSideBar></RightSideBar>
+        <PinnedList></PinnedList>
+        <Progress></Progress>
+        <Sidebar></Sidebar>
         <div className="Aboutus text-textGray h-screen pt-40 px-96">
             <main className="text-[CECECE]">
                 <h1 className="text-textGray">About us</h1>
@@ -34,7 +44,7 @@ function Aboutus() {
                 </div>
 
                 <div className="buttons">
-                    <Link to={'/logout'}>
+                    <Link to={`/logout`}>
                         <button className="logout" onClick={handleLogoutClick}>
                             Log out
                         </button>
@@ -42,6 +52,9 @@ function Aboutus() {
                 </div>
             </main>
         </div>
+        </div>
+       
+    
     );
 }
 

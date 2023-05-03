@@ -127,6 +127,27 @@ body{
     font-weight: bold;
     color: #CECECE;
 }
+.buttonslog {
+    position: absolute;
+    top: 9%; 
+    right: 15%;
+    margin: 4%;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+
+
+}
+  
+ 
+.logoutbut {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: red;
+  }
 
 .profile-label {
     display: flex;

@@ -6,13 +6,11 @@ const Scrollingbar = () => {
   return (
     <div className="sidebar no-scroll-bar">
       <ul>
-      <div className="custom-bg-color text-textGray">
+      <div className="bg-custom-color text-textGray">
 
       <li className="white-text">Theory</li>
            
-           
-      
-
+  
           <li>
             <NavLink to="/Arrays" activeClassName="active" className="my-link">
               Arrays
