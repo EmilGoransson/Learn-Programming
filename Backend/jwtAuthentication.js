@@ -82,19 +82,49 @@ router.post("/login", async (req, res) => {
 });
 
 
-router.post("/profile", authorization, async (req, res) => {
-  const remove = pool.query("DELETE FROM student WHERE s_id = $1", [s_id]);
+router.get("/remove", async (req, res) => {
+  try{
+    const  id  = req.headers.id;
+    console.log(req.headers.id);
+    console.log("Preparing to remove account: " + id);
+    // if ID is not null and not undefined -> Remove account
+    if(id != null && id != undefined){
+      const remove = pool.query("DELETE FROM student WHERE s_id = $1", [id]);
+      console.log("Account " + id + " was removed");
+      res.status(200).send("Your accont was removed");
+    }
+    // Else no account with given ID
+    else{
+      if(id === null){
+        console.log("Cannot remove account - ID is null")
+      }
+      else{
+        console.log("Cannot remove account - ID is undefined")
+      }
+      res.status(400).send("No account with that ID");
+    }
+  }catch(error){
+    console.error(error);
+    res.status(500).send("Server Error");
+  }
 });
 
-router.post("/profile", authorization, async (req, res) => {
-  let { email, password, firstName, lastName } = req.body;
-  const salt = await bcrypt.genSalt(10);
-  const encryptedPassword = await bcrypt.hash(password, salt);
+router.post("/edit", authorization, async (req, res) => {
+  try{
 
-  const changes = pool.query(
-    "UPDATE student SET email = $1, SET password = $2, SET first_name = $3, SET last_name = $4;",
-    [email, encryptedPassword, firstName, lastName]
-  );
+    let {id, email, password, firstName, lastName } = req.body;
+    const salt = await bcrypt.genSalt(10);
+    const encryptedPassword = await bcrypt.hash(password, salt);
+    //Update DB with new account credientials 
+    const changes = pool.query(
+      "UPDATE student SET email = $1, SET password = $2, SET first_name = $3, SET last_name = $4 where s_id = $5;",
+      [email, encryptedPassword, firstName, lastName, id]
+      );
+    }catch(error){
+      console.error(error);
+      res.status(500).send("Server Error");
+    }
+
 });
 //verify token
 router.get("/verify", authorization, async (req, res) => {

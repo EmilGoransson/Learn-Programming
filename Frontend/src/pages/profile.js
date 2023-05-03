@@ -1,6 +1,7 @@
 import "./profile.css";
 import React, { useState } from 'react';
 import useLevelStore from '../Model/frontEndStore';
+import decode from "../decode_token"
 
 const Profile = (props) => {
   //const {firstN, lastN, mail} = props;
@@ -16,7 +17,17 @@ const Profile = (props) => {
   }
 
   const handleDelete = async (event) => {
-    window.confirm("Are you sure you want to delete your account?");
+    if(window.confirm("Are you sure you want to delete your account?")){
+      console.log("Trying to remove account "+ Number(decode(localStorage.token).user.id))
+      const user_id = decode(localStorage.token).user.id
+      const res = await fetch("http://130.229.172.67:3003/authentication/remove", {
+        method: "GET",
+        headers: {
+          id: user_id,
+        },
+      })
+
+    }
   }
 
   return (
