@@ -5,6 +5,7 @@ import Sidebar from "../Components/Sidebar/Sidebar";
 import Progress from "../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import PinnedList from "../Components/PinnedList/PinnedList";
 import TopBar from "../Components/topBar/topBarPresenter";
+import Scrollingbar from '../Components/Scrollingbar/scrollingbar';
 
 
 function Theory() {
@@ -16,6 +17,7 @@ function Theory() {
  <Sidebar/>
  <Progress />
  <PinnedList/>
+ <Scrollingbar/>
 
  </div>  
       <div className="Theory">

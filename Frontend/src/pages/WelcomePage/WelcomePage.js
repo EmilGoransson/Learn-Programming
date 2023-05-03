@@ -16,7 +16,7 @@ function WelcomePage() {
           on different programming subjects and also practice tests where the
           students get to practice coding.
         </p>
-        <div className="buttons">
+        <div className="button">
           <Link to={`/login`}>
             <button className="login bg-ourGreen">Log In</button>
           </Link>
