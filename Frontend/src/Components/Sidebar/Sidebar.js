@@ -12,11 +12,13 @@ const Sidebar = () => {
     <div className="sidenav mt-10 bg-[1B2432] rounded-3xl pb-96">
       {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
       <div className="nav-Image -mt-6">
+      <NavLink to="/labs">
         <img
           src="https://i.imgur.com/xj9BUtI.png"
           className=""
           alt="My Image"
         />
+      </NavLink>
       </div>
       <NavLink to="/labs" activeClassName="active">
         <div className="sidebar-Item align-middle d-flex gap-2 align-items-center pr-3 pl-3 rounded-3xl">

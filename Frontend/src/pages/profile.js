@@ -2,6 +2,11 @@ import "./profile.css";
 import React, { useState } from 'react';
 import useLevelStore from '../Model/frontEndStore';
 import ProfilePicture from "../Components/ProfilePicture/profilePicture";
+import TopBar from "../Components/topBar/topBarPresenter";
+import RightSideBar from "../Components/rightSideBar/rightSideBarPresenter";
+import PinnedList from "../Components/PinnedList/PinnedList";
+import Progress from "../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
+import Sidebar from "../Components/Sidebar/Sidebar";
 
 const Profile = (props) => {
   //const {firstN, lastN, mail} = props;
@@ -19,8 +24,17 @@ const Profile = (props) => {
   const handleDelete = async (event) => {
     window.confirm("Are you sure you want to delete your account?");
   }
-
   return (
+    <div>
+    <div>
+      <RightSideBar></RightSideBar>
+      <Sidebar></Sidebar>
+      <Progress />
+      {/*<ProgressStar />*/}
+      <PinnedList/>
+    </div>
+    <TopBar></TopBar>
+    
     <body>
       <div className="profile-container">
         <ProfilePicture></ProfilePicture>
@@ -79,7 +93,7 @@ const Profile = (props) => {
             <button
               type="submit" 
               className="saveButton" 
-            > 
+> 
               Save
             </button> 
           </form>
@@ -87,6 +101,7 @@ const Profile = (props) => {
       {/*</div>*/}
       <button onClick={handleDelete} className="delete-account-button">Delete Account</button>
     </body>
+    </div>
     
   );
   //return (<h1>My profile</h1>);
