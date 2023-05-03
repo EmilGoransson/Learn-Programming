@@ -31,7 +31,6 @@ function App() {
   const [lastName, setLastName] = React.useState(null);
   const [email, setEmail] = React.useState(null);
   const [JSONmessage, setJSONmessage] = React.useState(null);
-  const [darkMode, setDarkMode] = useState(false);
   const checkAuthenticated = async () => {
     try {
       const res = await fetch(
@@ -107,36 +106,12 @@ function App() {
       .then((data) => setJSONmessage(data.JSONmessage));
       .then((data) => setTesting(data.testing));
   }, []);*/
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-  /*
-  useEffect(() => {
-    const body = document.body;
-    const sidebar = document.querySelector(".sidenav");
 
-    if (darkMode) {
-      body.classList.add("dark");
-      sidebar.classList.add("dark");
-    } else {
-      body.classList.remove("dark");
-      sidebar.classList.remove("dark");
-    }
-  }, [darkMode]);
-*/
+
 return (
   <BrowserRouter>
-    <div className={`App ${darkMode ? "dark" : ""}`} id="outer-container">
-      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
-      {!noSidebarRoutes.includes(window.location.pathname) && (
-        <div>
-          <TopBar />
-          <RightSideBar />
-          <PinnedList />
-          <CurrentProgressBarPresenter />
-          <Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} />
-        </div>
-      )}
+    <div>
+     
 
       <main id="page-wrap">
         <Routes>
@@ -151,6 +126,7 @@ return (
           <Route path="/aboutus" element={isAuthenticated ? <Aboutus setAuth={setAuth} /> : <Navigate to="/login" />} />
           <Route path="/Lab1/1" element={[<Lab1a1 />, <Sidebar />, <TopBar />, <PinnedList />, <RightSideBar />, <Progress />]} />
           <Route path="/Lab1/2" element={<Lab1a2 />} />
+          <Route path="/Lab1/3" element={<Lab1a3 />} />
           <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
         </Routes>
       </main>
