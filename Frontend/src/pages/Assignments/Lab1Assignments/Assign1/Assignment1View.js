@@ -3,11 +3,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Assignment1View.css";
 
+
 function Lab1a1View(props) {
   return (
     <div className="mt-20">
       <a onClick={props.addPinned} style={{ cursor: "pointer" }}>
-        <LogoBookmark className="text-textGray h-6 w-6" />
+        {props.svg}
       </a>
       <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
         <h1 className="text-3xl font-bold mb-4">Printing</h1>
