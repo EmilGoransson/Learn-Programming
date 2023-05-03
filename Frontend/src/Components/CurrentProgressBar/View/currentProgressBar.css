@@ -1,5 +1,34 @@
 .progress-bar {
-background-color: #2DCB6C
-;
+background-color: #2DCB6C;
+}
+.level-text{
+    font-size: 1.5vw;
+    position: fixed;
+    top: 14vh;
+    right: 8.6vw;
 }
 
+.star-container{
+    width: 10vw;
+    position: fixed;
+    right: 11vw;
+    top: 22vh;
+
+}
+
+.star{
+    width: 3vw;
+    height: 4vh;
+}
+.progressBar{
+    width: 10%;
+    position: fixed;
+    right: 2vw;
+    top: 18vh;
+}
+
+.test{
+    height:13vh;
+    width: 10vw;
+    margin-left: 9vw;
+}

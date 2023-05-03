@@ -9,54 +9,53 @@ function ProgressBarView(props) {
       if (index === 0) {
         // First star, bottom-right position
         styles = {
-          position: "absolute",
-          bottom: 0,
-          right: 0,
+          position: "fixed",
+          top: "29%",
+          right: "-17%",
           marginRight: "20%",
-          marginBottom: "10%",
         };
       } else if (index === 1) {
         // Second star, bottom-left position
         styles = {
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          marginLeft: "20%",
-          marginBottom: "10%",
+          position: "fixed",
+          top: "29%",
+          right: "-12%",
+          marginRight: "20%",
+        
         };
       } else if (index === 2) {
         // Third star, top position
         styles = {
-          position: "absolute",
-          top: 0,
-          left: "50%",
-          transform: "translateX(-50%)",
-          marginTop: "85%",
+          position: "fixed",
+          top: "23%",
+          right: "-14.5%",
+          marginRight: "20%",
+        
         };
       }
       return (
         <div key={star + index} style={styles}>
-          <img src={star} className="w-[40px] h-[40px]" alt="star" />
+          <img src={star} className="star" alt="star" />
         </div>
       );
     });
   }
 
   return (
-    <div className="star-container fixed right-4">
-      <div className="pb-4 pt-16">
-        <div className="mr-20 text-[#CECECE]">
+    <div className="star-container">
+      <div>
+        <div className="level-text text-[#CECECE]">
           {props.level} / {props.totalLevels}
         </div>
 
         <ProgressBar
-          className="w-44 mx-auto bg-red custom-progress-bar"
+          className="progressBar custom-progress-bar"
           now={props.progress}
         />
       </div>
 
-      <div className="bg-[#1B2432] rounded-xl h-32 w-40 ml-2 text-black text-center font-sans">
-        <div className="flex flex-col">{renderStars()}</div>
+      <div className="test bg-[#1B2432] rounded-xl">
+        <div className="test2">{renderStars()}</div>
       </div>
     </div>
   );
