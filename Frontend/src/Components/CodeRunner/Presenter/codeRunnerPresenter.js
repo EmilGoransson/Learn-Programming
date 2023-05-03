@@ -52,6 +52,8 @@ class Progman
   const [code, setCode] = useState("");
   const [data, setData] = useState("");
   const [data2, setData2] = useState("");
+  const [loading1, setLoading1] = useState(false);
+  const [loading2, setLoading2] = useState(false);
   const [compileCode, setCompileCode] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [passedTestOne, setPassedTestOne] = useState("");
@@ -145,7 +147,16 @@ class Progman
           });
         }
       });
-    if (count == 2) {
+    console.log("count" + count);
+    console.log("count == 1 " + Number(count) === 1);
+    console.log("testcase2" + !props.testCase2);
+    console.log(
+      "props.testCase2 === undefined " + props.testCase2 === undefined
+    );
+    if (count == 1 && !props.testCase2) {
+      setBothStyle("text-ourGreen font-bold");
+      setBothMessage("Test passed!");
+    } else if (count == 2) {
       setBothStyle("text-ourGreen font-bold");
       setBothMessage("Both tests passed!");
     } else {
