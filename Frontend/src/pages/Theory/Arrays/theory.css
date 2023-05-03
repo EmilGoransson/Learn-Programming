@@ -4,23 +4,29 @@
   flex-direction: column;
   color: #CECECE;
 }
-
+.Theory h1 {
+  font-size:48px;
+  color: #CECECE;
+  margin-top: 0;
+  text-align: center;
+  margin-left: 25%;
+}
 .Theory h2 {
-  font-size:150%;
+  font-size:36px;
   color: #CECECE;
   margin-top: 10px;
   margin-bottom: 10px;
-  text-align: left;
-  margin-left: 25%;
+  text-align: center;
+  margin-left: 10%;
 }
 .Theory h3 {
-  font-size:150%;
+  font-size:36px;
   color: #CECECE;
-  text-align: left;
-  margin-left: 25%;
+  text-align: center;
+  margin-left: 10%;
 }
 .Theory p {
-  font-size: 100%;
+  font-size: 24px;
   text-align: left;
   color:#CECECE;
   margin: auto;
