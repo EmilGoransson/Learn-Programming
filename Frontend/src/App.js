@@ -127,7 +127,15 @@ function App() {
     <BrowserRouter>
       <div className={`App ${darkMode ? "dark" : ""}`} id="outer-container">
         <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
-      
+        {!noSidebarRoutes.includes(window.location.pathname) && (
+          <div>
+            {" "}
+            <TopBar></TopBar>
+            <RightSideBar></RightSideBar>
+            <PinnedList></PinnedList>
+            <CurrentProgressBarPresenter></CurrentProgressBarPresenter>
+            <Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} />
+          </div>)}
 
       <main id="page-wrap">
         <Routes>
@@ -136,7 +144,7 @@ function App() {
           <Route path="/main" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
           <Route path="/exam" element={isAuthenticated ? <Exam setAuth={setAuth}/> : <Navigate to="/login"/>}/>
           <Route path="/labs" element={isAuthenticated ? <MainContent setAuth={setAuth}/> : <Navigate to="/login"/>}/>
-          <Route path="/theory" element={ isAuthenticated ? <Theory setAuth={setAuth} /> : <Navigate to="/login" />  }/>
+          <Route path="/theory" element={ isAuthenticated ? ( <div> <Theory setAuth={setAuth} /> <Scrollingbar /> </div> ) : (<Navigate to="/login" /> ) }/>
           <Route path="/profile" element={isAuthenticated ? <Profile setAuth={setAuth}/> : <Navigate to="/login"/>}/>
           <Route path="/login" element={!isAuthenticated ? <Login setAuth={setAuth} /> : <Navigate to="/main" />}/>
          
@@ -149,7 +157,6 @@ function App() {
           <Route path="/Lab1/2" Component={Lab1a2} />
           <Route path="/labs" Component={WelcomePage} />
           <Route path="/Arrays" element={[< Scrollingbar/> ,<Theory/>]}/>
-          <Route path="/logout" Component={WelcomePage} />
         </Routes>
       </main>
     </div>

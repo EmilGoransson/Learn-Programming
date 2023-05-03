@@ -1,29 +1,15 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import "./aboutus.css";
-import {ReactComponent as Mail} from "./mail.svg";
-import TopBar from "../../Components/topBar/topBarPresenter";
-import RightSideBar from "../../Components/rightSideBar/rightSideBarPresenter";
-import PinnedList from "../../Components/PinnedList/PinnedList";
-import Progress from "../../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
-import Sidebar from "../../Components/Sidebar/Sidebar";
+import { ReactComponent as Mail } from "./mail.svg";
 
 function Aboutus() {
-    
-    const handleLogoutClick = () => {
-        localStorage.removeItem("token");
-    }; 
-   
-    return (
-        <div> <TopBar></TopBar>
-        <RightSideBar></RightSideBar>
-        <PinnedList></PinnedList>
-        <Progress></Progress>
-        <Sidebar></Sidebar>
-      
-        <div className="Aboutus"> 
-      
-         <main>
+  const handleLogoutClick = () => {
+    localStorage.removeItem("token");
+  };
+  return (
+    <div className="Aboutus">
+      <main>
         <h1>About us</h1>
         <p> We are 8 students who are studying their second year in information 
           Technology at KTH. We want the future students of this program to love 
@@ -41,27 +27,21 @@ function Aboutus() {
           <p class="mail-text">proglin@gmail.com</p>
           </div>
          </div>
-
-         <div className="buttons">
-                    <Link to={`/logout`}>
-                        <button className="logout" onClick={handleLogoutClick}>
-                            Log out
-                        </button>
-                    </Link>
         
+        <div className="buttons"> 
+          <Link to={`/logout`}>
+          <button className="logout" onClick={handleLogoutClick }>
+            
+            Log out
           
-          </div>
+          </button>
+          </Link>
+  
+        </div>
 
-        
-    
       </main>
-
-        </div>
-        </div>
-        
-       
-    
-    );
+    </div>
+  );
 }
 
 export default Aboutus;
