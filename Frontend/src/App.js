@@ -111,15 +111,7 @@ function App() {
 return (
   <BrowserRouter>
     <div>
-      {!noSidebarRoutes.includes(window.location.pathname) && (
-        <div>
-          <TopBar />
-          <RightSideBar />
-          <PinnedList />
-          <CurrentProgressBarPresenter />
-          <Sidebar/>
-        </div>
-      )}
+     
 
       <main id="page-wrap">
         <Routes>
