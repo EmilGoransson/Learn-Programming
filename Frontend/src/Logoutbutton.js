@@ -1,12 +1,20 @@
 import React from 'react';
-import './App.css';
+import { Link } from 'react-router-dom';
+import './pages/profile.css';
 
 function Logoutbutton() {
-  return (
-    <div className="App">
-     <button className='rbtn'>Log out</button>
+  const handleLogoutClick = () => {
+    localStorage.removeItem("token");
+};
 
-    </div>
+  return (
+    <div className="buttonslog">
+    <Link to={'/logout'}>
+        <button className="logoutbut" onClick={handleLogoutClick}>
+            Logout
+        </button>
+    </Link>
+  </div>
   );
 }
 
