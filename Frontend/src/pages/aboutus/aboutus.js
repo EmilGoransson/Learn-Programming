@@ -1,12 +1,26 @@
 import React from 'react';
 import "./aboutus.css";
 import { ReactComponent as Mail } from "./mail.svg";
+import TopBar from '../../Components/topBar/topBarPresenter';
+import RightSideBar from '../../Components/Sidebar/leftSideBar';
+import PinnedList from '../../Components/PinnedList/PinnedList';
+import Progress from '../../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter';
+import Sidebar from '../../Components/Sidebar/Sidebar';
 
 function Aboutus() {
   /*const handleLogoutClick = () => {
     localStorage.removeItem("token"); 
   }; */
   return (
+  <div> 
+    <div>
+        <TopBar/>
+        <RightSideBar />
+        <PinnedList />
+        <Progress/>
+        <Sidebar/>
+    </div>
+    )}
     <div className="Aboutus">
       <main>
         <h1>About us</h1>
@@ -27,6 +41,7 @@ function Aboutus() {
           </div>
          </div>
       </main>
+    </div>
     </div>
   );
 }
