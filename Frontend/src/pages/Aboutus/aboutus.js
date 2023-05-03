@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import "./aboutus.css";
 import { ReactComponent as Mail } from "./mail.svg";
 
 function Aboutus() {
-  const handleLogoutClick = () => {
-    localStorage.removeItem("token");
-  };
+  /*const handleLogoutClick = () => {
+    localStorage.removeItem("token"); 
+  }; */
   return (
     <div className="Aboutus">
       <main>
@@ -27,18 +26,6 @@ function Aboutus() {
           <p class="mail-text">proglin@gmail.com</p>
           </div>
          </div>
-        
-        <div className="buttons"> 
-          <Link to={`/logout`}>
-          <button className="logout" onClick={handleLogoutClick }>
-            
-            Log out
-          
-          </button>
-          </Link>
-  
-        </div>
-
       </main>
     </div>
   );
