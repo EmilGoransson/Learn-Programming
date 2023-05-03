@@ -25,7 +25,6 @@ import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressB
 import useLevelStore from "./Model/frontEndStore";
 
 function App() {
-  const noSidebarRoutes = ["/", "/createaccount", "/logout"];
   const [message, setMessage] = React.useState(null);
   const [firstName, setFirstName] = React.useState(null);
   const [lastName, setLastName] = React.useState(null);
