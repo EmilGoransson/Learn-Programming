@@ -7,6 +7,7 @@ import RightSideBar from "../Components/rightSideBar/rightSideBarPresenter";
 import PinnedList from "../Components/PinnedList/PinnedList";
 import Progress from "../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import Sidebar from "../Components/Sidebar/Sidebar";
+import decode from "../decode_token";
 
 const Profile = (props) => {
   //const {firstN, lastN, mail} = props;
@@ -80,7 +81,7 @@ const Profile = (props) => {
         <ProfilePicture></ProfilePicture>
         
         <p className="profile-firstlastname">
-          {name}
+          
         </p>
         <p className="profile-mail">
           {email}
