@@ -4,7 +4,7 @@ import useLevelStore from "../../../../Model/frontEndStore";
 import { useEffect } from "react";
 
 function Lab1a2() {
-  const currentLevel = useLevelStore((state) => state.currentLeve2);
+  const currentLevel = useLevelStore((state) => state.currentLevel);
   const levelLab2 = useLevelStore((state) => state.levelsLab2);
 
   //update this variable if using this as template!!
@@ -33,7 +33,7 @@ class Progman
       setStatus([true, "next-button-gray"]);
     } else {
       setStatus([false, "button-lab-cyan "]);
-    }
+    } 
   }
   useEffect(() => {
     IsDisabled();
