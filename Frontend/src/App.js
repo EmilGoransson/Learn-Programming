@@ -151,6 +151,7 @@ return (
           <Route path="/aboutus" element={isAuthenticated ? <Aboutus setAuth={setAuth} /> : <Navigate to="/login" />} />
           <Route path="/Lab1/1" element={[<Lab1a1 />, <Sidebar />, <TopBar />, <PinnedList />, <RightSideBar />, <Progress />]} />
           <Route path="/Lab1/2" element={<Lab1a2 />} />
+          <Route path="/Lab1/3" element={<Lab1a3 />} />
           <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
         </Routes>
       </main>
