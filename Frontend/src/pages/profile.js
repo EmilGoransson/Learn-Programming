@@ -1,12 +1,17 @@
 import "./profile.css";
 import React, { useState } from 'react';
 import useLevelStore from '../Model/frontEndStore';
-import decode from "../decode_token"
+import ProfilePicture from "../Components/ProfilePicture/profilePicture";
+import TopBar from "../Components/topBar/topBarPresenter";
+import RightSideBar from "../Components/rightSideBar/rightSideBarPresenter";
+import PinnedList from "../Components/PinnedList/PinnedList";
+import Progress from "../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
+import Sidebar from "../Components/Sidebar/Sidebar";
 
 const Profile = (props) => {
   //const {firstN, lastN, mail} = props;
   const litstar = "https://i.imgur.com/PO5mEkq.png";
-  const { currentLevel, name } = useLevelStore();
+
 
   //const [firstName, setFirstName] = useState('');
   //const [lastName, setLastName] = useState('');
@@ -72,12 +77,8 @@ const Profile = (props) => {
   return (
     <body>
       <div className="profile-container">
-        <div className="level-container">
-            <p className="levelText">LEVEL</p>
-
-            <p className="levelNumber">{currentLevel}</p>
-            <img src={litstar} className="profile-level-star"/>
-        </div>
+        <ProfilePicture></ProfilePicture>
+        
         <p className="profile-firstlastname">
           {name}
         </p>
@@ -147,7 +148,6 @@ const Profile = (props) => {
         </div>
       {/*</div>*/}
       <button onClick={handleDelete} className="delete-account-button">Delete Account</button>
-    
     </body>
     
   );
