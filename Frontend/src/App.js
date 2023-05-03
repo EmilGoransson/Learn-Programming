@@ -31,7 +31,6 @@ function App() {
   const [lastName, setLastName] = React.useState(null);
   const [email, setEmail] = React.useState(null);
   const [JSONmessage, setJSONmessage] = React.useState(null);
-  const [darkMode, setDarkMode] = useState(false);
   const checkAuthenticated = async () => {
     try {
       const res = await fetch(
@@ -107,34 +106,18 @@ function App() {
       .then((data) => setJSONmessage(data.JSONmessage));
       .then((data) => setTesting(data.testing));
   }, []);*/
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-  /*
-  useEffect(() => {
-    const body = document.body;
-    const sidebar = document.querySelector(".sidenav");
 
-    if (darkMode) {
-      body.classList.add("dark");
-      sidebar.classList.add("dark");
-    } else {
-      body.classList.remove("dark");
-      sidebar.classList.remove("dark");
-    }
-  }, [darkMode]);
-*/
+
 return (
   <BrowserRouter>
-    <div className={`App ${darkMode ? "dark" : ""}`} id="outer-container">
-      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+    <div>
       {!noSidebarRoutes.includes(window.location.pathname) && (
         <div>
           <TopBar />
           <RightSideBar />
           <PinnedList />
           <CurrentProgressBarPresenter />
-          <Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} />
+          <Sidebar/>
         </div>
       )}
 
