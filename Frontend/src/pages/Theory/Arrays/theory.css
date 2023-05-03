@@ -9,6 +9,7 @@
   color: #CECECE;
   margin-top: 0;
   text-align: center;
+  margin-left: 25%;
 }
 .Theory h2 {
   font-size:36px;
@@ -16,11 +17,13 @@
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
+  margin-left: 10%;
 }
 .Theory h3 {
   font-size:36px;
   color: #CECECE;
   text-align: center;
+  margin-left: 10%;
 }
 .Theory p {
   font-size: 24px;

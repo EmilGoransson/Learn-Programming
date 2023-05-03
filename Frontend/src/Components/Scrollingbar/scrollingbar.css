@@ -1,27 +1,26 @@
 .no-scroll-bar::-webkit-scrollbar {
   display: none;
 }
-
+ 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scroll-bar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  
 }
   .sidebar {
-    width: 200px;
+    width: 15vh;
     height: 100vh;
     position: fixed;
-    right: 74%;
-    top: 0;
-    background-color: #f1f1f1;
+    right: 78%;
+    top: 8%;
+    background-color:  #1B2432;
     overflow-y: auto;
   }
-  
+
   .content {
     flex: 1;
-    padding: 20px;
+    padding: 2em;
   }
-  
+
   ul {
     list-style-type: none;
     padding: 0;
@@ -29,11 +28,20 @@
   }
   
   li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+    padding: 0.5em;
+    border-bottom: 0% solid #ddd;
   }
-  
+
   li:last-child {
     border-bottom: none;
   }
-  
+.bg-custom-color{
+   background-color: #1B2432;
+  }
+.my-link{
+  color: rgb(175, 19, 107);
+} 
+
+.Title{
+  color: white;
+}

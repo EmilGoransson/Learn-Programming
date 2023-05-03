@@ -1,9 +1,9 @@
 export const lab1Levels = [
-  "1 \nClass",
-  "2 \nMethod",
-  "3 \nSystem.out",
+  "1 \nSystem.out",
+  "2 \nVariables",
+  "3 \nMethod",
   "4 \nString",
-  "5 \nVariables",
+  "5 \nClass",
   "6 \nOperation",
   "7 \nIf-loop",
   "8 \nElse",
