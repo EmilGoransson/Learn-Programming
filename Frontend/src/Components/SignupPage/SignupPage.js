@@ -89,18 +89,14 @@ const SignupPage = ({setAuth}) => {
             <button type="submit" className="loginbutton">
               Create Account
             </button>
-             <p className="form-text">
-              Already have an account? Click{" "}
-              <a href="/login" className="form-link">
-                here
-              </a>{" "}
-              to log in.
-            </p>
           </form>
+          <p>
+            Already have an account? Click{" "} <a href="/login" className="form-link"> here </a>{" "} to log in.
+          </p>
         </div>
       </div>
     </Fragment>
-  );
+  ); 
 };
 
 export default SignupPage;
