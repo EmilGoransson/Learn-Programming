@@ -11,6 +11,7 @@ import Theory from "./pages/Theory/Arrays/theory";
 import Profile from "./pages/profile";
 import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assign1/Assignment1Presenter";
 import Lab1a2 from "./pages/Assignments/Lab1Assignments/Assign2/Assignment2Presenter";
+import Lab1a3 from "./pages/Assignments/Lab1Assignments/Assign3/Assignment3Presenter";
 import Login from "./Components/LoginPage/Login";
 import CreateAccount from "./Components/SignupPage/SignupPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
@@ -123,130 +124,40 @@ function App() {
     }
   }, [darkMode]);
 */
-  return (
-    <BrowserRouter>
-      <div className={`App ${darkMode ? "dark" : ""}`} id="outer-container">
-        <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
-        {!noSidebarRoutes.includes(window.location.pathname) && (
-          <div>
-            {" "}
-            <TopBar></TopBar>
-            <RightSideBar></RightSideBar>
-            <PinnedList></PinnedList>
-            <CurrentProgressBarPresenter></CurrentProgressBarPresenter>
-            <Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} />
-          </div>
-        )}
+return (
+  <BrowserRouter>
+    <div className={`App ${darkMode ? "dark" : ""}`} id="outer-container">
+      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+      {!noSidebarRoutes.includes(window.location.pathname) && (
+        <div>
+          <TopBar />
+          <RightSideBar />
+          <PinnedList />
+          <CurrentProgressBarPresenter />
+          <Sidebar className={`Sidebar ${darkMode ? "dark" : ""}`} />
+        </div>
+      )}
 
-        <main id="page-wrap">
-          <Routes>
-            <Route path="/" element={<WelcomePage />} />
-            <Route
-              path="/createaccount"
-              element={
-                !isAuthenticated ? (
-                  <CreateAccount setAuth={setAuth} />
-                ) : (
-                  <Navigate to="/main" />
-                )
-              }
-            />
-            <Route
-              path="/main"
-              element={
-                isAuthenticated ? (
-                  <MainContent setAuth={setAuth} />
-                ) : (
-                  <Navigate to="/login" />
-                )
-              }
-            />
-            <Route
-              path="/exam"
-              element={
-                isAuthenticated ? (
-                  <Exam setAuth={setAuth} />
-                ) : (
-                  <Navigate to="/login" />
-                )
-              }
-            />
-            <Route
-              path="/labs"
-              element={
-                isAuthenticated ? (
-                  <MainContent setAuth={setAuth} />
-                ) : (
-                  <Navigate to="/login" />
-                )
-              }
-            />
-            <Route
-              path="/theory"
-              element={
-                isAuthenticated ? (
-                  <div>
-                    {" "}
-                    <Theory setAuth={setAuth} /> <Scrollingbar />{" "}
-                  </div>
-                ) : (
-                  <Navigate to="/login" />
-                )
-              }
-            />
-            <Route
-              path="/profile"
-              element={
-                isAuthenticated ? (
-                  <Profile setAuth={setAuth} />
-                ) : (
-                  <Navigate to="/login" />
-                )
-              }
-            />
-            <Route
-              path="/login"
-              element={
-                !isAuthenticated ? (
-                  <Login setAuth={setAuth} />
-                ) : (
-                  <Navigate to="/main" />
-                )
-              }
-            />
+      <main id="page-wrap">
+        <Routes>
+          <Route path="/" element={<WelcomePage />} />
+          <Route path="/createaccount" element={!isAuthenticated ? <CreateAccount setAuth={setAuth} /> : <Navigate to="/main" />} />
+          <Route path="/main" element={isAuthenticated ? <MainContent setAuth={setAuth} /> : <Navigate to="/login" />} />
+          <Route path="/exam" element={isAuthenticated ? <Exam setAuth={setAuth} /> : <Navigate to="/login" />} />
+          <Route path="/labs" element={isAuthenticated ? <MainContent setAuth={setAuth} /> : <Navigate to="/login" />} />
+          <Route path="/theory" element={isAuthenticated ? <div><Theory setAuth={setAuth} /><Scrollingbar /></div> : <Navigate to="/login" />} />
+          <Route path="/profile" element={isAuthenticated ? <Profile setAuth={setAuth} /> : <Navigate to="/login" />} />
+          <Route path="/login" element={!isAuthenticated ? <Login setAuth={setAuth} /> : <Navigate to="/main" />} />
+          <Route path="/aboutus" element={isAuthenticated ? <Aboutus setAuth={setAuth} /> : <Navigate to="/login" />} />
+          <Route path="/Lab1/1" element={[<Lab1a1 />, <Sidebar />, <TopBar />, <PinnedList />, <RightSideBar />, <Progress />]} />
+          <Route path="/Lab1/2" element={<Lab1a2 />} />
+          <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
+        </Routes>
+      </main>
+    </div>
+  </BrowserRouter>
+);
 
-            <Route
-              path="/aboutus"
-              element={
-                isAuthenticated ? (
-                  <Aboutus setAuth={setAuth} />
-                ) : (
-                  <Navigate to="/login" />
-                )
-              }
-            />
-
-            <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
-
-            <Route
-              path="/Lab1/1"
-              element={[
-                <Lab1a1 />,
-                <Sidebar />,
-                <TopBar />,
-                <PinnedList />,
-                <RightSideBar />,
-                <Progress />,
-              ]}
-            />
-
-            <Route path="/Lab1/2" Component={Lab1a2} />
-            <Route path="/labs" Component={WelcomePage} />
-          </Routes>
-        </main>
-      </div>
-    </BrowserRouter>
-  );
 }
 
 export default App;

@@ -5,24 +5,21 @@ import { useEffect } from "react";
 
 function Lab1a1() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
+  const levelLab1 = useLevelStore((state) => state.levelsLab1);
+
   const addPinned = useLevelStore((state) => state.addPinned);
   const getPinned = useLevelStore((state) => state.pinnedTheory);
   const removePinned = useLevelStore((state) => state.removePinned);
   //update this variable if using this as template!!
-  const contentName = "Variables";
   const thisLevel = 1;
 
   const [status, setStatus] = React.useState([true, "next-button-gray"]);
 
   const preMadeText = `
-  import java.util.Scanner;  // Import the Scanner class
 class Progman
 {  
     public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-        //declare two variables of the type int
-        
-        //print the sum of the two variables
+      //print the "Hello World"
         
     }
 }`;
@@ -39,7 +36,7 @@ class Progman
       setStatus([true, "next-button-gray"]);
     } else {
       setStatus([false, "button-lab-cyan "]);
-    }
+    } 
   }
   useEffect(() => {
     IsDisabled();
