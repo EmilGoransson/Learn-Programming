@@ -70,6 +70,8 @@ const Profile = (props) => {
           },
         }
       );
+      localStorage.clear();
+        window.location.reload();
     }
   };
 
