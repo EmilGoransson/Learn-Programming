@@ -7,6 +7,7 @@ const SignupPage = ({setAuth}) => {
   const setLevel = useLevelStore((state) => state.setLevel);
   const setName = useLevelStore((state) => state.setName);
   const setID = useLevelStore((state) => state.setID);
+  const setProfilePicture = useLevelStore((state) => state.setProfilePic);
   const [inputs, setInputs] = useState({
     email: "",
     firstName: "",
@@ -48,6 +49,7 @@ const SignupPage = ({setAuth}) => {
           setLevel(Number(resJson.currentLevel));
           setName(String((resJson.firstName + " " + resJson.lastName)));
           setID((Number(resJson.id)));
+          setProfilePicture(resJson.profilePicture);
 
           console.log(resJson);
         } catch (error) {

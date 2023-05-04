@@ -19,6 +19,7 @@ import CreateAccount from "./Components/SignupPage/SignupPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 
+
 import PinnedList from "./Components/PinnedList/PinnedList";
 import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import decode from "./decode_token";
@@ -29,6 +30,7 @@ function App() {
     const setLevel = useLevelStore((state) => state.setLevel);
     const setName = useLevelStore((state) => state.setName);
     const setID = useLevelStore((state) => state.setID);
+    const setProfilePicture = useLevelStore((state) => state.setProfilePic);
     async function setData() {
         try {
             const res = await fetch("http://130.229.172.67:3003/authentication/getInfo", {
@@ -43,6 +45,7 @@ function App() {
             setLevel(Number(resJson.currentLevel));
             setName(String((resJson.firstName + " " + resJson.lastName)));
             setID((Number(resJson.id)));
+            setProfilePicture(resJson.profilePicture);
 
             console.log(resJson);
         } catch (error) {
