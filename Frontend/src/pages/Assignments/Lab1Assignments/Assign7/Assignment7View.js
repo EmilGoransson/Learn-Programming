@@ -2,7 +2,8 @@ import CodeRunner from "../../../../Components/CodeRunner/Presenter/codeRunnerPr
 import Quiz from "../../../../Components/Quiz/quiz";
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Assignment7View.css";
+import "../AssignmentView.css";
+import { quizData } from "./QuizData";
 
 function Lab1a7View(props) {
   return (
@@ -61,7 +62,7 @@ function Lab1a7View(props) {
           </code>
         </pre>
         <h2 className="text-2xl font-bold mb-4">A Quiz</h2>
-        <Quiz></Quiz>
+        <Quiz quizData={quizData}/>
         <h2 className="text-2xl font-bold mb-4">An exercise</h2>
         <p>
           In this exercise you will create a Method called "Words" that takes 2
