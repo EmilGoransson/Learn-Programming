@@ -3,61 +3,22 @@ import "./profilePicture.css";
 
 const ProfilePicture = () => {
     const [image, setImage] = useState(null);
-    const uploadedImage = React.useRef(null);
-    const imageUploader = React.useRef(null);
     const [showPopup, setShowPopup] = useState(false);
 
-    /*const handleClick = () => {
-        uploadedImage.current = image;
-        setImage(image);
-    };*/
-    
-    const handleImageUpload = e => {
-        const [file] = e.target.files;
-        if (file) {
-            const reader = new FileReader();
-            const {current} = uploadedImage;
-            current.file = file;
-            reader.onload = (e) => {
-                current.src = e.target.result;
-            }
-            reader.readAsDataURL(file);
-          }
-    };
     return (
+        <body>
+        <img src={image} className="image" alt="profilePic"/>       
         <div className="pictureContainer">
-            <input 
-                type="file" 
-                accept="image/*" 
-                onChange={handleImageUpload} 
-                ref={imageUploader} 
-                className="inputButton"
-            />
-            <div className="imageContainer" onClick={() => imageUploader.current.click()}>
+            <button className="changePicButton" type="button" onClick={() => setShowPopup(true)}>Change Avatar</button>
+            <div className="popup" style={{display:showPopup?"": "none"}}>
+                <img src="https://imgur.com/U7NDFB6.png" className="popupPic" alt="bearPic" onClick={() => {setShowPopup(false); setImage("https://imgur.com/U7NDFB6.png")}}/>
+                <img src="https://imgur.com/VuvuBaa.png" className="popupPic" alt="frogPic" onClick={() => {setShowPopup(false); setImage("https://imgur.com/VuvuBaa.png")}}/>
+                <img src="https://imgur.com/iXIZmIL.png" className="popupPic" alt="rabbitPic" onClick={() => {setShowPopup(false); setImage("https://imgur.com/iXIZmIL.png")}}/>
+                <img src="https://imgur.com/QbVIBJA.png" className="popupPic" alt="duckPic" onClick={() => {setShowPopup(false); setImage("https://imgur.com/QbVIBJA.png")}}/>
+                <button className="exitPopup" type="button" onClick={() => setShowPopup(false)}>x</button>
             </div>
-            {/*<div className="imageContainer" onClick={() => setShowPopup(true)}>
-                {showPopup && (
-                <div className="popup">
-                    <div className="option" onClick={() => setShowPopup(false)&& setImage("https://i.imgur.com/hYZ0fRZ.png")}>
-                    Option 1
-                    </div>
-                    <div className="option" onClick={() => setShowPopup(false)}>
-                    Option 2
-                    </div>
-                    <div className="option" onClick={() => setShowPopup(false)}>
-                    Option 3
-                    </div>
-                </div>
-                )}
-            </div>*/}
-            <img ref={uploadedImage} className="image" alt="profilePic"/>
-            
         </div>
+        </body>
     );
 }
 export default ProfilePicture;
-
-
-//<img src="https://i.imgur.com/hYZ0fRZ.png" alt="rabbit" onClick={() => handleImageClick("https://i.imgur.com/hYZ0fRZ.png")} />
-//<img src="https://i.imgur.com/bgtYDHd.png" alt="frog" onClick={() => handleImageClick("https://i.imgur.com/bgtYDHd.png")} />
-//<img src="https://i.imgur.com/UkmdMDY.png" alt="duck" onClick={() => handleImageClick("https://i.imgur.com/UkmdMDY.png")} />
