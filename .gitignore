@@ -28,3 +28,4 @@ yarn-debug.log*
 yarn-error.log*
 Backend/node_modules/
 .env
+Backend/node_modules/body-parser/
