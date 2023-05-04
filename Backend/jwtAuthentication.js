@@ -53,15 +53,16 @@ router.post("/login", async (req, res) => {
     }
 
     const cLevel = await pool.query(
-      "SELECT s_id, current_level, first_name, last_name from student where email = $1",
+      "SELECT s_id, current_level, first_name, last_name, email from student where email = $1",
       [email]
     );
     currentLevel = cLevel.rows[0].current_level;
     firstName = cLevel.rows[0].first_name;
     lastName = cLevel.rows[0].last_name;
     id = cLevel.rows[0].s_id;
-
-    const token = jwtGenerator(Number(id), firstName, lastName, currentLevel);
+    email = cLevel.rows[0].email
+      console.log("User email: " + email)
+    const token = jwtGenerator(Number(id), firstName, lastName, currentLevel, email);
 
 
     res.json({ token, currentLevel, firstName, lastName, id });
@@ -80,6 +81,18 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.get("/levelUp", authorization, async(req, res) =>{
+  const id = req.headers.id;
+  const current_lab = req.headers.current_lab
+  try{
+    await pool.query("UPDATE student SET $1 = $1 + 1, current_level = current_level + 1 WHERE s_id = $2", [current_lab, id]);
+    res.status(200);
+
+  }catch(error){
+    res.status(500);
+    console.log("Server Error")
+  }
+})
 
 router.get("/remove", authorization, async (req, res) => {
   try{
