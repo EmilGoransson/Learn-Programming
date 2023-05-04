@@ -20,6 +20,8 @@ import RightSideBar from "./Components/rightSideBar/rightSideBarPresenter";
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 import PinnedList from "./Components/PinnedList/PinnedList";
 import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
+import decode from "./decode_token";
+import useLevelStore from "./Model/frontEndStore";
 
 function App() {
   const checkAuthenticated = async () => {
@@ -44,10 +46,35 @@ function App() {
     }
   };
 
+  const setLevel = useLevelStore((state) => state.setLevel);
+  const setName = useLevelStore((state) => state.setName);
+  const setID = useLevelStore((state) => state.setID);
   useEffect(() => {
     checkAuthenticated();
-  }, []);
+    if (isAuthenticated) {
+      const first = decode(localStorage.token).user.firstName;
+      const last = decode(localStorage.token).user.lastName;
+      const id = decode(localStorage.token).user.id;
+      const level = decode(localStorage.token).user.currentLevel;
 
+      //sets correct level, name and ID in model for current user decoded token
+      const name = String(first) + " " + String(last);
+      setLevel(Number(level));
+      setName(String(name));
+      setID(Number(id));
+
+      console.log(
+        "All info from token:\n First Name: " +
+          first +
+          "\n Last Name: " +
+          last +
+          "\n ID: " +
+          id +
+          "\n Current Level: " +
+          level
+      );
+    }
+  });
   // Default state of authentication is false
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
 
@@ -55,32 +82,114 @@ function App() {
     setIsAuthenticated(boolean);
   };
 
-return (
-  <BrowserRouter>
-    <div>
-     
-
-      <main id="page-wrap">
-        <Routes>
-          <Route path="/" element={<WelcomePage />} />
-          <Route path="/createaccount" element={!isAuthenticated ? <CreateAccount setAuth={setAuth} /> : <Navigate to="/main" />} />
-          <Route path="/main" element={isAuthenticated ? <MainContent setAuth={setAuth} /> : <Navigate to="/login" />} />
-          <Route path="/exam" element={isAuthenticated ? <Exam setAuth={setAuth} /> : <Navigate to="/login" />} />
-          <Route path="/labs" element={isAuthenticated ? <MainContent setAuth={setAuth} /> : <Navigate to="/login" />} />
-          <Route path="/theory" element={isAuthenticated ? <div><Theory setAuth={setAuth} /><Scrollingbar /></div> : <Navigate to="/login" />} />
-          <Route path="/profile" element={isAuthenticated ? <Profile setAuth={setAuth} /> : <Navigate to="/login" />} />
-          <Route path="/login" element={!isAuthenticated ? <Login setAuth={setAuth} /> : <Navigate to="/main" />} />
-          <Route path="/aboutus" element={isAuthenticated ? <Aboutus setAuth={setAuth} /> : <Navigate to="/login" />} />
-          <Route path="/Lab1/1" element={[<Lab1a1 />, <Sidebar />, <TopBar />, <PinnedList />, <RightSideBar />, <Progress />]} />
-          <Route path="/Lab1/2" element={<Lab1a2 />} />
-          <Route path="/Lab1/3" element={<Lab1a3 />} />
-          <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
-        </Routes>
-      </main>
-    </div>
-  </BrowserRouter>
-);
-
+  return (
+    <BrowserRouter>
+      <div>
+        <main id="page-wrap">
+          <Routes>
+            <Route path="/" element={<WelcomePage />} />
+            <Route
+              path="/createaccount"
+              element={
+                !isAuthenticated ? (
+                  <CreateAccount setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/main" />
+                )
+              }
+            />
+            <Route
+              path="/main"
+              element={
+                isAuthenticated ? (
+                  <MainContent setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/exam"
+              element={
+                isAuthenticated ? (
+                  <Exam setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/labs"
+              element={
+                isAuthenticated ? (
+                  <MainContent setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/theory"
+              element={
+                isAuthenticated ? (
+                  <div>
+                    <Theory setAuth={setAuth} />
+                    <Scrollingbar />
+                  </div>
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                isAuthenticated ? (
+                  <Profile setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                !isAuthenticated ? (
+                  <Login setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/main" />
+                )
+              }
+            />
+            <Route
+              path="/aboutus"
+              element={
+                isAuthenticated ? (
+                  <Aboutus setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab1/1"
+              element={[
+                <Lab1a1 />,
+                <Sidebar />,
+                <TopBar />,
+                <PinnedList />,
+                <RightSideBar />,
+                <Progress />,
+              ]}
+            />
+            <Route path="/Lab1/2" element={<Lab1a2 />} />
+            <Route path="/Lab1/3" element={<Lab1a3 />} />
+            <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
