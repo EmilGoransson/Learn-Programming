@@ -89,15 +89,21 @@ router.post("/login", async (req, res) => {
 router.get("/getInfo", authorization, async(req,res) =>{
   const id = req.headers.id;
 try{
-  const info = await pool.query("SELECT first_name, last_name, email, current_level, profile_picture FROM student WHERE s_id = $1", [id]);
+  const info = await pool.query("SELECT first_name, last_name, email, current_level, profile_picture, pinned_items FROM student WHERE s_id = $1", [id]);
   const firstName = info.rows[0].first_name;
   const lastName = info.rows[0].last_name;
   const currentLevel = info.rows[0].current_level;
-  const email = info.rows[0].email 
-  const profilePicture = info.rows[0].profile_picture
+  const email = info.rows[0].email;
+  const profilePicture = info.rows[0].profile_picture;
+  var pinnedItems = info.rows[0].pinned_items
   console.log("Sending information about user: " + id + "\n");
-
-  res.status(200).json( {firstName, lastName, currentLevel, email, profilePicture} )
+  if(pinnedItems != null && pinnedItems != undefined){
+    res.status(200).json( {firstName, lastName, currentLevel, email, profilePicture, pinnedItems} )
+  }
+  else{
+    pinnedItems = [];
+    res.status(200).json( {firstName, lastName, currentLevel, email, profilePicture, pinnedItems} )
+  }
 }
 catch(error){
   res.status(500).send("Server Error")
