@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100;200;300;400;500;600;700;800&display=swap");
+
+
+.quiz-container {
+  max-width: 500px;
+  min-width: 250px;
+  background: #ededed;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 30px 60px;
+}
+
+.quiz-container .active-question-no {
+  font-size: 32px;
+  font-weight: 500;
+  color: #d63384;
+}
+
+.quiz-container .total-question {
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+
+.quiz-container h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  color:black;
+}
+
+.quiz-container ul {
+  margin-top: 20px;
+  margin-left: -40px;
+}
+
+.quiz-container ul li {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+  font-size: 16px;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  padding: 11px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.quiz-container ul .selected-answer {
+  background: rgb(205, 206, 228);
+  border: 1px solid rgb(205, 206, 228);
+}
+
+.quiz-container button {
+  background: linear-gradient(
+    90.04deg,
+    rgb(55, 57, 81) 0.03%,
+    rgb(55, 57, 81) 99.96%
+  );
+  border-radius: 9px;
+  font-size: 18px;
+  color: #ffffff;
+  padding: 10px 42px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.quiz-container button:disabled {
+  background: #e7e8e9;
+  color: #9fa3a9;
+  cursor: not-allowed;
+}
+
+.flex-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.result h1 {
+  color: rgb(55, 57, 81);
+  font-weight: bold;
+}
+
+.result h3 {
+  font-size: 24px;
+  letter-spacing: 1.4px;
+  text-align: center;
+}
+
+.result-totalScoreText {
+  font-size: 25px;
+  color: black;
+}
+
+.result-scoreNbr {
+  color: #24a658;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.result-totalQuestionNbr {
+  font-size: 20px;
+}
+
+.result p {
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+
+.result p span {
+  color: #24a658;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+span.failed-text {
+  color: red !important;
+}

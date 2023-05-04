@@ -1,0 +1,17 @@
+export const lab3Levels = [
+  "29 \nRecursion",
+  "30 \nDynamic Programming",
+  "31 \nBacktracking",
+  "32 \nGreedy Algorithms",
+  "33 \nDivide and Conquer",
+  "34 \nGraph Algorithms",
+  "35 \nSearching Algorithms",
+  "36 \nSorting Algorithms",
+  "37 \nString Algorithms",
+  "38 \nComputational Geometry",
+  "39 \nNumber Theory",
+  "40 \nProbability and Statistics",
+  "41 \nArtificial Intelligence",
+  "42 \nFinal Boss",
+  "3",
+];

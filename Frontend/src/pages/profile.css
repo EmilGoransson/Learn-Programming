@@ -1,0 +1,205 @@
+body{
+    font-family: 'Lora';
+    background-color: #14161b;
+
+}
+
+.profile-container {
+    margin-top: 30%;
+    display: block;
+    width: 60%;
+    height: 20em;
+    background-color: #1b2432;
+    margin-left: 20%;
+    margin-right: 50%;
+    border-radius: 1.5em;
+    font-family: 'Lora';
+
+    
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;*/
+}
+/*
+.edit-button {
+    width: 130px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #CECECE;
+    background-color: rgb(13, 250, 29);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+    float: right;
+    margin-right: 40px;
+    margin-top: 30px;
+    font-family: 'Lora';
+} */
+
+.profile-firstlastname {
+    font-size: 5em;
+    padding-top: 1em;
+    align-self: center;
+    margin-top: -4em;
+    margin-left: 30%;
+    font-weight: bold;
+    color: white;
+
+}
+
+.profile-mail {
+    font-size: 1em;
+    margin-left: 30%;
+    font-weight: bold;
+    color: white;
+}
+
+.level-container {
+    display: block;
+    width: 20%;
+    height: 20em;
+    /*background-color: blue;*/
+    /*position: relative;*/
+    margin-left: 10%;
+    margin-top: 6%;
+    border-radius: 1.5em;
+    font-family: 'Lora';
+}
+
+.levelText {
+    position: absolute;
+    font-size: 1em;
+    padding-top: 2em;
+    margin-top: 5em;
+    margin-left: 4.25%;
+    color: white;
+    
+}
+
+.levelNumber {
+    align-items: center;
+    position: absolute;
+    font-size: 5em;
+    color: white;
+    margin-top: 1.3em;
+    margin-left: 4.5%;
+}
+
+.profile-level-star {
+    width: 100%;
+    height: 16em;
+    /*margin: auto;*/
+    padding-top: 2.75em;
+}
+
+.delete-account-button {
+    width: 180px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    background-color: rgb(247, 69, 69);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+    
+    margin-left: 0.5%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+   
+}
+
+.edit-profile-container {
+    width: 60%;
+    height: 34em;
+    margin-top: 4%;
+    margin-left: 20%;
+    border-radius: 1.5em;
+    background-color: #1b2432;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-heading {
+    font-size: 3em;
+    float: left;
+    margin-top: 1em;
+    margin-left: 1em;
+    font-weight: bold;
+    color: #CECECE;
+}
+.buttonslog {
+    position: absolute;
+    top: 9%; 
+    right: 15%;
+    margin: 4%;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+
+
+}
+  
+ 
+.logoutbut {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: red;
+  }
+
+.profile-label {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
+    margin-top: 0.5em;
+    color: #CECECE;
+    
+  }
+    
+.profile-label-text {
+    font-size: 1em;
+    width: 30%;
+    margin-left: 10%;
+    margin-right: 3%;
+    margin-top: 1em;
+    font-weight: bold;
+}
+    
+.inputSquare {
+    margin-bottom: 1em;
+    padding: 0.75em;
+    border-radius: 1em;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 10%;
+    margin-left: 1%;
+}
+  
+
+.saveButton {
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    width: 8em;
+    height: 3em;
+    max-width: 10em;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+    margin-top: 1.5em;
+}
+
+.saveButton:hover {
+    background-color: #61a7f3;
+}
+  

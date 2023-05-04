@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1B2432;
+  color: white;
+}
+
+.form-container h2 {
+  align-self: center;
+  font-family: 'Lora';
+  font-weight: bold;
+  font-size: 50px;
+  color: #CECECE;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  color: #000000;
+  width:80%;
+}
+
+.form-container label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Lora';
+  
+}
+
+.form-container label span {
+  margin-bottom: 0.5rem;
+}
+
+.form-container input[type='text'],
+.form-container input[type='password'] {
+  width: 100%;
+  max-width: 400px;
+}

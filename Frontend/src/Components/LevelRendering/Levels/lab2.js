@@ -1,0 +1,17 @@
+export const lab2Levels = [
+  "15 \nInheritance",
+  "16 \nPolymorphism",
+  "17 \nAbstraction",
+  "18 \nEncapsulation",
+  "19 \nException Handling",
+  "20 \nInterfaces",
+  "21 \nGenerics",
+  "22 \nLambda Expressions",
+  "23 \nStreams",
+  "24 \nSerialization",
+  "25 \nMultithreading",
+  "26 \nSynchronization",
+  "27 \nConcurrency Utilities",
+  "28 \nFinal Boss",
+  "2",
+];
