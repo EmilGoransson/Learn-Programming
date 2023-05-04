@@ -34,11 +34,11 @@ function TopBarView(props) {
          onMouseLeave={() => setIsDropdownOpen(false)}
         />
         {isDropdownOpen && (
-          <div className="absolute  top-10 right-0 w-15 py-0 rounded shadow-xl z-10"
+          <div className="absolute  top-12 right-2 w-20 py-1 rounded shadow-xl z-10"
             onMouseEnter = {() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}>
             <button
-              className="block w-full text-right px-100 py-1 text-green pink hover:bg-green-200 cursor-pointer"
+              className="block w-full text-right font-bold text-xl px-100 py-1  hover:bg-green-200 cursor-pointer"
               onClick={handleLogoutClick}
             >
               Log out
