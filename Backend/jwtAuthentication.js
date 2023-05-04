@@ -94,7 +94,7 @@ try{
   const currentLevel = info.rows[0].current_level;
   const email = info.rows[0].email 
   const profilePicture = info.rows[0].profile_picture
-  console.log("Sending information about user: " + id);
+  console.log("Sending information about user: " + id + "\n");
 
   res.status(200).json( {firstName, lastName, currentLevel, email, profilePicture} )
 }
@@ -149,10 +149,10 @@ router.get("/remove", authorization, async (req, res) => {
     // Else no account with given ID
     else{
       if(id === null){
-        console.log("Cannot remove account - ID is null")
+        console.log("\nCannot remove account - ID is null")
       }
       else{
-        console.log("Cannot remove account - ID is undefined")
+        console.log("Cannot remove account - ID is undefined\n")
       }
       res.status(400).send("No account with that ID");
     }
@@ -170,7 +170,7 @@ router.get("/editProfilePicture", authorization, async(req, res) =>{
     const query = await pool.query("UPDATE student SET profile_picture = $1 WHERE s_id = $2", [new_pic, id])
   
     res.status(200).send("You have a new cool profile picture")
-    console.log("Updated profile picture for user " + id + " with new picture: " + new_pic)
+    console.log("\nUpdated profile picture for user " + id + " with new picture: " + new_pic + " \n")
   }catch(error){
     res.status(500);
     console.log(error)
@@ -186,6 +186,13 @@ router.post("/edit", authorization, async (req, res) => {
     const id = Number(req.headers.id);
     let { firstName, lastName, email, password } = req.body;
 
+    const existing_user = await pool.query("SELECT email from student where email = $1", [email])
+    console.log("\nUser " + id + " is trying to change email to " + existing_user.rows[0].email)
+    if(existing_user.rows.length > 0){
+      console.log("\nUser " + id + " attempted to change their email to an already existing one")
+      console.log("Change of credentials refused\n")
+      return res.status(403).send("An account with that email already exists");
+    }
     const salt = await bcrypt.genSalt(10);
     const encryptedPassword = await bcrypt.hash(password, salt);
     console.log("\nPreparing credential update for user: " + id + "\n")
@@ -200,7 +207,7 @@ router.post("/edit", authorization, async (req, res) => {
       console.log("\nUpdated user: " + id + "\n"+ old.rows[0].first_name +  " --> " + firstName +"\n" + old.rows[0].last_name + " --> " + lastName + "\n" + old.rows[0].email +  " --> " + email + "\n")
       
       const token = jwtGenerator(id, firstName, lastName, old.rows[0].current_level);
-      console.log("Updated user new token: " + token);
+      console.log("\nUpdated user new token: " + token + " \n");
       res.json({ token })
     }catch(error){
       console.error(error);
