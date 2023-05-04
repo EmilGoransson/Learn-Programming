@@ -125,6 +125,7 @@ B) 14
 C) 15
 D) 16
 Answer: D
+kuggis: med 15,16,17,18
 
 What is the output of the following code?
 vbnet
