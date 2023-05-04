@@ -1,6 +1,5 @@
 import "./profile.css";
 import React, { useState } from "react";
-import useLevelStore from "../Model/frontEndStore";
 import ProfilePicture from "../Components/ProfilePicture/profilePicture";
 import TopBar from "../Components/topBar/topBarPresenter";
 import RightSideBar from "../Components/rightSideBar/rightSideBarPresenter";
@@ -80,7 +79,6 @@ const Profile = (props) => {
         <RightSideBar></RightSideBar>
         <Sidebar></Sidebar>
         <Progress />
-        {/*<ProgressStar />*/}
         <PinnedList />
       </div>
       <TopBar></TopBar>
