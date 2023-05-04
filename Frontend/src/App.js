@@ -171,12 +171,7 @@ function App() {
                 )
               }
             />
-            <Route
-              path="/Lab1/1"
-              element={
-                <Lab1a1 />
-              }
-            />
+            <Route path="/Lab1/1" element={<Lab1a1 />} />
             <Route path="/Lab1/2" element={<Lab1a2 />} />
             <Route path="/Lab1/3" element={<Lab1a3 />} />
             <Route path="/Lab1/7" element={<Lab1a7 />} />

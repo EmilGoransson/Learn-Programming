@@ -44,8 +44,8 @@ const Profile = (props) => {
     const parseRes = await res.json();
     if (
       parseRes.token &&
-      parseRes.token != undefined &&
-      parseRes.token != null
+      parseRes.token !== undefined &&
+      parseRes.token !== null
     ) {
       localStorage.setItem("token", parseRes.token);
       window.location.reload();
