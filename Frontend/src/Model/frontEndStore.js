@@ -18,7 +18,20 @@ const useLevelStore = create((set) => ({
     set(() => ({currentLevel: cLevel}));
   },
   setProfilePic: (profileP) => {
-    set(() => ({ profilePic: profileP }));
+    //set(() => ({ profilePic: profileP }));
+    set((state) => {
+      console.log("Profile pic in frontendStore: "+ profileP)
+      const res = fetch("http://130.229.172.67:3003/authentication/editProfilePicture", {
+        method: "GET",
+        headers: {
+          id: decode(localStorage.token).user.id,
+          token: localStorage.token,
+          new_pic: profileP
+        }
+      });
+      return {profilePic: profileP};
+
+    });
   },
   setID: (id) => set(() => ({ id: id })),
   totalLevels: 42,
