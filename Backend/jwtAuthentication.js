@@ -215,6 +215,26 @@ router.post("/edit", authorization, async (req, res) => {
     }
 
 });
+
+
+
+
+router.post("/pinnedItems", authorization, async (req,res) =>{
+    const id = req.headers.id
+    const items_to_pin = req.body;
+  try{
+    
+    const pinnedItems = await pool.query("UPDATE student SET pinned_items = $1 WHERE s_id = $2", [items_to_pin, id])
+    console.log("\n User " + id + " has pinned " + req.body);
+    res.status(200).send("Pinned items");
+  }
+  catch(error){
+    console.log(error)
+    res.status(500)
+  }
+})
+
+
 //verify token
 router.get("/verify", authorization, async (req, res) => {
   try {
