@@ -4,8 +4,6 @@ const pool = require("./dbConfig");
 const bcrypt = require("bcrypt");
 const jwtGenerator = require("./jwtGenerator");
 const authorization = require("./middleware/authorization");
-const bodyParser = require("body-parser");
-router.use(bodyParser.json());
 //register route
 router.post("/Signup", async (req, res) => {
   try {

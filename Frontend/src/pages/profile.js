@@ -76,6 +76,18 @@ const Profile = (props) => {
   }
 
   return (
+
+    <div>
+
+     <div>
+      <RightSideBar></RightSideBar>
+      <Sidebar></Sidebar>
+      <Progress />
+      {/*<ProgressStar />*/}
+      <PinnedList/>
+    </div>
+    <TopBar></TopBar>
+
     <body>
       <div className="profile-container">
         <ProfilePicture></ProfilePicture>
@@ -137,12 +149,12 @@ const Profile = (props) => {
                 className="inputSquare"
                 placeholder="Password"
                 name="password"
-              />
+                />
             </label>
             <button onClick={updateAccount}
               type="submit" 
               className="saveButton" 
-            > 
+              > 
               Save
             </button> 
           </form>
@@ -150,6 +162,7 @@ const Profile = (props) => {
       {/*</div>*/}
       <button onClick={handleDelete} className="delete-account-button">Delete Account</button>
     </body>
+    </div>
     
   );
   //return (<h1>My profile</h1>);

@@ -20,6 +20,8 @@ import RightSideBar from "./Components/rightSideBar/rightSideBarPresenter";
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 import PinnedList from "./Components/PinnedList/PinnedList";
 import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
+import useLevelStore from "./Model/frontEndStore";
+import decode from "./decode_token";
 
 function App() {
   const checkAuthenticated = async () => {
@@ -50,7 +52,21 @@ function App() {
   const setID = useLevelStore(state => state.setID);
   useEffect(() => {
     checkAuthenticated();
-  }, []);
+    if(isAuthenticated){
+      const first = decode(localStorage.token).user.firstName;
+      const last = decode(localStorage.token).user.lastName;
+      const id = decode(localStorage.token).user.id;
+      const level = decode(localStorage.token).user.currentLevel;
+
+      //sets correct level, name and ID in model for current user decoded token
+      const name = String(first) + " " + String(last);
+      setLevel(Number(level));
+      setName(String(name));
+      setID(Number(id));
+    
+      console.log("All info from token:\n First Name: "  + first + "\n Last Name: " + last + "\n ID: " + id + "\n Current Level: " + level);
+    }
+  });
 
   // Default state of authentication is false
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
