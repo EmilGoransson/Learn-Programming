@@ -89,8 +89,14 @@ const Profile = (props) => {
         <div className="profile-container">
           <ProfilePicture></ProfilePicture>
 
-          <p className="profile-firstlastname"></p>
-          <p className="profile-mail">{email}</p>
+          <p className="profile-firstlastname">
+            {decode(localStorage.token).user.firstName +
+              " " +
+              decode(localStorage.token).user.lastName}
+          </p>
+          <p className="profile-mail">
+            {decode(localStorage.token).user.email}
+          </p>
           {/*<button className="edit-button">Edit Profile</button>*/}
         </div>
 
