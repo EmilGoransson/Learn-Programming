@@ -31,6 +31,7 @@ function App() {
     const setName = useLevelStore((state) => state.setName);
     const setID = useLevelStore((state) => state.setID);
     const setProfilePicture = useLevelStore((state) => state.setProfilePic);
+    const setPinned = useLevelStore((state) => state.setPinned);
     async function setData() {
         try {
             const res = await fetch("http://130.229.172.67:3003/authentication/getInfo", {
@@ -45,6 +46,8 @@ function App() {
             setLevel(Number(resJson.currentLevel));
             setName(String((resJson.firstName + " " + resJson.lastName)));
             setID((Number(resJson.id)));
+            setPinned(resJson.pinnedItems);
+
             setProfilePicture(resJson.profilePicture);
 
             console.log(resJson);

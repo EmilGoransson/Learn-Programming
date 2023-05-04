@@ -6,9 +6,13 @@ const useLevelStore = create((set) => ({
   levelsLab1: 14,
   levelsLab2: 14,
   levelsLab3: 14,
-
+  totalLevels: 42,
+  email: "johndoe@kth.se",
+  pinnedTheory: [],
   name: "John Doe",
   avatar: "https://i.imgur.com/PjqWEth.png",
+
+
   setName: (name) => {
     set(() => ({
       name: name,
@@ -17,11 +21,12 @@ const useLevelStore = create((set) => ({
   setLevel: (cLevel) => {
     set(() => ({currentLevel: cLevel}));
   },
-  setProfilePic: (profileP) => {
+  setPinned: (pinned) => {
+    set(() => ({pinnedTheory: pinned}));
+  },
 
-    //set(() => ({ profilePic: profileP }));
+  setProfilePic: (profileP) => {
     set((state) => {
-      console.log("Profile pic in frontendStore: "+ profileP)
       const res = fetch("http://130.229.172.67:3003/authentication/editProfilePicture", {
         method: "GET",
         headers: {
@@ -36,12 +41,23 @@ const useLevelStore = create((set) => ({
 
   },
   setID: (id) => set(() => ({ id: id })),
-  totalLevels: 42,
-  email: "johndoe@kth.se",
-  pinnedTheory: ["Arrays", "Methods", "Variables", "For-loop", "If-loop"],
-
   addPinned: (newPinned) => {
     set((state) => {
+      const res = fetch("http://130.229.172.67:3003/authentication/pinnedItems", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          id: decode(localStorage.token).user.id,
+          token: localStorage.token,
+        },
+        body: JSON.stringify({
+          newPinned: newPinned
+        }
+        )
+      } );
+      console.log(JSON.stringify({
+        newPinned: newPinned
+      }))
       return {pinnedTheory: [...state.pinnedTheory, newPinned]};
     });
   },
@@ -61,6 +77,19 @@ const useLevelStore = create((set) => ({
   removePinned: (removePinned) => {
     console.log("removePinned", removePinned);
     set((state) => {
+      const res = fetch("http://130.229.172.67:3003/authentication/removePinnedItems", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          id: decode(localStorage.token).user.id,
+          token: localStorage.token,
+        },
+        body: JSON.stringify({
+              removePinned: removePinned
+            }
+
+        )
+      } );
       return {
         pinnedTheory: state.pinnedTheory.filter(
             (item) => item !== removePinned
