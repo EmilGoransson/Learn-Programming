@@ -44,6 +44,26 @@ body{
     font-family: 'Lora';
 }
 
+.levelText {
+    position: absolute;
+    font-size: 1em;
+    padding-top: 2em;
+    margin-top: 5em;
+    margin-left: 4.25%;
+    color: white;
+    
+}
+
+.levelNumber {
+    align-items: center;
+    position: absolute;
+    font-size: 5em;
+    color: white;
+    margin-top: 1.3em;
+    margin-left: 4.5%;
+}
+
+
 .delete-account-button {
     width: 180px;
     height: 50px;
@@ -92,11 +112,11 @@ body{
 }
  
 .logoutbut {
-    position: absolute;
-    top: 20px;
+    position: relative;
+    top: 20000px;
     right: 20px;
     color: red;
-  }
+}
 
 .profile-label {
     display: flex;
@@ -106,7 +126,7 @@ body{
     margin-top: 0.5em;
     color: #CECECE;
     
-  }
+}
     
 .profile-label-text {
     font-size: 1em;

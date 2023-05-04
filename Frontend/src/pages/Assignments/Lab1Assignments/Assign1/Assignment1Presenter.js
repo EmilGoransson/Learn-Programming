@@ -4,6 +4,11 @@ import useLevelStore from "../../../../Model/frontEndStore";
 import { useEffect } from "react";
 import { ReactComponent as LogoBookmark } from "../../bookmark.svg";
 import { ReactComponent as LogoBookmarkFilled } from "../../filledBookmark.svg";
+import RightSideBar from "../../../../Components/rightSideBar/rightSideBarPresenter";
+import Progress from "../../../../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
+import Sidebar from "../../../../Components/Sidebar/Sidebar";
+import PinnedList from "../../../../Components/PinnedList/PinnedList";
+import TopBar from "../../../../Components/topBar/topBarPresenter";
 
 function Lab1a1() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
@@ -31,15 +36,11 @@ function Lab1a1() {
     }
   }
 
-  const preMadeText = `
-  import java.util.Scanner;  // Import the Scanner class
-class Progman
+  const preMadeText = `class Progman
 {  
     public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-        //declare two variables of the type int
         
-        //print the sum of the two variables
+      //print "Hello World here"
         
     }
 }`;
@@ -63,13 +64,21 @@ class Progman
   }, [currentLevel, getPinned]);
 
   return (
-    <Lab1a1View
+    <div>
+      <RightSideBar></RightSideBar>
+      <Sidebar></Sidebar>
+      <Progress />
+      <PinnedList/>
+      <TopBar></TopBar>
+      <Lab1a1View
+
       addPinned={addToPinned}
       preMadeText={preMadeText}
       disabled={status}
       thisLevel={thisLevel}
       svg={isFilled}
     ></Lab1a1View>
+    </div>
   );
 }
 export default Lab1a1;

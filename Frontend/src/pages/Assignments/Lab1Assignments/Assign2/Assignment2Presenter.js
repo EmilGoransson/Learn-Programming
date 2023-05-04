@@ -4,6 +4,12 @@ import useLevelStore from "../../../../Model/frontEndStore";
 import { useEffect } from "react";
 import { ReactComponent as LogoBookmark } from "../../bookmark.svg";
 import { ReactComponent as LogoBookmarkFilled } from "../../filledBookmark.svg";
+import RightSideBar from "../../../../Components/rightSideBar/rightSideBarPresenter";
+import Progress from "../../../../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
+import Sidebar from "../../../../Components/Sidebar/Sidebar";
+import PinnedList from "../../../../Components/PinnedList/PinnedList";
+import TopBar from "../../../../Components/topBar/topBarPresenter";
+
 
 function Lab1a2() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
@@ -63,6 +69,13 @@ class Progman
   }, [currentLevel, getPinned]);
 
   return (
+    <div>
+    <RightSideBar></RightSideBar>
+    <Sidebar></Sidebar>
+    <Progress />
+    <PinnedList/>
+    <TopBar></TopBar>
+  
     <Lab1a2View
       addPinned={addToPinned}
       preMadeText={preMadeText}
@@ -70,6 +83,8 @@ class Progman
       thisLevel={thisLevel}
       svg={isFilled}
     ></Lab1a2View>
+    </div>
+    
   );
 }
 export default Lab1a2;

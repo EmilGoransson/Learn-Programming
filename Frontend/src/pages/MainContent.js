@@ -17,11 +17,10 @@ function MainContent() {
         <RightSideBar></RightSideBar>
         <Sidebar></Sidebar>
         <Progress />
-        {/*<ProgressStar />*/}
         <PinnedList/>
+        <TopBar></TopBar>
       </div>
-      <TopBar></TopBar>
-
+      
       <ButtonContainer
         title="Lab 1"
         buttonLabels={lab1Levels}

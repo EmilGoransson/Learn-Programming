@@ -12,12 +12,12 @@ import Profile from "./pages/profile";
 import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assign1/Assignment1Presenter";
 import Lab1a2 from "./pages/Assignments/Lab1Assignments/Assign2/Assignment2Presenter";
 import Lab1a3 from "./pages/Assignments/Lab1Assignments/Assign3/Assignment3Presenter";
+import Lab1a7 from "./pages/Assignments/Lab1Assignments/Assign7/Assignment7Presenter";
 import Login from "./Components/LoginPage/Login";
 import CreateAccount from "./Components/SignupPage/SignupPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
-import TopBar from "./Components/topBar/topBarPresenter";
-import RightSideBar from "./Components/rightSideBar/rightSideBarPresenter";
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
+
 import PinnedList from "./Components/PinnedList/PinnedList";
 import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import decode from "./decode_token";
@@ -173,17 +173,13 @@ function App() {
             />
             <Route
               path="/Lab1/1"
-              element={[
-                <Lab1a1 />,
-                <Sidebar />,
-                <TopBar />,
-                <PinnedList />,
-                <RightSideBar />,
-                <Progress />,
-              ]}
+              element={
+                <Lab1a1 />
+              }
             />
             <Route path="/Lab1/2" element={<Lab1a2 />} />
             <Route path="/Lab1/3" element={<Lab1a3 />} />
+            <Route path="/Lab1/7" element={<Lab1a7 />} />
             <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
           </Routes>
         </main>
