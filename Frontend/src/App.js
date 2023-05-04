@@ -48,6 +48,7 @@ function App() {
             console.error(error);
         }
     }
+
   const checkAuthenticated = async () => {
     try {
       const res = await fetch(
@@ -70,8 +71,6 @@ function App() {
     }
   };
 
-
-
   useEffect(  () => {
       checkAuthenticated();
       if (isAuthenticated) {
@@ -81,6 +80,7 @@ function App() {
 
 
       }
+  
   });
   // Default state of authentication is false
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);

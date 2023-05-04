@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 function TopBar() {
   const name = useLevelStore((state) => state.name);
-  const avatar = useLevelStore((state) => state.avatar);
+  const avatar = useLevelStore((state) => state.profilePic);
   /*const [isDropdownOpen, setIsDropdownOpen] = useState(false); */
 /*
   const handleAvatarClick = () => {
