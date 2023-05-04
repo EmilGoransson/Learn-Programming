@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { quiz } from "./Data/MethodQuiz";
 import "./quiz.css";
 
 /*
@@ -13,6 +12,7 @@ quizet för att sprintdemon  import { quiz } from "./Data/sprintdemo";
 Quizet är hårdkodat för 4 frågor just nu, det som är hårdkodat är displaysystemet för individuella frågor.
 */
 const Quiz = (props) => {
+  const { quizData } = props;
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [showResult, setShowResult] = useState(false);
@@ -25,9 +25,9 @@ const Quiz = (props) => {
     resultCounter: 0,
   });
 
-  const quizid = props.quizid; // Måste fixa så att importen beror på ett id som importeras
+  //const quizid = props.quizid; // Måste fixa så att importen beror på ett id som importeras
 
-  const { questions } = quiz;
+  const { questions } = quizData;
   const { question, choices, correctAnswer } = questions[activeQuestion];
 
   const onClickNext = () => {
