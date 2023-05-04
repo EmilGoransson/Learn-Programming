@@ -8,7 +8,10 @@ function Lab1a1() {
   const levelLab1 = useLevelStore((state) => state.levelsLab1);
   const pinnedTheory = useLevelStore((state) => state.pinnedTheory);
   const addPinned = useLevelStore((state) => state.addPinned);
+  const removePinned = useLevelStore((state) => state.removePinned);
+  const getPinned = useLevelStore((state) => state.pinnedTheory);
   //update this variable if using this as template!!
+  const contentName = "Printing";
   const thisLevel = 1;
 
   const [status, setStatus] = React.useState([true, "next-button-gray"]);
@@ -23,6 +26,13 @@ class Progman
         
     }
 }`;
+  function addToPinned() {
+    if (!getPinned.includes(contentName)) {
+      addPinned(contentName);
+    } else {
+      removePinned(contentName);
+    }
+  }
   function IsDisabled() {
     if (thisLevel >= currentLevel) {
       setStatus([true, "next-button-gray"]);
