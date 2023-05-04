@@ -20,7 +20,6 @@ function Aboutus() {
         <Progress/>
         <Sidebar/>
     </div>
-    )}
     <div className="Aboutus">
       <main>
         <h1>About us</h1>
