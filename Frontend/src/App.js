@@ -78,8 +78,6 @@ function App() {
           setData();
           const id = decode(localStorage.token).user.id;
           setID(Number(id));
-
-
       }
   
   });

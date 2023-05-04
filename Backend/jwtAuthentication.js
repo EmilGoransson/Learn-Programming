@@ -76,8 +76,6 @@ router.post("/login", async (req, res) => {
         lastName +
         "\nid: " +
         id + 
-        "\nProfile pic URL: " + 
-        profilePicture+
         " logged in successfully\n"
     );
   } catch (err) {
@@ -85,6 +83,7 @@ router.post("/login", async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
+
 
 router.get("/getInfo", authorization, async(req,res) =>{
   const id = req.headers.id;
@@ -96,8 +95,7 @@ try{
   const email = info.rows[0].email 
   const profilePicture = info.rows[0].profile_picture
   console.log("Sending information about user: " + id);
-  const sendObject =  {firstName, lastName, currentLevel, email, profilePicture}
-  console.log("\n " + sendObject)
+
   res.status(200).json( {firstName, lastName, currentLevel, email, profilePicture} )
 }
 catch(error){
@@ -108,11 +106,30 @@ catch(error){
 
 router.get("/levelUp", authorization, async(req, res) =>{
   const id = req.headers.id;
-  const current_lab = req.headers.current_lab
-  console.log("User " + id +" is about to level up");
+  console.log("User " + id +" is about to level up\n");
   try{
     const level= await pool.query("UPDATE student SET current_level = current_level + 1 WHERE s_id = $1", [id]);
-    res.status(200).send(token ,`Level up! You are now level ${level.rows[0].current_level}`);
+
+    // GENERATE NEW TOKEN FOR LEVEL
+    const info = await pool.query("SELECT first_name, last_name, email, current_level, profile_picture FROM student WHERE s_id = $1", [id])
+
+    console.log("User info from /levelUp ");
+    console.log(info.rows[0])
+    console.log("\n")
+    const firstName = info.rows[0].first_name;
+    const lastName = info.rows[0].last_name;
+    const currentLevel = info.rows[0].current_level;
+    const email = info.rows[0].email 
+    const profilePicture = info.rows[0].profile_picture
+    console.log("\n" + firstName + " " + lastName + " is now level " + currentLevel);
+    token = jwtGenerator(id, firstName, lastName, currentLevel, email, profilePicture);
+    if(req.headers.token === token){
+      console.log("Failed to generate new token\n")
+    }
+    else{
+      console.log("Successfully generated new token\n")
+    }
+    res.status(200).send(token);
   }catch(error){
     res.status(500);
     console.log(error)
@@ -122,7 +139,6 @@ router.get("/levelUp", authorization, async(req, res) =>{
 router.get("/remove", authorization, async (req, res) => {
   try{
     const  id  = req.headers.id;
-    console.log(req.headers.id);
     console.log("Preparing to remove account: " + id);
     // if ID is not null and not undefined -> Remove account
     if(id != null && id != undefined){
@@ -145,6 +161,25 @@ router.get("/remove", authorization, async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
+
+
+router.get("/editProfilePicture", authorization, async(req, res) =>{
+  const id = req.headers.id;
+  const new_pic = req.headers.new_pic;
+  try{
+    const query = await pool.query("UPDATE student SET profile_picture = $1 WHERE s_id = $2", [new_pic, id])
+  
+    res.status(200).send("You have a new cool profile picture")
+    console.log("Updated profile picture for user " + id + " with new picture: " + new_pic)
+  }catch(error){
+    res.status(500);
+    console.log(error)
+  }
+
+
+})
+
+
 
 router.post("/edit", authorization, async (req, res) => {
   try{
