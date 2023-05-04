@@ -1,7 +1,7 @@
 import CodeRunner from "../../../../Components/CodeRunner/Presenter/codeRunnerPresenter";
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Assignment2View.css";
+import "../AssignmentView.css";
 import Button from "react-bootstrap/Button";
 import { ReactComponent as LogoBookmark } from "../../bookmark.svg";
 

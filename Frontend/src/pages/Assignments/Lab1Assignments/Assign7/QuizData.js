@@ -1,7 +1,7 @@
 // Question Types
 // 1. MCQs | Multiple Choice | single
 
-export const quiz = {
+export const quizData = {
     topic: "Javas",
     level: "Beginner",
     totalQuestions: 4,

@@ -1,7 +1,7 @@
 import CodeRunner from "../../../../Components/CodeRunner/Presenter/codeRunnerPresenter";
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Assignment1View.css";
+import "../AssignmentView.css";
 
 function Lab1a1View(props) {
   return (
