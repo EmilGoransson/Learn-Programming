@@ -7,6 +7,7 @@ const useLevelStore = create((set) => ({
   levelsLab3: 14,
 
   name: "John Doe",
+  profilePic: "https://i.imgur.com/PjqWEth.png",
   setName: (name) => {
     set(() => ({
       name: name,
@@ -15,9 +16,11 @@ const useLevelStore = create((set) => ({
   setLevel: (cLevel) => {
     set(() => ({ currentLevel: cLevel }));
   },
+  setProfilePic: (profileP) => {
+    set(() => ({ profilePic: profileP }));
+  },
   setID: (id) => set(() => ({ id: id })),
   totalLevels: 42,
-  avatar: "https://i.imgur.com/PjqWEth.png",
   email: "johndoe@kth.se",
   pinnedTheory: ["Arrays", "Methods", "Variables", "For-loop", "If-loop"],
 
