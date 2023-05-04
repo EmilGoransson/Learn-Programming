@@ -27,6 +27,7 @@ const Scrollingbar = () => {
   return (
     <div className="sidebar no-scroll-bar">
       <ul>
+        <br></br>
         <div className="bg-custom-color text-textGray">
           Lab 1{renderLevels(lab1Levels)}
         </div>

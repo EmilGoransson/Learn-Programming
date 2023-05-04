@@ -14,6 +14,7 @@ import Lab1a2 from "./pages/Assignments/Lab1Assignments/Assign2/Assignment2Prese
 import Lab1a3 from "./pages/Assignments/Lab1Assignments/Assign3/Assignment3Presenter";
 import Lab1a4 from "./pages/Assignments/Lab1Assignments/Assign4/Assignment4Presenter";
 import Lab1a5 from "./pages/Assignments/Lab1Assignments/Assign5/Assignment5Presenter";
+import Lab1a6 from "./pages/Assignments/Lab1Assignments/Assign6/Assignment6Presenter";
 import Lab1a7 from "./pages/Assignments/Lab1Assignments/Assign7/Assignment7Presenter";
 import Login from "./Components/LoginPage/Login";
 import CreateAccount from "./Components/SignupPage/SignupPage";
@@ -32,6 +33,7 @@ function App() {
     const setName = useLevelStore((state) => state.setName);
     const setID = useLevelStore((state) => state.setID);
     const setProfilePicture = useLevelStore((state) => state.setProfilePic);
+    const setPinned = useLevelStore((state) => state.setPinned);
     async function setData() {
         try {
             const res = await fetch("http://130.229.172.67:3003/authentication/getInfo", {
@@ -46,6 +48,8 @@ function App() {
             setLevel(Number(resJson.currentLevel));
             setName(String((resJson.firstName + " " + resJson.lastName)));
             setID((Number(resJson.id)));
+            setPinned(resJson.pinnedItems);
+
             setProfilePicture(resJson.profilePicture);
 
             console.log(resJson);
@@ -186,6 +190,7 @@ function App() {
             <Route path="/Lab1/3" element={<Lab1a3 />} />
             <Route path="/Lab1/4" element={<Lab1a4 />} />
             <Route path="/Lab1/5" element={<Lab1a5 />} />
+            <Route path="/Lab1/6" element={<Lab1a6 />} />
             <Route path="/Lab1/7" element={<Lab1a7 />} />
             <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
           </Routes>

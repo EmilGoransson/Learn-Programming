@@ -56,7 +56,7 @@ router.post("/login", async (req, res) => {
     }
 
     const cLevel = await pool.query(
-      "SELECT s_id, current_level, first_name, last_name, email, profile_picture from student where email = $1",
+      "SELECT s_id, current_level, first_name, last_name, email, profile_picture, pinned_items from student where email = $1",
       [email]
     );
     console.log(cLevel.rows[0])
@@ -66,9 +66,10 @@ router.post("/login", async (req, res) => {
     id = cLevel.rows[0].s_id;
     email = cLevel.rows[0].email
     profilePicture = cLevel.rows[0].profile_picture
+    pinnedItems = cLevel.rows[0].pinned_items
     const token = jwtGenerator(Number(id), firstName, lastName, currentLevel, email, profilePicture);
 
-    res.json({ token, currentLevel, firstName, lastName, id });
+    res.json({ token, currentLevel, firstName, lastName, id, pinnedItems });
     console.log(
       "User: " +
         firstName +
@@ -88,15 +89,21 @@ router.post("/login", async (req, res) => {
 router.get("/getInfo", authorization, async(req,res) =>{
   const id = req.headers.id;
 try{
-  const info = await pool.query("SELECT first_name, last_name, email, current_level, profile_picture FROM student WHERE s_id = $1", [id]);
+  const info = await pool.query("SELECT first_name, last_name, email, current_level, profile_picture, pinned_items FROM student WHERE s_id = $1", [id]);
   const firstName = info.rows[0].first_name;
   const lastName = info.rows[0].last_name;
   const currentLevel = info.rows[0].current_level;
-  const email = info.rows[0].email 
-  const profilePicture = info.rows[0].profile_picture
-  console.log("Sending information about user: " + id);
-
-  res.status(200).json( {firstName, lastName, currentLevel, email, profilePicture} )
+  const email = info.rows[0].email;
+  const profilePicture = info.rows[0].profile_picture;
+  var pinnedItems = info.rows[0].pinned_items
+  console.log("Sending information about user: " + id + "\n");
+  if(pinnedItems != null && pinnedItems != undefined){
+    res.status(200).json( {firstName, lastName, currentLevel, email, profilePicture, pinnedItems} )
+  }
+  else{
+    pinnedItems = [];
+    res.status(200).json( {firstName, lastName, currentLevel, email, profilePicture, pinnedItems} )
+  }
 }
 catch(error){
   res.status(500).send("Server Error")
@@ -149,10 +156,10 @@ router.get("/remove", authorization, async (req, res) => {
     // Else no account with given ID
     else{
       if(id === null){
-        console.log("Cannot remove account - ID is null")
+        console.log("\nCannot remove account - ID is null")
       }
       else{
-        console.log("Cannot remove account - ID is undefined")
+        console.log("Cannot remove account - ID is undefined\n")
       }
       res.status(400).send("No account with that ID");
     }
@@ -170,7 +177,6 @@ router.get("/editProfilePicture", authorization, async(req, res) =>{
     const query = await pool.query("UPDATE student SET profile_picture = $1 WHERE s_id = $2", [new_pic, id])
   
     res.status(200).send("You have a new cool profile picture")
-    console.log("Updated profile picture for user " + id + " with new picture: " + new_pic)
   }catch(error){
     res.status(500);
     console.log(error)
@@ -186,6 +192,12 @@ router.post("/edit", authorization, async (req, res) => {
     const id = Number(req.headers.id);
     let { firstName, lastName, email, password } = req.body;
 
+    const existing_user = await pool.query("SELECT email from student where email = $1", [email])
+    if(existing_user.rows.length > 0){
+      console.log("\nUser " + id + " attempted to change their email to an already existing one")
+      console.log("Change of credentials refused\n")
+      return res.status(403).send("An account with that email already exists");
+    }
     const salt = await bcrypt.genSalt(10);
     const encryptedPassword = await bcrypt.hash(password, salt);
     console.log("\nPreparing credential update for user: " + id + "\n")
@@ -200,7 +212,7 @@ router.post("/edit", authorization, async (req, res) => {
       console.log("\nUpdated user: " + id + "\n"+ old.rows[0].first_name +  " --> " + firstName +"\n" + old.rows[0].last_name + " --> " + lastName + "\n" + old.rows[0].email +  " --> " + email + "\n")
       
       const token = jwtGenerator(id, firstName, lastName, old.rows[0].current_level);
-      console.log("Updated user new token: " + token);
+      console.log("\nUpdated user new token: " + token + " \n");
       res.json({ token })
     }catch(error){
       console.error(error);
@@ -208,6 +220,39 @@ router.post("/edit", authorization, async (req, res) => {
     }
 
 });
+
+router.post("/pinnedItems", authorization, async (req,res) =>{
+    const id = req.headers.id
+    let newPinned = req.body.newPinned;
+  try{
+    
+    const pinnedItems = await pool.query("UPDATE student SET pinned_items = array_append(pinned_items, $1) WHERE s_id = $2", [newPinned, id])
+    console.log("\n User " + id + " has pinned " + newPinned);
+    res.status(200).send("Pinned items");
+  }
+  catch(error){
+    console.log(error)
+    res.status(500)
+  }
+})
+
+router.post("/removePinnedItems", authorization, async(req, res) =>{
+
+  const id = req.headers.id;
+  let removePin = req.body.removePinned;
+  try{
+    const removeItem = await pool.query("UPDATE student SET pinned_items = array_remove(pinned_items, $1) WHERE s_id = $2", [removePin, id])
+    console.log("\n User " + id + " has removed pinned item " + removePin);
+    res.status(200).send("Unpinned item")
+  }
+  catch(error){
+    console.log(error)
+    res.status(500);
+  }
+ 
+})
+
+
 //verify token
 router.get("/verify", authorization, async (req, res) => {
   try {

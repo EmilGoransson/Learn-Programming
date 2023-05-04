@@ -16,7 +16,7 @@ function Lab1a4() {
   const addPinned = useLevelStore((state) => state.addPinned);
   const getPinned = useLevelStore((state) => state.pinnedTheory);
   //update this variable if using this as template!!
-  const contentName = "Strings";
+  const contentName = "Scanner";
   const thisLevel = 4;
   const [isFilled, setIsFilled] = React.useState(
     <LogoBookmarkFilled className="bookmark-icon" />

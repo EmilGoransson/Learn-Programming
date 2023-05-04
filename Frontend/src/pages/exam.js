@@ -7,7 +7,7 @@ import './exam.css';
 
 function Exam (){
   return (
-    <div> 
+    <div>
     <div>
         <TopBar/>
         <RightSideBar />

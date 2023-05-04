@@ -12,7 +12,7 @@ function Lab1a2View(props) {
         {props.svg}
       </a>
       <h1 className="text-3xl font-bold mb-4">
-        Introduction to Variables in Java
+        Variables
       </h1>
       <p className="mb-4">
         In Java, a variable is a named container that stores a value. Variables
@@ -65,11 +65,8 @@ function Lab1a2View(props) {
         <p>1. Declare two variables which when added should equal 6</p>
         <p>2. Print the result to the console.</p>
         <CodeRunner
-          testCases={3}
-          testCase2={6}
+          testCases={6}
           preMadeText={props.preMadeText}
-          input1={1}
-          input2={2}
           shouldIncrement={true}
           thisLevel={props.thisLevel}
         />
