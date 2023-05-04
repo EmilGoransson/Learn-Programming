@@ -227,7 +227,7 @@ router.post("/pinnedItems", authorization, async (req,res) =>{
   try{
     
     const pinnedItems = await pool.query("UPDATE student SET pinned_items = array_append(pinned_items, $1) WHERE s_id = $2", [newPinned, id])
-    console.log("\n User " + id + " has pinned " + newPinned);
+    console.log("\nUser " + id + " has pinned " + newPinned);
     res.status(200).send("Pinned items");
   }
   catch(error){
@@ -242,7 +242,7 @@ router.post("/removePinnedItems", authorization, async(req, res) =>{
   let removePin = req.body.removePinned;
   try{
     const removeItem = await pool.query("UPDATE student SET pinned_items = array_remove(pinned_items, $1) WHERE s_id = $2", [removePin, id])
-    console.log("\n User " + id + " has removed pinned item " + removePin);
+    console.log("\nUser " + id + " has removed pinned item " + removePin);
     res.status(200).send("Unpinned item")
   }
   catch(error){
