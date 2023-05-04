@@ -22,12 +22,13 @@ function Exam (){
           preparing in good time before the exam and you'll see that you'll ace the exam! </p>
         <h1>1. Practice on Old Exams</h1>
         <p> Most of the exams in Programming 1 follow a similar structure. By practicing old exams and understanding them
-          you'll have a good chance of doing well on your exam.
+          you'll have a good chance of doing well on your exam. You can find the old exams and their solutions on you canvas page.
+          Try to give the exam a serious try before checking the solutions!
         </p>
           <h1>2. Practice Writing Code on Paper</h1>
           <p>The exam is pen and paper hence no compilator or IDE will help you autofill your code. 
              So do yourself a favor and practice writing code on a paper. When doing this remember to still 
-             indent as you would do on a computer so it makes it easier to read.
+             indent as you would do in a real coding environment so it's easier to read.
           </p>
           <h1>3. Write Comments</h1>
           <p> It can be of great help to comment your code even on the exam. Try to include comments 
