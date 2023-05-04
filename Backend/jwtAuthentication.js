@@ -27,9 +27,12 @@ router.post("/Signup", async (req, res) => {
       "INSERT INTO student(first_name, last_name, email, password) VALUES($1,$2,$3,$4)",
       [firstName, lastName, email, encryptedPassword]
     );
+
+    const added_user = await pool.query("SELECT * FROM student WHERE email = $1", [email])
     console.log("User Created: " + firstName + " " + lastName);
+    console.log(added_user.rows[0]);
     //5. generate JWT token
-    const token = jwtGenerator(new_user.rows[0]);
+    const token = jwtGenerator(added_user.rows[0].s_id, added_user.rows[0].first_name, added_user.rows[0].last_name, added_user.rows[0].current_level, added_user.rows[0].email, added_user.rows[0].profilePicture);
     res.json({ token });
   } catch (err) {
     console.error(err.message);
@@ -53,17 +56,17 @@ router.post("/login", async (req, res) => {
     }
 
     const cLevel = await pool.query(
-      "SELECT s_id, current_level, first_name, last_name, email from student where email = $1",
+      "SELECT s_id, current_level, first_name, last_name, email, profile_picture from student where email = $1",
       [email]
     );
+    console.log(cLevel.rows[0])
     currentLevel = cLevel.rows[0].current_level;
     firstName = cLevel.rows[0].first_name;
     lastName = cLevel.rows[0].last_name;
     id = cLevel.rows[0].s_id;
     email = cLevel.rows[0].email
-      console.log("User email: " + email)
-    const token = jwtGenerator(Number(id), firstName, lastName, currentLevel, email);
-
+    profilePicture = cLevel.rows[0].profile_picture
+    const token = jwtGenerator(Number(id), firstName, lastName, currentLevel, email, profilePicture);
 
     res.json({ token, currentLevel, firstName, lastName, id });
     console.log(
@@ -72,7 +75,9 @@ router.post("/login", async (req, res) => {
         " " +
         lastName +
         "\nid: " +
-        id +
+        id + 
+        "\nProfile pic URL: " + 
+        profilePicture+
         " logged in successfully\n"
     );
   } catch (err) {
@@ -81,16 +86,36 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.get("/getInfo", authorization, async(req,res) =>{
+  const id = req.headers.id;
+try{
+  const info = await pool.query("SELECT first_name, last_name, email, current_level, profile_picture FROM student WHERE s_id = $1", [id]);
+  const firstName = info.rows[0].first_name;
+  const lastName = info.rows[0].last_name;
+  const currentLevel = info.rows[0].current_level;
+  const email = info.rows[0].email 
+  const profilePicture = info.rows[0].profile_picture
+  console.log("Sending information about user: " + id);
+  const sendObject =  {firstName, lastName, currentLevel, email, profilePicture}
+  console.log("\n " + sendObject)
+  res.status(200).json( {firstName, lastName, currentLevel, email, profilePicture} )
+}
+catch(error){
+  res.status(500).send("Server Error")
+  console.log(error)
+}
+})
+
 router.get("/levelUp", authorization, async(req, res) =>{
   const id = req.headers.id;
   const current_lab = req.headers.current_lab
+  console.log("User " + id +" is about to level up");
   try{
-    await pool.query("UPDATE student SET $1 = $1 + 1, current_level = current_level + 1 WHERE s_id = $2", [current_lab, id]);
-    res.status(200);
-
+    const level= await pool.query("UPDATE student SET current_level = current_level + 1 WHERE s_id = $1", [id]);
+    res.status(200).send(token ,`Level up! You are now level ${level.rows[0].current_level}`);
   }catch(error){
     res.status(500);
-    console.log("Server Error")
+    console.log(error)
   }
 })
 

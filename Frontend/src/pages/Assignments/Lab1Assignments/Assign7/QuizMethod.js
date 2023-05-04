@@ -1,14 +1,14 @@
 // Question Types
 // 1. MCQs | Multiple Choice | single
 
-export const quiz = {
+export const quizData = {
     topic: "Javas",
     level: "Beginner",
     totalQuestions: 4,
     perQuestionScore: 5,
     questions: [
       {
-        question: "What is a method in Java??",
+        question: "What is a method in Java?",
         choices: ["A reserved word in the language", "A collection of statements that performs a specific task", "A way to represent a piece of data", "A way to declare a variable"],
         type: "MCQs",
         correctAnswer: "A collection of statements that performs a specific task",

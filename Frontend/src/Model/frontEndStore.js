@@ -8,7 +8,7 @@ const useLevelStore = create((set) => ({
   levelsLab3: 14,
 
   name: "John Doe",
-  profilePic: "https://i.imgur.com/PjqWEth.png",
+  avatar: "https://i.imgur.com/PjqWEth.png",
   setName: (name) => {
     set(() => ({
       name: name,
@@ -18,6 +18,7 @@ const useLevelStore = create((set) => ({
     set(() => ({currentLevel: cLevel}));
   },
   setProfilePic: (profileP) => {
+
     //set(() => ({ profilePic: profileP }));
     set((state) => {
       console.log("Profile pic in frontendStore: "+ profileP)
@@ -32,6 +33,7 @@ const useLevelStore = create((set) => ({
       return {profilePic: profileP};
 
     });
+
   },
   setID: (id) => set(() => ({ id: id })),
   totalLevels: 42,

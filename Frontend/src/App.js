@@ -24,6 +24,31 @@ import decode from "./decode_token";
 import useLevelStore from "./Model/frontEndStore";
 
 function App() {
+
+    const setLevel = useLevelStore((state) => state.setLevel);
+    const setName = useLevelStore((state) => state.setName);
+    const setID = useLevelStore((state) => state.setID);
+    async function setData() {
+        try {
+            const res = await fetch("http://130.229.172.67:3003/authentication/getInfo", {
+                method: "GET",
+                headers: {
+                    id: decode(localStorage.token).user.id,
+                    token: localStorage.token,
+                },
+            });
+            const resJson = await res.json();
+            console.log(resJson.currentLevel);
+            setLevel(Number(resJson.currentLevel));
+            setName(String((resJson.firstName + " " + resJson.lastName)));
+            setID((Number(resJson.id)));
+
+            console.log(resJson);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
   const checkAuthenticated = async () => {
     try {
       const res = await fetch(
@@ -46,39 +71,16 @@ function App() {
     }
   };
 
-  const setLevel = useLevelStore((state) => state.setLevel);
-  const setName = useLevelStore((state) => state.setName);
-  const setID = useLevelStore((state) => state.setID);
-  const setProfilePic = useLevelStore((state) => state.setProfilePic);
-  useEffect(() => {
-    checkAuthenticated();
-    if (isAuthenticated) {
-      const first = decode(localStorage.token).user.firstName;
-      const last = decode(localStorage.token).user.lastName;
-      const id = decode(localStorage.token).user.id;
-      const level = decode(localStorage.token).user.currentLevel;
-      const profilePic = decode(localStorage.token).user.profilePicture;
+  useEffect(  () => {
+      checkAuthenticated();
+      if (isAuthenticated) {
+          setData();
+          const id = decode(localStorage.token).user.id;
+          setID(Number(id));
 
-      //sets correct level, name and ID in model for current user decoded token
-      const name = String(first) + " " + String(last);
-      setLevel(Number(level));
-      setName(String(name));
-      setID(Number(id));
-      setProfilePic(String(profilePic))
 
-      console.log(
-        "All info from token:\n First Name: " +
-          first +
-          "\n Last Name: " +
-          last +
-          "\n ID: " +
-          id +
-          "\n Current Level: " +
-          level + 
-          "\n profile pic: " + 
-          decode(localStorage.token)
-      );
-    }
+      }
+  
   });
   // Default state of authentication is false
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
