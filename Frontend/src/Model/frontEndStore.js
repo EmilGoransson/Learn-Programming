@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import decode from "../decode_token";
 
 const useLevelStore = create((set) => ({
   currentLevel: 1,
@@ -14,7 +15,7 @@ const useLevelStore = create((set) => ({
     }));
   },
   setLevel: (cLevel) => {
-    set(() => ({ currentLevel: cLevel }));
+    set(() => ({currentLevel: cLevel}));
   },
   setProfilePic: (profileP) => {
     set(() => ({ profilePic: profileP }));
@@ -26,7 +27,20 @@ const useLevelStore = create((set) => ({
 
   addPinned: (newPinned) => {
     set((state) => {
-      return { pinnedTheory: [...state.pinnedTheory, newPinned] };
+      return {pinnedTheory: [...state.pinnedTheory, newPinned]};
+    });
+  },
+  incrementLevel: () => {
+    set((state) => {
+      const res = fetch("http://130.229.172.67:3003/authentication/levelUp", {
+        method: "GET",
+        headers: {
+          id: decode(localStorage.token).user.id,
+          token: localStorage.token,
+        }
+      });
+      return {currentLevel: state.currentLevel + 1};
+
     });
   },
   removePinned: (removePinned) => {
@@ -34,14 +48,11 @@ const useLevelStore = create((set) => ({
     set((state) => {
       return {
         pinnedTheory: state.pinnedTheory.filter(
-          (item) => item !== removePinned
+            (item) => item !== removePinned
         ),
       };
     });
   },
-
-  incrementLevel: () =>
-    set((state) => ({ currentLevel: state.currentLevel + 1 })),
 }));
 
 export default useLevelStore;
