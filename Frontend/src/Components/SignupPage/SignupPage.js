@@ -1,7 +1,12 @@
 import React, { Fragment, useState } from "react";
 import { toast } from "react-toastify"
 import "./SignupPage.css";
+import decode from "../../decode_token";
+import useLevelStore from "../../Model/frontEndStore";
 const SignupPage = ({setAuth}) => {
+  const setLevel = useLevelStore((state) => state.setLevel);
+  const setName = useLevelStore((state) => state.setName);
+  const setID = useLevelStore((state) => state.setID);
   const [inputs, setInputs] = useState({
     email: "",
     firstName: "",
@@ -31,7 +36,25 @@ const SignupPage = ({setAuth}) => {
       if(parseRespone.token){
         localStorage.setItem("token", parseRespone.token);
         setAuth(true);
+        try {
+          const res = await fetch("http://130.229.172.67:3003/authentication/getInfo", {
+            method: "GET",
+            headers: {
+              id: decode(parseRespone.token).user.id,
+              token: parseRespone.token,
+            },
+          });
+          const resJson = await res.json();
+          setLevel(Number(resJson.currentLevel));
+          setName(String((resJson.firstName + " " + resJson.lastName)));
+          setID((Number(resJson.id)));
+
+          console.log(resJson);
+        } catch (error) {
+          console.error(error);
+        }
         toast.success("Register Sucessfully")
+
       }
       else{
         toast.error(parseRespone);

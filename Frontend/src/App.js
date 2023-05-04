@@ -22,8 +22,13 @@ import PinnedList from "./Components/PinnedList/PinnedList";
 import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import decode from "./decode_token";
 import useLevelStore from "./Model/frontEndStore";
+import Spinner from "react-bootstrap/Spinner";
 
 function App() {
+
+    const setLevel = useLevelStore((state) => state.setLevel);
+    const setName = useLevelStore((state) => state.setName);
+    const setID = useLevelStore((state) => state.setID);
     async function setData() {
         try {
             const res = await fetch("http://130.229.172.67:3003/authentication/getInfo", {
@@ -67,32 +72,15 @@ function App() {
   };
 
 
-  const setLevel = useLevelStore((state) => state.setLevel);
-  const setName = useLevelStore((state) => state.setName);
-  const setID = useLevelStore((state) => state.setID);
+
   useEffect(  () => {
       checkAuthenticated();
       if (isAuthenticated) {
           setData();
-          const first = decode(localStorage.token).user.firstName;
-          const last = decode(localStorage.token).user.lastName;
           const id = decode(localStorage.token).user.id;
-          const level = decode(localStorage.token).user.currentLevel;      //sets correct level, name and ID in model for current user decoded token
-          const name = String(first) + " " + String(last);
-          setLevel(Number(level));
-          setName(String(name));
           setID(Number(id));
 
-          console.log(
-              "All info from token:\n First Name: " +
-              first +
-              "\n Last Name: " +
-              last +
-              "\n ID: " +
-              id +
-              "\n Current Level: " +
-              level
-          );
+
       }
   });
   // Default state of authentication is false
@@ -101,6 +89,7 @@ function App() {
   const setAuth = (boolean) => {
     setIsAuthenticated(boolean);
   };
+
 
   return (
     <BrowserRouter>

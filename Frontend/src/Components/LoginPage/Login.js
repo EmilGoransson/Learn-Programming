@@ -3,8 +3,12 @@ import { Link, Redirect } from "react-router-dom";
 import "./LoginPage.css";
 import { toast } from "react-toastify";
 import useLevelStore from "../../Model/frontEndStore";
+import decode from "../../decode_token";
 
 const Login = ({ setAuth }) => {
+  const setLevel = useLevelStore((state) => state.setLevel);
+  const setName = useLevelStore((state) => state.setName);
+  const setID = useLevelStore((state) => state.setID);
   const getLevel = useLevelStore(state => state.getLevel);
   const [inputs, setInputs] = useState({
     email: "",
@@ -30,9 +34,10 @@ const Login = ({ setAuth }) => {
           body: JSON.stringify(body),
         }
       );
-
+  //kolla token, sätt saker
       const parseRes = await response.json();
       if (parseRes.token) {
+
         localStorage.setItem("token", parseRes.token);
         localStorage.setItem("id", parseRes.id)
         localStorage.setItem("name", parseRes.userName)
