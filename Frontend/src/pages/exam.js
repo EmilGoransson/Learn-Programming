@@ -44,8 +44,10 @@ function Exam (){
           <h1>5. Sorting Algoritms</h1>
           <p> Question 5 on the exam always contains a sorting algoritm and a question about time complexity. Also, in order 
             to pass the exam one needs atleast 3 points on this question. The sorting algoritms are usually either
-            selection sort or insertion sort. So look up these algoritms and learn how they work and their time complexity.
-            It's good to do this some time before the exam since these can be a little tricky to understand at first.
+            selection sort or insertion sort. So look up these algoritms and learn how they work and how the sorting goes
+            step by step. Also make sure to look up and understand the timecomplexity for both of them, both in worst 
+            case and best case. It's good to do this some time before the exam since these can be a little tricky to 
+            understand at first.
           </p>
           <h1>6. Do this Course</h1>
           <p> This course is carefully designed to be aligned with the concepts that are included in Programming 1. If you do 
