@@ -34,7 +34,7 @@ function TopBarView(props) {
          onMouseLeave={() => setIsDropdownOpen(false)}
         />
         {isDropdownOpen && (
-          <div className="absolute  top-12 right-2 w-20 py-1 rounded shadow-xl z-10"
+          <div className="absolute  top-12 right-0 w-20 py-1 rounded shadow-xl z-10"
             onMouseEnter = {() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}>
             <button
