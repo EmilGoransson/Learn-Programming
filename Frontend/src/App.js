@@ -22,8 +22,6 @@ import PinnedList from "./Components/PinnedList/PinnedList";
 import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import decode from "./decode_token";
 import useLevelStore from "./Model/frontEndStore";
-import Spinner from "react-bootstrap/Spinner";
-import ProfilePicture from "./Components/ProfilePicture/profilePicture";
 
 function App() {
 
@@ -49,6 +47,7 @@ function App() {
         } catch (error) {
             console.error(error);
         }
+
     }
   const checkAuthenticated = async () => {
     try {
@@ -79,25 +78,9 @@ function App() {
       if (isAuthenticated) {
           setData();
           const id = decode(localStorage.token).user.id;
-          const level = decode(localStorage.token).user.currentLevel;      //sets correct level, name and ID in model for current user decoded token
-          const name = String(first) + " " + String(last);
-          const profilePic = decode(localStorage.token).user.profilePicture;
-          setLevel(Number(level));
-          setName(String(name));
           setID(Number(id));
 
-          console.log(
-              "All info from token:\n First Name: " +
-              first +
-              "\n Last Name: " +
-              last +
-              "\n ID: " +
-              id +
-              "\n Current Level: " +
-              level + 
-              "\n Profile Picture URL: "+ 
-              profilePic
-          );
+
       }
   });
   // Default state of authentication is false
@@ -106,7 +89,6 @@ function App() {
   const setAuth = (boolean) => {
     setIsAuthenticated(boolean);
   };
-
 
   return (
     <BrowserRouter>
