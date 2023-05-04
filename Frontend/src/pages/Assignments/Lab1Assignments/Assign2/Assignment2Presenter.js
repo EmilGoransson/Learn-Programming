@@ -38,11 +38,9 @@ function Lab1a2() {
   }
 
   const preMadeText = `
-  import java.util.Scanner;  // Import the Scanner class
 class Progman
 {  
     public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
         //declare two variables of the type int
         
         //print the sum of the two variables
