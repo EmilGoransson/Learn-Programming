@@ -56,7 +56,7 @@ router.post("/login", async (req, res) => {
     }
 
     const cLevel = await pool.query(
-      "SELECT s_id, current_level, first_name, last_name, email, profile_picture from student where email = $1",
+      "SELECT s_id, current_level, first_name, last_name, email, profile_picture, pinned_items from student where email = $1",
       [email]
     );
     console.log(cLevel.rows[0])
@@ -66,9 +66,10 @@ router.post("/login", async (req, res) => {
     id = cLevel.rows[0].s_id;
     email = cLevel.rows[0].email
     profilePicture = cLevel.rows[0].profile_picture
+    pinnedItems = cLevel.rows[0].pinned_items
     const token = jwtGenerator(Number(id), firstName, lastName, currentLevel, email, profilePicture);
 
-    res.json({ token, currentLevel, firstName, lastName, id });
+    res.json({ token, currentLevel, firstName, lastName, id, pinnedItems });
     console.log(
       "User: " +
         firstName +
@@ -170,7 +171,6 @@ router.get("/editProfilePicture", authorization, async(req, res) =>{
     const query = await pool.query("UPDATE student SET profile_picture = $1 WHERE s_id = $2", [new_pic, id])
   
     res.status(200).send("You have a new cool profile picture")
-    console.log("\nUpdated profile picture for user " + id + " with new picture: " + new_pic + " \n")
   }catch(error){
     res.status(500);
     console.log(error)
@@ -187,7 +187,6 @@ router.post("/edit", authorization, async (req, res) => {
     let { firstName, lastName, email, password } = req.body;
 
     const existing_user = await pool.query("SELECT email from student where email = $1", [email])
-    console.log("\nUser " + id + " is trying to change email to " + existing_user.rows[0].email)
     if(existing_user.rows.length > 0){
       console.log("\nUser " + id + " attempted to change their email to an already existing one")
       console.log("Change of credentials refused\n")
@@ -215,6 +214,39 @@ router.post("/edit", authorization, async (req, res) => {
     }
 
 });
+
+router.post("/pinnedItems", authorization, async (req,res) =>{
+    const id = req.headers.id
+    let newPinned = req.body.newPinned;
+  try{
+    
+    const pinnedItems = await pool.query("UPDATE student SET pinned_items = array_append(pinned_items, $1) WHERE s_id = $2", [newPinned, id])
+    console.log("\n User " + id + " has pinned " + newPinned);
+    res.status(200).send("Pinned items");
+  }
+  catch(error){
+    console.log(error)
+    res.status(500)
+  }
+})
+
+router.post("/removePinnedItems", authorization, async(req, res) =>{
+
+  const id = req.headers.id;
+  let removePin = req.body.removePinned;
+  try{
+    const removeItem = await pool.query("UPDATE student SET pinned_items = array_remove(pinned_items, $1) WHERE s_id = $2", [removePin, id])
+    console.log("\n User " + id + " has removed pinned item " + removePin);
+    res.status(200).send("Unpinned item")
+  }
+  catch(error){
+    console.log(error)
+    res.status(500);
+  }
+ 
+})
+
+
 //verify token
 router.get("/verify", authorization, async (req, res) => {
   try {
