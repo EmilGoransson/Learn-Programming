@@ -47,7 +47,6 @@ function App() {
         } catch (error) {
             console.error(error);
         }
-
     }
   const checkAuthenticated = async () => {
     try {
