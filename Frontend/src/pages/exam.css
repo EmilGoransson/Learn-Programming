@@ -19,8 +19,9 @@
   
   .examHeader{
     font-size: 60px;
-    text-align: center;
-    color: white;
+    margin-left: 10%;
+    color: #cecece;
+    margin-bottom: 3%;
   }
 
   .exam h1 {
@@ -35,5 +36,7 @@
     margin-right: 10%;
     color: #cecece;
     margin-left: 10%;
+    margin-top: 1%;
+    margin-bottom: 5%;
   }
  
