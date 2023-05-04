@@ -2,12 +2,12 @@
 
 
 .quiz-container {
-  max-width: 500px;
-  min-width: 250px;
-  background: #ededed;
+  width: 100%;
+  background: #1b2432;
   border-radius: 4px;
   margin-top: 10px;
   padding: 30px 60px;
+  color: #ceceec;
 }
 
 .quiz-container .active-question-no {
@@ -19,37 +19,35 @@
 .quiz-container .total-question {
   font-size: 16px;
   font-weight: 500;
-  color: black;
+  color: #cecece;
 }
 
 .quiz-container h2 {
   font-size: 20px;
   font-weight: 500;
   margin: 0;
-  color:black;
+  color: #cecece;
 }
 
 .quiz-container ul {
-  margin-top: 20px;
-  margin-left: -40px;
+  margin-top: 10%;
+  align-content: center;
 }
 
 .quiz-container ul li {
   text-decoration: none;
   list-style: none;
-  color: black;
+  color: #cecece;
   font-size: 16px;
-  background: #ffffff;
-  border: 1px solid #eaeaea;
-  border-radius: 16px;
+  background: #14161B;
+  border-radius: 0.5em;
   padding: 11px;
   margin-top: 15px;
   cursor: pointer;
 }
 
 .quiz-container ul .selected-answer {
-  background: rgb(205, 206, 228);
-  border: 1px solid rgb(205, 206, 228);
+  background: #d63384;
 }
 
 .quiz-container button {
@@ -65,12 +63,12 @@
   outline: none;
   border: none;
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: 10%;
 }
 
 .quiz-container button:disabled {
-  background: #e7e8e9;
-  color: #9fa3a9;
+  background: #14161B;
+  color: #cecece;
   cursor: not-allowed;
 }
 
@@ -80,7 +78,7 @@
 }
 
 .result h1 {
-  color: rgb(55, 57, 81);
+  color: #cecece;
   font-weight: bold;
 }
 
@@ -92,7 +90,7 @@
 
 .result-totalScoreText {
   font-size: 25px;
-  color: black;
+  color: #cecece;
 }
 
 .result-scoreNbr {
@@ -108,7 +106,7 @@
 .result p {
   font-size: 16px;
   font-weight: 500;
-  color: black;
+  color: #cecece;
 }
 
 .result p span {
@@ -118,5 +116,5 @@
 }
 
 span.failed-text {
-  color: red !important;
+  color: #d63384 !important;
 }

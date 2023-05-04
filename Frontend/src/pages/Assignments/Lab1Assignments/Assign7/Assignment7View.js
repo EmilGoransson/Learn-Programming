@@ -3,7 +3,7 @@ import Quiz from "../../../../Components/Quiz/quiz";
 import React from "react";
 import { Link } from "react-router-dom";
 import "../AssignmentView.css";
-import { quizData } from "./QuizData";
+import { quizData } from "./QuizMethod";
 
 function Lab1a7View(props) {
   return (
