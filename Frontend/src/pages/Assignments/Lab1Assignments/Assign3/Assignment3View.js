@@ -2,6 +2,10 @@ import CodeRunner from "../../../../Components/CodeRunner/Presenter/codeRunnerPr
 import React from "react";
 import { Link } from "react-router-dom";
 import "../AssignmentView.css";
+import { quizData } from "./QuizString";
+import Quiz from "../../../../Components/Quiz/quiz";
+
+
 
 
 function Lab1a3View(props) {
@@ -72,6 +76,8 @@ boolean result = str1.equals(str2);
       It's important to note that strings in Java are immutable, which means that once a string is created, 
       it cannot be changed. However, you can create a new string that contains the desired changes.
       </p>
+      <h2 className="text-2xl font-bold mb-4">A Quiz</h2>
+      <Quiz quizData={quizData}/>
       <h2 className="text-2xl font-bold mb-4">An exercise</h2>
       <p>
         In this exercise we will concatenate two Strings{" "}
@@ -102,45 +108,3 @@ boolean result = str1.equals(str2);
   );
 }
 export default Lab1a3View;
-
-/* The quiz 
-
-What is a string in Java?
-A) A sequence of numbers
-B) A sequence of characters
-C) A data type that stores Boolean values
-D) A type of loop
-Answer: B
-
-Which operator is used for string concatenation in Java?
-A) *
-B) %
-C) +
-D) -
-Answer: C
-
-What is the length of the string "Java Programming"?
-A) 13
-B) 14
-C) 15
-D) 16
-Answer: D
-kuggis: med 15,16,17,18
-
-What is the output of the following code?
-vbnet
-Copy code
-String str1 = "Java";
-String str2 = "Java";
-String str3 = new String("Java");
-System.out.println(str1 == str2);
-System.out.println(str1.equals(str3));
-A) true false
-B) true true
-C) false false
-D) false true
-
-Answer: B
-
-Explanation: The first println() statement will output true because str1 and str2 refer to the same string literal, so they are equal. The second println() statement will output true because the equals() method compares the contents of the strings, not their references, and str1 and str3 have the same contents.
-*/
