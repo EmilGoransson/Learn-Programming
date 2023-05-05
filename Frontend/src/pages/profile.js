@@ -59,6 +59,7 @@ const Profile = (props) => {
       console.log(
         "Trying to remove account " + Number(decode(localStorage.token).user.id)
       );
+      //130.229.172.67
       const user_id = decode(localStorage.token).user.id;
       const res = await fetch(
         "http://130.229.172.67:3003/authentication/remove",
