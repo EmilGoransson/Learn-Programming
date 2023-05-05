@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { toast } from "react-toastify"
 import "./SignupPage.css";
 import decode from "../../decode_token";
-import useLevelStore from "../../Model/frontEndStore";
+import useLevelStore, {IP} from "../../Model/frontEndStore";
 const SignupPage = ({setAuth}) => {
   const setLevel = useLevelStore((state) => state.setLevel);
   const setName = useLevelStore((state) => state.setName);
@@ -26,7 +26,7 @@ const SignupPage = ({setAuth}) => {
     try {
       const body = { email, firstName, lastName, password };
         const response = await fetch(
-        "http://130.229.152.143:3003/authentication/Signup",
+        IP + "/authentication/Signup",
         {
           method: "POST",
           headers: { "Content-type": "application/json" },
@@ -39,7 +39,7 @@ const SignupPage = ({setAuth}) => {
         localStorage.setItem("token", parseRespone.token);
         setAuth(true);
         try {
-          const res = await fetch("http://130.229.152.143:3003/authentication/getInfo", {
+          const res = await fetch(IP + "/authentication/getInfo", {
             method: "GET",
             headers: {
               id: decode(parseRespone.token).user.id,

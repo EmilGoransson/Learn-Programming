@@ -7,6 +7,7 @@ import PinnedList from "../Components/PinnedList/PinnedList";
 import Progress from "../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import Sidebar from "../Components/Sidebar/Sidebar";
 import decode from "../decode_token";
+import {IP} from "../Model/frontEndStore";
 
 const Profile = (props) => {
   const litstar = "https://i.imgur.com/PO5mEkq.png";
@@ -29,7 +30,7 @@ const Profile = (props) => {
         decode(localStorage.token).user.lastName
     );
     var id = decode(localStorage.token).user.id;
-    const res = await fetch("http://130.229.152.143:3003/authentication/edit", {
+    const res = await fetch(IP + "/authentication/edit", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -62,7 +63,7 @@ const Profile = (props) => {
       //130.229.172.67
       const user_id = decode(localStorage.token).user.id;
       const res = await fetch(
-        "http://130.229.152.143:3003/authentication/remove",
+        IP + "/authentication/remove",
         {
           method: "GET",
           headers: {

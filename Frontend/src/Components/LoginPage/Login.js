@@ -2,8 +2,9 @@ import React, { Fragment, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import "./LoginPage.css";
 import { toast } from "react-toastify";
-import useLevelStore from "../../Model/frontEndStore";
+import useLevelStore, {IP} from "../../Model/frontEndStore";
 import decode from "../../decode_token";
+
 
 const Login = ({ setAuth }) => {
   const setLevel = useLevelStore((state) => state.setLevel);
@@ -25,7 +26,7 @@ const Login = ({ setAuth }) => {
     try {
       const body = { email, password };
       const response = await fetch(
-        "http://130.229.152.143:3003/authentication/login",
+        IP + "/authentication/login",
         {
           method: "POST",
           headers: {

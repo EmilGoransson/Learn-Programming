@@ -25,7 +25,7 @@ import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 import PinnedList from "./Components/PinnedList/PinnedList";
 import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import decode from "./decode_token";
-import useLevelStore from "./Model/frontEndStore";
+import useLevelStore, {IP} from "./Model/frontEndStore";
 
 function App() {
 
@@ -36,7 +36,7 @@ function App() {
     const setPinned = useLevelStore((state) => state.setPinned);
     async function setData() {
         try {
-            const res = await fetch("http://130.229.152.143:3003/authentication/getInfo", {
+            const res = await fetch(IP + "/authentication/getInfo", {
                 method: "GET",
                 headers: {
                     id: decode(localStorage.token).user.id,
@@ -61,7 +61,7 @@ function App() {
   const checkAuthenticated = async () => {
     try {
       const res = await fetch(
-        "http://130.229.152.143:3003/authentication/verify",
+        IP + "/authentication/verify",
         {
           metod: "POST",
           headers: { token: localStorage.token }, // Tries to find local token
