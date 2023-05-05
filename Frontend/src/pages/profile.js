@@ -29,7 +29,7 @@ const Profile = (props) => {
         decode(localStorage.token).user.lastName
     );
     var id = decode(localStorage.token).user.id;
-    const res = await fetch("http://130.229.172.67:3003/authentication/edit", {
+    const res = await fetch("http://130.229.152.143:3003/authentication/edit", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -62,7 +62,7 @@ const Profile = (props) => {
       //130.229.172.67
       const user_id = decode(localStorage.token).user.id;
       const res = await fetch(
-        "http://130.229.172.67:3003/authentication/remove",
+        "http://130.229.152.143:3003/authentication/remove",
         {
           method: "GET",
           headers: {

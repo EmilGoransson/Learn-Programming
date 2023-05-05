@@ -27,7 +27,7 @@ const useLevelStore = create((set) => ({
 
   setProfilePic: (profileP) => {
     set((state) => {
-      const res = fetch("http://130.229.172.67:3003/authentication/editProfilePicture", {
+      const res = fetch("http://130.229.152.143:3003/authentication/editProfilePicture", {
         method: "GET",
         headers: {
           id: decode(localStorage.token).user.id,
@@ -43,7 +43,7 @@ const useLevelStore = create((set) => ({
   setID: (id) => set(() => ({ id: id })),
   addPinned: (newPinned) => {
     set((state) => {
-      const res = fetch("http://130.229.172.67:3003/authentication/pinnedItems", {
+      const res = fetch("http://130.229.152.143:3003/authentication/pinnedItems", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -63,7 +63,7 @@ const useLevelStore = create((set) => ({
   },
   incrementLevel: () => {
     set((state) => {
-      const res = fetch("http://130.229.172.67:3003/authentication/levelUp", {
+      const res = fetch("http://130.229.152.143:3003/authentication/levelUp", {
         method: "GET",
         headers: {
           id: decode(localStorage.token).user.id,
@@ -77,7 +77,7 @@ const useLevelStore = create((set) => ({
   removePinned: (removePinned) => {
     console.log("removePinned", removePinned);
     set((state) => {
-      const res = fetch("http://130.229.172.67:3003/authentication/removePinnedItems", {
+      const res = fetch("http://130.229.152.143:3003/authentication/removePinnedItems", {
         method: "POST",
         headers: {
           "Content-type": "application/json",

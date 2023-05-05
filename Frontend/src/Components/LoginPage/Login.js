@@ -25,7 +25,7 @@ const Login = ({ setAuth }) => {
     try {
       const body = { email, password };
       const response = await fetch(
-        "http://130.229.172.67:3003/authentication/login",
+        "http://130.229.152.143:3003/authentication/login",
         {
           method: "POST",
           headers: {

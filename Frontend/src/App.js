@@ -36,7 +36,7 @@ function App() {
     const setPinned = useLevelStore((state) => state.setPinned);
     async function setData() {
         try {
-            const res = await fetch("http://130.229.172.67:3003/authentication/getInfo", {
+            const res = await fetch("http://130.229.152.143:3003/authentication/getInfo", {
                 method: "GET",
                 headers: {
                     id: decode(localStorage.token).user.id,
@@ -61,7 +61,7 @@ function App() {
   const checkAuthenticated = async () => {
     try {
       const res = await fetch(
-        "http://130.229.172.67:3003/authentication/verify",
+        "http://130.229.152.143:3003/authentication/verify",
         {
           metod: "POST",
           headers: { token: localStorage.token }, // Tries to find local token
