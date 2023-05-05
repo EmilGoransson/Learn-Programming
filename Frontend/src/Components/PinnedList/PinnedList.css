@@ -1,6 +1,6 @@
 .Pinned-container{
     background-color: #1B2432;
-    justify-content: center;
+    text-align: center;
     right: 2vw;
     bottom:10vw;
     top: calc(2/3 * 100%);
