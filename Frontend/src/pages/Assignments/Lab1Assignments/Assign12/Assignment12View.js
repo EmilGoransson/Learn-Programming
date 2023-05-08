@@ -11,7 +11,7 @@ function Lab1a12View(props) {
                 {props.svg}
             </a>
             <h1 className="text-3xl font-bold mb-4">
-                If Statment
+                If Statement
             </h1>
             <p className="mb-4">
             In Java, the <code>if</code> statement is a conditional statement that allows you to execute a block of code only if a certain 
