@@ -183,7 +183,7 @@ const ButtonContainer = (props) => {
 
                             const buttonId = "button-${index + 8}";
                             return (
-                                <Link to={`/L${linkTitle}/${index + 8}`}>
+                                <Link to={`/${linkTitle}/${index + 8}`}>
                                     <button className={color} key={buttonId}>
                                         <div>{line1}</div>
                                     </button>
