@@ -26,8 +26,8 @@ function Lab1a7View(props) {
                 <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <code className="text-sm font-mono">
             {`public static int addNumbers(int a, int b) {
-        return a + b;
-        }`}
+return a + b;
+}`}
           </code>
         </pre>
                 <p className="mb-4">
@@ -45,6 +45,11 @@ function Lab1a7View(props) {
             {`int result = addNumbers(3, 5);`}
           </code>
         </pre>
+        <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
+          <code className="text-sm font-mono">
+          {`int result = addNumbers(3, 5);`}
+          </code>
+        </pre>
                 <p className="mb-4">
                     This will call the <code>addNumbers</code> method with the parameters
                     3 and 5, and store the result (8) in the variable named{" "}
@@ -56,11 +61,12 @@ function Lab1a7View(props) {
                     break our code into smaller, reusable pieces. By using methods, we can
                     write code that is easier to read, maintain, and debug.
                 </p>
-                <pre className="bg-gray-100 rounded-md p-4 mb-4">
+        <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <code className="text-sm font-mono">
-            System.out.println(myNumber);
+          {`System.out.println(myNumber);`}
           </code>
         </pre>
+        
                 <h2 className="text-2xl font-bold mb-4">A Quiz</h2>
                 <Quiz quizData={quizData}/>
                 <h2 className="text-2xl font-bold mb-4">An exercise</h2>
@@ -88,7 +94,7 @@ function Lab1a7View(props) {
                     </Link>
                     <Link to={`/Lab1/8`}>
                         <button className={props.disabled[1]} disabled={props.disabled[0]}
-                                onClick={() => window.scrollTo(0, 0)}>>
+                                onClick={() => window.scrollTo(0, 0)}>
                             Next
                         </button>
                     </Link>
