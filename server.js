@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const port = 3003;
+const port = process.env.PORT || 3003; // use either the host env var port (PORT) provided by Heroku or the local port (5000) on your machine
 
 //middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static('build')); // serve static files (css & js) from the 'public' directory
 
 //routes
 app.use("/authentication", require("./jwtAuthentication"));

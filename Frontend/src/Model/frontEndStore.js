@@ -2,7 +2,7 @@ import { create } from "zustand";
 import decode from "../decode_token";
 
 //SELECT IP FOR SERVER HERE
-export const IP="http://130.229.136.197:3003"
+export const IP="";
 
 const useLevelStore = create((set) => ({
   currentLevel: 1,
