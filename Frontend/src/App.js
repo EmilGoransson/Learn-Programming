@@ -16,6 +16,7 @@ import Lab1a4 from "./pages/Assignments/Lab1Assignments/Assign4/Assignment4Prese
 import Lab1a5 from "./pages/Assignments/Lab1Assignments/Assign5/Assignment5Presenter";
 import Lab1a6 from "./pages/Assignments/Lab1Assignments/Assign6/Assignment6Presenter";
 import Lab1a7 from "./pages/Assignments/Lab1Assignments/Assign7/Assignment7Presenter";
+import Lab1a8 from "./pages/Assignments/Lab1Assignments/Assign8/Assignment8Presenter";
 import Login from "./Components/LoginPage/Login";
 import CreateAccount from "./Components/SignupPage/SignupPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
@@ -192,6 +193,7 @@ function App() {
             <Route path="/Lab1/5" element={<Lab1a5 />} />
             <Route path="/Lab1/6" element={<Lab1a6 />} />
             <Route path="/Lab1/7" element={<Lab1a7 />} />
+            <Route path="/Lab1/8" element={<Lab1a8 />} />
             <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
           </Routes>
         </main>

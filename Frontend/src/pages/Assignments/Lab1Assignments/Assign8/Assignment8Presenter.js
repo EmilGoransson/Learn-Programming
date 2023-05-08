@@ -18,20 +18,16 @@ function Lab1a8() {
   const [status, setStatus] = React.useState([true, "next-button-gray"]);
 
   const preMadeText = `
+import java.util.Scanner;
+
 class Progman
 {  
     public static void main(String[] args) {
-        //declare two variables of the type String
+        Scanner scanner = new Scanner(System.in); 
+        //Your code here
         
-        
-        // Call the Words method
-
-
-        //print the sum of the two variables
         
     }
-
-    //Declare your method here
 }`;
   function IsDisabled() {
     if (thisLevel >= currentLevel) {

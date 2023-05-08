@@ -123,10 +123,10 @@ function Lab1a6View(props) {
                 />
             </p>
             <div>
-                <Link to={`/Lab1/3`}>
+                <Link to={`/Lab1/5`}>
                     <button className="next-button text-black">Prev</button>
                 </Link>
-                <Link to={`/Lab1/5`}>
+                <Link to={`/Lab1/7`}>
                     <button className={props.disabled[1]} disabled={props.disabled[0]}
                             onClick={() => window.scrollTo(0, 0)}>
                         Next
