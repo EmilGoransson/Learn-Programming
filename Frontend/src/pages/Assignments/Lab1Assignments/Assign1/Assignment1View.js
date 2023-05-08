@@ -61,8 +61,7 @@ World
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>
                 In this first exercise we will simply print "Hello World" to the console
-                using <code>System.out.print()</code> or{" "}
-                <code>System.out.println()</code>{" "}
+                using <code>System.out.print()</code> method.
             </p>
             Remember:
             <p>
@@ -73,7 +72,7 @@ World
                 </p>
                 <p>
                     3. Always use the semicolon <code>;</code> at the end of each
-                    statement in Java
+                    statement in Java.
                 </p>
                 <CodeRunner
                     testCases={"Hello World"}
