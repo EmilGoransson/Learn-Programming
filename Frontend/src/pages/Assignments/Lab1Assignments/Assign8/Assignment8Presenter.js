@@ -1,5 +1,5 @@
 import React from "react";
-import Lab1a7View from "./Assignment7View";
+import Lab1a8View from "./Assignment8View";
 import useLevelStore from "../../../../Model/frontEndStore";
 import { useEffect } from "react";
 import RightSideBar from "../../../../Components/rightSideBar/rightSideBarPresenter";
@@ -8,26 +8,27 @@ import Sidebar from "../../../../Components/Sidebar/Sidebar";
 import PinnedList from "../../../../Components/PinnedList/PinnedList";
 import TopBar from "../../../../Components/topBar/topBarPresenter";
 
-function Lab1a7() {
+function Lab1a8() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
+  const levelLab3 = useLevelStore((state) => state.levelsLab8);
 
   //update this variable if using this as template!!
-  const thisLevel = 7;
+  const thisLevel = 8;
 
   const [status, setStatus] = React.useState([true, "next-button-gray"]);
 
-  const preMadeText = `import java.util.Scanner;  // Import the Scanner class
-  class Progman
-  {  
-      public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);  
-        
-        //printing the result from the fun method
-        System.out.print(fun(scanner.nextInt()));
-      }
+  const preMadeText = `
+import java.util.Scanner;
 
-      //Write the fun metohd here
-  }`;
+class Progman
+{  
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); 
+        //Your code here
+        
+        
+    }
+}`;
   function IsDisabled() {
     if (thisLevel >= currentLevel) {
       setStatus([true, "next-button-gray"]);
@@ -47,12 +48,12 @@ function Lab1a7() {
       <PinnedList/>
       <TopBar></TopBar>
 
-      <Lab1a7View
+      <Lab1a8View
         preMadeText={preMadeText}
         disabled={status}
         thisLevel={thisLevel}
-      ></Lab1a7View>
+      ></Lab1a8View>
     </div>
   );
 }
-export default Lab1a7;
+export default Lab1a8;

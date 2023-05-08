@@ -26,8 +26,8 @@ function Lab1a7View(props) {
                 <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <code className="text-sm font-mono">
             {`public static int addNumbers(int a, int b) {
-        return a + b;
-        }`}
+return a + b;
+}`}
           </code>
         </pre>
                 <p className="mb-4">
@@ -40,9 +40,9 @@ function Lab1a7View(props) {
                     it. For example, we can call the <code>addNumbers</code> method we
                     declared above like this:
                 </p>
-                <pre className="bg-gray-100 rounded-md p-4 mb-4">
+        <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <code className="text-sm font-mono">
-            {`int result = addNumbers(3, 5);`}
+          {`int result = addNumbers(3, 5);`}
           </code>
         </pre>
                 <p className="mb-4">
@@ -56,28 +56,27 @@ function Lab1a7View(props) {
                     break our code into smaller, reusable pieces. By using methods, we can
                     write code that is easier to read, maintain, and debug.
                 </p>
-                <pre className="bg-gray-100 rounded-md p-4 mb-4">
+        <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <code className="text-sm font-mono">
-            System.out.println(myNumber);
+          {`System.out.println(myNumber);`}
           </code>
         </pre>
+        
                 <h2 className="text-2xl font-bold mb-4">A Quiz</h2>
                 <Quiz quizData={quizData}/>
                 <h2 className="text-2xl font-bold mb-4">An exercise</h2>
-                <p>
-                    In this exercise you will create a Method called "Words" that takes 2
-                    Strings as parameters and returns a Sting containing both of the input
-                    strings.{" "}
+                <p>In this exercise you will:</p>
+                <p> 
+                    1. Create a Method called "fun" that takes an <code>int</code> as 
+                    parameter and returns a the the squared value.{" "}
                 </p>
-                To pass the exercise you need to:
                 <p>
-                    <br></br>
-                    <p>1. Declare two Strings, "Hello" and "World" in the main method.</p>
-                    <p>2. Print the result of the method call to Words to the console.</p>
                     <CodeRunner
-                        testCases={"HelloWorld"}
+                        testCases={100}
+                        testCase2={25}
                         preMadeText={props.preMadeText}
-                        input={"Hello"}
+                        input1={10}
+                        input2={5}
                         shouldIncrement={true}
                         thisLevel={props.thisLevel}
                     />
@@ -88,7 +87,7 @@ function Lab1a7View(props) {
                     </Link>
                     <Link to={`/Lab1/8`}>
                         <button className={props.disabled[1]} disabled={props.disabled[0]}
-                                onClick={() => window.scrollTo(0, 0)}>>
+                                onClick={() => window.scrollTo(0, 0)}>
                             Next
                         </button>
                     </Link>

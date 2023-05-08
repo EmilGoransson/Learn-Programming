@@ -72,7 +72,7 @@ function Lab1a4View(props) {
                     testCases={1}
                     testCase2={2}
                     preMadeText={props.preMadeText}
-                    input1={1}
+                    input1={4}
                     input2={2}
                     shouldIncrement={true}
                     thisLevel={props.thisLevel}
@@ -84,7 +84,7 @@ function Lab1a4View(props) {
                 </Link>
                 <Link to={`/Lab1/5`}>
                     <button className={props.disabled[1]} disabled={props.disabled[0]}
-                            onClick={() => window.scrollTo(0, 0)}>>
+                            onClick={() => window.scrollTo(0, 0)}>
                         Next
                     </button>
                 </Link>
