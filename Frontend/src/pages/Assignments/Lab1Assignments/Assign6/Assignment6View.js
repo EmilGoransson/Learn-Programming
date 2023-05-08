@@ -83,8 +83,8 @@ function Lab1a6View(props) {
       </pre>
             <h2 className="text-2xl font-bold mb-4">Access modifiers</h2>
             <p>
-                Classes and their properties and methods can have access modifiers, such as <code>public</code>,
-                <code>private</code>, and <code>protected</code>, that determine
+                Classes and their properties and methods can have access modifiers, such 
+                as <code>public</code>, <code>private</code>, and <code>protected</code>, that determine
                 their visibility to other classes. Public members can be accessed by any class, private members can only
                 be accessed by the
                 same class, and protected members can be accessed by subclasses and classes in the same package.
@@ -100,27 +100,25 @@ function Lab1a6View(props) {
             </p>
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>
-            Your task is to create a Java class called Progman that represents a progman object, and to implement the 
-            following method: <code>getAge()</code> that returns the age of the progman as an integer.
-            The Progman class should have a private instance variable for the age and a constructor that takes 
-            this as parameter.
+            Your task is to create a Java class called Progman give it a main method (copy from below). After this compile 
+            the code, you will pass if the Class is correctly implenented. 
             </p>
             <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <code className="text-sm font-mono">
             {`public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);  
-    //print the input given from scanner
+    System.out.print(scanner.next());
           
 }`}
           </code>
       </pre>
             <p>
                 <CodeRunner
-                    testCases={33}
-                    testCase2={56}
+                    testCases={"Free"}
+                    testCase2={"Pass"}
                     preMadeText={props.preMadeText}
-                    input1={33}
-                    input2={56}
+                    input1={"Free"}
+                    input2={"Pass"}
                     shouldIncrement={true}
                     thisLevel={props.thisLevel}
                 />
