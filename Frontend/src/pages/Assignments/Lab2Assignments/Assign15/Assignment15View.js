@@ -83,13 +83,15 @@ If any IO exception occurs, it is caught in the catch block, and the stack trace
             </p>
             <h2 className="text-2xl font-bold mb-4">A Quiz</h2>
             <Quiz quizData={quizData}/>
-
+            
+        
             <h2 className="text-2xl font-bold mb-4">Summary</h2>
             <p className="mb-4">
             BufferedReader is a class in Java that provides buffering functionality for reading character-based input streams. By wrapping around existing Reader objects, it improves reading performance by reducing the number of I/O interactions with the underlying stream. It is particularly useful for handling large volumes of text data and offers methods for reading characters, lines of text, and skipping characters.
             </p>
             
-
+            
+         
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>Write a Java program that prompts the user for their name and age, and then displays a personalized greeting along with the entered age.</p>
             <p>Instruction: </p>
