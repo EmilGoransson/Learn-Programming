@@ -83,8 +83,8 @@ function Lab1a6View(props) {
       </pre>
             <h2 className="text-2xl font-bold mb-4">Access modifiers</h2>
             <p>
-                Classes and their properties and methods can have access modifiers, such as <code>public</code>,
-                <code>private</code>, and <code>protected</code>, that determine
+                Classes and their properties and methods can have access modifiers, such 
+                as <code>public</code>, <code>private</code>, and <code>protected</code>, that determine
                 their visibility to other classes. Public members can be accessed by any class, private members can only
                 be accessed by the
                 same class, and protected members can be accessed by subclasses and classes in the same package.
@@ -100,24 +100,25 @@ function Lab1a6View(props) {
             </p>
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>
-                Create a class called Progman and give it a main method(copy from below).
+            Your task is to create a Java class called Progman give it a main method (copy from below). After this compile 
+            the code, you will pass if the Class is correctly implenented. 
             </p>
             <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <code className="text-sm font-mono">
             {`public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);  
-    //print the input given from scanner
+    System.out.print(scanner.next());
           
 }`}
           </code>
       </pre>
             <p>
                 <CodeRunner
-                    testCases={1}
-                    testCase2={2}
+                    testCases={"Free"}
+                    testCase2={"Pass"}
                     preMadeText={props.preMadeText}
-                    input1={1}
-                    input2={2}
+                    input1={"Free"}
+                    input2={"Pass"}
                     shouldIncrement={true}
                     thisLevel={props.thisLevel}
                 />
