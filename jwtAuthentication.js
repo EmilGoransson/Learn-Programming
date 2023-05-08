@@ -98,7 +98,7 @@ router.post("/login", async (req, res) => {
 router.get("/getInfo", authorization, async(req,res) =>{
   const id = req.headers.id;
 try{
-  const info = await pool.query("SELECT first_name, last_name, email, current_level, profile_picture, pinned_items FROM student WHERE s_id = $1", [id]);
+  const info = await client.query("SELECT first_name, last_name, email, current_level, profile_picture, pinned_items FROM student WHERE s_id = $1", [id]);
   const firstName = info.rows[0].first_name;
   const lastName = info.rows[0].last_name;
   const currentLevel = info.rows[0].current_level;
@@ -124,10 +124,10 @@ router.get("/levelUp", authorization, async(req, res) =>{
   const id = req.headers.id;
   console.log("User " + id +" is about to level up\n");
   try{
-    const level= await pool.query("UPDATE student SET current_level = current_level + 1 WHERE s_id = $1", [id]);
+    const level= await client.query("UPDATE student SET current_level = current_level + 1 WHERE s_id = $1", [id]);
 
     // GENERATE NEW TOKEN FOR LEVEL
-    const info = await pool.query("SELECT first_name, last_name, email, current_level, profile_picture FROM student WHERE s_id = $1", [id])
+    const info = await client.query("SELECT first_name, last_name, email, current_level, profile_picture FROM student WHERE s_id = $1", [id])
 
     console.log("User info from /levelUp ");
     console.log(info.rows[0])
@@ -158,7 +158,7 @@ router.get("/remove", authorization, async (req, res) => {
     console.log("Preparing to remove account: " + id);
     // if ID is not null and not undefined -> Remove account
     if(id != null && id != undefined){
-      const remove = pool.query("DELETE FROM student WHERE s_id = $1", [id]);
+      const remove = client.query("DELETE FROM student WHERE s_id = $1", [id]);
       console.log("Account " + id + " was removed");
       res.status(200).send("Your accont was removed");
     }
@@ -183,7 +183,7 @@ router.get("/editProfilePicture", authorization, async(req, res) =>{
   const id = req.headers.id;
   const new_pic = req.headers.new_pic;
   try{
-    const query = await pool.query("UPDATE student SET profile_picture = $1 WHERE s_id = $2", [new_pic, id])
+    const query = await client.query("UPDATE student SET profile_picture = $1 WHERE s_id = $2", [new_pic, id])
   
     res.status(200).send("You have a new cool profile picture")
   }catch(error){
@@ -201,7 +201,7 @@ router.post("/edit", authorization, async (req, res) => {
     const id = Number(req.headers.id);
     let { firstName, lastName, email, password } = req.body;
 
-    const existing_user = await pool.query("SELECT email from student where email = $1", [email])
+    const existing_user = await client.query("SELECT email from student where email = $1", [email])
     if(existing_user.rows.length > 0){
       console.log("\nUser " + id + " attempted to change their email to an already existing one")
       console.log("Change of credentials refused\n")
@@ -210,11 +210,11 @@ router.post("/edit", authorization, async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const encryptedPassword = await bcrypt.hash(password, salt);
     console.log("\nPreparing credential update for user: " + id + "\n")
-    const old = await pool.query(
+    const old = await client.query(
       "SELECT first_name, last_name, email, current_level FROM student where s_id = $1", [id]
     );
     //Update DB with new account credientials 
-    await pool.query(
+    await client.query(
       "UPDATE student SET email = $1, password = $2, first_name = $3, last_name = $4 WHERE s_id = $5;",
       [email, encryptedPassword, firstName, lastName, id]
       );
@@ -235,7 +235,7 @@ router.post("/pinnedItems", authorization, async (req,res) =>{
     let newPinned = req.body.newPinned;
   try{
     
-    const pinnedItems = await pool.query("UPDATE student SET pinned_items = array_append(pinned_items, $1) WHERE s_id = $2", [newPinned, id])
+    const pinnedItems = await client.query("UPDATE student SET pinned_items = array_append(pinned_items, $1) WHERE s_id = $2", [newPinned, id])
     console.log("\nUser " + id + " has pinned " + newPinned);
     res.status(200).send("Pinned items");
   }
@@ -250,7 +250,7 @@ router.post("/removePinnedItems", authorization, async(req, res) =>{
   const id = req.headers.id;
   let removePin = req.body.removePinned;
   try{
-    const removeItem = await pool.query("UPDATE student SET pinned_items = array_remove(pinned_items, $1) WHERE s_id = $2", [removePin, id])
+    const removeItem = await client.query("UPDATE student SET pinned_items = array_remove(pinned_items, $1) WHERE s_id = $2", [removePin, id])
     console.log("\nUser " + id + " has removed pinned item " + removePin);
     res.status(200).send("Unpinned item")
   }
