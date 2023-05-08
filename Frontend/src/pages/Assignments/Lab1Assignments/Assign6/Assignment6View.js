@@ -100,7 +100,10 @@ function Lab1a6View(props) {
             </p>
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>
-                Create a class called Progman and give it a main method(copy from below).
+            Your task is to create a Java class called Progman that represents a progman object, and to implement the 
+            following method: <code>getAge()</code> that returns the age of the progman as an integer.
+            The Progman class should have a private instance variable for the age and a constructor that takes 
+            this as parameter.
             </p>
             <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <code className="text-sm font-mono">
@@ -113,11 +116,11 @@ function Lab1a6View(props) {
       </pre>
             <p>
                 <CodeRunner
-                    testCases={1}
-                    testCase2={2}
+                    testCases={33}
+                    testCase2={56}
                     preMadeText={props.preMadeText}
-                    input1={1}
-                    input2={2}
+                    input1={33}
+                    input2={56}
                     shouldIncrement={true}
                     thisLevel={props.thisLevel}
                 />

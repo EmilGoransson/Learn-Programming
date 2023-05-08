@@ -26,8 +26,8 @@ function Lab1a7View(props) {
                 <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <code className="text-sm font-mono">
             {`public static int addNumbers(int a, int b) {
-        return a + b;
-        }`}
+return a + b;
+}`}
           </code>
         </pre>
                 <p className="mb-4">
@@ -94,7 +94,7 @@ function Lab1a7View(props) {
                     </Link>
                     <Link to={`/Lab1/8`}>
                         <button className={props.disabled[1]} disabled={props.disabled[0]}
-                                onClick={() => window.scrollTo(0, 0)}>>
+                                onClick={() => window.scrollTo(0, 0)}>
                             Next
                         </button>
                     </Link>
