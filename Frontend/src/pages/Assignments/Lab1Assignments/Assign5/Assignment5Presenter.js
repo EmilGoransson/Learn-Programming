@@ -36,13 +36,21 @@ function Lab1a5() {
     }
   }
 
-  const preMadeText = `import java.util.Scanner;  // Import the Scanner class
+  const preMadeText = `import java.util.Scanner;
   class Progman
   {  
       public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);  
-        //print the input given from scanner
+        int num = scanner.nextInt();;
+        if (/*Your code here*/) {
           
+          /*Your code here*/
+
+        } else {
+
+          /*Your code here*/
+
+        }
       }
   }`;
   function addToPinned() {
