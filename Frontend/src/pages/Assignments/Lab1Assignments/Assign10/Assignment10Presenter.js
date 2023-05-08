@@ -26,6 +26,7 @@ class Progman
         Scanner scanner = new Scanner(System.in); 
         //Your code here
         
+        System.out.print(sum);
         
     }
 }`;
