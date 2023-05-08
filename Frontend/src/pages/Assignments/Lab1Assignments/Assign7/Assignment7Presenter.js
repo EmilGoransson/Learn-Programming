@@ -10,29 +10,24 @@ import TopBar from "../../../../Components/topBar/topBarPresenter";
 
 function Lab1a7() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
-  const levelLab3 = useLevelStore((state) => state.levelsLab7);
 
   //update this variable if using this as template!!
   const thisLevel = 7;
 
   const [status, setStatus] = React.useState([true, "next-button-gray"]);
 
-  const preMadeText = `
-class Progman
-{  
-    public static void main(String[] args) {
-        //declare two variables of the type String
+  const preMadeText = `import java.util.Scanner;  // Import the Scanner class
+  class Progman
+  {  
+      public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);  
         
-        
-        // Call the Words method
+        //printing the result from the fun method
+        System.out.print(fun(scanner.nextInt()));
+      }
 
-
-        //print the sum of the two variables
-        
-    }
-
-    //Declare your method here
-}`;
+      //Write the fun metohd here
+  }`;
   function IsDisabled() {
     if (thisLevel >= currentLevel) {
       setStatus([true, "next-button-gray"]);
