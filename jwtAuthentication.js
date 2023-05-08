@@ -4,6 +4,15 @@ const pool = require("./dbConfig");
 const bcrypt = require("bcrypt");
 const jwtGenerator = require("./jwtGenerator");
 const authorization = require("./middleware/authorization");
+const { Client } = require('pg');
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+client.connect();
 //register route
 router.post("/Signup", async (req, res) => {
   try {
@@ -11,7 +20,7 @@ router.post("/Signup", async (req, res) => {
     const { email, firstName, lastName, password } = req.body;
     //2. check if user exists
     //this is a temporary psql query that will be found in queries.js later on
-    const user = await pool.query("SELECT * FROM student WHERE email = $1", [
+    const user = await client.query("SELECT * FROM student WHERE email = $1", [
       email,
     ]);
     if (user.rows.length > 0) {
@@ -23,12 +32,12 @@ router.post("/Signup", async (req, res) => {
     const encryptedPassword = await bcrypt.hash(password, salt);
     //4. insert user into DB
     //This is a temporary psql query that will be in queries.js later on
-    let new_user = await pool.query(
+    let new_user = await client.query(
       "INSERT INTO student(first_name, last_name, email, password) VALUES($1,$2,$3,$4)",
       [firstName, lastName, email, encryptedPassword]
     );
 
-    const added_user = await pool.query("SELECT * FROM student WHERE email = $1", [email])
+    const added_user = await client.query("SELECT * FROM student WHERE email = $1", [email])
     console.log("User Created: " + firstName + " " + lastName);
     console.log(added_user.rows[0]);
     //5. generate JWT token
@@ -44,7 +53,7 @@ router.post("/Signup", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     let { email, password } = req.body;
-    const user = await pool.query("SELECT * FROM student WHERE email = $1", [
+    const user = await client.query("SELECT * FROM student WHERE email = $1", [
       email,
     ]);
     if (user.rows.length === 0) {
@@ -55,7 +64,7 @@ router.post("/login", async (req, res) => {
       return res.status(401).send("Incorrect Email or Password");
     }
 
-    const cLevel = await pool.query(
+    const cLevel = await client.query(
       "SELECT s_id, current_level, first_name, last_name, email, profile_picture, pinned_items from student where email = $1",
       [email]
     );
@@ -76,7 +85,7 @@ router.post("/login", async (req, res) => {
         " " +
         lastName +
         "\nid: " +
-        id + 
+        id +
         " logged in successfully\n"
     );
   } catch (err) {
