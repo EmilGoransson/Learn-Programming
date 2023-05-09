@@ -112,7 +112,7 @@ class Progman
       .then((response) => {
         setData(response.data);
         //Here the test cases are compared to the response from the API
-        if (response.data.Result == props.testCases) {
+        if ((response.data.Result == props.testCases) || (response.data.Result == props.testCases + "\n")) {
           setPassedTestOne("Passed");
           setStyle("text-ourGreen font-bold");
           count++;
@@ -133,7 +133,7 @@ class Progman
           const res2 = await axios.request(options2).then((response) => {
             setData2(response.data);
             //Here the test cases are compared to the response from the API
-            if (response.data.Result == props.testCase2) {
+            if ((response.data.Result == props.testCase2) || (response.data.Result == props.testCase2 + "\n")) {
               setPassedTest2("Passed");
               setStyle2("text-ourGreen font-bold");
               count++;
