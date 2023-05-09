@@ -129,7 +129,10 @@ The algorithm repeatedly finds the minimum element from the unsorted part and sw
                    
                     <CodeRunner
                     testCases={"5,7,25,30,45,100,"}
-                   
+                    testCase2={"4,5,7,25,30,100,"}
+                    input1={45}
+                    input2={4}
+
                    
                     preMadeText={props.preMadeText}
                     
