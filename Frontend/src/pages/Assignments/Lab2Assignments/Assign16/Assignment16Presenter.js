@@ -41,7 +41,28 @@ function Lab2a16() {
   {  
       public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);  
-        //print the input given from scanner
+        //declare a BufferedReader and intializw it by wrapping System in
+
+        // create a try block and inside it read the input using "readLine()"
+
+
+
+        // Claculate the square of the of the input och print inte "use 'print' only"
+
+
+        //close the try block and catch an IOException
+
+        //create a finally block
+
+        //Inside the finally blok create a new try
+
+        // close the reader and then the try block
+
+        catch (IOException e) {
+          System.err.print("An error occurred while closing the reader: " + e.getMessage());
+      }
+
+
           
       }
   }`;

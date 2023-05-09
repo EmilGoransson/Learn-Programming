@@ -100,31 +100,40 @@ When performing I/O operations, various errors can occur, such as file not found
             
          
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
-            <p>Write a Java program that prompts the user for their name and age, and then displays a personalized greeting along with the entered age.</p>
+            <p>Write a Java program that reads a number from the user and calculates its square. Handle any <code>IOException</code>I that may occur and display an appropriate error message if the input is invalid.</p>
             <p>Instruction: </p>
-               <p> 1.Import the necessary <code>classes</code> </p>
+               <p> 1.Declare a<code> BufferedReader </code>object and initialize it by wrapping <code>System.in </code>with an <code>InputStreamReader </code>.</p>
                     
-                    <p>2. Create a <code>BufferedReader</code> object that wraps <code>System.in</code> to read the input
+                    <p>2.Inside a <code>try</code> block, read the user input as a <code>String</code> using the <code>readLine()</code> method of the <code>BufferedReader</code> object.
                     </p>
-                    
-                    <p>3. Implement the logic to prompt the input using <code>BufferedReader</code> object, the <code>println</code> line should be in this format <code>System.out.println("Hello, " + [bufferreaderobject]+ "!");</code>.
-                    </p>
+                
                    
-                    <p>4. Close the <code>BufferedReader</code> object </p>
+                    <p>3.Parse the input <code>String</code> to an <code>int</code> using <code>Integer.parseInt()</code>, and store it in a variable.  </p>
                    
-                    <p>5. Run the program</p>
+                   
+                    <p>5.Calculate the square of the entered number by multiplying it with itself.</p>
                     
+                    <p>6.Display the result to the user by printing the message "The square of <code>number</code> is: <code>result</code>". Where <code>result</code> is the calculated square.</p>
+                    
+                    <p>7.If an <code>IOException</code> or <code>NumberFormatException</code> occurs during input reading or parsing, catch the exception and display the error message "Invalid input: Please enter a valid integer."</p>
+                    
+                    <p>8.Use a <code>finally</code> block to ensure that the <code>BufferedReader</code> is closed properly, even if an exception occurs. Inside the <code>finally</code> block, call the <code>close()</code> method on the <code>BufferedReader</code> object.</p>
+
+                    <p>9. Run the program</p>
                     <CodeRunner
-                    testCases={"Hello, Ayah!"}
-                    
+                    testCases={"The square of 4 is: 16"}
+                    testCase2={"The square of 10 is: 100"}
+                   
                     preMadeText={props.preMadeText}
-                    input1={"Ayah"}
+                    input1={4}
+                    input2={10}
+                    
                     
                     shouldIncrement={true}
                     thisLevel={props.thisLevel}
                 />
                 
-               
+             
   
             <div>
                 <Link to={`/Lab2/1`}>
