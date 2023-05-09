@@ -9,6 +9,11 @@ import Aboutus from "./pages/Aboutus/aboutus";
 import Exam from "./pages/exam";
 import Theory from "./pages/Theory/Arrays/theory";
 import Profile from "./pages/profile";
+import PinnedList from "./Components/PinnedList/PinnedList";
+import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
+import decode from "./decode_token";
+import useLevelStore, {IP} from "./Model/frontEndStore";
+
 import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assign1/Assignment1Presenter";
 import Lab1a2 from "./pages/Assignments/Lab1Assignments/Assign2/Assignment2Presenter";
 import Lab1a3 from "./pages/Assignments/Lab1Assignments/Assign3/Assignment3Presenter";
@@ -16,13 +21,19 @@ import Lab1a4 from "./pages/Assignments/Lab1Assignments/Assign4/Assignment4Prese
 import Lab1a5 from "./pages/Assignments/Lab1Assignments/Assign5/Assignment5Presenter";
 import Lab1a6 from "./pages/Assignments/Lab1Assignments/Assign6/Assignment6Presenter";
 import Lab1a7 from "./pages/Assignments/Lab1Assignments/Assign7/Assignment7Presenter";
+import Lab1a9 from "./pages/Assignments/Lab1Assignments/Assign9/Assignment9Presenter";
 import Lab1a8 from "./pages/Assignments/Lab1Assignments/Assign8/Assignment8Presenter";
 import Lab1a10 from "./pages/Assignments/Lab1Assignments/Assign10/Assignment10Presenter";
 import Lab1a11 from "./pages/Assignments/Lab1Assignments/Assign11/Assignment11Presenter";
 import Lab1a12 from "./pages/Assignments/Lab1Assignments/Assign12/Assignment12Presenter";
 import Lab1a13 from "./pages/Assignments/Lab1Assignments/Assign13/Assignment13Presenter";
-import Lab1a9 from "./pages/Assignments/Lab1Assignments/Assign9/Assignment9Presenter";
 import Lab1a14 from "./pages/Assignments/Lab1Assignments/Assign14/Assignment14Presenter";
+
+import Lab2a15 from "./pages/Assignments/Lab2Assignments/Assign15/Assignment15Presenter";
+import Lab2a16 from "./pages/Assignments/Lab2Assignments/Assign16/Assignment16Presenter";
+import Lab2a25 from "./pages/Assignments/Lab2Assignments/Assign25/Assignment25Presenter";
+import Lab2a24 from "./pages/Assignments/Lab2Assignments/Assign24/Assignment24Presenter";
+import Lab2a27 from "./pages/Assignments/Lab2Assignments/Assign27/Assignment27Presenter";
 
 import Lab3a3 from "./pages/Assignments/Lab3Assignments/Assign31/Assignment31Presenter";
 import Lab3a5 from "./pages/Assignments/Lab3Assignments/Assign33/Assignment33Presenter";
@@ -31,13 +42,8 @@ import Login from "./Components/LoginPage/Login";
 import CreateAccount from "./Components/SignupPage/SignupPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
-import Lab2a10 from "./pages/Assignments/Lab2Assignments/Assign24/Assignment24Presenter";
 
 
-import PinnedList from "./Components/PinnedList/PinnedList";
-import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
-import decode from "./decode_token";
-import useLevelStore, {IP} from "./Model/frontEndStore";
 
 function App() {
 
@@ -204,10 +210,6 @@ function App() {
             <Route path="/Lab1/5" element={<Lab1a5 />} />
             <Route path="/Lab1/6" element={<Lab1a6 />} />
             <Route path="/Lab1/7" element={<Lab1a7 />} />
-            
-            <Route path="/Lab2/1" element={<Lab2a15 />} />
-            <Route path="/Lab2/2" element={<Lab2a16 />} />
-            <Route path="/Lab2/11" element={<Lab2a25 />} />
 
             <Route path="/Lab1/8" element={<Lab1a8 />} />
             <Route path="/Lab1/9" element={<Lab1a9 />} />
@@ -217,8 +219,12 @@ function App() {
             <Route path="/Lab1/13" element={<Lab1a13 />} />
             <Route path="/Lab1/14" element={<Lab1a14 />} />
            
-            <Route path="/Lab2/10" element={<Lab2a10 />} />
-            <Route path="/Lab2/13" element={<Lab2a13 />} />       
+            
+            <Route path="/Lab2/1" element={<Lab2a15 />} />
+            <Route path="/Lab2/2" element={<Lab2a16 />} />
+            <Route path="/Lab2/11" element={<Lab2a25 />} />
+            <Route path="/Lab2/10" element={<Lab2a24 />} />
+            <Route path="/Lab2/13" element={<Lab2a27 />} />       
 
             <Route path="/Lab3/6" element={<Lab3a6 />} />
 
