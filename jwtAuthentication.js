@@ -7,6 +7,7 @@ const jwtGenerator = require("./jwtGenerator");
 const authorization = require("./middleware/authorization");
 const { Client } = require('pg');
 const {join} = require("path");
+const path = require("path");
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
   ssl: {
@@ -277,5 +278,13 @@ router.get("/verify", authorization, async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
+
+if(process.env.NODE_ENV === "production") {
+  app.use(express.static("/build"));
+  app.get("/*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./build/index.html"));
+  });
+}
+
 
 module.exports = router;

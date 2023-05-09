@@ -17,13 +17,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('build')); // serve static files (css & js) from the 'public' directory
 
-if(process.env.NODE_ENV === "production") {
-  app.use(express.static("/build"));
-  app.get("/*", function(req, res) {
-    res.sendFile(path.join(__dirname, "./build/index.html"));
-  });
-}
-
 //routes
 app.use("/authentication", require("./jwtAuthentication"));
 
