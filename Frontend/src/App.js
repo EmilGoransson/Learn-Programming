@@ -16,22 +16,25 @@ import Lab1a4 from "./pages/Assignments/Lab1Assignments/Assign4/Assignment4Prese
 import Lab1a5 from "./pages/Assignments/Lab1Assignments/Assign5/Assignment5Presenter";
 import Lab1a6 from "./pages/Assignments/Lab1Assignments/Assign6/Assignment6Presenter";
 import Lab1a7 from "./pages/Assignments/Lab1Assignments/Assign7/Assignment7Presenter";
-import Lab2a15 from "./pages/Assignments/Lab2Assignments/Assign15/Assignment15Presenter";
 import Lab1a8 from "./pages/Assignments/Lab1Assignments/Assign8/Assignment8Presenter";
 import Lab1a10 from "./pages/Assignments/Lab1Assignments/Assign10/Assignment10Presenter";
 import Lab1a11 from "./pages/Assignments/Lab1Assignments/Assign11/Assignment11Presenter";
 import Lab1a12 from "./pages/Assignments/Lab1Assignments/Assign12/Assignment12Presenter";
 import Lab1a13 from "./pages/Assignments/Lab1Assignments/Assign13/Assignment13Presenter";
-import Lab2a16 from "./pages/Assignments/Lab2Assignments/Assign16/Assignment16Presenter";
 import Lab1a9 from "./pages/Assignments/Lab1Assignments/Assign9/Assignment9Presenter";
 import Lab1a14 from "./pages/Assignments/Lab1Assignments/Assign14/Assignment14Presenter";
 
+import Lab2a13 from "./pages/Assignments/Lab2Assignments/Assign27/Assignment27Presenter"
+import Lab2a15 from "./pages/Assignments/Lab2Assignments/Assign15/Assignment15Presenter";
+import Lab2a16 from "./pages/Assignments/Lab2Assignments/Assign16/Assignment16Presenter";
+
 import Lab3a3 from "./pages/Assignments/Lab3Assignments/Assign31/Assignment31Presenter";
+import Lab3a6 from "./pages/Assignments/Lab3Assignments/Assign34/Assignment34Presenter";
 import Login from "./Components/LoginPage/Login";
 import CreateAccount from "./Components/SignupPage/SignupPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
-import Lab2a10 from "./pages/Assignments/Lab2Assignments/Assign10/Assignment10Presenter";
+import Lab2a10 from "./pages/Assignments/Lab2Assignments/Assign24/Assignment24Presenter";
 
 
 import PinnedList from "./Components/PinnedList/PinnedList";
@@ -216,11 +219,11 @@ function App() {
             <Route path="/Lab1/13" element={<Lab1a13 />} />
             <Route path="/Lab1/14" element={<Lab1a14 />} />
 
-       
+            <Route path="/Lab2/10" element={<Lab2a10 />} />
+            <Route path="/Lab2/13" element={<Lab2a13 />} />       
 
             <Route path="/Lab3/3" element={<Lab3a3 />} />
-            <Route path="/Lab2/10" element={<Lab2a10 />} />
-
+            <Route path="/Lab3/6" element={<Lab3a6 />} />
             <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
           </Routes>
         </main>

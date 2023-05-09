@@ -1,5 +1,5 @@
 import React from "react";
-import Lab2a10View from "./Assignment10View";
+import Lab3a6View from "./Assignment34View";
 import useLevelStore from "../../../../Model/frontEndStore";
 import { useEffect } from "react";
 import RightSideBar from "../../../../Components/rightSideBar/rightSideBarPresenter";
@@ -8,10 +8,10 @@ import Sidebar from "../../../../Components/Sidebar/Sidebar";
 import PinnedList from "../../../../Components/PinnedList/PinnedList";
 import TopBar from "../../../../Components/topBar/topBarPresenter";
 //Module 10 Lab 2 - Nested For-Loops
-function Lab2a10() {
+function Lab3a6() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
   //update this variable if using this as template!
-  const thisLevel = 24;
+  const thisLevel = 34;
 
   const [status, setStatus] = React.useState([true, "next-button-gray"]);
 
@@ -20,16 +20,23 @@ class Progman
 {  
     public static void main(String[] args) {
       Scanner scanner = new Scanner(System.in);
-      System.out.print(insert(scanner.nextInt()));    
+      int input = scanner.nextInt();
+
+      //Your code here
+
+      if(input == 1){
+        System.out.print("Before method call: x = " + x + ", y[0] = " + y[0]);
+        }
+
+      //call modifyValues() with x and y as parameters
+
+      if(input == 2){
+        System.out.print("After method call: x = " + x + ", y[0] = " + y[0]);
+        }
     }
-      public static int insert(int n) {
-          int sum = 0;
-          int[] array = {1,2,3,5,6,7,8,9};
-          int[] new_array = ...;
-          //Your code below
-          
-          return sum;
-          }
+    public static void modifyValues(int x, int[] y) {
+      //Your code here
+  }
 }`;
   function IsDisabled() {
     if (thisLevel >= currentLevel) {
@@ -50,12 +57,12 @@ class Progman
       <PinnedList/>
       <TopBar></TopBar>
 
-      <Lab2a10View
+      <Lab3a6View
         preMadeText={preMadeText}
         disabled={status}
         thisLevel={thisLevel}
-      ></Lab2a10View>
+      ></Lab3a6View>
     </div>
   );
 }
-export default Lab2a10;
+export default Lab3a6;
