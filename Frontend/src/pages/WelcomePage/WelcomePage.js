@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function WelcomePage() {
   return (
     <div className="WelcomePage h-screen">
-      <img src="https://i.imgur.com/csg65HH.png" className="logo" />
+      <img src="https://i.imgur.com/yLqZDJM.png" className="logo" />
       <main>
         <h1>Welcome!</h1>
         <h2 className="text-[#d63384]">Are you ready to code?</h2>
