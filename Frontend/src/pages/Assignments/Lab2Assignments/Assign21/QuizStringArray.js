@@ -18,7 +18,7 @@ export const quizData = {
     },
     {
       question: "How do you access a specific element in a string array in Java?",
-      choices: [" Using the index of the element in square brackets, e.g. scar[0]", "Using the get() method of the array, e.g. arr.get(0)", "Using the indexOf() method of the array, e.g. arr.indexOf(0)" ,"Using the getElement() method of the array, e.g. arr.getElement(0)"],
+      choices: ["Using the index of the element in square brackets, e.g. scar[0]", "Using the get() method of the array, e.g. arr.get(0)", "Using the indexOf() method of the array, e.g. arr.indexOf(0)" ,"Using the getElement() method of the array, e.g. arr.getElement(0)"],
       type: "MCQs",
       correctAnswer: "Using the index of the element in square brackets, e.g. scar[0]",
     },
@@ -40,7 +40,7 @@ export const quizData = {
       question: "How do you declare a string array variable in Java?",
       choices: ["String[] arr = new String();", "String arr[] = new String();", "String[] arr = new String[];", "String arr[] = new String[];"],
       type: "MCQs",
-      correctAnswer: "String[] arr = new String[]",
+      correctAnswer: "String[] arr = new String()",
     },
   ],
 };

@@ -11,36 +11,36 @@ export const quizData = {
 
   questions: [
     {
-      question: "What method is commonly used to compare two strings lexicographically in Java?",
-      choices: ["compareTo()", "equals()", "contains()", "length()"],
+      question: "What is a linked list?",
+      choices: [" A data structure that stores data in a linear sequence", "A data structure that stores data in a non-linear sequence", "A data structure that stores data in a tabular format", "A data structure that stores data in a graph format"],
       type: "MCQs",
-      correctAnswer: "compareTo()",
+      correctAnswer: "A data structure that stores data in a non-linear sequence",
     },
     {
-      question: "When using the compareTo() method to compare two strings, what does a negative result mean?",
-      choices: ["The first string comes after the second string.", "The first string is equal to the second string.", "The two strings cannot be compared." ,"The first string comes before the second string."],
+      question: "What are the two main components of a linked list?",
+      choices: ["Nodes and edges", "Nodes and pointers", "Elements and references" ,"Elements and indices"],
       type: "MCQs",
-      correctAnswer: "The first string comes before the second string.",
+      correctAnswer: "Nodes and pointers",
     },
     {
       question:
-        "Which of the following is true when comparing two strings using the < and > operators in Java?",
+        "What is the difference between a singly linked list and a doubly linked list?",
         choices: [
-        "The comparison is based on the ASCII values ​​of the characters in the strings.",
-        "The comparison is based on the Unicode values ​​of the characters in the strings.",
-        "The comparison is case-insensitive.",
-        "The comparison is based on the length of the strings.",
+        "A singly linked list has nodes that only point to the next node, while a doubly linked list has nodes that point to both the next and previous nodes",
+        "A singly linked list has nodes that point to both the next and previous nodes, while a doubly linked list has nodes that only point to the next node",
+        "A singly linked list can only be traversed in one direction, while a doubly linked list can be traversed in both directions",
+        "A singly linked list has nodes that are connected in a circular manner, while a doubly linked list does not",
       ],
       type: "MCQs",
       correctAnswer:
-        "The comparison is based on the Unicode values ​​of the characters in the strings.",
+        "A singly linked list has nodes that only point to the next node, while a doubly linked list has nodes that point to both the next and previous nodes",
     },
   
     {
-      question: "What can you do to ensure that the comparison of two strings using the < and > operators is case-insensitive?",
-      choices: [" Nothing, the comparison is always case-insensitive.", " Convert both strings to uppercase before comparing them.", "Convert both strings to lower case before comparing them.", "Use the equalsIgnoreCase() method to compare the strings."],
+      question: "What is a node in a linked list?",
+      choices: ["A pointer to the next node in the list", "A value or piece of data stored in the list", "A variable that stores the size of the list", "A function that performs operations on the list"],
       type: "MCQs",
-      correctAnswer: "Use the equalsIgnoreCase() method to compare the strings.",
+      correctAnswer: "A value or piece of data stored in the list",
     },
   ],
 };
