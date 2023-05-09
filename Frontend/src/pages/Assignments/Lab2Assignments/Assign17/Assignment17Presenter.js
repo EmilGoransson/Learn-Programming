@@ -19,8 +19,8 @@ function Lab2a17() {
     const removePinned = useLevelStore((state) => state.removePinned);
     const getPinned = useLevelStore((state) => state.pinnedTheory);
     //update this variable if using this as template!!
-    const contentName = "Booleans";
-    const thisLevel = 18;
+    const contentName = "For-Each Loop";
+    const thisLevel = 17;
     const [isFilled, setIsFilled] = React.useState(
         <LogoBookmarkFilled className="bookmark-icon"/>
     );
@@ -42,21 +42,13 @@ function Lab2a17() {
 
 
     const preMadeText = `import java.util.Scanner;
-    class Progman
-   
+class Progman
 {  
     public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int[] arr = {3, 6, 9, 12, 15};
-
-
-    //Print your values
-
-
-
-
+        Scanner scanner = new Scanner(System.in);
+        int[] arr = {3, 6, 9, 12, 15};
+         //Print your values
     }
-    
 }`;
 
 
