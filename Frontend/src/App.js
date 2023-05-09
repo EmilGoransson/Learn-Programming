@@ -35,7 +35,7 @@ import Lab2a26 from "./pages/Assignments/Lab2Assignments/Assign26/Assignment25Pr
 import Lab2a15 from "./pages/Assignments/Lab2Assignments/Assign15/Assignment15Presenter";
 import Lab2a16 from "./pages/Assignments/Lab2Assignments/Assign16/Assignment16Presenter";
 import Lab2a18 from "./pages/Assignments/Lab2Assignments/Assign18/Assignment18Presenter";
-import Lab2a25 from "./pages/Assignments/Lab2Assignments/Assign25/Assignment25Presenter";
+
 import Lab2a24 from "./pages/Assignments/Lab2Assignments/Assign24/Assignment24Presenter";
 import Lab2a27 from "./pages/Assignments/Lab2Assignments/Assign27/Assignment27Presenter";
 import Lab2a17 from "./pages/Assignments/Lab2Assignments/Assign17/Assignment17Presenter";
@@ -44,6 +44,7 @@ import Lab2a20 from "./pages/Assignments/Lab2Assignments/Assign20/Assignment20Pr
 import Lab2a21 from "./pages/Assignments/Lab2Assignments/Assign21/Assignment21Presenter";
 import Lab2a22 from "./pages/Assignments/Lab2Assignments/Assign22/Assignment22Presenter";
 import Lab2a23 from "./pages/Assignments/Lab2Assignments/Assign23/Assignment23Presenter";
+
 
 import Lab3a2 from "./pages/Assignments/Lab3Assignments/Assign30/Assignment30Presenter";
 import Lab3a3 from "./pages/Assignments/Lab3Assignments/Assign31/Assignment31Presenter";
