@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const jwtGenerator = require("./jwtGenerator");
 const authorization = require("./middleware/authorization");
 const { Client } = require('pg');
+const {join} = require("path");
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
   ssl: {
@@ -48,6 +49,14 @@ router.post("/Signup", async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
+
+router.get('/*', function(req, res) {
+  res.sendFile(join(__dirname, 'Frontend/src/App.js'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
 
 //login route
 router.post("/login", async (req, res) => {
