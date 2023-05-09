@@ -26,6 +26,7 @@ import Lab2a16 from "./pages/Assignments/Lab2Assignments/Assign16/Assignment16Pr
 import Lab1a9 from "./pages/Assignments/Lab1Assignments/Assign9/Assignment9Presenter";
 import Lab1a14 from "./pages/Assignments/Lab1Assignments/Assign14/Assignment14Presenter";
 
+import Lab3a2 from "./pages/Assignments/Lab3Assignments/Assign30/Assignment30Presenter";
 import Lab3a3 from "./pages/Assignments/Lab3Assignments/Assign31/Assignment31Presenter";
 import Lab3a5 from "./pages/Assignments/Lab3Assignments/Assign33/Assignment33Presenter";
 import Login from "./Components/LoginPage/Login";
@@ -219,6 +220,7 @@ function App() {
 
             <Route path="/Lab2/10" element={<Lab2a10 />} />
 
+            <Route path="/Lab3/2" element={<Lab3a2 />} />
             <Route path="/Lab3/3" element={<Lab3a3 />} />
             <Route path="/Lab3/5" element={<Lab3a5 />} />
 
