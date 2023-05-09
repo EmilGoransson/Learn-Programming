@@ -8,50 +8,50 @@ export const quizData = {
     perQuestionScore: 5,
     questions: [
       {
-        question: "What is a matrix?",
+        question: "Which of the following is a benefit of using StringBuilder over String for string manipulation?",
         choices: [
-        "A one-dimensional array", 
-        "A two-dimensional array", 
-        "A three-dimensional array", 
-        "A four-dimensional array"
+        "StringBuilder is more memory-efficient than String.", 
+        "StringBuilder is more thread-safe than String.", 
+        "StringBuilder is more performance-efficient than String.", 
+        "StringBuilder is more secure than String."
         ],
         type: "MCQs",
-        correctAnswer: "A two-dimensional array",
+        correctAnswer: "StringBuilder is more performance-efficient than String.",
       },
       {
-        question: "How do you access an element in a matrix with indices i and j?",
+        question: "What method can be used to add a string to the end of a StringBuilder object?",
         choices: [
-          "matrix[i+j];", 
-          "matrix(i+j);", 
-          "matrix[i][j];", 
-          "matrix(i)(j);"],
+          "add()", 
+          "insert()", 
+          "append()", 
+          "concat()"],
         type: "MCQs",
-        correctAnswer: "matrix[i][j];",
+        correctAnswer: "append()",
       },
       {
         question:
-          "What operations can be performed on matrices?",
+          "Which of the following methods can be used to remove a range of characters from a StringBuilder object?",
         choices: [
-          "Addition",
-          "Subtraction",
-          "Multiplication",
-          "All of the above",
+          "remove()",
+          "delete()",
+          "replace()",
+          "substring()",
         ],
         type: "MCQs",
         correctAnswer:
-          "All of the above",
+          "delete()",
       },
       {
         question:
-          "What numbers do the indices start at for a matrix in Java?",
+          "What is the correct sequence of method calls to create a StringBuilder object, append a character to it, and convert it to a String?",
         choices: [ 
-        "-1", 
-        "0", 
-        "1",
-        "2"
+        "new StringBuilder().add('c').toString()", 
+        "new StringBuilder().append('c').toString()", 
+        "new String(new StringBuilder().add('c')).toString()",
+        "new String(new StringBuilder().append('c')).toString()"
         ],
         type: "MCQs",
-        correctAnswer: "0",
+        correctAnswer: "new String(new StringBuilder().append('c')).toString()",
       },
     ],
   };
