@@ -48,6 +48,7 @@ function Lab2a16View(props) {
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+
 public class IOExceptionExample {
     public static void main(String[] args) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

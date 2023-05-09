@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import "../../Lab1Assignments/AssignmentView.css";
 import {quizData} from "./QuizDynamicArray";
 
-function Lab1a9View(props) {
+function Lab2a10View(props) {
     return (
         <div className="mt-20">
             <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
@@ -134,4 +134,4 @@ arr = newArr;
     );
 }
 
-export default Lab1a9View;
+export default Lab2a10View;
