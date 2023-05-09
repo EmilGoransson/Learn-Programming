@@ -63,9 +63,8 @@ The loop continues until i is incremented to 11, at which point the condition be
       </pre>
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>
-            Write a Java program that takes a series of positive integers as input from the user using the Scanner class, 
-            and stops taking input when the user enters a negative number. The program should then print the sum of all 
-            the positive integers entered by the user.
+            Write a program that takes an integer input from the user and calculates the sum of all the numbers from 1 
+            up to and including the input using a while loop. The program should then output the calculated sum.
             </p>
             Remember:
             <p>
@@ -75,18 +74,20 @@ The loop continues until i is incremented to 11, at which point the condition be
                     statement in Java.
                 </p>
                 <CodeRunner
-                    testCases={"24"}
-                    preMadeText={props.preMadeText}
-                    input1={"{2,4,8,10,11}"}
-                    shouldIncrement={true}
-                    thisLevel={props.thisLevel}
+                   testCases={"The sum of numbers from 1 to 6 is 21"}
+                   testCase2={"The sum of numbers from 1 to 10 is 55"}
+                   preMadeText={props.preMadeText}
+                   input1={6}
+                   input2={10}
+                   shouldIncrement={true}
+                   thisLevel={props.thisLevel}
                 />
             </p>
             <div>
-                <Link to={`/Lab2/2`}>
+                <Link to={`/Lab2/5`}>
                     <button className="next-button text-black">Prev</button>
                 </Link>
-                <Link to={`/Lab2/4`}>
+                <Link to={`/Lab2/7`}>
                     <button className={props.disabled[1]} disabled={props.disabled[0]}
                             onClick={() => window.scrollTo(0, 0)}>
                         Next

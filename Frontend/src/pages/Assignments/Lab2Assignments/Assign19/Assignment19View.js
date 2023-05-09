@@ -16,22 +16,21 @@ function Lab2a19View(props) {
            <code>Logical operators</code> Logical operators in Java are used to perform boolean operations on 
             boolean expressions. There are three logical operators in Java: <code>AND (&&)</code>, <code>OR (||)</code>, and <code>NOT (!)</code>.
             </p>
-            <h1 className="text-3xl font-bold mb-4">Operator Options</h1>
 
             <p>The <code>AND</code> operator (&&) returns true only if both operands are true. For example, 
                 the expression true && true would evaluate to true, while the expression true 
                 && false would evaluate to false.</p>
-            <p> The OR operator (||) returns true if either operand is true. 
+            <p> The <code>OR</code> operator (||) returns true if either operand is true. 
                 For example, the expression true || false would evaluate to true, 
                 while the expression false || false would evaluate to false.
 </p>
             <p> 
-The NOT operator (!) returns the opposite of the boolean value of its operand.
+The <code>NOT</code> operator (!) returns the opposite of the boolean value of its operand.
  For example, the expression !true would evaluate to false, while the expression 
  !false would evaluate to true.
 </p>
            
-            <h2 className="text-2xl font-bold mb-4">Order of operatiosn</h2>
+            <h2 className="text-2xl font-bold mb-4">Order of operations</h2>
             <p className="mb-4">
             When multiple logical operators are used in an expression, Java evaluates them in a specific order. 
             The NOT operator is evaluated first, followed by the AND operator, and then the OR operator. 
@@ -51,13 +50,9 @@ The NOT operator (!) returns the opposite of the boolean value of its operand.
       </pre>
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>
-            Write a Java program that takes two integers as input from the user and
-           checks whether they meet the following conditions:
-           </p>
-          <p> Both integers are positive and even.</p>
-           <p>Either integer is negative.</p>
-<p>If both conditions are true, the program should print "Valid input." Otherwise, it should print "Invalid input."
-
+            Write a Java program that takes an integer input from the user and checks if the number is both greater 
+            than 10 and less than 100. If the number satisfies this condition, output the number multiplied by 2. 
+            If the number does not satisfy this condition, output the message "Number is not between 10 and 100".
             </p>
             Remember:
             <p>
@@ -67,11 +62,11 @@ The NOT operator (!) returns the opposite of the boolean value of its operand.
                     statement in Java.
                 </p>
                 <CodeRunner
-                    testCases={"24 is a multiple of 8"}
-                    testCase2={"32 is not a multiple of 6"}
+                    testCases={"22"}
+                    testCase2={"Number is not between 10 and 100"}
                     preMadeText={props.preMadeText}
-                    input1={"24,8"}
-                    input2={"32,6"}
+                    input1={"11"}
+                    input2={"101"}
                     shouldIncrement={true}
                     thisLevel={props.thisLevel}
 

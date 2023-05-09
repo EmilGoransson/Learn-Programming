@@ -17,7 +17,7 @@ function Lab2a18View(props) {
             They can have one of two values: <code>true</code> or <code>false</code>. Booleans are often used in conditional 
             statements and loops to control program flow based on whether certain conditions are true or false
             </p>
-            <h1 className="text-3xl font-bold mb-4">Here are some important things to know about booleans in Java:</h1>
+            <h2 className="text-2xl font-bold mb-4">Important Boolean Facts</h2>
 
             <p>Booleans are represented by the <code> boolean keyword in Java.</code></p>
             <p> The default value for a boolean variable is <code>false.</code></p>
@@ -74,11 +74,8 @@ results in a boolean value. We print out the result of this comparison. Finally,
       </pre>
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>
-            Write a Java program that prompts the user to input two integers using the Scanner class. 
-            The program should then determine whether the first integer is a multiple of the second integer 
-            using a boolean variable and the modulus operator. If the first integer is a multiple of the second 
-            integer, the program should output a message indicating this. If not, the program should output a 
-            message indicating that the first integer is not a multiple of the second integer.
+            Write a program that prompts the user to enter an integer and checks whether it is a prime number or not using a 
+            boolean variable. If the number is prime, output "The number is prime", otherwise output "The number is not prime".
             </p>
             Remember:
             <p>
@@ -88,11 +85,11 @@ results in a boolean value. We print out the result of this comparison. Finally,
                     statement in Java.
                 </p>
                 <CodeRunner
-                    testCases={"24 is a multiple of 8"}
-                    testCase2={"32 is not a multiple of 6"}
+                    testCases={"The number is prime"}
+                    testCase2={"The number is not prime"}
                     preMadeText={props.preMadeText}
-                    input1={"24,8"}
-                    input2={"32,6"}
+                    input1={"7"}
+                    input2={"20"}
                     shouldIncrement={true}
                     thisLevel={props.thisLevel}
 

@@ -41,12 +41,13 @@ function Lab2a17() {
     }
 
 
-    const preMadeText = `class Progman
-    import java.util.Scanner;
+    const preMadeText = `import java.util.Scanner;
+    class Progman
+   
 {  
     public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    
+    int[] arr = {3, 6, 9, 12, 15};
 
 
     //Print your values
@@ -54,7 +55,7 @@ function Lab2a17() {
 
 
 
-
+    }
     
 }`;
 

@@ -19,8 +19,8 @@ function Lab2a21() {
     const removePinned = useLevelStore((state) => state.removePinned);
     const getPinned = useLevelStore((state) => state.pinnedTheory);
     //update this variable if using this as template!!
-    const contentName = "For-Each Loop";
-    const thisLevel = 17;
+    const contentName = "String Array";
+    const thisLevel = 21;
     const [isFilled, setIsFilled] = React.useState(
         <LogoBookmarkFilled className="bookmark-icon"/>
     );
@@ -47,6 +47,7 @@ function Lab2a21() {
 {  
     public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
+    String[] arr={"Hello", "How", "are", "you", "?"};
     
 
 

@@ -12,7 +12,7 @@ export const quizData = {
   questions: [
     {
       question: "What method is commonly used to compare two strings lexicographically in Java?",
-      choices: [" compareTo()", "equals()", "contains()", "length()"],
+      choices: ["compareTo()", "equals()", "contains()", "length()"],
       type: "MCQs",
       correctAnswer: "compareTo()",
     },

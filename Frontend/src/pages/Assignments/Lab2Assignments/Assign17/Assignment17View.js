@@ -56,22 +56,32 @@ and the code inside the loop (in this case, just printing out the number) gets e
       </pre>
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>
-            Write a program that prompts the user to enter a series of integers, separated by spaces.
-            The program should use a scanner to read in the input, convert it to an array of integers, and then calculate
-            the sum of all the even numbers in the array. The program should use a "for each" loop to iterate over
-             the elements in the array.
+          
+            Write a program that adds a number which is given from the scanner and 
+            adds that number to each element in the array that is written. Finally 
+            add all the values in the array and print it.
             </p>
-            Remember:
-            <p>
-                <p>1. The code-checker is case sensitive.</p>
+
+                To pass the exercise you need to:
                 <p>
-                    2. Always use the semicolon <code>;</code> at the end of each
-                    statement in Java.
-                </p>
+                    <br></br>
+                    <p>1. Use the Scanner class to get an integer input from the user.</p>
+                    <p>2. Change the values of the array by adding the given number.</p>
+                    <p>3. Use a for-each loop to iterate over all the numbers and add them </p>
+                    <p>4. Print out the final sum.
+
+
+
+
+                    </p>
+                   
+                
                 <CodeRunner
-                    testCases={"24"}
+                    testCases={50}
+                    testCase2={95}
                     preMadeText={props.preMadeText}
-                    input1={"{2,4,8,10,11}"}
+                    input1={1}
+                    input2={10}
                     shouldIncrement={true}
                     thisLevel={props.thisLevel}
                 />
