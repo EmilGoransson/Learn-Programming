@@ -27,12 +27,33 @@ function Lab1a5View(props) {
                 These operations are performed on numeric data types such as int, double, float, etc. For example:
             </p>
             <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
-        <code className="text-sm font-mono">
-          {`int a = 10;
+                <code className="text-sm font-mono">
+                    {`int a = 10;
 int b = 5;
 int c = a + b; // result is 15`}
-        </code>
-      </pre>
+                </code>
+            </pre>
+            <p className="mb-4">
+            The division operator (<code>/</code>) for integer division, differes from what you are familliar with. 
+            When two integer values are divided using the division operator, the result is always an integer value. 
+            This means that any remainder resulting from the division is discarded.For example, 
+            if you were to perform the operation 7 / 3 in Java, the result would be 2, not 2.33333. 
+            This is because the decimal portion of the result is discarded, and only the integer portion is returned.
+            </p>
+
+            <h2 className="text-2xl font-bold mb-4">Modulus Operations</h2>
+            <p className="mb-4">
+            The modulo operator (<code>%</code>) is used to calculate the remainder of a division operation between two values. 
+            It can be used with both integer and floating-point values. The modulo operator returns the remainder of a division operation. 
+            For example, if you perform the operation 7 % 3 in Java, the result would be 1, because 7 divided by 3 leaves a remainder of 1.
+            </p>
+            <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
+                <code className="text-sm font-mono">
+                    {`int x = 9;
+int y = 3;
+int result = x % y; // result is 0 since there there will no remainder`}
+                </code>
+            </pre>
 
             <h2 className="text-2xl font-bold mb-4">Comparison Operations</h2>
             <p className="mb-4">
@@ -70,27 +91,29 @@ boolean result = (a && b); // result is false`}
                 code.
             </p>
             {/*TODO: gör kodfråga*/}
-            <h2 className="text-2xl font-bold mb-4">Scanner in our exercises</h2>
+            <h2 className="text-2xl font-bold mb-4">Operations in our exercise</h2>
             <p>
-                To pass this, and following, exercises you need to understand how to use the <code>Scanner</code> class.
-                The exercises will
-                a pre-defined Scanner called "scanner" this will be the input. To declare a variable you will need to
-                write:
+                To pass this, and following, exercises you need to understand how to use the modulus (<code>%</code>) operation
+                 and the equal to (<code>==</code>) operation.
             </p>
-            <pre className="pre-Code rounded-md p-4 mb-4">
-        <code className="text-sm font-mono">scanner.next[Datatype];</code>
-      </pre>
+        
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>
-                In this exercise print the <code>int</code> given from scanner to the console.
+                In this exercise you will write a check for even and odd numbers using the modulus operation. 
+                If the first <code>if</code> statement is true print out the num. If the <code>if</code> statement is false, 
+                the <code>else</code> statement will run, print out the String ”Odd number”.
             </p>
+            <p>To pass the exercise you need to</p>
+            <p>1. Write a correct statement in the ”if” parenthesis</p>
+            <p>2. Write a print statement printing num if the number is even</p>
+            <p>3. Write a print statement printing the String ”Odd number”</p>
             <p>
                 <CodeRunner
-                    testCases={1}
-                    testCase2={2}
+                    testCases={4}
+                    testCase2={"Odd number"}
                     preMadeText={props.preMadeText}
-                    input1={1}
-                    input2={2}
+                    input1={4}
+                    input2={5}
                     shouldIncrement={true}
                     thisLevel={props.thisLevel}
                 />
@@ -101,7 +124,7 @@ boolean result = (a && b); // result is false`}
                 </Link>
                 <Link to={`/Lab1/6`}>
                     <button className={props.disabled[1]} disabled={props.disabled[0]}
-                            onClick={() => window.scrollTo(0, 0)}>>
+                            onClick={() => window.scrollTo(0, 0)}>
                         Next
                     </button>
                 </Link>

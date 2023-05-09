@@ -98,7 +98,7 @@ boolean result = str1.equals(str2);
                 </Link>
                 <Link to={`/Lab1/4`}>
                     <button className={props.disabled[1]} disabled={props.disabled[0]}
-                            onClick={() => window.scrollTo(0, 0)}>>
+                            onClick={() => window.scrollTo(0, 0)}>
                         Next
                     </button>
                 </Link>

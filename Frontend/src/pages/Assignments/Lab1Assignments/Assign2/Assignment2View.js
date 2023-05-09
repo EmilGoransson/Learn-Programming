@@ -77,7 +77,7 @@ function Lab1a2View(props) {
                 </Link>
                 <Link to={`/Lab1/3`}>
                     <button className={props.disabled[1]} disabled={props.disabled[0]}
-                            onClick={() => window.scrollTo(0, 0)}>>
+                            onClick={() => window.scrollTo(0, 0)}>
                         Next
                     </button>
                 </Link>

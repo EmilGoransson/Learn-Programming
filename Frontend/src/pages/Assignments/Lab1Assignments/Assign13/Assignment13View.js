@@ -9,12 +9,15 @@ function Lab1a13View(props) {
     return (
         <div className="mt-20">
             <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
+                <a onClick={props.addPinned} style={{cursor: "pointer"}}>
+                    {props.svg}
+                </a>
                 <h1 className="text-3xl font-bold mb-4">Else and Else if</h1>
                 <p className="mb-4">
                 <code>else</code> and <code>else if</code> are additional control structures that can be used in conjunction with <code>if</code> statements 
                 to create more complex decision-making logic. 
                 </p>
-                <h2 className="text-2xl font-bold mb-4">Else</h2>
+                <h2 className="text-2xl font-bold mb-4">else</h2>
                 <p className="mb-4">
                 The <code>else</code> statement is used to specify a block of code that should be executed if the condition in the <code>if</code> statement is false. For example:                </p>
                 <pre className="bg-lightBlueGray rounded-md p-4 mb-4">

@@ -9,6 +9,9 @@ function Lab1a7View(props) {
     return (
         <div className="mt-20">
             <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
+            <a onClick={props.addPinned} style={{cursor: "pointer"}}>
+                {props.svg}
+            </a>
                 <h1 className="text-3xl font-bold mb-4">Methods</h1>
                 <p className="mb-4">
                     Methods, also known as functions, are a fundamental concept in
@@ -40,11 +43,6 @@ return a + b;
                     it. For example, we can call the <code>addNumbers</code> method we
                     declared above like this:
                 </p>
-                <pre className="bg-gray-100 rounded-md p-4 mb-4">
-          <code className="text-sm font-mono">
-            {`int result = addNumbers(3, 5);`}
-          </code>
-        </pre>
         <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <code className="text-sm font-mono">
           {`int result = addNumbers(3, 5);`}
@@ -70,20 +68,18 @@ return a + b;
                 <h2 className="text-2xl font-bold mb-4">A Quiz</h2>
                 <Quiz quizData={quizData}/>
                 <h2 className="text-2xl font-bold mb-4">An exercise</h2>
-                <p>
-                    In this exercise you will create a Method called "Words" that takes 2
-                    Strings as parameters and returns a Sting containing both of the input
-                    strings.{" "}
+                <p>In this exercise you will:</p>
+                <p> 
+                    1. Create a Method called "fun" that takes an <code>int</code> as 
+                    parameter and returns a the the squared value.{" "}
                 </p>
-                To pass the exercise you need to:
                 <p>
-                    <br></br>
-                    <p>1. Declare two Strings, "Hello" and "World" in the main method.</p>
-                    <p>2. Print the result of the method call to Words to the console.</p>
                     <CodeRunner
-                        testCases={"HelloWorld"}
+                        testCases={100}
+                        testCase2={25}
                         preMadeText={props.preMadeText}
-                        input={"Hello"}
+                        input1={10}
+                        input2={5}
                         shouldIncrement={true}
                         thisLevel={props.thisLevel}
                     />

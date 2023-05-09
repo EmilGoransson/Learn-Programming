@@ -15,6 +15,7 @@ function Lab1a4() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
   const addPinned = useLevelStore((state) => state.addPinned);
   const getPinned = useLevelStore((state) => state.pinnedTheory);
+  const removePinned = useLevelStore((state) => state.removePinned);
   //update this variable if using this as template!!
   const contentName = "Scanner";
   const thisLevel = 4;
@@ -49,6 +50,8 @@ function Lab1a4() {
   function addToPinned() {
     if (!getPinned.includes(contentName)) {
       addPinned(contentName);
+    } else {
+      removePinned(contentName);
     }
   }
 
