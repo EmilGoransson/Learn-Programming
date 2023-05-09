@@ -18,7 +18,7 @@ export const quizData = {
     },
     {
       question: "What are the two main components of a linked list?",
-      choices: [" Nodes and edges", "Nodes and pointers", "Elements and references" ,"Elements and indices"],
+      choices: ["Nodes and edges", "Nodes and pointers", "Elements and references" ,"Elements and indices"],
       type: "MCQs",
       correctAnswer: "Nodes and pointers",
     },
