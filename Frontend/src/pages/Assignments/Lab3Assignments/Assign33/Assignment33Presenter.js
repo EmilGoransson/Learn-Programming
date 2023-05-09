@@ -1,5 +1,5 @@
 import React from "react";
-import Lab3a31View from "./Assignment31View";
+import Lab3a33View from "./Assignment33View";
 import useLevelStore from "../../../../Model/frontEndStore";
 import {useEffect} from "react";
 import {ReactComponent as LogoBookmark} from "../../bookmark.svg";
@@ -10,14 +10,14 @@ import Sidebar from "../../../../Components/Sidebar/Sidebar";
 import PinnedList from "../../../../Components/PinnedList/PinnedList";
 import TopBar from "../../../../Components/topBar/topBarPresenter";
 
-function Lab3a31() {
+function Lab3a33() {
     const currentLevel = useLevelStore((state) => state.currentLevel);
     const addPinned = useLevelStore((state) => state.addPinned);
     const removePinned = useLevelStore((state) => state.removePinned);
     const getPinned = useLevelStore((state) => state.pinnedTheory);
     //update this variable if using this as template!!
-    const contentName = "Stringbuilder";
-    const thisLevel = 31;
+    const contentName = "Break";
+    const thisLevel = 33;
     const [isFilled, setIsFilled] = React.useState(
         <LogoBookmarkFilled className="bookmark-icon"/>
     );
@@ -43,23 +43,12 @@ class Progman
 {  
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int[] array = {1, -7, 92, 77, 54, -40, 10, 40, 29, 42};
+        int secretnumber = scanner.nextInt();
+
+        //Your code here
         
-        String secretword = scanner.next();
-
-        // Create a StringBuilder object
-
-        // Append "Hello " to the StringBuilder
-
-        // Insert the secretword at index 6       
-
-        // Replace the substring at index 0-5 with "Hi"
-
-        // Delete the characters at range 8-10
-
-        // Append the char '!' to the StringBuilder
-
-        // Convert the StringBuilder to a String and print it
-        
+       
     }
 }`;
 
@@ -91,16 +80,16 @@ class Progman
             <Progress/>
             <PinnedList/>
             <TopBar></TopBar>
-            <Lab3a31View
+            <Lab3a33View
 
                 addPinned={addToPinned}
                 preMadeText={preMadeText}
                 disabled={status}
                 thisLevel={thisLevel}
                 svg={isFilled}
-            ></Lab3a31View>
+            ></Lab3a33View>
         </div>
     );
 }
 
-export default Lab3a31;
+export default Lab3a33;

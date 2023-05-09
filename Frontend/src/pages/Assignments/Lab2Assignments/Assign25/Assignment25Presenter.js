@@ -1,5 +1,5 @@
 import React from "react";
-import Lab2a16View from "./Assignment16View";
+import Lab2a25View from "./Assignment25View";
 import useLevelStore from "../../../../Model/frontEndStore";
 import { useEffect } from "react";
 import { ReactComponent as LogoBookmark } from "../../bookmark.svg";
@@ -11,13 +11,13 @@ import PinnedList from "../../../../Components/PinnedList/PinnedList";
 import TopBar from "../../../../Components/topBar/topBarPresenter";
 
 
-function Lab2a16() {
+function Lab2a25() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
   const addPinned = useLevelStore((state) => state.addPinned);
   const getPinned = useLevelStore((state) => state.pinnedTheory);
   //update this variable if using this as template!!
-  const contentName = "IOExceptions";
-  const thisLevel = 16;
+  const contentName = "Delete element in a array";
+  const thisLevel = 25;
   const [isFilled, setIsFilled] = React.useState(
     <LogoBookmarkFilled className="bookmark-icon" />
   );
@@ -37,36 +37,26 @@ function Lab2a16() {
   }
 
   const preMadeText = `import java.util.Scanner;  // Import the Scanner class
-  
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-  
   class Progman
   {  
       public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);  
-        //declare a BufferedReader and intializw it by wrapping System in
+        int[]  array ={25,30,45,100,5,7};
 
-        // create a try block and inside it read the input using "readLine()"
-
-
-
-        // Claculate the square of the of the input och print inte "use 'print' only"
+        //create int variable "indexToDelete" and intiate it the value fron System.in
 
 
-        //close the try block and catch an IOException
 
-        //create a finally block
+        //Delete the element at the specified indec
 
-        //Inside the finally blok create a new try
+        
 
-        // close the reader and then the try block
-
-        catch (IOException e) {
-          System.err.print("An error occurred while closing the reader: " + e.getMessage());
+        //Print the array array after deletion 
+        for (int i = 0; i < newArray.length; i++) {
+          System.out.print(newArray[i] + " ");
       }
-
+      
+       
 
           
       }
@@ -96,15 +86,15 @@ import java.io.InputStreamReader;
     <PinnedList/>
     <TopBar></TopBar>
   
-    <Lab2a16View
+    <Lab2a25View
       addPinned={addToPinned}
       preMadeText={preMadeText}
       disabled={status}
       thisLevel={thisLevel}
       svg={isFilled}
-    ></Lab2a16View>
+    ></Lab2a25View>
     </div>
     
   );
 }
-export default Lab2a16;
+export default Lab2a25;

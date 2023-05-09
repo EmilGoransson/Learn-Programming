@@ -48,7 +48,6 @@ class Progman
       System.out.print(square_matrix(scanner.nextInt()));    
     }
       public static int square_matrix(int n) {
-          Scanner input = new Scanner(System.in);
           int sum = 0;
           int[][] matrix = new int[n][n];
           //Your code below
