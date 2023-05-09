@@ -21,6 +21,14 @@ app.use(express.static('build')); // serve static files (css & js) from the 'pub
 //routes
 app.use("/authentication", require("./jwtAuthentication"));
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("build"));
+  app.use("/authentication", require("./jwtAuthentication")); // include authentication route here
+  app.get("/*", function (req, res) {
+    res.sendFile(path.join(__dirname, "./build/index.html"));
+  });
+}
+
 app.listen(port, function () {
   console.log(`App listening on port ${port}!`);
 });

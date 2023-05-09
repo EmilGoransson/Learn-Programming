@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8917fd65-ebac-457d-ac00-26ec4ef8f082" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/jwtAuthentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/jwtAuthentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +68,7 @@
       <workItem from="1683180167349" duration="4453000" />
       <workItem from="1683190549647" duration="28582000" />
       <workItem from="1683526338869" duration="11093000" />
-      <workItem from="1683574266348" duration="5521000" />
+      <workItem from="1683574266348" duration="5626000" />
     </task>
     <servers />
   </component>
