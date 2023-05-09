@@ -41,21 +41,14 @@ function Lab2a21() {
     }
 
     
-    const preMadeText = `
-    import java.util.Scanner;
-    class Progman
+    const preMadeText = `import java.util.Scanner;
+class Progman
 {  
     public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    String[] arr={"Hello", "How", "are", "you", "?"};
+        Scanner scanner = new Scanner(System.in);
+        String[] arr={"Hello", "How", "are", "you", "?"};
     
-
-
-
-
-
     }
-    
 }`;
 
 
