@@ -16,7 +16,7 @@ function Lab3a31() {
     const removePinned = useLevelStore((state) => state.removePinned);
     const getPinned = useLevelStore((state) => state.pinnedTheory);
     //update this variable if using this as template!!
-    const contentName = "Printing";
+    const contentName = "Stringbuilder";
     const thisLevel = 31;
     const [isFilled, setIsFilled] = React.useState(
         <LogoBookmarkFilled className="bookmark-icon"/>
@@ -37,11 +37,28 @@ function Lab3a31() {
         }
     }
 
-    const preMadeText = `class Progman
+    const preMadeText = `import java.util.Scanner;
+
+class Progman
 {  
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         
-      //print "Hello World here"
+        String secretword = scanner.next();
+
+        // Create a StringBuilder object
+
+        // Append "Hello " to the StringBuilder
+
+        // Insert the secretword at index 6       
+
+        // Replace the substring at index 0-5 with "Hi"
+
+        // Delete the characters at range 8-10
+
+        // Append the char '!' to the StringBuilder
+
+        // Convert the StringBuilder to a String and print it
         
     }
 }`;
