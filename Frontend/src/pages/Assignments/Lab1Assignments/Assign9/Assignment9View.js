@@ -9,6 +9,9 @@ function Lab1a9View(props) {
     return (
         <div className="mt-20">
             <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
+                <a onClick={props.addPinned} style={{cursor: "pointer"}}>
+                   {props.svg}
+                </a>
                 <h1 className="text-3xl font-bold mb-4">Nested For-Loops</h1>
                 <p className="mb-4">
                 Nested for-loops are loops that are inside another loop. In Java, nested loops can be used to iterate over two-dimensional arrays or to perform operations on pairs of values.
@@ -73,16 +76,40 @@ for(int i=0; i<nums1.length; i++) {
                 <h2 className="text-2xl font-bold mb-4">Exercise: Summation with Nested Loops</h2>
                 <p>
 
-                    
+                <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <p>
-            {`Write a Java program that counts to n*n-1 using a nested for-loop and returns the sum.`}
+1. Use nested for-loops to generate the matrix: Use a nested for-loop structure to 
+<br></br>generate the matrix. 
+<br></br>
+<br></br>
+2. The outer loop should iterate over the rows of the matrix, 
+<br></br>and the inner loop should iterate over the columns of the matrix. 
+<br></br>
+<br></br>
+3. Within the nested loop structure, calculate the product of the row and column 
+<br></br>indices for each element 
+and assign it to the corresponding element in the matrix.
+<br></br>
+<br></br>
+4. Calculate the sum of all elements in the matrix: Use a nested for-loop structure 
+<br></br>again to iterate through the matrix and calculate the sum of all elements.
+<br></br>
+<br></br>
+Example: <code>n = 3 </code> generates the matrix: <br></br><br></br>0 0 0<br></br>
+                             0 1 2
+<br></br>
+                             0 2 4
+<br></br>sum = 9
+</p>     </pre>
+          <p>
+            {`Write the Java method square_matrix that populates a matrix and returns the sum`}
           </p>
                     <CodeRunner
-                        testCases={30}
-                        testCase2={3}
+                        testCases={9}
+                        testCase2={2025}
                         preMadeText={props.preMadeText}
-                        input1={4}
-                        input2={2}
+                        input1={3}
+                        input2={10}
                         shouldIncrement={true}
                         thisLevel={props.thisLevel}
                     />

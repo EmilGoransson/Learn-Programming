@@ -9,6 +9,9 @@ function Lab1a7View(props) {
     return (
         <div className="mt-20">
             <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
+                <a onClick={props.addPinned} style={{cursor: "pointer"}}>
+                    {props.svg}
+                </a>
                 <h1 className="text-3xl font-bold mb-4">For-loop</h1>
                 <p className="mb-4">
                 In Java, a for loop is a control flow statement that allows you to execute a block 

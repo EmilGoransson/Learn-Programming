@@ -9,6 +9,9 @@ function Lab1a13View(props) {
     return (
         <div className="mt-20">
             <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
+                <a onClick={props.addPinned} style={{cursor: "pointer"}}>
+                    {props.svg}
+                </a>
                 <h1 className="text-3xl font-bold mb-4">Else and Else if</h1>
                 <p className="mb-4">
                 <code>else</code> and <code>else if</code> are additional control structures that can be used in conjunction with <code>if</code> statements 

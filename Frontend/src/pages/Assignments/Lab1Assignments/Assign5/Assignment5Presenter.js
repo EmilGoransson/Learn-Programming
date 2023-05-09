@@ -15,6 +15,7 @@ function Lab1a5() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
   const addPinned = useLevelStore((state) => state.addPinned);
   const getPinned = useLevelStore((state) => state.pinnedTheory);
+  const removePinned = useLevelStore((state) => state.removePinned);
   //update this variable if using this as template!!
   const contentName = "Operations";
   const thisLevel = 5;
@@ -27,11 +28,11 @@ function Lab1a5() {
   function isPinned() {
     if (getPinned.includes(contentName)) {
       setIsFilled(
-        <LogoBookmarkFilled className="text-textGray h-6 w-6 fill-current" />
+          <LogoBookmarkFilled className="text-textGray h-6 w-6 fill-current"/>
       );
     } else {
       setIsFilled(
-        <LogoBookmark className="text-textGray h-6 w-6 fill-current" />
+          <LogoBookmark className="text-textGray h-6 w-6 fill-current"/>
       );
     }
   }
@@ -56,8 +57,11 @@ function Lab1a5() {
   function addToPinned() {
     if (!getPinned.includes(contentName)) {
       addPinned(contentName);
+    } else {
+      removePinned(contentName);
     }
   }
+
   function IsDisabled() {
     if (thisLevel >= currentLevel) {
       setStatus([true, "next-button-gray"]);
@@ -65,6 +69,7 @@ function Lab1a5() {
       setStatus([false, "button-lab-cyan "]);
     }
   }
+
   useEffect(() => {
     IsDisabled();
     isPinned();
