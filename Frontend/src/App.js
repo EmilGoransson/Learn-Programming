@@ -29,26 +29,30 @@ import Lab1a12 from "./pages/Assignments/Lab1Assignments/Assign12/Assignment12Pr
 import Lab1a13 from "./pages/Assignments/Lab1Assignments/Assign13/Assignment13Presenter";
 import Lab1a14 from "./pages/Assignments/Lab1Assignments/Assign14/Assignment14Presenter";
 
+
 import Lab2a15 from "./pages/Assignments/Lab2Assignments/Assign15/Assignment15Presenter";
 import Lab2a16 from "./pages/Assignments/Lab2Assignments/Assign16/Assignment16Presenter";
+import Lab2a18 from "./pages/Assignments/Lab2Assignments/Assign18/Assignment18Presenter";
 import Lab2a25 from "./pages/Assignments/Lab2Assignments/Assign25/Assignment25Presenter";
 import Lab2a24 from "./pages/Assignments/Lab2Assignments/Assign24/Assignment24Presenter";
 import Lab2a27 from "./pages/Assignments/Lab2Assignments/Assign27/Assignment27Presenter";
-
-import Lab3a3 from "./pages/Assignments/Lab3Assignments/Assign31/Assignment31Presenter";
-import Lab3a5 from "./pages/Assignments/Lab3Assignments/Assign33/Assignment33Presenter";
-import Lab3a6 from "./pages/Assignments/Lab3Assignments/Assign34/Assignment34Presenter";
-import Login from "./Components/LoginPage/Login";
-import Lab2a18 from "./pages/Assignments/Lab2Assignments/Assign18/Assignment18Presenter";
-import CreateAccount from "./Components/SignupPage/SignupPage";
-import WelcomePage from "./pages/WelcomePage/WelcomePage";
-import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 import Lab2a17 from "./pages/Assignments/Lab2Assignments/Assign17/Assignment17Presenter";
 import Lab2a19 from "./pages/Assignments/Lab2Assignments/Assign19/Assignment19Presenter";
 import Lab2a20 from "./pages/Assignments/Lab2Assignments/Assign20/Assignment20Presenter";
 import Lab2a21 from "./pages/Assignments/Lab2Assignments/Assign21/Assignment21Presenter";
 import Lab2a22 from "./pages/Assignments/Lab2Assignments/Assign22/Assignment22Presenter";
 import Lab2a23 from "./pages/Assignments/Lab2Assignments/Assign23/Assignment23Presenter";
+
+import Lab3a2 from "./pages/Assignments/Lab3Assignments/Assign30/Assignment30Presenter";
+import Lab3a3 from "./pages/Assignments/Lab3Assignments/Assign31/Assignment31Presenter";
+import Lab3a29 from "./pages/Assignments/Lab3Assignments/Assign29/Assignment29Presenter";
+import Lab3a5 from "./pages/Assignments/Lab3Assignments/Assign33/Assignment33Presenter";
+import Lab3a6 from "./pages/Assignments/Lab3Assignments/Assign34/Assignment34Presenter";
+
+import Login from "./Components/LoginPage/Login";
+import CreateAccount from "./Components/SignupPage/SignupPage";
+import WelcomePage from "./pages/WelcomePage/WelcomePage";
+import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 
 
 function App() {
@@ -241,8 +245,13 @@ function App() {
 
             <Route path="/Lab3/6" element={<Lab3a6 />} />
 
+            <Route path="/Lab3/2" element={<Lab3a2 />} />
+            <Route path="/Lab3/3" element={<Lab3a3 />} />
+
+            <Route path="/Lab3/1" element={<Lab3a29 />} />
             <Route path="/Lab3/3" element={<Lab3a3 />} />
             <Route path="/Lab3/5" element={<Lab3a5 />} />
+            
             <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
           </Routes>
         </main>

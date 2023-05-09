@@ -1,4 +1,5 @@
 import React from "react";
+import Lab3a29View from "./Assignment29View";
 import useLevelStore from "../../../../Model/frontEndStore";
 import {useEffect} from "react";
 import {ReactComponent as LogoBookmark} from "../../bookmark.svg";
@@ -8,25 +9,21 @@ import Progress from "../../../../Components/CurrentProgressBar/Presenter/curren
 import Sidebar from "../../../../Components/Sidebar/Sidebar";
 import PinnedList from "../../../../Components/PinnedList/PinnedList";
 import TopBar from "../../../../Components/topBar/topBarPresenter";
-import Lab2a17View from "./Assignment17View";
 
-
-
-
-function Lab2a17() {
+function Lab3a29() {
     const currentLevel = useLevelStore((state) => state.currentLevel);
     const addPinned = useLevelStore((state) => state.addPinned);
     const removePinned = useLevelStore((state) => state.removePinned);
     const getPinned = useLevelStore((state) => state.pinnedTheory);
     //update this variable if using this as template!!
-    const contentName = "For-Each Loop";
-    const thisLevel = 17;
+    const contentName = "Objects";
+    const thisLevel = 29;
     const [isFilled, setIsFilled] = React.useState(
         <LogoBookmarkFilled className="bookmark-icon"/>
     );
 
-
     const [status, setStatus] = React.useState([true, "next-button-gray"]);
+
 
     function isPinned() {
         if (getPinned.includes(contentName)) {
@@ -40,17 +37,39 @@ function Lab2a17() {
         }
     }
 
-
     const preMadeText = `import java.util.Scanner;
-class Progman
-{  
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int[] arr = {3, 6, 9, 12, 15};
-         //Print your values
-    }
-}`;
 
+    class Progman {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int age = scanner.nextInt();
+            
+            //Create a new Person object called "person" with the age from scanner
+
+
+            //Call the haveBirthday() method with the created person
+
+
+            //Prints the result
+            System.out.print("Happy birthday! You are now " + person.getAge() + " years old.");
+        }
+    }
+    
+    //A class called Person
+    class Person {
+        //Create instance variable for age
+
+        
+        //Create a constructor here
+
+
+        //Create the getAge() method here that returns the age of the Person
+
+
+        //Create the haveBirthday() method here that adds 1 to the age of the Person
+
+
+    }`;
 
     function addToPinned() {
         if (!getPinned.includes(contentName)) {
@@ -60,7 +79,6 @@ class Progman
         }
     }
 
-
     function IsDisabled() {
         if (thisLevel >= currentLevel) {
             setStatus([true, "next-button-gray"]);
@@ -69,12 +87,10 @@ class Progman
         }
     }
 
-
     useEffect(() => {
         IsDisabled();
         isPinned();
     }, [currentLevel, getPinned]);
-
 
     return (
         <div>
@@ -83,17 +99,15 @@ class Progman
             <Progress/>
             <PinnedList/>
             <TopBar></TopBar>
-            
-    <Lab2a17View
-      addPinned={addToPinned}
-      preMadeText={preMadeText}
-      disabled={status}
-      thisLevel={thisLevel}
-      svg={isFilled}
-    ></Lab2a17View>
+            <Lab3a29View
+                addPinned={addToPinned}
+                preMadeText={preMadeText}
+                disabled={status}
+                thisLevel={thisLevel}
+                svg={isFilled}
+            ></Lab3a29View>
         </div>
     );
 }
 
-
-export default Lab2a17;
+export default Lab3a29;
