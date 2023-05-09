@@ -20,16 +20,17 @@ function Lab1a9() {
 class Progman
 {  
     public static void main(String[] args) {
-      Scanner scanner = new Scanner(System.in);  
-      System.out.print(count_sum(scanner.nextInt()));
-        
+      Scanner scanner = new Scanner(System.in);
+      System.out.print(square_matrix(scanner.nextInt()));    
     }
-    public static int count_sum(int n){
-      int sum = 0;
-      //Your code here
+      public static int square_matrix(int n) {
+          Scanner input = new Scanner(System.in);
+          int sum = 0;
+          int[][] matrix = new int[n][n];
+          //Your code below
 
-      return sum;
-    }
+          return sum;
+          }
 }`;
   function IsDisabled() {
     if (thisLevel >= currentLevel) {
