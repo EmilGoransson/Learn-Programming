@@ -1,5 +1,5 @@
 import React from "react";
-import Lab2a15View from "./Assignment15View";
+import Lab1a11View from "./Assignment11View";
 import useLevelStore from "../../../../Model/frontEndStore";
 import { useEffect } from "react";
 import { ReactComponent as LogoBookmark } from "../../bookmark.svg";
@@ -11,14 +11,14 @@ import PinnedList from "../../../../Components/PinnedList/PinnedList";
 import TopBar from "../../../../Components/topBar/topBarPresenter";
 
 
-function Lab2a15() {
+function Lab1a11() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
   const addPinned = useLevelStore((state) => state.addPinned);
   const getPinned = useLevelStore((state) => state.pinnedTheory);
   const removePinned = useLevelStore((state) => state.removePinned);
   //update this variable if using this as template!!
-  const contentName = "Buffered reader";
-  const thisLevel = 15;
+  const contentName = "Matrix";
+  const thisLevel = 11;
   const [isFilled, setIsFilled] = React.useState(
       <LogoBookmarkFilled className="bookmark-icon"/>
   );
@@ -41,36 +41,40 @@ function Lab2a15() {
     }
   }
 
-  const preMadeText = `import java.util.Scanner;  // Import the Scanner class
+  const preMadeText = `import java.util.Scanner;
+
   class Progman
   {  
       public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);  
-        //print the input given from scanner
+          Scanner scanner = new Scanner(System.in); 
+          //Your code here
+          
+          System.out.print(sum);
           
       }
-  }`;
-
-  function addToPinned() {
-    if (!getPinned.includes(contentName)) {
-      addPinned(contentName);
-    } else {
-      removePinned(contentName);
-    }
   }
+`;
 
-  function IsDisabled() {
-    if (thisLevel >= currentLevel) {
-      setStatus([true, "next-button-gray"]);
-    } else {
-      setStatus([false, "button-lab-cyan "]);
-    }
+function addToPinned() {
+  if (!getPinned.includes(contentName)) {
+    addPinned(contentName);
+  } else {
+    removePinned(contentName);
   }
+}
 
-  useEffect(() => {
-    IsDisabled();
-    isPinned();
-  }, [currentLevel, getPinned]);
+function IsDisabled() {
+  if (thisLevel >= currentLevel) {
+    setStatus([true, "next-button-gray"]);
+  } else {
+    setStatus([false, "button-lab-cyan "]);
+  }
+}
+
+useEffect(() => {
+  IsDisabled();
+  isPinned();
+}, [currentLevel, getPinned]);
 
   return (
     <div>
@@ -80,15 +84,15 @@ function Lab2a15() {
     <PinnedList/>
     <TopBar></TopBar>
   
-    <Lab2a15View
+    <Lab1a11View
       addPinned={addToPinned}
       preMadeText={preMadeText}
       disabled={status}
       thisLevel={thisLevel}
       svg={isFilled}
-    ></Lab2a15View>
+    ></Lab1a11View>
     </div>
     
   );
 }
-export default Lab2a15;
+export default Lab1a11;

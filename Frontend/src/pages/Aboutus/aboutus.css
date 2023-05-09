@@ -50,10 +50,12 @@
   height: 20px;
   margin: 0 auto;
   color: #CECECE;
+  margin-left: -35%;
 }
 
 .mail-text {
   margin-top: 10px;
+  margin-left: -35%;
 }
 
 
@@ -68,6 +70,11 @@
   font-family: "Lora";
   color: #CECECE;
   
+
+}
+.Aboutus h1{
+  text-align: left;
+  margin-left: -20%;
 }
 /*
 .buttons {

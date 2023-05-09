@@ -1,30 +1,33 @@
 import React from "react";
-import Lab1a6View from "./Assignment6View";
+import Lab1a9View from "./Assignment9View";
 import useLevelStore from "../../../../Model/frontEndStore";
 import { useEffect } from "react";
-import { ReactComponent as LogoBookmark } from "../../bookmark.svg";
-import { ReactComponent as LogoBookmarkFilled } from "../../filledBookmark.svg";
+import {ReactComponent as LogoBookmark} from "../../bookmark.svg";
+import {ReactComponent as LogoBookmarkFilled} from "../../filledBookmark.svg";
 import RightSideBar from "../../../../Components/rightSideBar/rightSideBarPresenter";
 import Progress from "../../../../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import Sidebar from "../../../../Components/Sidebar/Sidebar";
 import PinnedList from "../../../../Components/PinnedList/PinnedList";
 import TopBar from "../../../../Components/topBar/topBarPresenter";
-
-
-function Lab1a6() {
+//Module 9 Lab 1 - Nested For-Loops
+function Lab1a9() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
   const addPinned = useLevelStore((state) => state.addPinned);
   const getPinned = useLevelStore((state) => state.pinnedTheory);
   const removePinned = useLevelStore((state) => state.removePinned);
   //update this variable if using this as template!!
-  const contentName = "Class";
-  const thisLevel = 6;
+  const contentName = "Nested for-loop";
+  const thisLevel = 9;
   const [isFilled, setIsFilled] = React.useState(
-    <LogoBookmarkFilled className="bookmark-icon" />
+      <LogoBookmarkFilled className="bookmark-icon"/>
   );
 
   const [status, setStatus] = React.useState([true, "next-button-gray"]);
-  
+
+  function scrollToTop() {
+    window.scrollTo(0, 0)
+  };
+
   function isPinned() {
     if (getPinned.includes(contentName)) {
       setIsFilled(
@@ -37,8 +40,22 @@ function Lab1a6() {
     }
   }
 
-  const preMadeText = `import java.util.Scanner;  // Import the Scanner class
-`;
+  const preMadeText = `import java.util.Scanner;
+class Progman
+{  
+    public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+      System.out.print(square_matrix(scanner.nextInt()));    
+    }
+      public static int square_matrix(int n) {
+          Scanner input = new Scanner(System.in);
+          int sum = 0;
+          int[][] matrix = new int[n][n];
+          //Your code below
+
+          return sum;
+          }
+}`;
 
 function addToPinned() {
   if (!getPinned.includes(contentName)) {
@@ -63,21 +80,20 @@ useEffect(() => {
 
   return (
     <div>
-    <RightSideBar></RightSideBar>
-    <Sidebar></Sidebar>
-    <Progress />
-    <PinnedList/>
-    <TopBar></TopBar>
-  
-    <Lab1a6View
-      addPinned={addToPinned}
-      preMadeText={preMadeText}
-      disabled={status}
-      thisLevel={thisLevel}
-      svg={isFilled}
-    ></Lab1a6View>
+      <RightSideBar></RightSideBar>
+      <Sidebar></Sidebar>
+      <Progress />
+      <PinnedList/>
+      <TopBar></TopBar>
+
+      <Lab1a9View
+        addPinned={addToPinned}
+        svg={isFilled}
+        preMadeText={preMadeText}
+        disabled={status}
+        thisLevel={thisLevel}
+      ></Lab1a9View>
     </div>
-    
   );
 }
-export default Lab1a6;
+export default Lab1a9;
