@@ -25,6 +25,7 @@ import Lab1a13 from "./pages/Assignments/Lab1Assignments/Assign13/Assignment13Pr
 import Lab2a16 from "./pages/Assignments/Lab2Assignments/Assign16/Assignment16Presenter";
 import Lab1a9 from "./pages/Assignments/Lab1Assignments/Assign9/Assignment9Presenter";
 import Lab1a14 from "./pages/Assignments/Lab1Assignments/Assign14/Assignment14Presenter";
+import Lab2a25 from "./pages/Assignments/Lab2Assignments/Assign25/Assignment25Presenter";
 
 import Lab3a3 from "./pages/Assignments/Lab3Assignments/Assign31/Assignment31Presenter";
 import Login from "./Components/LoginPage/Login";
@@ -206,7 +207,8 @@ function App() {
             
             <Route path="/Lab2/1" element={<Lab2a15 />} />
             <Route path="/Lab2/2" element={<Lab2a16 />} />
-            
+            <Route path="/Lab2/11" element={<Lab2a25 />} />
+
             <Route path="/Lab1/8" element={<Lab1a8 />} />
             <Route path="/Lab1/9" element={<Lab1a9 />} />
             <Route path="/Lab1/10" element={<Lab1a10 />} />
@@ -214,7 +216,7 @@ function App() {
             <Route path="/Lab1/12" element={<Lab1a12 />} />
             <Route path="/Lab1/13" element={<Lab1a13 />} />
             <Route path="/Lab1/14" element={<Lab1a14 />} />
-
+           
        
 
             <Route path="/Lab3/3" element={<Lab3a3 />} />
