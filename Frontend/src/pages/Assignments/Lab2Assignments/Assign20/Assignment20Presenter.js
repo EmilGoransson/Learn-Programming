@@ -1,5 +1,4 @@
 import React from "react";
-import Lab3a31View from "./Assignment31View";
 import useLevelStore from "../../../../Model/frontEndStore";
 import {useEffect} from "react";
 import {ReactComponent as LogoBookmark} from "../../bookmark.svg";
@@ -9,21 +8,25 @@ import Progress from "../../../../Components/CurrentProgressBar/Presenter/curren
 import Sidebar from "../../../../Components/Sidebar/Sidebar";
 import PinnedList from "../../../../Components/PinnedList/PinnedList";
 import TopBar from "../../../../Components/topBar/topBarPresenter";
+import Lab2a20View from "./Assignment20View";
 
-function Lab3a31() {
+
+
+
+function Lab2a20() {
     const currentLevel = useLevelStore((state) => state.currentLevel);
     const addPinned = useLevelStore((state) => state.addPinned);
     const removePinned = useLevelStore((state) => state.removePinned);
     const getPinned = useLevelStore((state) => state.pinnedTheory);
     //update this variable if using this as template!!
-    const contentName = "Stringbuilder";
-    const thisLevel = 31;
+    const contentName = "While loop";
+    const thisLevel = 20;
     const [isFilled, setIsFilled] = React.useState(
         <LogoBookmarkFilled className="bookmark-icon"/>
     );
 
-    const [status, setStatus] = React.useState([true, "next-button-gray"]);
 
+    const [status, setStatus] = React.useState([true, "next-button-gray"]);
 
     function isPinned() {
         if (getPinned.includes(contentName)) {
@@ -37,31 +40,23 @@ function Lab3a31() {
         }
     }
 
-    const preMadeText = `import java.util.Scanner;
-
-class Progman
+    
+    const preMadeText = `
+    import java.util.Scanner;
+    class Progman
 {  
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        String secretword = scanner.next();
+    Scanner scanner = new Scanner(System.in);
+    
 
-        // Create a StringBuilder object
 
-        // Append "Hello " to the StringBuilder
 
-        // Insert the secretword at index 6       
 
-        // Replace the substring at index 0-5 with "Hi"
 
-        // Delete the characters at range 8-10
-
-        // Append the char '!' to the StringBuilder
-
-        // Convert the StringBuilder to a String and print it
-        
     }
+    
 }`;
+
 
     function addToPinned() {
         if (!getPinned.includes(contentName)) {
@@ -71,6 +66,7 @@ class Progman
         }
     }
 
+
     function IsDisabled() {
         if (thisLevel >= currentLevel) {
             setStatus([true, "next-button-gray"]);
@@ -79,10 +75,12 @@ class Progman
         }
     }
 
+
     useEffect(() => {
         IsDisabled();
         isPinned();
     }, [currentLevel, getPinned]);
+
 
     return (
         <div>
@@ -91,16 +89,17 @@ class Progman
             <Progress/>
             <PinnedList/>
             <TopBar></TopBar>
-            <Lab3a31View
-
-                addPinned={addToPinned}
-                preMadeText={preMadeText}
-                disabled={status}
-                thisLevel={thisLevel}
-                svg={isFilled}
-            ></Lab3a31View>
+            
+    <Lab2a20View
+      addPinned={addToPinned}
+      preMadeText={preMadeText}
+      disabled={status}
+      thisLevel={thisLevel}
+      svg={isFilled}
+    ></Lab2a20View>
         </div>
     );
 }
 
-export default Lab3a31;
+
+export default Lab2a20;
