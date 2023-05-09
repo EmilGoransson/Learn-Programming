@@ -28,12 +28,14 @@ import Lab1a11 from "./pages/Assignments/Lab1Assignments/Assign11/Assignment11Pr
 import Lab1a12 from "./pages/Assignments/Lab1Assignments/Assign12/Assignment12Presenter";
 import Lab1a13 from "./pages/Assignments/Lab1Assignments/Assign13/Assignment13Presenter";
 import Lab1a14 from "./pages/Assignments/Lab1Assignments/Assign14/Assignment14Presenter";
+import Lab2a25 from "./pages/Assignments/Lab2Assignments/Assign25/Assignment25Presenter";
+import Lab2a26 from "./pages/Assignments/Lab2Assignments/Assign26/Assignment25Presenter";
 
 
 import Lab2a15 from "./pages/Assignments/Lab2Assignments/Assign15/Assignment15Presenter";
 import Lab2a16 from "./pages/Assignments/Lab2Assignments/Assign16/Assignment16Presenter";
 import Lab2a18 from "./pages/Assignments/Lab2Assignments/Assign18/Assignment18Presenter";
-import Lab2a25 from "./pages/Assignments/Lab2Assignments/Assign25/Assignment25Presenter";
+
 import Lab2a24 from "./pages/Assignments/Lab2Assignments/Assign24/Assignment24Presenter";
 import Lab2a27 from "./pages/Assignments/Lab2Assignments/Assign27/Assignment27Presenter";
 import Lab2a17 from "./pages/Assignments/Lab2Assignments/Assign17/Assignment17Presenter";
@@ -42,6 +44,7 @@ import Lab2a20 from "./pages/Assignments/Lab2Assignments/Assign20/Assignment20Pr
 import Lab2a21 from "./pages/Assignments/Lab2Assignments/Assign21/Assignment21Presenter";
 import Lab2a22 from "./pages/Assignments/Lab2Assignments/Assign22/Assignment22Presenter";
 import Lab2a23 from "./pages/Assignments/Lab2Assignments/Assign23/Assignment23Presenter";
+
 
 import Lab3a2 from "./pages/Assignments/Lab3Assignments/Assign30/Assignment30Presenter";
 import Lab3a3 from "./pages/Assignments/Lab3Assignments/Assign31/Assignment31Presenter";
@@ -235,6 +238,8 @@ function App() {
             <Route path="/Lab2/9" element={<Lab2a23 />} />
             <Route path="/Lab1/13" element={<Lab1a13 />} />
             <Route path="/Lab1/14" element={<Lab1a14 />} />
+            <Route path="/Lab2/12" element={<Lab2a26 />}/>
+       
            
             
             <Route path="/Lab2/1" element={<Lab2a15 />} />
