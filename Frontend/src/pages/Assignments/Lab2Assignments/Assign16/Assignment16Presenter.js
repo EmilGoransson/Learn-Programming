@@ -37,6 +37,11 @@ function Lab2a16() {
   }
 
   const preMadeText = `import java.util.Scanner;  // Import the Scanner class
+  
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+  
   class Progman
   {  
       public static void main(String[] args) {
