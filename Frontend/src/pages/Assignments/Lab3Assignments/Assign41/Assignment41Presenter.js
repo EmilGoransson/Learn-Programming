@@ -48,7 +48,7 @@ class Progman
     }
     public static void selectOption(int number) {
       //Your code here
-      
+
     }
 }`;
 

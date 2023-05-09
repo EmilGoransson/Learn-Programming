@@ -148,13 +148,13 @@ public class SwitchExample {
             on the number using a switch statement. The program should do the following:
             </p>
             <p>
-            1. If the number is 1, output "You selected option 1."
+            1. If the number is 1, output "You selected option one."
             </p>
             <p>
-                2. If the number is 2, output "You selected option 2."
+                2. If the number is 2, output "You selected option two."
             </p>
             <p>
-                3. If the number is 3, output "You selected option 3."
+                3. If the number is 3, output "You selected option three."
             </p>
             <p>
                 4. If the number is not 1, 2, or 3, output "Invalid option selected."
@@ -170,7 +170,7 @@ public class SwitchExample {
               use a Switch statement! </p>
             <p>
                 <CodeRunner
-                    testCases={"You selected option 2."}
+                    testCases={"You selected option two."}
                     testCase2={"Invalid option selected."}
                     preMadeText={props.preMadeText}
                     input1={2}
