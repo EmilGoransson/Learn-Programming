@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const app = express()
 const pool = require("./dbConfig");
 const bcrypt = require("bcrypt");
 const jwtGenerator = require("./jwtGenerator");
@@ -13,7 +14,10 @@ const client = new Client({
   }
 });
 
+
 client.connect();
+
+
 //register route
 router.post("/Signup", async (req, res) => {
   try {
@@ -50,13 +54,6 @@ router.post("/Signup", async (req, res) => {
   }
 });
 
-router.get('/*', function(req, res) {
-  res.sendFile(join(__dirname, 'Frontend/src/App.js'), function(err) {
-    if (err) {
-      res.status(500).send(err)
-    }
-  })
-})
 
 //login route
 router.post("/login", async (req, res) => {
