@@ -41,20 +41,13 @@ function Lab2a20() {
     }
 
     
-    const preMadeText = `
-    import java.util.Scanner;
-    class Progman
+    const preMadeText = `import java.util.Scanner;
+class Progman
 {  
     public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
+     Scanner scanner = new Scanner(System.in);
     
-
-
-
-
-
     }
-    
 }`;
 
 
