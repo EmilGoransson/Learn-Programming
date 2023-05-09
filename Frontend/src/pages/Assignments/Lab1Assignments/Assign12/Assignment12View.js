@@ -58,7 +58,7 @@ function Lab1a12View(props) {
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>
             Write a Java program that inputs an integer value from the Scanner, and then prints whether the value is positive or negative. 
-            You should use two if statements to test the value, and print either "Possitive" or "Negative" based on the test.
+            You should use two if statements to test the value, and print either "Positive" or "Negative" based on the test.
             </p>
             <p>
                 <CodeRunner

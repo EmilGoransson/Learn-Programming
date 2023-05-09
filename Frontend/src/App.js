@@ -23,6 +23,7 @@ import Lab1a11 from "./pages/Assignments/Lab1Assignments/Assign11/Assignment11Pr
 import Lab1a12 from "./pages/Assignments/Lab1Assignments/Assign12/Assignment12Presenter";
 import Lab1a13 from "./pages/Assignments/Lab1Assignments/Assign13/Assignment13Presenter";
 import Lab1a9 from "./pages/Assignments/Lab1Assignments/Assign9/Assignment9Presenter";
+import Lab1a14 from "./pages/Assignments/Lab1Assignments/Assign14/Assignment14Presenter";
 import Login from "./Components/LoginPage/Login";
 import CreateAccount from "./Components/SignupPage/SignupPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
@@ -199,14 +200,16 @@ function App() {
             <Route path="/Lab1/5" element={<Lab1a5 />} />
             <Route path="/Lab1/6" element={<Lab1a6 />} />
             <Route path="/Lab1/7" element={<Lab1a7 />} />
-            <Route path="/Lab2/1" element={<Lab2a15 />} />
-
             <Route path="/Lab1/8" element={<Lab1a8 />} />
+            <Route path="/Lab1/9" element={<Lab1a9 />} />
             <Route path="/Lab1/10" element={<Lab1a10 />} />
             <Route path="/Lab1/11" element={<Lab1a11 />} />
             <Route path="/Lab1/12" element={<Lab1a12 />} />
             <Route path="/Lab1/13" element={<Lab1a13 />} />
-            <Route path="/Lab1/9" element={<Lab1a9 />} />
+            <Route path="/Lab1/14" element={<Lab1a14 />} />
+
+            <Route path="/Lab2/1" element={<Lab2a15 />} />
+
             <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
           </Routes>
         </main>
