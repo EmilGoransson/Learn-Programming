@@ -112,11 +112,8 @@ Decide which string comes first with the operators more than and less than analp
                     statement in Java.
                 </p>
                 <CodeRunner
-                     testCases={"Apple"}
-                     testCase2={"Proglin"}
+                     testCases={1}
                      preMadeText={props.preMadeText}
-                     input1={"Apple"}
-                     input2={"Xylophone"}
                      shouldIncrement={true}
                      thisLevel={props.thisLevel}
                 />
