@@ -120,7 +120,7 @@ function Lab2a25View(props) {
                     
                    
                     <CodeRunner
-                    testCases={"25,30,45,5,7,"}
+                    testCases={"{25,30,45,5,7}"}
                    
                    
                     preMadeText={props.preMadeText}
@@ -135,10 +135,10 @@ function Lab2a25View(props) {
              
   
             <div>
-                <Link to={`/Lab2/10`}>
+                <Link to={`/Lab2/1`}>
                     <button className="next-button text-black">Prev</button>
                 </Link>
-                <Link to={`/Lab2/12`}>
+                <Link to={`/Lab2/3`}>
                     <button className={props.disabled[1]} disabled={props.disabled[0]}
                             onClick={() => window.scrollTo(0, 0)}>
                         Next
