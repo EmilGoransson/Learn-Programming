@@ -69,7 +69,7 @@ function Lab1a4View(props) {
             </p>
             <p>
                 <CodeRunner
-                    testCases={1}
+                    testCases={4}
                     testCase2={2}
                     preMadeText={props.preMadeText}
                     input1={4}
