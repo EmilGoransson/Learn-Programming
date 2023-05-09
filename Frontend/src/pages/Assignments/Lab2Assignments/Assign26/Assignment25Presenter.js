@@ -36,12 +36,13 @@ function Lab2a26() {
     }
   }
 
-  const preMadeText = `
+  const preMadeText = `import java.util.Scanner;  // Import the Scanner class
   class Progman
   {  
       public static void main(String[] args) {
-
-        int[]  array ={25,30,45,100,5,7};
+        Scanner scanner = new Scanner(System.in);
+        int input = scanner.nextInt();
+        int[]  array ={25,30,input,100,5,7};
 
         //Implement selection sort algorithm
 
