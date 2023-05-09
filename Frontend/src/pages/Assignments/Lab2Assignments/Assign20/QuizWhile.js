@@ -33,7 +33,7 @@ export const quizData = {
       ],
       type: "MCQs",
       correctAnswer:
-        "Infinite time",
+        "Infinite times",
     },
   
     {

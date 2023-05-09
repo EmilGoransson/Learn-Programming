@@ -38,15 +38,15 @@ export const quizData = {
     },
     {
       question: "Which of the following is true about the variable used in a for-each loop in Java?",
-      choices: ["The variable must be declared outside of the loop", " The variable is automatically initialized to zero ", "The variable is automatically declared and initialized by the loop ", "The variable must be of type Object"],
+      choices: ["The variable must be declared outside of the loop", " The variable is automatically initialized to zero ", "The variable is automatically declared and initialized by the loop", "The variable must be of type Object"],
       type: "MCQs",
       correctAnswer: "The variable is automatically declared and initialized by the loop",
     },
     {
-      question: " Can a for-each loop be used to modify the elements in an array or collection?",
+      question: "Can a for-each loop be used to modify the elements in an array or collection?",
       choices: ["Yes, but only if the elements are objects", " Yes, but only if the loop is nested inside another loop", "Yes, but only if the loop variable is declared as final", "No, a for-each loop is read-only and cannot modify the elements"],
       type: "MCQs",
-      correctAnswer: "No, a for-each loop is read-only and cannot modify the elements ",
+      correctAnswer: "No, a for-each loop is read-only and cannot modify the elements",
     },
   ],
 };

@@ -56,10 +56,10 @@ This loop prints out each element in the myArray array.
                     statement in Java.
                 </p>
                 <CodeRunner
-                     testCases={"Hello1 How1 are1 you1 ?1"}
+                     testCases={"Hellol Howl arel youl ?l"}
                      testCase2={"Helloyay Howyay areyay youyay ?yay"}
                      preMadeText={props.preMadeText}
-                     input1={"1"}
+                     input1={"l"}
                      input2={"yay"}
                      shouldIncrement={true}
                      thisLevel={props.thisLevel}

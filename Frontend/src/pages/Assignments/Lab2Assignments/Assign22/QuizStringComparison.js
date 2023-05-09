@@ -20,7 +20,7 @@ export const quizData = {
       question: "When using the compareTo() method to compare two strings, what does a negative result mean?",
       choices: ["The first string comes after the second string.", "The first string is equal to the second string.", "The two strings cannot be compared." ,"The first string comes before the second string."],
       type: "MCQs",
-      correctAnswer: "The first string comes before the second string.",
+      correctAnswer:"The first string comes before the second string.",
     },
     {
       question:
