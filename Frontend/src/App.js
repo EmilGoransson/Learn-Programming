@@ -28,6 +28,7 @@ import Login from "./Components/LoginPage/Login";
 import CreateAccount from "./Components/SignupPage/SignupPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
+import Lab2a10 from "./pages/Assignments/Lab2Assignments/Assign10/Assignment10Presenter";
 
 
 import PinnedList from "./Components/PinnedList/PinnedList";
@@ -209,6 +210,7 @@ function App() {
             <Route path="/Lab1/14" element={<Lab1a14 />} />
 
             <Route path="/Lab2/1" element={<Lab2a15 />} />
+            <Route path="/Lab2/10" element={<Lab2a10 />} />
 
             <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
           </Routes>

@@ -1,5 +1,5 @@
 import React from "react";
-import Lab1a9View from "./Assignment9View";
+import Lab2a10View from "./Assignment10View";
 import useLevelStore from "../../../../Model/frontEndStore";
 import { useEffect } from "react";
 import RightSideBar from "../../../../Components/rightSideBar/rightSideBarPresenter";
@@ -7,12 +7,11 @@ import Progress from "../../../../Components/CurrentProgressBar/Presenter/curren
 import Sidebar from "../../../../Components/Sidebar/Sidebar";
 import PinnedList from "../../../../Components/PinnedList/PinnedList";
 import TopBar from "../../../../Components/topBar/topBarPresenter";
-//Module 9 Lab 1 - Nested For-Loops
-function Lab1a9() {
+//Module 10 Lab 2 - Nested For-Loops
+function Lab2a10() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
-  const levelLab3 = useLevelStore((state) => state.levelsLab7);
   //update this variable if using this as template!
-  const thisLevel = 9;
+  const thisLevel = 24;
 
   const [status, setStatus] = React.useState([true, "next-button-gray"]);
 
@@ -21,13 +20,14 @@ class Progman
 {  
     public static void main(String[] args) {
       Scanner scanner = new Scanner(System.in);
-      System.out.print(square_matrix(scanner.nextInt()));    
+      System.out.print(insert(scanner.nextInt()));    
     }
-      public static int square_matrix(int n) {
+      public static int insert(int n) {
           int sum = 0;
-          int[][] matrix = new int[n][n];
+          int[] array = {1,2,3,5,6,7,8,9};
+          int[] new_array = ...;
           //Your code below
-
+          
           return sum;
           }
 }`;
@@ -50,12 +50,12 @@ class Progman
       <PinnedList/>
       <TopBar></TopBar>
 
-      <Lab1a9View
+      <Lab2a10View
         preMadeText={preMadeText}
         disabled={status}
         thisLevel={thisLevel}
-      ></Lab1a9View>
+      ></Lab2a10View>
     </div>
   );
 }
-export default Lab1a9;
+export default Lab2a10;
