@@ -278,8 +278,9 @@ router.get("/verify", authorization, async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
-app.get("/*", function(req, res) {
+router.get("/*", function(req, res) {
   res.sendFile(path.join(__dirname, "./build/index.html"));
+  res.status(200);
 });
 
 
