@@ -14,7 +14,7 @@ const Sidebar = () => {
       <div className="nav-Image -mt-6">
       <NavLink to="/labs">
         <img
-          src="https://i.imgur.com/xj9BUtI.png"
+          src="https://i.imgur.com/yLqZDJM.png"
           className=""
           alt="My Image"
         />
