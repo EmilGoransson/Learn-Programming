@@ -89,6 +89,9 @@ arr = newArr;
 
                 <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <p>
+          <p>
+            {`Write a java method that inserts the parameter n at index n and sums each index to sum.`}
+          </p>
 1. Initialize the length of <code>new_array</code> to be one larger than the length of <code>array.</code>
 <br></br>
 <br></br>
@@ -107,13 +110,12 @@ arr = newArr;
 <br></br>
 6. Return the sum.
 </p>     </pre>
-          <p>
-            {`Write the Java method square_matrix that populates a matrix and returns the sum`}
-          </p>
                     <CodeRunner
                         testCases={45}
+                        testCase2={43}
                         preMadeText={props.preMadeText}
                         input1={4}
+                        input2={2}
                         shouldIncrement={true}
                         thisLevel={props.thisLevel}
                     />
