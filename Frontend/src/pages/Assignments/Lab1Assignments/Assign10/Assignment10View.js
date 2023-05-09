@@ -5,10 +5,13 @@ import {Link} from "react-router-dom";
 import "../AssignmentView.css";
 import {quizData} from "./QuizArray";
 
-function Lab1a7View(props) {
+function Lab1a10View(props) {
     return (
         <div className="mt-20">
             <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
+                <a onClick={props.addPinned} style={{cursor: "pointer"}}>
+                   {props.svg}
+                </a>
                 <h1 className="text-3xl font-bold mb-4">Arrays</h1>
                 <p className="mb-4">
                 In Java, an array is a data structure that stores a fixed-size sequence of elements
@@ -115,4 +118,4 @@ for (int i = 0; i < numbers.length; i++) {
     );
 }
 
-export default Lab1a7View;
+export default Lab1a10View;
