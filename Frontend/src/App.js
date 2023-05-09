@@ -22,10 +22,15 @@ import Lab1a10 from "./pages/Assignments/Lab1Assignments/Assign10/Assignment10Pr
 import Lab1a12 from "./pages/Assignments/Lab1Assignments/Assign12/Assignment12Presenter";
 import Lab1a13 from "./pages/Assignments/Lab1Assignments/Assign13/Assignment13Presenter";
 import Login from "./Components/LoginPage/Login";
+import Lab2a18 from "./pages/Assignments/Lab2Assignments/Assign18/Assignment18Presenter";
 import CreateAccount from "./Components/SignupPage/SignupPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 import Lab2a17 from "./pages/Assignments/Lab2Assignments/Assign17/Assignment17Presenter";
+import Lab2a19 from "./pages/Assignments/Lab2Assignments/Assign19/Assignment19Presenter";
+import Lab2a20 from "./pages/Assignments/Lab2Assignments/Assign20/Assignment20Presenter";
+import Lab2a21 from "./pages/Assignments/Lab2Assignments/Assign21/Assignment21Presenter";
+import Lab2a22 from "./pages/Assignments/Lab2Assignments/Assign22/Assignment22Presenter";
 
 import PinnedList from "./Components/PinnedList/PinnedList";
 import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
@@ -203,7 +208,11 @@ function App() {
             <Route path="/Lab1/10" element={<Lab1a10 />} />
             <Route path="/Lab1/12" element={<Lab1a12 />} />
             <Route path="/Lab2/3" element={<Lab2a17 />} />
-
+            <Route path="/Lab2/4" element={<Lab2a18 />} />
+            <Route path="/Lab2/5" element={<Lab2a19 />} />
+            <Route path="/Lab2/6" element={<Lab2a20 />} />
+            <Route path="/Lab2/7" element={<Lab2a21 />} />
+            <Route path="/Lab2/8" element={<Lab2a22 />} />
             <Route path="/Lab1/13" element={<Lab1a13 />} />
             <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
           </Routes>
