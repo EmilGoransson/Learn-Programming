@@ -53,7 +53,7 @@ function Lab2a25() {
 
         //Print the array array after deletion 
         for (int i = 0; i < newArray.length; i++) {
-          System.out.print(newArray[i] + " ");
+          System.out.print(newArray[i] + ",");
       }
       
        
