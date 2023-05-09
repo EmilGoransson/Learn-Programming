@@ -42,35 +42,33 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
   
-  class Progman
-  {  
-      public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);  
-        //declare a BufferedReader and intializw it by wrapping System in
-
-        // create a try block and inside it read the input using "readLine()"
+class Progman {  
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);  
+    //declare a BufferedReader and intializw it by wrapping System in
 
 
-
-        // Claculate the square of the of the input och print inte "use 'print' only"
-
-
-        //close the try block and catch an IOException
-
-        //create a finally block
-
-        //Inside the finally blok create a new try
-
-        // close the reader and then the try block
-
-        catch (IOException e) {
-          System.err.print("An error occurred while closing the reader: " + e.getMessage());
-      }
+    //Create a try block and inside it read the input using "readLine()"
 
 
-          
-      }
-  }`;
+    //Claculate the square of the of the input och print inte "use 'print' only"
+
+
+    //Close the try block and catch an IOException
+
+    
+    //Create a finally block
+
+        
+    //Inside the finally blok create a new try
+
+    
+    //Close the reader and then the try block
+    catch (IOException e) {
+      System.err.print("An error occurred while closing the reader: " + e.getMessage());
+    }    
+  }
+}`;
   function addToPinned() {
     if (!getPinned.includes(contentName)) {
       addPinned(contentName);

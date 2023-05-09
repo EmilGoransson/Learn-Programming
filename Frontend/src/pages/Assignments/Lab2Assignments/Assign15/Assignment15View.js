@@ -93,25 +93,24 @@ If any IO exception occurs, it is caught in the catch block, and the stack trace
             
          
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
-            <p>Write a Java program that prompts the user for their name and age, and then displays a personalized greeting along with the entered age.</p>
-            <p>Instruction: </p>
-               <p> 1.Import the necessary <code>classes</code> </p>
-                    
-                    <p>2. Create a <code>BufferedReader</code> object that wraps <code>System.in</code> to read the input
+            <p>Write a Java program that prompts the user for their name, and then displays a personalized greeting along.</p>
+            <p>Instruction: </p>                    
+                    <p>1. Create a <code>BufferedReader</code> object that wraps <code>System.in</code> to read the input
                     </p>
                     
-                    <p>3. Implement the logic to prompt the input using <code>BufferedReader</code> object, the <code>println</code> line should be in this format <code>System.out.println("Hello, " + [bufferreaderobject]+ "!");</code>.
+                    <p>2. Implement the logic to prompt the input using <code>BufferedReader</code> object.
                     </p>
                    
-                    <p>4. Close the <code>BufferedReader</code> object </p>
+                    <p>3. Close the <code>BufferedReader</code> object </p>
                    
-                    <p>5. Run the program</p>
+                    <p>4. Run the program</p>
                     
                     <CodeRunner
                     testCases={"Hello, Ayah!"}
-                    
+                    testCase2={"Hello, Hiba!"}
                     preMadeText={props.preMadeText}
                     input1={"Ayah"}
+                    input2={"Hiba"}
                     
                     shouldIncrement={true}
                     thisLevel={props.thisLevel}
