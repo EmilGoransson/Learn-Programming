@@ -41,15 +41,23 @@ function Lab2a15() {
     }
   }
 
-  const preMadeText = `import java.util.Scanner;  // Import the Scanner class
-  class Progman
-  {  
-      public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);  
-        //print the input given from scanner
-          
-      }
-  }`;
+  const preMadeText = `import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+  
+class Progman {  
+    public static void main(String[] args) throws IOException {
+        //Create a BufferedReader object and use InputStreamReader to read the input
+
+        //Create a String that stores the input from the BufferedReader
+         
+        //Close the BufferedReader
+
+        //Output
+        System.out.println("Hello, " + name + "!");
+
+    }
+}`;
 
   function addToPinned() {
     if (!getPinned.includes(contentName)) {
