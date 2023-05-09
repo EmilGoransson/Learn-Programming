@@ -16,7 +16,7 @@ function Lab3a29() {
     const removePinned = useLevelStore((state) => state.removePinned);
     const getPinned = useLevelStore((state) => state.pinnedTheory);
     //update this variable if using this as template!!
-    const contentName = "Return";
+    const contentName = "Objects";
     const thisLevel = 29;
     const [isFilled, setIsFilled] = React.useState(
         <LogoBookmarkFilled className="bookmark-icon"/>
@@ -37,14 +37,39 @@ function Lab3a29() {
         }
     }
 
-    const preMadeText = `class Progman
-{  
-    public static void main(String[] args) {
-        
-      //print "Hello World here"
-        
+    const preMadeText = `import java.util.Scanner;
+
+    class Progman {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int age = scanner.nextInt();
+            
+            //Create a new Person object called "person" with the age from scanner
+
+
+            //Call the haveBirthday() method with the created person
+
+
+            //Prints the result
+            System.out.print("Happy birthday! You are now " + person.getAge() + " years old.");
+        }
     }
-}`;
+    
+    //A class called Person
+    class Person {
+        //Create instance variable for age
+
+        
+        //Create a constructor here
+
+
+        //Create the getAge() method here that returns the age of the Person
+
+
+        //Create the haveBirthday() method here that adds 1 to the age of the Person
+
+
+    }`;
 
     function addToPinned() {
         if (!getPinned.includes(contentName)) {
