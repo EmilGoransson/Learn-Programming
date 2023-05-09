@@ -121,13 +121,14 @@ function Lab2a25View(props) {
                    
                     <CodeRunner
                     testCases={"25,30,45,5,7,"}
-                   
+                    testCase2={"25,30,45,100,7,"}
+
                    
                     preMadeText={props.preMadeText}
                     input1={3}
+                    input2={4}
+
                    
-                    
-                    
                     shouldIncrement={true}
                     thisLevel={props.thisLevel}
                 />

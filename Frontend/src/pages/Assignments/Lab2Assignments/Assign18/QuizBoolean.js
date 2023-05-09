@@ -38,7 +38,7 @@ export const quizData = {
     },
     {
       question: "What is the result of the following expression? true && false",
-      choices: ["true", "false ", " undefined ", "error"],
+      choices: ["true", "false", " undefined", "error"],
       type: "MCQs",
       correctAnswer: "false",
     },
@@ -46,7 +46,7 @@ export const quizData = {
       question: "What is the result of the following expression? !(true || false)",
       choices: ["true", "false", "undefined", "error"],
       type: "MCQs",
-      correctAnswer: "false ",
+      correctAnswer: "false",
     },
   ],
 };

@@ -4,12 +4,10 @@
     width: 13%;
     height: 100%;
     position: fixed;
-    z-index: 1;
     top: 0;
     left: 0;
     background-color: #141B26;
     overflow: hidden;
-    padding-top: 20px;
     text-overflow: ellipsis;
     line-height: 1.2em;
 }
@@ -23,11 +21,10 @@
     text-decoration: none;
     font-size: 1.6vw;
     color: #CECECE;
-    margin-bottom: 10%;
+    margin-top: 10%;
     text-align: left;
     text-overflow: ellipsis;
     line-height: 2em;
-
 }
 
 .nav-Image {
@@ -60,7 +57,7 @@
 .sidenav img {
     display: block;
     margin: 20px;
-    margin-bottom: 50%;
+    margin-bottom: 40%;
     width: 80%;
     padding: 20px;
 }

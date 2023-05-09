@@ -10,99 +10,56 @@ function Lab2a23View(props) {
             <a onClick={props.addPinned} style={{cursor: "pointer"}}>
                 {props.svg}
             </a>
-            <h1 className="text-3xl font-bold mb-4">Comparing Strings</h1>
+            <h1 className="text-3xl font-bold mb-4">Linked Lists</h1>
             <p className="mb-4">
-            In Java, you can compare strings using several methods, 
-            including the <code>equals() method</code>, the <code>equalsIgnoreCase() method</code>, and the <code>comparison operators (== and !=) </code>
-            as well as the more than and less than operators..
-            <h2 className="text-2xl font-bold mb-4">Equals</h2>
-<p><code>The equals() method</code> compares the content of two strings and returns true if they have the 
-    same characters in the same order. For example:</p>
-    <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
-<code>{`String str1 = "Hello";
-String str2 = "hello";
-String str3 = "Hello";
-
-System.out.println(str1.equals(str2)); // false
-System.out.println(str1.equals(str3)); // true
-`};</code>
-</pre>
+            A <code>linked list</code> is a data structure used in computer science to store and manipulate collections of data. 
+            Unlike an array, which stores elements in contiguous memory locations, a linked list is made up of individual 
+            nodes that contain both a value and a reference to the next node in the list.One of the key advantages of a 
+            linked list is that it can grow or shrink dynamically, without needing to allocate or deallocate a contiguous 
+            block of memory like an array does. This makes linked lists useful for situations where the size of the data 
+            being stored may change frequently.
 </p>
-<h2 className="text-2xl font-bold mb-4">equalsIgnoreCase</h2>
-<p>The <code>equalsIgnoreCase() method</code> is similar to equals(), but it ignores the case of the characters. For example:</p>
-
-<pre className="bg-lightBlueGray rounded-md p-4 mb-4">
-<code>{`String str1 = "Hello";
-String str2 = "hello";
-String str3 = "Hello";
-
-System.out.println(str1.equalsIgnoreCase(str2)); // true
-System.out.println(str1.equalsIgnoreCase(str3)); // true
-`};</code>
-</pre>
-
-<p>Note that both <code>equals()</code> and <code>equalsIgnoreCase()</code> are case-sensitive, so "Hello" and "hello" are considered different strings.
-           
+            <h2 className="text-2xl font-bold mb-4">Single Linked List</h2>
+<p>Linked lists come in several different varieties, but the most common is the <code>singly linked list</code>. 
+    In a singly linked list, each node contains a <code>value</code> and a <code>reference</code> to the next node in the list. 
+    The last node in the list has a reference to <code>null</code>, indicating the end of the list.To traverse a linked list, 
+    you start at the head node (the first node in the list) and follow the references from node to node until you
+     reach the end of the list. Linked lists also support insertion and deletion of elements at any point in the list, 
+     although this can be less efficient than with an array due to the need to update references to adjacent nodes.
 </p>
+    
+<h2 className="text-2xl font-bold mb-4">Double Linked List</h2>
+<p>Another variation of linked list is the <code>doubly linked list</code>, where each node has a reference to both the <code>next</code>
+     and <code>previous</code> nodes in the list. This allows for more efficient insertion and deletion operations, but requires 
+     more memory overhead to store the extra reference.</p>
 
-            <h2 className="text-2xl font-bold mb-4">Comparison Operators</h2>
+     <h2 className="text-2xl font-bold mb-4">Array vs Linked List</h2>
+<p><code>Arrays</code> and <code>linked lists</code> are two common data structures used in programming. 
+    Arrays store a fixed number of elements in contiguous memory, making random access 
+    and traversal efficient. However, resizing an array can be costly and it's difficult to 
+    insert or delete elements in the middle.Linked lists, on the other hand, use nodes to store 
+    elements in non-contiguous memory. Each node contains a value and a reference to the next node, 
+    forming a chain-like structure. This allows for easy insertion and deletion of elements, as well as 
+    dynamic resizing. However, linked lists can be less efficient for random access and traversal since 
+    elements are not stored in contiguous memory.Overall, the choice between arrays and linked lists depends 
+    on the specific use case and the trade-offs between efficiency, flexibility, and memory usage.</p>
+
+            <h2 className="text-2xl font-bold mb-4">Conclusion</h2>
             <p className="mb-4">
-            Alternatively, you can use the comparison operators <code>== and !=</code> to compare strings, but they work differently than with primitive 
-            data types. When you use == or != with strings, they compare the memory addresses of the strings, not their contents. 
-            For example:
-            </p>
-            <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
-            <code>{`String str1 = "Hello";
-String str2 = "Hello";
-String str3 = new String("Hello");
-
-System.out.println(str1 == str2); // true
-System.out.println(str1 == str3); // false
-
-`};</code>
-</pre>
-
-<p>In the above example, str1 and str2 are two different variables that hold the same string literal,
-     so they refer to the same memory address. On the other hand, str3 is a new string object that was 
-     created using the new keyword, so it has a different memory address than str1 and str2.</p>
-     <h2 className="text-2xl font-bold mb-4">More than & Less than</h2>
-            <p className="mb-4">
-            In Java, you can also use the<code> {`{<}`} </code> and <code> {`{>}`} </code> operators to compare strings lexicographically. When you compare two strings using the
-            {`{<}`}  or {`{>}`}  operators, the comparison is based on the Unicode values ​​of the characters in the strings.
-            </p>
-            <p>
-Here's an example of using the {`{<}`} operator to compare two strings:</p>
-<pre className="bg-lightBlueGray rounded-md p-4 mb-4"> <code>{`
-String str1 = "apple";
-String str2 = "banana";
-
-if (str1.compareTo(str2) < 0) {
-    System.out.println(str1 + " comes before " + str2);
-} else {
-    System.out.println(str2 + " comes before " + str1);
-}
-
-`};</code></pre>
+            Overall, linked lists are a powerful and flexible data structure with many use cases in computer
+             science and programming. They are widely used in programming languages and frameworks such as Java
+              and .NET, and have been a staple of computer science education for many years.
+           </p>
 
 
-<p>In the above example, the compareTo() method is used to compare the strings lexicographically. If str1 comes before str2 in 
-    the dictionary, the result of compareTo() will be a negative number. Conversely, if str1 comes after str2 in the dictionary, 
-    the result of compareTo() will be a positive number. If the two strings are equal, the result of compareTo() will be 0.Note 
-    that when using {`{<}`} and {`{>}`} to compare strings, the result can be different depending on the capitalization of the characters. 
-    For example, "apple" is lexicographically before "Banana", even though "B" has a lower Unicode value than "a". If you want 
-    to compare strings based on their alphabetical order, regardless of capitalization, you can convert the strings to lowercase 
-    or uppercase before comparing them.In general, it's recommended to use the equals() or equalsIgnoreCase() method when comparing
-     strings in Java, as they provide a more reliable way to compare the content of strings
-.</p>
-     
 
+    
             <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
      <Quiz quizData={quizData}/>
       </pre>
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>    
-Write a program that compares a given string from the scanner togetehr with the given string. 
-Decide which string comes first with the operators more than and less than analphabetically.Print the string that comes first.
+Print 1
             </p>
             Remember:
             <p>
@@ -112,11 +69,9 @@ Decide which string comes first with the operators more than and less than analp
                     statement in Java.
                 </p>
                 <CodeRunner
-                     testCases={"Apple"}
-                     testCase2={"Proglin"}
+                     testCases={1}
                      preMadeText={props.preMadeText}
-                     input1={"Apple"}
-                     input2={"Xylophone"}
+                     input={1}
                      shouldIncrement={true}
                      thisLevel={props.thisLevel}
                 />

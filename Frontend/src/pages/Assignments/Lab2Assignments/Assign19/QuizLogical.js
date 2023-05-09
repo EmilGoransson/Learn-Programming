@@ -41,7 +41,7 @@ export const quizData = {
       question: "What is the result of the following expression? true || false && !true || true",
       choices: ["true", "false", "undefined", "error"],
       type: "MCQs",
-      correctAnswer: "true ",
+      correctAnswer: "true",
     },
   ],
 };
