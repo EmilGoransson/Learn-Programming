@@ -40,7 +40,7 @@ function Lab3a42() {
     const preMadeText = `import java.util.Scanner
     {  
         public static void main(String[] args) {
-          System.out.print("Done");
+        
         }
     }`;
 
