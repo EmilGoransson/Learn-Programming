@@ -129,12 +129,14 @@ const ButtonContainer = (props) => {
               return (
                 <Link to={`/${linkTitle}/${index + 1}`}>
                  <OverlayTrigger
+                 
+                 rootClose
                     overlay={
                       <Tooltip id="tooltip-disabled">{moduleName}</Tooltip>
                     }
                   >
                     <button className={color} key={buttonId} disabled={status}>
-                      <div>{number}</div>
+                      {number}
                     </button>
                   </OverlayTrigger>
                 </Link>
@@ -193,12 +195,13 @@ const ButtonContainer = (props) => {
 return (
   <Link to={`/${linkTitle}/${index + 8}`}>
     <OverlayTrigger
+    rootClose
                     overlay={
                       <Tooltip id="tooltip-disabled">{line2}</Tooltip>
                     }
                   >
                     <button className={color} key={buttonId} disabled={status}>
-                      <div>{line1}</div>
+                      {line1}
                     </button>
                   </OverlayTrigger>
   </Link>

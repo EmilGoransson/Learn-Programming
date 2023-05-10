@@ -21,7 +21,6 @@ function ProgressBarView(props) {
           top: "29%",
           right: "-12%",
           marginRight: "20%",
-        
         };
       } else if (index === 2) {
         // Third star, top position
@@ -30,7 +29,6 @@ function ProgressBarView(props) {
           top: "23%",
           right: "-14.5%",
           marginRight: "20%",
-        
         };
       }
       return (
@@ -45,7 +43,7 @@ function ProgressBarView(props) {
     <div className="star-container">
       <div>
         <div className="level-text text-[#CECECE]">
-          {props.level} / {props.totalLevels}
+          {props.level - 1} / {props.totalLevels}
         </div>
 
         <ProgressBar

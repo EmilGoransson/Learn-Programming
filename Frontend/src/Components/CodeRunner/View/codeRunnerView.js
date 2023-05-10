@@ -6,7 +6,6 @@ import "./codeRunnerView.css";
 import { Table } from "react-bootstrap";
 
 function CodeRunnerView(props) {
-  console.log(props);
   //gets the code from the editor (realtime) and returns it to the presenter
   function onChangeACB(e) {
     props.setCodeWritten(e);
