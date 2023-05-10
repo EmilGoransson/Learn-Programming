@@ -57,6 +57,7 @@ import Lab3a41 from "./pages/Assignments/Lab3Assignments/Assign41/Assignment41Pr
 import Lab3a6 from "./pages/Assignments/Lab3Assignments/Assign34/Assignment34Presenter";
 import Lab3a36 from "./pages/Assignments/Lab3Assignments/Assign36/Assignment36Presenter";
 import Lab3a38 from "./pages/Assignments/Lab3Assignments/Assign38/Assignment38Presenter";
+import Lab3a39 from "./pages/Assignments/Lab3Assignments/Assign39/Assignment39Presenter";
 
 import Lab1t1 from "./pages/Theory/Theoryparts/Lab1t1";
 import Lab1t2 from "./pages/Theory/Theoryparts/Lab1t2";
@@ -304,6 +305,7 @@ function App() {
             <Route path="/Lab3/7" element={<Lab3a35 />} />
             <Route path="/Lab3/8" element={<Lab3a36 />} />
             <Route path="/Lab3/13" element={<Lab3a41 />} />
+            <Route path="/Lab3/11" element={<Lab3a39 />} />
 
             <Route path="/theory/Lab1/1" element={<Lab1t1 />} />
             <Route path="/theory/Lab1/2" element={<Lab1t2 />} />
