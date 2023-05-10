@@ -11,38 +11,35 @@ function Lab2a28View(props) {
             </a>
             <h1 className="text-3xl font-bold mb-4">Boss Level</h1>
             <p className="mb-4">
-            This is a simplified version of the assignment in Lab 1. Complete the assignment, 
-            and you will be ready to solve the first Lab. Write the code and confirm the functionality 
+            This is a similar task as the assignment in Lab 2. Complete the assignment, 
+            and you will be ready to solve the second Lab. Write the code and confirm the functionality 
             on your own. Once you have done this, simply press compile and you will pass this level. 
             #HonorSystem
             </p>
             <h2 className="text-2xl font-bold mb-4">Problem Description</h2>
             <p className="mb-4">
-            The assignment involves processing a grocery list. A shopper wants to create a grocery list for a week, 
-            which will include the name of each item, its price, and the quantity needed. At the end of the week, the 
-            shopper will process the grocery list by calculating the total cost of the items purchased. The shopper will 
-            also determine the most expensive item and the average price per item on the list.
+            Lab 2 is about creating a program that handles synonyms for words. Synonyms for a word 
+            can be written as a string of words separated by commas or "|" the symbol. To manage synonyms 
+            one can add or remove synonyms and also add or remove rows of synonyms. It is also possible to sort synonyms
+             alphabetically. In this lab you are supposed to complete code to make sure that all the functions work correctly.
             </p>
             <h2 className="text-2xl font-bold mb-4">Solution Approach</h2>
             <p>
-            The solution involves writing a Java program that reads the grocery list and displays it. Then, it calculates 
-            the total cost of the items purchased, determines the most expensive item, and calculates the average price per 
-            item on the list. These results are then printed on the standard output device.  
+            The solution involves writing a Java program that adds onto the boss level from lab 1 with the grocery list. To finish this 
+            boss level you need to add methods that can add, remove, change order and sort the list alphabetically.
             </p>
             <p>
             The program prompts the user to input the number of items on the grocery list. Then, it creates storage space for 
-            the grocery list data using arrays to store the item names, prices, and quantities. The program then prompts the user 
-            to enter each item's name, price, and quantity using a for loop to iterate through each item.    
+            the grocery list data using arrays to store the item names,price and quantity. The program then prompts the user 
+            to enter each item's name,price and quantity using a for loop to iterate through each item.    
             </p>
             <p>
             After the input is complete, the program displays the grocery list by iterating through the arrays and printing out each 
-            item's name, price, and quantity. The program then calculates the total cost of the items purchased by multiplying the price 
-            of each item by its quantity and summing the results.    
+            item's name, price, and quantity. Finally the add, remove, change order and sort methods are supposed to be made so that 
+            they function correctly.  
             </p>
             <p>
-            Next, the program determines the most expensive item by iterating through the item price array and comparing each item's price 
-            with the current maximum. Finally, the program calculates the average price per item on the list by dividing the total cost by 
-            the number of items.    
+              
             </p>
             <h2 className="text-2xl font-bold mb-4">Implementation</h2>
             <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
@@ -69,6 +66,18 @@ public class GroceryList {
        
 
         // Determine the most expensive item
+
+
+        // Add method
+
+
+        // Remove method
+
+
+        // Change order
+        
+
+        // Sort Alphabetically
                
     }`}
                     </code>
