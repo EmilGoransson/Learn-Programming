@@ -50,9 +50,11 @@ import Lab3a42 from "./pages/Assignments/Lab3Assignments/Assign42/Assignment42Pr
 import Lab3a29 from "./pages/Assignments/Lab3Assignments/Assign29/Assignment29Presenter";
 import Lab3a30 from "./pages/Assignments/Lab3Assignments/Assign30/Assignment30Presenter";
 import Lab3a31 from "./pages/Assignments/Lab3Assignments/Assign31/Assignment31Presenter";
+import Lab3a32 from "./pages/Assignments/Lab3Assignments/Assign32/Assignment32Presenter";
 import Lab3a33 from "./pages/Assignments/Lab3Assignments/Assign33/Assignment33Presenter";
 import Lab3a34 from "./pages/Assignments/Lab3Assignments/Assign34/Assignment34Presenter";
 import Lab3a35 from "./pages/Assignments/Lab3Assignments/Assign35/Assignment35Presenter";
+import Lab3a37 from "./pages/Assignments/Lab3Assignments/Assign37/Assignment37Presenter";
 import Lab3a41 from "./pages/Assignments/Lab3Assignments/Assign41/Assignment41Presenter";
 import Lab3a6 from "./pages/Assignments/Lab3Assignments/Assign34/Assignment34Presenter";
 import Lab3a36 from "./pages/Assignments/Lab3Assignments/Assign36/Assignment36Presenter";
@@ -299,9 +301,11 @@ function App() {
             <Route path="/Lab3/1" element={<Lab3a29 />} />
             <Route path="/Lab3/2" element={<Lab3a30 />} />
             <Route path="/Lab3/3" element={<Lab3a31 />} />
+            <Route path="/Lab3/4" element={<Lab3a32 />} />
             <Route path="/Lab3/5" element={<Lab3a33 />} />
             <Route path="/Lab3/6" element={<Lab3a34 />} />
             <Route path="/Lab3/7" element={<Lab3a35 />} />
+            <Route path="/Lab3/9" element={<Lab3a37 />} />
             <Route path="/Lab3/8" element={<Lab3a36 />} />
             <Route path="/Lab3/13" element={<Lab3a41 />} />
 
