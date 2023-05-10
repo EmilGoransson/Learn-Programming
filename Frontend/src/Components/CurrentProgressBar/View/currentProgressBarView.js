@@ -45,7 +45,7 @@ function ProgressBarView(props) {
     <div className="star-container">
       <div>
         <div className="level-text text-[#CECECE]">
-          {props.level} / {props.totalLevels}
+          {props.level - 1} / {props.totalLevels}
         </div>
 
         <ProgressBar
