@@ -1,5 +1,5 @@
 import React from "react";
-import Lab2a28View from "./Assignment28View";
+import Lab3a42View from "./Assignment42View";
 import useLevelStore from "../../../../Model/frontEndStore";
 import {useEffect} from "react";
 import {ReactComponent as LogoBookmark} from "../../bookmark.svg";
@@ -10,14 +10,14 @@ import Sidebar from "../../../../Components/Sidebar/Sidebar";
 import PinnedList from "../../../../Components/PinnedList/PinnedList";
 import TopBar from "../../../../Components/topBar/topBarPresenter";
 
-function Lab2a28() {
+function Lab3a42() {
     const currentLevel = useLevelStore((state) => state.currentLevel);
     const addPinned = useLevelStore((state) => state.addPinned);
     const removePinned = useLevelStore((state) => state.removePinned);
     const getPinned = useLevelStore((state) => state.pinnedTheory);
     //update this variable if using this as template!!
-    const contentName = "Boss 2";
-    const thisLevel = 28;
+    const contentName = "Boss 3";
+    const thisLevel = 42;
     const [isFilled, setIsFilled] = React.useState(
         <LogoBookmarkFilled className="bookmark-icon"/>
     );
@@ -40,7 +40,7 @@ function Lab2a28() {
     const preMadeText = `import java.util.Scanner
     {  
         public static void main(String[] args) {
-          
+        
         }
     }`;
 
@@ -72,15 +72,15 @@ function Lab2a28() {
             <Progress/>
             <PinnedList/>
             <TopBar></TopBar>
-            <Lab2a28View
+            <Lab3a42View
                 addPinned={addToPinned}
                 preMadeText={preMadeText}
                 disabled={status}
                 thisLevel={thisLevel}
                 svg={isFilled}
-            ></Lab2a28View>
+            ></Lab3a42View>
         </div>
     );
 }
 
-export default Lab2a28;
+export default Lab3a42;

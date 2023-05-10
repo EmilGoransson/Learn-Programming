@@ -13,7 +13,7 @@ function Lab1a14View(props) {
             <p className="mb-4">
             This is a simplified version of the assignment in Lab 1. Complete the assignment, 
             and you will be ready to solve the first Lab. Write the code and confirm the functionality 
-            on your own. Once you have done this, simply press compile and you will pass this level. 
+            on your own. Once you have done this, simply print out Done and you will pass this level. 
             #HonorSystem
             </p>
             <h2 className="text-2xl font-bold mb-4">Problem Description</h2>
