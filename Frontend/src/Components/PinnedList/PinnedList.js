@@ -25,7 +25,7 @@ function PinnedList() {
                 style={{ cursor: "pointer" }}
                 onClick={() => removeItem(item)}
               />
-              <Link to={`/${getItemRoute(item)}`}>
+              <Link to={`/${getItemRoute(item)}`} className="custom-link">
                 {item}
               </Link>
             </li>

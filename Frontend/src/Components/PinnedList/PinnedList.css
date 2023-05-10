@@ -26,6 +26,16 @@
     font-size: 1.5vw;
 }
 
+.custom-link{
+    color: #cecece;
+    text-decoration: none;
+    font-family: laura;
+    
+}
+.custom-link:hover{
+    color: #2dcb6c;
+}
+
 .x-button {
     width: 1.5vw;
     height: 1.5vw;
