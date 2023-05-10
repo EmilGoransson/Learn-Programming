@@ -149,15 +149,17 @@ function Lab3a32View(props) {
 
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>
-                In this first exercise we will Write a program that finds the first positive integer 
-                in an array that is a multiple of the secret number that you will receive from the scanner.
+                In this exercise you will implement an ArrayQueue class in Java that represents a queue using an array.
+                Your implementation should include the following methods and a constructor:
             </p>
-            To pass the exercise you need to:
-                    <br></br>
-                    <p>1. The program should iterate over the array and check each element to see if it is a positive multiple of 
-                        the secret number.</p>
-                    <p>2. If a positive multiple of the secret number is found, the program should print the value of the element and exit the loop.</p>
-              <p>Remember to use <code>System.out.print()</code> for the print statement! </p>
+            <p> 1. <code>enqueue(String item)</code>: Adds a String element to the rear of the queue.</p>
+            <p> 2. <code>dequeue()</code>: Removes and returns the front String element of the queue.</p>
+            <p> 3. The ArrayQueue should only support String elements.</p>
+            <br></br>
+            <p> Optional:</p>
+            <p> When attempting to enqueue an element into a full queue, an exception should be thrown.</p>
+            <p> When attempting to dequeue an element from an empty queue, an exception should be thrown.</p>
+
             <p>
                 <CodeRunner
                     testCases={"Kiwi"}
