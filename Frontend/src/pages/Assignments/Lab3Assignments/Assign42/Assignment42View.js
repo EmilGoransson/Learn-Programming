@@ -3,13 +3,13 @@ import React from "react";
 import {Link} from "react-router-dom";
 import "../../Lab1Assignments/AssignmentView.css";
 
-function Lab2a28View(props) {
+function Lab3a42View(props) {
     return (
         <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
             <a onClick={props.addPinned} style={{cursor: "pointer"}}>
                 {props.svg}
             </a>
-            <h1 className="text-3xl font-bold mb-4">Boss Level 2</h1>
+            <h1 className="text-3xl font-bold mb-4">Boss Level 3</h1>
             <p className="mb-4">
             This is a similar task as the assignment in Lab 2. Complete the assignment, 
             and you will be ready to solve the second Lab. Write the code and confirm the functionality 
@@ -96,10 +96,10 @@ public class GroceryList {
                 />
             </p>
             <div>
-                <Link to={`/Lab2/13`}>
+                <Link to={`/Lab3/13`}>
                     <button className="next-button text-black">Prev</button>
                 </Link>
-                <Link to={`/Lab3/1`}>
+                <Link to={`/Labs`}>
                     <button className={props.disabled[1]} disabled={props.disabled[0]}
                             onClick={() => window.scrollTo(0, 0)}>
                         Next
@@ -110,4 +110,4 @@ public class GroceryList {
     );
 }
 
-export default Lab2a28View;
+export default Lab3a42View;
