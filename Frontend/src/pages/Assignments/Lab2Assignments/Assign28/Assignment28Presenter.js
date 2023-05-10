@@ -37,10 +37,10 @@ function Lab2a28() {
         }
     }
 
-    const preMadeText = `import java.util.Scanner
+    const preMadeText = `
+    class Progman
     {  
         public static void main(String[] args) {
-          
         }
     }`;
 

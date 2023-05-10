@@ -1,4 +1,4 @@
-import "../../Assignments/Lab1Assignments/AssignmentView.css";
+import "./TheoryView.css";
 import RightSideBar from "../../../Components/rightSideBar/rightSideBarPresenter";
 import Progress from "../../../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import Sidebar from "../../../Components/Sidebar/Sidebar";
@@ -18,6 +18,9 @@ function Lab1t1(props) {
         <Scrollingbar />
       </div>
       <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
+      <a onClick={props.addPinned} style={{ cursor: "pointer" }}>
+          {props.svg}
+        </a>
         <h1 className="text-3xl font-bold mb-4">Printing</h1>
         <p className="mb-4">
           The <code>System.out.print()</code> method is a commonly used method
