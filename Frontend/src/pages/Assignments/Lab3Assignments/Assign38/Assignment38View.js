@@ -101,16 +101,26 @@ if (str != null) {
 
                 <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <p>
-            Add an if-else statement in the code below so that if index is null, print <br></br>
-            "There is no such index", else print the value of the array on the index
+            Handling null in Java is important to prevent user errors and unexpected behavior of <br></br>certain data structures e.g., Linked lists,
+            Binary Trees, Queues, etc. Therefore, it <br></br>is important for all developers to know how to handle null. 
+<br></br><br></br>
+            In this assignment do the following:
+            <br></br><br></br>
+            1. Initiate a String variable called name to be initialized to null inside the try <br></br>statement
+            <br></br><br></br>
+            2. Create an int variable called name_length and store name.length(); in name_length <br></br>inside the try statement
+            <br></br><br></br>
+            3. Print the name length inside the try statement
+            <br></br><br></br>
+            4. In the catch block, print "Null Pointer Exception!"
 </p>     </pre>
 
        
                     <CodeRunner
-                        testCases={2}
-                        testCase2={"There is no such index"}
+                        testCases={4}
+                        testCase2={"Null Pointer Exception!"}
                         preMadeText={props.preMadeText}
-                        input1={1}
+                        input1={"John"}
                         input2={null}
                         shouldIncrement={true}
                         

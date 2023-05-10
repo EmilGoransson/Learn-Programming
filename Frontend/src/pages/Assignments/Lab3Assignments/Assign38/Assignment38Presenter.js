@@ -20,12 +20,13 @@ function Lab3a10() {
   class Progman
   {  
       public static void main(String[] args) {
-        //Your code here
         Scanner scanner = new Scanner(System.in);
-        int[] badArray = {1,2,3,4,5,6,7,8,9};
-        int index = scanner.nextInt();
-        System.out.print(badArray[index])
-  
+        try{
+          //Your code here
+        }
+        catch(Exception e){
+          //Your code here
+        }
     }
   }`;
   function IsDisabled() {
