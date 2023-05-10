@@ -124,7 +124,7 @@ then both head and tail are set to the new node. Otherwise, the new node is adde
        
                     <CodeRunner
                         testCases={"[Proglin, Java, Arrays start at index 0, Hello!]"}
-                        testCase2={"[Proglin, Java, Arrays start at index 0, Good bye!"}
+                        testCase2={"[Proglin, Java, Arrays start at index 0, Good bye!]"}
                         preMadeText={props.preMadeText}
                         input={"Hello!"}
                         input2={"Good Bye!"}
