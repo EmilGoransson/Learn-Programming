@@ -12,6 +12,6 @@ export const lab2Levels = [
   "25 \nDelete Element",
   "26 \nSelection Sort 1",
   "27 \nSelection Sort 2",
-
+  "28 \nFinal Boss",
   "2",
 ];
