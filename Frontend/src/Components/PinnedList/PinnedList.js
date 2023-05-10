@@ -21,7 +21,7 @@ function PinnedList() {
             <li className="Pinned-list z-10" key={item}>
               <img
                 src={xbutton}
-                className="x-button cursor-click"
+                className="x-button cursor-click transition-transform duration-100ms hover:scale-110"
                 style={{ cursor: "pointer" }}
                 onClick={() => removeItem(item)}
               />
@@ -62,65 +62,65 @@ function PinnedList() {
       case "If-statement":
         return "Lab1/12";
       case "Else":
-        return "Lab1/13";      
+        return "Lab1/13";
       case "Boss 1":
         return "Lab1/14";
-        case "Buffered Reader":
-          return "Lab2/1";
-        case "IOException":
-          return "Lab2/2";
-        case "For-Each":
-          return "Lab2/3";
-        case "Boolean":
-          return "Lab2/4";
-        case "Logical Operators":
-          return "Lab2/5";
-        case "While-Loop":
-          return "Lab1/6";
-        case "String Array":
-          return "Lab2/7";
-        case "String Comparison":
-          return "Lab2/8";
-        case "Linked List":
-          return "Lab2/9";
-        case "Array Index Insertion":
-          return "Lab2/10";
-        case "Delete":
-          return "Lab2/11";
-        case "Selection Sort 1":
-          return "Lab2/12";
-        case "Selection Sort 2":
-          return "Lab2/13";      
-        case "Boss 2":
-          return "Lab2/14";
-          case "Objects":
-            return "Lab3/1";
-          case "String Concatenation":
-            return "Lab3/2";
-          case "String Builder":
-            return "Lab3/3";
-          case "Queue":
-            return "Lab3/4";
-          case "Break Statement":
-            return "Lab3/5";
-          case "Pass by Reference":
-            return "Lab3/6";
-          case "Creating Linked List":
-            return "Lab3/7";
-          case "Traverse Linked List":
-            return "Lab3/8";
-          case "Linkedlist to Array":
-            return "Lab3/9";
-          case "Null":
-            return "Lab3/10";
-          case "Delete Linkedlist":
-            return "Lab3/11";
-          case "Java Library":
-            return "Lab3/12";
-          case "Switch":
-            return "Lab3/13";      
-          case "Boss 3":
-            return "Lab3/14";
+      case "Buffered Reader":
+        return "Lab2/1";
+      case "IOException":
+        return "Lab2/2";
+      case "For-Each":
+        return "Lab2/3";
+      case "Boolean":
+        return "Lab2/4";
+      case "Logical Operators":
+        return "Lab2/5";
+      case "While-Loop":
+        return "Lab1/6";
+      case "String Array":
+        return "Lab2/7";
+      case "String Comparison":
+        return "Lab2/8";
+      case "Linked List":
+        return "Lab2/9";
+      case "Array Index Insertion":
+        return "Lab2/10";
+      case "Delete":
+        return "Lab2/11";
+      case "Selection Sort 1":
+        return "Lab2/12";
+      case "Selection Sort 2":
+        return "Lab2/13";
+      case "Boss 2":
+        return "Lab2/14";
+      case "Objects":
+        return "Lab3/1";
+      case "String Concatenation":
+        return "Lab3/2";
+      case "String Builder":
+        return "Lab3/3";
+      case "Queue":
+        return "Lab3/4";
+      case "Break Statement":
+        return "Lab3/5";
+      case "Pass by Reference":
+        return "Lab3/6";
+      case "Creating Linked List":
+        return "Lab3/7";
+      case "Traverse Linked List":
+        return "Lab3/8";
+      case "Linkedlist to Array":
+        return "Lab3/9";
+      case "Null":
+        return "Lab3/10";
+      case "Delete Linkedlist":
+        return "Lab3/11";
+      case "Java Library":
+        return "Lab3/12";
+      case "Switch":
+        return "Lab3/13";
+      case "Boss 3":
+        return "Lab3/14";
       // Add more cases for other items if needed
       default:
         return "main"; // Default route if no specific route is defined

@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from "react";
-import { toast } from "react-toastify"
+import { toast } from "react-toastify";
 import "./SignupPage.css";
 import decode from "../../decode_token";
-import useLevelStore, {IP} from "../../Model/frontEndStore";
-const SignupPage = ({setAuth}) => {
+import useLevelStore, { IP } from "../../Model/frontEndStore";
+const SignupPage = ({ setAuth }) => {
   const setLevel = useLevelStore((state) => state.setLevel);
   const setName = useLevelStore((state) => state.setName);
   const setID = useLevelStore((state) => state.setID);
@@ -13,10 +13,10 @@ const SignupPage = ({setAuth}) => {
     email: "",
     firstName: "",
     lastName: "",
-    password: "", 
+    password: "",
   });
   const { email, firstName, lastName, password } = inputs;
- 
+
   const onChange = (e) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
   };
@@ -25,17 +25,14 @@ const SignupPage = ({setAuth}) => {
     e.preventDefault();
     try {
       const body = { email, firstName, lastName, password };
-        const response = await fetch(
-        IP + "/authentication/Signup",
-        {
-          method: "POST",
-          headers: { "Content-type": "application/json" },
-          body: JSON.stringify(body),
-        }
-      );
+      const response = await fetch(IP + "/authentication/Signup", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(body),
+      });
 
       const parseRespone = await response.json();
-      if(parseRespone.token){
+      if (parseRespone.token) {
         localStorage.setItem("token", parseRespone.token);
         setAuth(true);
         try {
@@ -48,20 +45,17 @@ const SignupPage = ({setAuth}) => {
           });
           const resJson = await res.json();
           setLevel(Number(resJson.currentLevel));
-          setName(String((resJson.firstName + " " + resJson.lastName)));
-          setID((Number(resJson.id)));
+          setName(String(resJson.firstName + " " + resJson.lastName));
+          setID(Number(resJson.id));
           setProfilePicture(resJson.profilePicture);
           setPinned(resJson.pinnedItems);
-
 
           console.log(resJson);
         } catch (error) {
           console.error(error);
         }
-        toast.success("Register Sucessfully")
-
-      }
-      else{
+        toast.success("Register Sucessfully");
+      } else {
         toast.error(parseRespone);
       }
     } catch (error) {
@@ -76,7 +70,7 @@ const SignupPage = ({setAuth}) => {
     <Fragment>
       <div className="container">
         <img src="https://i.imgur.com/yLqZDJM.png" className="hej" />
-        
+
         <div className="form-container">
           <h2 className="heading">Register</h2>
           <br></br>
@@ -118,12 +112,17 @@ const SignupPage = ({setAuth}) => {
             </button>
           </form>
           <p>
-            Already have an account? Click{" "} <a href="/login" className="form-link"> here </a>{" "} to log in.
+            Already have an account? Click{" "}
+            <a href="/login" className="form-link">
+              {" "}
+              here{" "}
+            </a>{" "}
+            to log in.
           </p>
         </div>
       </div>
     </Fragment>
-  ); 
+  );
 };
 
 export default SignupPage;
