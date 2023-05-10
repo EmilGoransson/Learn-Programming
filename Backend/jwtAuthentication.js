@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const pool = require("./dbConfig");
+const Count = require("./counterClass");
 const bcrypt = require("bcrypt");
 const jwtGenerator = require("./jwtGenerator");
 const authorization = require("./middleware/authorization");
 //DECLARE API_KEY INSIDE apiKey.js
 const API_KEY = require("./apiKey");
 
-console.log("test");
 router.post("/Signup", async (req, res) => {
   try {
     //1. destructure req.body (first_name, last_name, email, password)
@@ -326,39 +326,45 @@ router.post("/removePinnedItems", authorization, async (req, res) => {
   }
 });
 // API call counter
+counter = new Count();
+
 router.post("/codeRunner", authorization, async (req, res) => {
   // Resets callCount at 13:00 UTC
   //MAKE IT SO THAT IT TRACKS THE DAY
-  const id = req.headers.id;
-  try {
-    console.log("\nUser " + id + " codeRunner");
-    const url = "https://code-compiler.p.rapidapi.com/v2";
-    const options = {
-      method: "POST",
-      headers: {
-        "content-type": "application/x-www-form-urlencoded",
-        "X-RapidAPI-Key": API_KEY.API_KEY,
-        "X-RapidAPI-Host": "code-compiler.p.rapidapi.com",
-      },
-      body: new URLSearchParams({
-        LanguageChoice: "4",
-        Program: req.body.data,
-        Input: req.body.input ? req.body.input : "",
-      }),
-    };
-    let result = "";
+  console.log("API-CALL-counter: " + counter.getValue());
+  if (counter.getValue() < 900) {
+    counter.increment();
     try {
-      const response = await fetch(url, options);
-      result = await response.json();
-      console.log("result");
-      console.log(result);
-      res.status(200).send(result);
+      const url = "https://code-compiler.p.rapidapi.com/v2";
+      const options = {
+        method: "POST",
+        headers: {
+          "content-type": "application/x-www-form-urlencoded",
+          "X-RapidAPI-Key": API_KEY.API_KEY,
+          "X-RapidAPI-Host": "code-compiler.p.rapidapi.com",
+        },
+        body: new URLSearchParams({
+          LanguageChoice: "4",
+          Program: req.body.data,
+          Input: req.body.input ? req.body.input : "",
+        }),
+      };
+      let result = "";
+      try {
+        const response = await fetch(url, options);
+        result = await response.json();
+        console.log("result");
+        console.log(result);
+        res.status(200).send(result);
+      } catch (error) {
+        console.error(error);
+      }
     } catch (error) {
-      console.error(error);
+      console.log(error);
+      res.status(500);
     }
-  } catch (error) {
-    console.log(error);
-    res.status(500);
+  } else {
+    res.status(500).send("API call limit reached");
   }
 });
 
