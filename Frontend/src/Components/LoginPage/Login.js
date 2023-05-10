@@ -40,7 +40,6 @@ const Login = ({ setAuth }) => {
       if (parseRes.token) {
 
         localStorage.setItem("token", parseRes.token);
-        localStorage.setItem("id", parseRes.id)
         localStorage.setItem("name", parseRes.userName)
         setAuth(true);
         toast.success("Logged in Successfully");
