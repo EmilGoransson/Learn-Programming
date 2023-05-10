@@ -3,25 +3,24 @@ import React from "react";
 import {Link} from "react-router-dom";
 import "../../Lab1Assignments/AssignmentView.css";
 
-function Lab2a28View(props) {
+function Lab3a42View(props) {
     return (
         <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
             <a onClick={props.addPinned} style={{cursor: "pointer"}}>
                 {props.svg}
             </a>
-            <h1 className="text-3xl font-bold mb-4">Boss Level 2</h1>
+            <h1 className="text-3xl font-bold mb-4">Boss Level 3</h1>
             <p className="mb-4">
-            This is a similar task as the assignment in Lab 2. Complete the assignment, 
-            and you will be ready to solve the second Lab. Write the code and confirm the functionality 
+            This is a similar task as the assignment in Lab 3. Complete the assignment, 
+            and you will be ready to solve the third Lab. Write the code and confirm the functionality 
             on your own. Once you have done this, simply print out Done and you will pass this level. 
             #HonorSystem
             </p>
             <h2 className="text-2xl font-bold mb-4">Problem Description for the lab</h2>
             <p className="mb-4">
-            Lab 2 is about creating a program that handles synonyms for words. Synonyms for a word 
-            can be written as a string of words separated by commas or "|" the symbol. To manage synonyms 
-            one can add or remove synonyms and also add or remove rows of synonyms. It is also possible to sort synonyms
-             alphabetically. In this lab you are supposed to complete code to make sure that all the functions work correctly.
+            Lab 3 is about creating a program that checks number sequences. You have to find the upper and lower bound of the sequence as well
+             as implement methods that decide whether the sequence is increasing or decreasing, finding the number at a position, 
+             add and remove numbers, and inserting.In this lab you are supposed to complete code to make sure that all the methods work correctly.
             </p>
             <h2 className="text-2xl font-bold mb-4">Solution Approach for this assignment</h2>
             <p>
@@ -36,7 +35,8 @@ function Lab2a28View(props) {
             <p>
             After the input is complete, the program displays the grocery list by iterating through the arrays and printing out each 
             item's name, price, and quantity. Finally the add, remove, change order and sort methods are supposed to be made so that 
-            they function correctly.  
+            they function correctly.  Additionally, you should take the input to add into an array and a linked list to be able to add methods 
+            that remove and add at a certain position or index.
             </p>
             <p>
               
@@ -78,6 +78,12 @@ public class GroceryList {
         
 
         // Sort Alphabetically
+
+
+        // RemoveAt method
+
+
+        // InsertAt method
                
     }`}
                     </code>
@@ -96,10 +102,10 @@ public class GroceryList {
                 />
             </p>
             <div>
-                <Link to={`/Lab2/13`}>
+                <Link to={`/Lab3/13`}>
                     <button className="next-button text-black">Prev</button>
                 </Link>
-                <Link to={`/Lab3/1`}>
+                <Link to={`/Labs`}>
                     <button className={props.disabled[1]} disabled={props.disabled[0]}
                             onClick={() => window.scrollTo(0, 0)}>
                         Next
@@ -110,4 +116,4 @@ public class GroceryList {
     );
 }
 
-export default Lab2a28View;
+export default Lab3a42View;

@@ -40,7 +40,7 @@ function Lab1a14() {
     const preMadeText = `class Progman
 {  
     public static void main(String[] args) {
-      System.out.print("Done");
+     
     }
 }`;
 
