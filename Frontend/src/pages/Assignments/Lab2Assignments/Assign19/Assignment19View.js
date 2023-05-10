@@ -20,15 +20,56 @@ function Lab2a19View(props) {
             <p>The <code>AND</code> operator (&&) returns true only if both operands are true. For example, 
                 the expression true && true would evaluate to true, while the expression true 
                 && false would evaluate to false.</p>
+               <p>Example of AND utilzation</p>
+              
+                <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
+<code className="text-sm font-mono">
+   { `int age = 25;
+boolean hasLicense = true;
+boolean isQualifiedDriver = age >= 18 && hasLicense;
+System.out.println("Is the person a qualified driver? " + isQualifiedDriver);
+
+ `}
+</code>
+</pre>
+
+<p>In this example, the && operator is used to check if a person is a qualified driver. The person must be 18 years or older (age {`{>}`}= 18) and have a valid driver's license (hasLicense).</p>
+            
             <p> The <code>OR</code> operator (||) returns true if either operand is true. 
                 For example, the expression true || false would evaluate to true, 
                 while the expression false || false would evaluate to false.
 </p>
+<p>Example of OR utilzation</p>
+<pre className="bg-lightBlueGray rounded-md p-4 mb-4">
+<code className="text-sm font-mono">
+   { `boolean isSunny = true;
+boolean isWarm = false;
+boolean isWeatherGood = isSunny || isWarm;
+System.out.println("Is the weather good? " + isWeatherGood);
+
+ `}
+</code>
+</pre>
+<p>Here, the || operator is used to determine if the weather is good. The weather is considered good 
+if it's sunny (isSunny) or warm (isWarm).</p>
+
             <p> 
 The <code>NOT</code> operator (!) returns the opposite of the boolean value of its operand.
  For example, the expression !true would evaluate to false, while the expression 
  !false would evaluate to true.
 </p>
+<p>Example of NOT utilzation</p>
+<pre className="bg-lightBlueGray rounded-md p-4 mb-4">
+<code className="text-sm font-mono">
+   { `boolean isRaining = true;
+boolean isNotRaining = !isRaining;
+System.out.println("Is it not raining? " + isNotRaining);
+
+`}
+</code>
+</pre>
+<p>In this example, the ! operator is used to negate the value of a boolean variable. 
+If it's raining (isRaining is true), then isNotRaining will be false.</p>
            
             <h2 className="text-2xl font-bold mb-4">Order of operations</h2>
             <p className="mb-4">
