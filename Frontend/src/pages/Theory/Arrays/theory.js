@@ -10,16 +10,22 @@ import Scrollingbar from "../../../Components/Scrollingbar/scrollingbar";
 function Theory() {
   return (
     <div>
-      <TopBar />
+    <TopBar/>
+  
+ <RightSideBar/>
+ <Scrollingbar/>
+ <Sidebar/>
+ <Progress />
+ <PinnedList/>
+  
 
-      <RightSideBar />
-      <Scrollingbar />
-      <Sidebar />
-      <Progress />
-      <PinnedList />
 
-      <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
-        <h1 className="text-3xl font-bold mb-4">Printing</h1>
+    <div className="Theory mt-20 ">
+    
+      <div className="theory-header">
+        <h3 className="text-3xl font-bold mb-4">
+          Getting started with Java, Integrated Development <br></br>Environments (IDEs) and other useful tips
+        </h3>
         <p className="mb-4">
           The <code>System.out.print()</code> method is a commonly used method
           in Java programming. It is used to display output to the console or
