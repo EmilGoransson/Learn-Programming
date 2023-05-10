@@ -1,5 +1,5 @@
 import React from "react";
-import Lab2a28View from "./Assignment28View";
+import Lab3a37View from "./Assignment37View";
 import useLevelStore from "../../../../Model/frontEndStore";
 import {useEffect} from "react";
 import {ReactComponent as LogoBookmark} from "../../bookmark.svg";
@@ -10,14 +10,14 @@ import Sidebar from "../../../../Components/Sidebar/Sidebar";
 import PinnedList from "../../../../Components/PinnedList/PinnedList";
 import TopBar from "../../../../Components/topBar/topBarPresenter";
 
-function Lab2a28() {
+function Lab3a37() {
     const currentLevel = useLevelStore((state) => state.currentLevel);
     const addPinned = useLevelStore((state) => state.addPinned);
     const removePinned = useLevelStore((state) => state.removePinned);
     const getPinned = useLevelStore((state) => state.pinnedTheory);
     //update this variable if using this as template!!
-    const contentName = "Boss 2";
-    const thisLevel = 28;
+    const contentName = "From Linkedlist to Array";
+    const thisLevel = 37;
     const [isFilled, setIsFilled] = React.useState(
         <LogoBookmarkFilled className="bookmark-icon"/>
     );
@@ -37,12 +37,80 @@ function Lab2a28() {
         }
     }
 
-    const preMadeText = `import java.util.Scanner
-    {  
-        public static void main(String[] args) {
-          
+    const preMadeText = `import java.util.Scanner;
+class Progman {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int scanned = scanner.nextInt();
+        
+        //Initializing the list and adding elements to it
+        LinkedList list = new LinkedList();
+        for(int i = 0; i < 5; i++){
+            list.add(5*i*scanned);
         }
-    }`;
+    
+        //your code here
+        int[] array = new int[....];
+
+        //Printing statement 
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + ",");
+        }
+    }
+}
+    
+class Node {
+    int data;
+    Node next;
+    
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+    
+class LinkedList {
+    Node head;
+    
+    public LinkedList() {
+        this.head = null;
+    }
+    
+    public void add(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+    }
+    
+    public int length() {
+        int count = 0;
+        Node current = head;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
+    
+    public int get(int index) {
+        if (index < 0 || index >= length()) {
+            throw new IndexOutOfBoundsException("Index out of range");
+        }
+        Node current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        return current.data;
+    }
+}  
+`;
 
     function addToPinned() {
         if (!getPinned.includes(contentName)) {
@@ -72,15 +140,16 @@ function Lab2a28() {
             <Progress/>
             <PinnedList/>
             <TopBar></TopBar>
-            <Lab2a28View
+            <Lab3a37View
+
                 addPinned={addToPinned}
                 preMadeText={preMadeText}
                 disabled={status}
                 thisLevel={thisLevel}
                 svg={isFilled}
-            ></Lab2a28View>
+            ></Lab3a37View>
         </div>
     );
 }
 
-export default Lab2a28;
+export default Lab3a37;
