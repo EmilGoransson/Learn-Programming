@@ -24,18 +24,16 @@ Component works in the following way.
 
 import React, { useState } from "react";
 import axios from "axios";
-import { API_KEY } from "../apiKey";
 import CodeRunnerView from "../View/codeRunnerView";
 import { useEffect } from "react";
 import Spinner from "react-bootstrap/Spinner";
-import useLevelStore from "../../../Model/frontEndStore";
+import useLevelStore, { IP } from "../../../Model/frontEndStore";
 import { v4 as uuidv4 } from "uuid";
-
+import decode from "../../../decode_token";
 
 function CodeRunner(props) {
   const checkMark = "https://i.imgur.com/EC4wJV8.png";
   const crossMark = "https://i.imgur.com/vZIJZoz.png";
-  console.log(props);
   const incrementCurrentLevel = useLevelStore((state) => state.incrementLevel);
   const currentLevel = useLevelStore((state) => state.currentLevel);
   const string = `
@@ -53,8 +51,6 @@ class Progman
   const [code, setCode] = useState("");
   const [data, setData] = useState("");
   const [data2, setData2] = useState("");
-  const [loading1, setLoading1] = useState(false);
-  const [loading2, setLoading2] = useState(false);
   const [compileCode, setCompileCode] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [passedTestOne, setPassedTestOne] = useState("");
@@ -70,6 +66,7 @@ class Progman
   encodedParams.append("Program", code);
   if (props.input1) {
     encodedParams.append("Input", props.input1);
+    const input1 = props.input1;
   }
 
   const encodedParams2 = new URLSearchParams();
@@ -77,42 +74,38 @@ class Progman
   encodedParams2.append("Program", code);
   if (props.input2) {
     encodedParams2.append("Input", props.input2);
+    const input2 = props.input2;
   }
   //SPECIFY THE "INPUT" HERE BY PASSING IT AS A PROP ex: <CodeRunner input="5" />
-
-  const options = {
-    method: "POST",
-    url: "https://code-compiler.p.rapidapi.com/v2",
-    headers: {
-      "content-type": "application/x-www-form-urlencoded",
-      "X-RapidAPI-Key": API_KEY,
-      "X-RapidAPI-Host": "code-compiler.p.rapidapi.com",
-    },
-    data: encodedParams,
-  };
-  const options2 = {
-    method: "POST",
-    url: "https://code-compiler.p.rapidapi.com/v2",
-    headers: {
-      "content-type": "application/x-www-form-urlencoded",
-      "X-RapidAPI-Key": API_KEY,
-      "X-RapidAPI-Host": "code-compiler.p.rapidapi.com",
-    },
-    data: encodedParams2,
-  };
-  if (!props.testCase2) {
-  }
-
   const getCompilerOutput = async () => {
     let count = 0;
     setIsLoading(true);
     //fetches the data from the API via a POST request
-    const res = await axios
-      .request(options)
-      .then((response) => {
-        setData(response.data);
+
+    const res = await fetch(IP + "/authentication/codeRunner", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        id: decode(localStorage.token).user.id,
+        token: localStorage.token,
+      },
+      body: JSON.stringify({
+        data: code,
+        input: props.input1 ? props.input1 : "",
+      }),
+    })
+      .then(async (response) => {
+        console.log("data from server");
+        const data = await response.json();
+        console.log(response.status);
+        setData(data);
+
         //Here the test cases are compared to the response from the API
-        if ((response.data.Result == props.testCases) || (response.data.Result == props.testCases + "\n")) {
+
+        if (
+          data.Result == props.testCases ||
+          data.Result == props.testCases + "\n"
+        ) {
           setPassedTestOne("Passed");
           setStyle("text-ourGreen font-bold");
           count++;
@@ -126,23 +119,42 @@ class Progman
         }
       })
       .catch(async (error) => {
-        console.log(error);
+        alert(error + " " + "please refresh the page and try again");
       })
       .then(async () => {
         if (props.testCase2) {
-          const res2 = await axios.request(options2).then((response) => {
-            setData2(response.data);
-            //Here the test cases are compared to the response from the API
-            if ((response.data.Result == props.testCase2) || (response.data.Result == props.testCase2 + "\n")) {
-              setPassedTest2("Passed");
-              setStyle2("text-ourGreen font-bold");
-              count++;
-            } else {
-              setPassedTest2("Failed");
-              setStyle2("text-redColor font-bold");
-            }
-            setIsLoading(false);
-          });
+          const res2 = await fetch(IP + "/authentication/codeRunner", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              id: decode(localStorage.token).user.id,
+              token: localStorage.token,
+            },
+            body: JSON.stringify({
+              data: code,
+              input: props.input2 ? props.input2 : "",
+            }),
+          })
+            .then(async (response) => {
+              const data2 = await response.json();
+              setData2(data2);
+              //Here the test cases are compared to the response from the API
+              if (
+                data2.Result == props.testCase2 ||
+                data2.Result == props.testCase2 + "\n"
+              ) {
+                setPassedTest2("Passed");
+                setStyle2("text-ourGreen font-bold");
+                count++;
+              } else {
+                setPassedTest2("Failed");
+                setStyle2("text-redColor font-bold");
+              }
+              setIsLoading(false);
+            })
+            .catch(async (error) => {
+              alert(error + " " + "please refresh the page and try again");
+            });
         }
       });
     if (count == 1 && !props.testCase2) {
