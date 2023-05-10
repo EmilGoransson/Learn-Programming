@@ -56,7 +56,7 @@ import Lab3a35 from "./pages/Assignments/Lab3Assignments/Assign35/Assignment35Pr
 import Lab3a41 from "./pages/Assignments/Lab3Assignments/Assign41/Assignment41Presenter";
 import Lab3a6 from "./pages/Assignments/Lab3Assignments/Assign34/Assignment34Presenter";
 import Lab3a38 from "./pages/Assignments/Lab3Assignments/Assign38/Assignment38Presenter";
-
+import Lab3a40 from "./pages/Assignments/Lab3Assignments/Assign40/Assignment40Presenter";
 import Login from "./Components/LoginPage/Login";
 import CreateAccount from "./Components/SignupPage/SignupPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
@@ -247,15 +247,14 @@ function App() {
             <Route path="/Lab2/9" element={<Lab2a23 />} />
             <Route path="/Lab2/10" element={<Lab2a24 />} />
             <Route path="/Lab2/13" element={<Lab2a27 />} />     
+            <Route path="/Lab2/11" element={<Lab2a25 />} />
+            <Route path="/Lab2/12" element={<Lab2a26 />}/>
             <Route path="/Lab2/14" element={<Lab2a28 />} />  
 
             <Route path="/Lab3/6" element={<Lab3a6 />} />
 
             <Route path="/Lab3/2" element={<Lab3a2 />} />
             <Route path="/Lab3/3" element={<Lab3a3 />} />
-
-            <Route path="/Lab2/11" element={<Lab2a25 />} />
-            <Route path="/Lab2/12" element={<Lab2a26 />}/>
             <Route path="/Lab2/13" element={<Lab2a27 />} />       
        
             <Route path="/Lab3/1" element={<Lab3a29 />} />
@@ -264,9 +263,9 @@ function App() {
             <Route path="/Lab3/5" element={<Lab3a33 />} />
             <Route path="/Lab3/6" element={<Lab3a34 />} />
             <Route path="/Lab3/7" element={<Lab3a35 />} />
-            <Route path="/Lab3/13" element={<Lab3a41 />} />
             <Route path="/Lab3/10" element={<Lab3a38 />} />
-            
+            <Route path="/Lab3/12" element={<Lab3a40 />} />
+            <Route path="/Lab3/13" element={<Lab3a41 />} />
             <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
           </Routes>
         </main>
