@@ -17,7 +17,7 @@ function Lab1a12() {
   const getPinned = useLevelStore((state) => state.pinnedTheory);
   const removePinned = useLevelStore((state) => state.removePinned);
   //update this variable if using this as template!!
-  const contentName = "If";
+  const contentName = "If-statement";
   const thisLevel = 12;
   const [isFilled, setIsFilled] = React.useState(
       <LogoBookmarkFilled className="bookmark-icon"/>

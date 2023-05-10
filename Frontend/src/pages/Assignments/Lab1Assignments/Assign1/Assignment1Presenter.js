@@ -17,6 +17,7 @@ function Lab1a1() {
     const getPinned = useLevelStore((state) => state.pinnedTheory);
     //update this variable if using this as template!!
     const contentName = "Printing";
+
     const thisLevel = 1;
     const [isFilled, setIsFilled] = React.useState(
         <LogoBookmarkFilled className="bookmark-icon"/>
@@ -75,7 +76,6 @@ function Lab1a1() {
             <PinnedList/>
             <TopBar></TopBar>
             <Lab1a1View
-
                 addPinned={addToPinned}
                 preMadeText={preMadeText}
                 disabled={status}

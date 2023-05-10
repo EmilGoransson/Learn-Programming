@@ -16,7 +16,7 @@ function Lab2a16() {
   const addPinned = useLevelStore((state) => state.addPinned);
   const getPinned = useLevelStore((state) => state.pinnedTheory);
   //update this variable if using this as template!!
-  const contentName = "IOExceptions";
+  const contentName = "IOException";
   const thisLevel = 16;
   const [isFilled, setIsFilled] = React.useState(
     <LogoBookmarkFilled className="bookmark-icon" />
