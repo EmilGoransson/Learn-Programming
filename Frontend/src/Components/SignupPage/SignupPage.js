@@ -13,7 +13,7 @@ const SignupPage = ({setAuth}) => {
     email: "",
     firstName: "",
     lastName: "",
-    password: "",
+    password: "", 
   });
   const { email, firstName, lastName, password } = inputs;
  
@@ -75,9 +75,8 @@ const SignupPage = ({setAuth}) => {
   return (
     <Fragment>
       <div className="container">
-        <div className="hej">
-          {/*<img src={logo} alt="Logo" className="hej"></img>*/}
-        </div>
+        <img src="https://i.imgur.com/yLqZDJM.png" className="hej" />
+        
         <div className="form-container">
           <h2 className="heading">Register</h2>
           <br></br>
