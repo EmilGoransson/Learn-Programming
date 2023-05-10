@@ -9,115 +9,125 @@ function Lab3a36View(props) {
     return (
         <div className="mt-20">
             <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
-                <h1 className="text-3xl font-bold mb-4">Traverse a LinkedList</h1>
+                <h1 className="text-3xl font-bold mb-4">Traverse a LinkedList in Java using Pointers</h1>
                 <p className="mb-4">
-inthere are two ways to do it: pass by value and pass by reference.
-            <p></p>
-                </p>
-                <p className="mb-4">
-           </p>
-                <p className="mb-4">
-               
-                </p>
-
-                <p className="mb-4">
+                In Java, a <code>LinkedList</code> is a data structure that allows <code>dynamic insertion and removal</code> of elements.
+                 Traversing a LinkedList involves visiting each element in the list to perform a specific operation, 
+                 such as printing or modifying the values.
+           
             
                 </p>
-                <h2 className="text-2xl font-bold mb-4"> Pass by Value</h2>
+                <h2 className="text-2xl font-bold mb-4"> Implementation Steps: How to traverse a LinkedList</h2>
                 <p className="mb-4">
-                In <code>pass by value</code>, a copy of the value of the variable is passed to the method. 
-                This means that any changes made to the variable inside the method do not affect the original variable outside of the method. 
-                Java is strictly <code>pass by value</code>, which means that any variable that is passed to a method is actually a copy of the variable, 
-                not a reference to the original variable.
-<br></br><br></br>
-                For example, consider the following code:
-<pre className="bg-lightBlueGray rounded-md p-4 mb-4">
-          <code className="text-sm font-mono">
-            {`public void changeValue(int x) {
-    x = 5;
-}
-
-public static void main(String[] args) {
-    int a = 10;
-    changeValue(a);
-    System.out.println(a);
-}
-`}
-          </code>
-        </pre>
-        In this code, we define a method <code>changeValue()</code> that takes an integer <code>x</code> as a parameter and sets its value to <code>5</code>. 
-        We then define a variable <code>a </code> and set its value to <code>10</code>. We call the <code>changeValue()</code> method with <code>a</code> as an argument, 
-        and then we print out the value of <code>a</code>.
-        <br></br>
-        <br></br>
-        When we run this code, the output will be <code>10</code>. This is because a is passed by value to the <code>changeValue()</code> method, 
-        meaning that a copy of a is passed to the method. Inside the method, we change the value of the copy to <code>5</code>, but 
-        this has no effect on the original value of a outside of the method.
-                </p>
-                <h2 className="text-2x font-bold mb-4">Pass by Reference</h2>
-                <p>
-                In <code>pass by reference</code>, a reference to the original variable is passed to the method. 
-                This means that any changes made to the variable inside the method will affect the original variable outside of the method. 
-                However, Java does not support pass by reference for non-object types.
-<br></br><br></br>
-For example, consider the following code:
-<pre className="bg-lightBlueGray rounded-md p-4 mb-4">
-          <code className="text-sm font-mono">
-            {`public void changeValue(int[] arr) {
-    arr[0] = 5;
-}
-
-public static void main(String[] args) {
-    int[] a = {10};
-    changeValue(a);
-    System.out.println(a[0]);
-}
-`}
-          </code>
-        </pre>
-        In this code, we define a method changeValue() that takes an integer array <code>arr </code> as a parameter and sets the value of the first element to <code>5</code>. We then define an integer array <code>a </code> with a single element of <code>10</code>. We call the <code>changeValue()</code> method with a as an argument, and then we print out the value of the first element of a.
-<br></br><br></br>
-When we run this code, the output will be <code>5</code>. This is because a is passed by reference to the <code>changeValue()</code> method, meaning that a reference to the original array is passed to the method. Inside the method, we change the value of the first element of the original array to <code>5</code>, which affects the original value of a outside of the method.
-                </p>
-                <h2 className="text-2xl font-bold mb-4">Conclusion</h2>
-                <p className="mb-4">
-                So, in summary, Java is strictly pass by value, meaning that any variable passed to a method is a copy of the original variable. However, for object types, the copy is a reference to the original object, which means that changes made to the object inside the method will affect the original object outside of the method.
-</p>
                 
+                <p>1.Create a LinkedList:</p>
+                  <p>Declare and instantiate a LinkedList object to store the elements.</p>
+
+                <p>2.Add elements to the LinkedList: </p>
+                  <p>Use the <code>add() method </code>to insert elements into the LinkedList.</p>
+
+                <p>3.Define a Node class:</p>
+                  <p>Create a <code>nested Node class </code>to represent the elements in the LinkedList.</p>
+                  <p>Each node contains a <code>data field</code> and a <code>next field</code> that points to the next node in the list.</p>
+
+                <p>4.Traverse the LinkedList using a pointer:</p>
+                  <p>Initialize a pointer variable <code>(current) </code>and set it to the first element using the <code>getFirst()</code> method.</p>
+                  <p>Enter a while loop that iterates until the pointer reaches the <code>end of the list (null)</code>.</p>
+                  <p>Perform the desired operation on the current element (e.g., printing).</p>
+                  <p>Move the pointer to the next element by assigning <code>current.next to current</code>.</p>
+
+                <h2 className="text-2xl font-bold mb-4">Code Example</h2>
+<pre className="bg-lightBlueGray rounded-md p-4 mb-4">
+          <code className="text-sm font-mono">
+            {`import java.util.LinkedList;
+
+public class LinkedListTraversalExample {
+    public static void main(String[] args) {
+        // Create a LinkedList
+        LinkedList<String> linkedList = new LinkedList<>();
+
+        // Add elements to the LinkedList
+        linkedList.add("Apple");
+        linkedList.add("Banana");
+        linkedList.add("Orange");
+
+        // Traverse the LinkedList using a pointer
+        Node current = linkedList.getFirst(); // Set the pointer to the first element
+
+        while (current != null) {
+            // Perform an operation on the current element
+            System.out.println(current.data);
+
+            // Move the pointer to the next element
+            current = current.next;
+        }
+    }
+
+    // Node class to represent elements in the LinkedList
+    static class Node {
+        String data;
+        Node next;
+
+        Node(String data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+}
+
+`}
+          </code>
+        </pre>
+        In this code, we create a LinkedList and add some elements to it. Then, we define a Node class to represent the elements, 
+        which consists of a data field and a 
+        next field pointing to the next node in the list.
+        <br></br>
+        <br></br>
+        We start traversing the LinkedList by setting the current pointer to the first element using <code>getFirst()</code> method. Then, we iterate through the list using a<code> while loop</code>. 
+        Inside the loop, we perform the desired operation on the current element (printing in this case)
+        and move the pointer to the next element by assigning <code>current.next to current</code>.
+                </p>
+
+                <h2 className="text-2xl font-bold mb-4"> Summary </h2>
+                <p className="mb-4">
+                Traversing a LinkedList using pointers in Java involves visiting each element in the list by using a pointer variable. 
+                The pointer starts at the first element and moves to the next element until the end of the list is reached. This allows performing operations on each element, 
+                such as printing or modifying its value. 
+                By following this approach, you can effectively traverse a LinkedList and access its elements sequentially.
+                    </p>
+               
+           
                 <h2 className="text-2xl font-bold mb-4">A Quiz</h2>
                 <Quiz quizData={quizData}/>
-                <p>                    <br></br>                    <br></br></p>
-                <h2 className="text-2xl font-bold mb-4">Exercise: Pass by Value vs Pass by Reference</h2>
-                <p>
-
-                <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
-          <p>
-            1. In the main method, create an integer x that holds the value 5
+                                               
+                <h2 className="text-2xl font-bold mb-4">Exercise</h2>
+               
+                <p className="mb-4">
+              
+            1. Write a method called <code>traverseLinkedList</code> that takes the head 
+            node of the LinkedList as a parameter and prints each element in the list.
             <br></br><br></br>
-            2. In the main method, create an integer array y that holds the values (1, 2, 3)
+            2. Call the <code>traverseLinkedList</code> method with the <code>head of the LinkedList</code> to 
+            print the elements
             <br></br><br></br>
-            3. In the method modifyValues update x to 5 and y[0] to 100
-            <br></br><br></br>
-            4. Call the method modifyValues(x, y) between the two if statements
-            <br></br><br></br>
-            5. Understand the output!
-</p>     </pre>
+            
+</p>    
        
                     <CodeRunner
-                        testCases={"Before method call: x = 5, y[0] = 1"}
-                        testCase2={"After method call: x = 5, y[0] = 100"}
+                        testCases={"110345"}
+                        testCase2={"17345"}
                         preMadeText={props.preMadeText}
-                        input1={1}
-                        input2={2}
+                        input1={10}
+                        input2={7}
                         shouldIncrement={true}
                         thisLevel={props.thisLevel}
                     />
-                </p>
+                
                 <div>
-                    <Link to={`/Lab3/5`}>
+                    <Link to={`/Lab3/7`}>
                         <button className="next-button text-black">Prev</button>
                     </Link>
-                    <Link to={`/Lab3/7`}>
+                    <Link to={`/Lab3/9`}>
                         <button className={props.disabled[1]} disabled={props.disabled[0]}
                                 onClick={() => window.scrollTo(0, 0)}>
                             Next

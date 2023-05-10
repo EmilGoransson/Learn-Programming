@@ -263,7 +263,8 @@ function App() {
             <Route path="/Lab3/5" element={<Lab3a33 />} />
             <Route path="/Lab3/6" element={<Lab3a34 />} />
             <Route path="/Lab3/7" element={<Lab3a35 />} />
-            
+            <Route path="/Lab3/8" element={<Lab3a36 />} />
+
             <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
           </Routes>
         </main>

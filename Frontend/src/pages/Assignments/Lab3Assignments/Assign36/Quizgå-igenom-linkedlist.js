@@ -9,28 +9,41 @@ export const quizData = {
     
     questions:[
       {
-      question: "What is the difference between pass by value and pass by reference?",
-      choices: ["Pass by value means that the value of the argument is passed to the method, while pass by reference means that the reference to the argument is passed to the method.", "Pass by reference means that the value of the argument is passed to the method, while pass by value means that the reference to the argument is passed to the method.", "There is no difference between pass by value and pass by reference in Java.", "Pass by value and pass by reference both mean that the method modifies the original value of the argument."],
+      question: "What is the purpose of traversing a LinkedLsit using pointers?",
+      choices: ["To add new elements to the list",
+      "To remove elements from the list",
+      "To visit each element in the list", 
+      "To sort the elements in the list",
+       ],
       type: "MCQs",
-      correctAnswer: "Pass by value means that the value of the argument is passed to the method, while pass by reference means that the reference to the argument is passed to the method."
+      correctAnswer: "To visit each element in the list"
       },
       {
-      question: "In Java, are primitive types passed by value or by reference?",
-      choices: ["By value", "By reference", "Depends on the type", "Not applicable, primitives cannot be passed as arguments."],
+      question: "Which variable is used as a pointer to traverse a LinkedList?",
+      choices: ["head",
+       "size", 
+       "tail",
+       "current"],
       type: "MCQs",
-      correctAnswer: "By value"
+      correctAnswer: "current"
       },
       {
-      question: "In Java, are objects passed by value or by reference?",
-      choices: ["By value", "By reference", "Depends on the object", "Not applicable, objects cannot be passed as arguments."],
+      question: "How do you move the pointer to the text element in the LinkedList?",
+      choices: ["current = current.next;", 
+      "current = current.previous;", 
+      "current = current.nextNode;", 
+      "current = current.prevNode;"],
       type: "MCQs",
-      correctAnswer: "By reference"
+      correctAnswer: "current = current.next;"
       },
       {
-      question: "What is the difference between modifying an object inside a method and reassigning the object inside a method?",
-      choices: ["Modifying an object changes its internal state, while reassigning an object changes the reference to which it points.", "Reassigning an object changes its internal state, while modifying an object changes the reference to which it points.", "Modifying and reassigning an object are equivalent operations in Java.", "Objects cannot be modified or reassigned inside a method."],
+      question: "What is the condition to stop treversing the LinkedList using pointers?",
+      choices: ["current == null", 
+      "current == head",
+      "current == tail", 
+      "current == size"],
       type: "MCQs",
-      correctAnswer: "Modifying an object changes its internal state, while reassigning an object changes the reference to which it points."
+      correctAnswer: "current == null"
       }
       ]
       
