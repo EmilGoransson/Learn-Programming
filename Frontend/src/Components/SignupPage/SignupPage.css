@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100vh; 
 }
 
 .ruta {
@@ -38,9 +38,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  margin: 1rem;
-  width: 200px;
-  height: 200px;
+  margin: 4rem;
+  height: 150px;
 }
 
 /* Ny CSS för registreringsformulär */

@@ -10,72 +10,66 @@ import Scrollingbar from "../../../Components/Scrollingbar/scrollingbar";
 function Theory() {
   return (
     <div>
-    <TopBar/>
-  
- <RightSideBar/>
- <Scrollingbar/>
- <Sidebar/>
- <Progress />
- <PinnedList/>
-  
+      <TopBar />
 
+      <RightSideBar />
+      <Scrollingbar />
+      <Sidebar />
+      <Progress />
+      <PinnedList />
 
-    <div className="Theory mt-20 ">
-    
-      <div className="theory-header">
-        <h3 className="text-3xl font-bold mb-4">
-          Introduction to Methods in Java
-        </h3>
+      <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
+        <h1 className="text-3xl font-bold mb-4">Printing</h1>
         <p className="mb-4">
-          In Java, a method is a function that is called to perform a set of
-          actions. This is useful for when you have a very common operation and
-          might have to do the same thing over and over again instead of
-          rewriting the code at every part of the code section you can write the
-          code once in a method and then just call it. Imagine instead of having
-          one person doing all the jobs that need to be done for something you
-          can divide up the jobs so that someone can always do one job, much
-          more effective right. Therefore, if you master methods you can create
-          much more optimal code.
+          The <code>System.out.print()</code> method is a commonly used method
+          in Java programming. It is used to display output to the console or
+          standard output stream. The <code>System.out</code> part of the method
+          refers to the standard output stream in Java, and the{" "}
+          <code>print()</code> part is the method that actually prints the
+          output to the console.
         </p>
-        <h2 className="text-2xl font-bold mb-4">Creating a Method</h2>
+        <h2 className="text-2xl font-bold mb-4">print and println</h2>
         <p className="mb-4">
-          To declare a variable in Java, we need to specify its type and name.
-          For example, to declare a variable of type <code>int</code> with the
-          name <code>myNumber</code>, we would write:
+          The <code>System.out.print()</code> method differs from the{" "}
+          <code>System.out.println()</code> method in that <code>print()</code>{" "}
+          does not append a newline character at the end of the output, while{" "}
+          <code>println()</code> does. This means that if you use{" "}
+          <code>print()</code>, the output will continue on the same line, while{" "}
+          <code>println()</code> will start a new line after the output is
+          displayed.
         </p>
-        <pre className="bg-gray-100 rounded-md p-4 mb-4">
-          <code className="text-sm font-mono">int myNumber;</code>
-        </pre>
-        <p className="mb-4">
-          This declares a variable of type <code>int</code> with the name{" "}
-          <code>myNumber</code>. We can also initialize the variable with a
-          value at the time of declaration:
+        <p>
+          Here is an example to illustrate the difference between the two
+          methods:
         </p>
-        <pre className="bg-gray-100 rounded-md p-4 mb-4">
-          <code className="text-sm font-mono">int myNumber = 42;</code>
-        </pre>
-        <p className="mb-4">
-          This declares a variable of type <code>int</code> with the name{" "}
-          <code>myNumber</code> and initializes it with the value{" "}
-          <code>42</code>.
-        </p>
-        <h2 className="text-2xl font-bold mb-4">Using Variables</h2>
-        <p className="mb-4">
-          Once we have declared and initialized a variable, we can use it in our
-          program. For example, we can print the value of <code>myNumber</code>{" "}
-          to the console:
-        </p>
-        <pre className="bg-gray-100 rounded-md p-4 mb-4">
+        <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <code className="text-sm font-mono">
-            System.out.println(myNumber);
+            {`System.out.print("Hello ");
+System.out.print("World");
+
+Output:
+Hello World
+            `}
+          </code>
+        </pre>
+        <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
+          <code className="text-sm font-mono">
+            {`System.out.println("Hello ");
+System.out.println("World");
+
+Output:
+Hello
+World
+            `}
           </code>
         </pre>
         <p className="mb-4">
-          This will print the value of <code>myNumber</code> (in this case,{" "}
-          <code>42</code>) to the console.
+          It is important to note that <code>print()</code> and{" "}
+          <code>println()</code> can be used to print not just text, but also{" "}
+          <code>variables</code>, <code>expressions</code>, and other data types
+          in Java.
         </p>
       </div>
-    </div>
     </div>
   );
 }

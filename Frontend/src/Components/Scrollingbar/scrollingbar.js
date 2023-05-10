@@ -17,7 +17,7 @@ const Scrollingbar = () => {
             activeClassName="active"
             className="my-link"
           >
-            {string}
+            {string == "Final Boss" ? null : string}
           </NavLink>
         </li>
       );
