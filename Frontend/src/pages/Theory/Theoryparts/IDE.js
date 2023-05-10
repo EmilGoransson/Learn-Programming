@@ -6,7 +6,7 @@ import PinnedList from "../../../Components/PinnedList/PinnedList";
 import TopBar from "../../../Components/topBar/topBarPresenter";
 import Scrollingbar from "../../../Components/Scrollingbar/scrollingbar";
 
-function Lab1t1(props) {
+function IDE(props) {
   return (
     <div>
       <div>
@@ -68,9 +68,26 @@ World
           <code>variables</code>, <code>expressions</code>, and other data types
           in Java.
         </p>
+        <h2 className="text-2xl font-bold mb-4">An exercise</h2>
+        <p>
+          In this first exercise we will simply print "Hello World" to the
+          console using <code>System.out.print()</code> method.
+        </p>
+        Remember:
+        <p>
+          <p>1. The code-checker is case sensetive.</p>
+          <p>
+            2. You should write the print statment in the <code>main</code>{" "}
+            method.
+          </p>
+          <p>
+            3. Always use the semicolon <code>;</code> at the end of each
+            statement in Java.
+          </p>
+        </p>
       </div>
     </div>
   );
 }
 
-export default Lab1t1;
+export default IDE;
