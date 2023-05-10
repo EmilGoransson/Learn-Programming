@@ -28,14 +28,13 @@ import { API_KEY } from "../apiKey";
 import CodeRunnerView from "../View/codeRunnerView";
 import { useEffect } from "react";
 import Spinner from "react-bootstrap/Spinner";
-import useLevelStore from "../../../Model/frontEndStore";
+import useLevelStore, { IP } from "../../../Model/frontEndStore";
 import { v4 as uuidv4 } from "uuid";
-
+import decode from "../../../decode_token";
 
 function CodeRunner(props) {
   const checkMark = "https://i.imgur.com/EC4wJV8.png";
   const crossMark = "https://i.imgur.com/vZIJZoz.png";
-  console.log(props);
   const incrementCurrentLevel = useLevelStore((state) => state.incrementLevel);
   const currentLevel = useLevelStore((state) => state.currentLevel);
   const string = `
@@ -98,21 +97,52 @@ class Progman
       "X-RapidAPI-Key": API_KEY,
       "X-RapidAPI-Host": "code-compiler.p.rapidapi.com",
     },
-    data: encodedParams2,
+    data: JSON.stringify({
+      code: code,
+    }),
   };
   if (!props.testCase2) {
+  }
+  function startFetch() {
+    fetch(IP + "/authentication/codeRunner", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        id: decode(localStorage.token).user.id,
+        token: localStorage.token,
+      },
+      body: JSON.stringify({
+        data: code,
+      }),
+    });
   }
 
   const getCompilerOutput = async () => {
     let count = 0;
     setIsLoading(true);
+
     //fetches the data from the API via a POST request
-    const res = await axios
-      .request(options)
-      .then((response) => {
-        setData(response.data);
+
+    const res = await fetch(IP + "/authentication/codeRunner", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        id: decode(localStorage.token).user.id,
+        token: localStorage.token,
+      },
+      body: JSON.stringify({
+        data: code,
+      }),
+    })
+      .then(async (response) => {
+        console.log("data from server");
+        const data = await response.json();
+        console.log("data");
+        console.log(data);
+        setData(data);
+
         //Here the test cases are compared to the response from the API
-        if (response.data.Result == props.testCases) {
+        if (data.Result == props.testCases) {
           setPassedTestOne("Passed");
           setStyle("text-ourGreen font-bold");
           count++;
@@ -130,10 +160,21 @@ class Progman
       })
       .then(async () => {
         if (props.testCase2) {
-          const res2 = await axios.request(options2).then((response) => {
-            setData2(response.data);
+          const res2 = await fetch(IP + "/authentication/codeRunner", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              id: decode(localStorage.token).user.id,
+              token: localStorage.token,
+            },
+            body: JSON.stringify({
+              data: code,
+            }),
+          }).then(async (response) => {
+            const data2 = await response.json();
+            setData2(data2);
             //Here the test cases are compared to the response from the API
-            if (response.data.Result == props.testCase2) {
+            if (data2.Result == props.testCase2) {
               setPassedTest2("Passed");
               setStyle2("text-ourGreen font-bold");
               count++;
