@@ -86,9 +86,9 @@ If it's raining (isRaining is true), then isNotRaining will be false.</p>
 </p>
  
            
-            <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
+<h2 className="text-2xl font-bold mb-4">A Quiz</h2> 
      <Quiz quizData={quizData}/>
-      </pre>
+   
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>
             Write a Java program that takes an integer input from the user and checks if the number is both greater 

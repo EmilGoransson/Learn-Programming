@@ -5,7 +5,7 @@
 export const quizData = {
   topic: "Javas",
   level: "Beginner",
-  totalQuestions: 5,
+  totalQuestions: 4,
   perQuestionScore: 5,
 
 
@@ -16,12 +16,7 @@ export const quizData = {
       type: "MCQs",
       correctAnswer: "A loop that iterates over the elements in an array or collection",
     },
-    {
-      question: "What is the syntax for a for-each loop in Java?",
-      choices: ["for (int i = 0; i < n; i++)", "for (int in : array)", "for (String s : list)", "for (char c : string)"],
-      type: "MCQs",
-      correctAnswer: "for (int in : array)",
-    },
+
     {
       question:
         "What is the advantage of using a for-each loop over a regular for loop in Java?"

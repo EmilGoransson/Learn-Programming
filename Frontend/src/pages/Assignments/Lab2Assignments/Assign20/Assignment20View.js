@@ -58,9 +58,9 @@ The loop continues until i is incremented to 11, at which point the condition be
 
             </p>
            
-            <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
+            <h2 className="text-2xl font-bold mb-4">A Quiz</h2>
      <Quiz quizData={quizData}/>
-      </pre>
+      
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>
             Write a program that takes an integer input from the user and calculates the sum of all the numbers from 1 

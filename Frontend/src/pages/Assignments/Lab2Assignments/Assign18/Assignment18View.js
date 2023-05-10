@@ -69,9 +69,9 @@ results in a boolean value. We print out the result of this comparison. Finally,
             </p>
         
            
-            <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
+            <h2 className="text-2xl font-bold mb-4">A Quiz</h2>
      <Quiz quizData={quizData}/>
-      </pre>
+      
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>
             Write a program that prompts the user to enter an integer and checks whether it is a prime number or not using a 
