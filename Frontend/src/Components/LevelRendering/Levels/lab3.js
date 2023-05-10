@@ -6,7 +6,7 @@ export const lab3Levels = [
   "33 \nBreak Statement",
   "34 \nPass by Reference",
   "35 \nCreating Linked List",
-  "36 \nTraverse Linked LIst",
+  "36 \nTraverse Linked List",
   "37 \nLinked List to Array",
   "38 \nNull",
   "39 \nDelete Linked List",
