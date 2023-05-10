@@ -16,7 +16,7 @@ function Lab3a37() {
     const removePinned = useLevelStore((state) => state.removePinned);
     const getPinned = useLevelStore((state) => state.pinnedTheory);
     //update this variable if using this as template!!
-    const contentName = "From Linkedlist to Array";
+    const contentName = "Linkedlist to Array";
     const thisLevel = 37;
     const [isFilled, setIsFilled] = React.useState(
         <LogoBookmarkFilled className="bookmark-icon"/>

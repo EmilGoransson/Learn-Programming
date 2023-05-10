@@ -9,6 +9,9 @@ function Lab3a36View(props) {
     return (
         <div className="mt-20">
             <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
+            <a onClick={props.addPinned} style={{cursor: "pointer"}}>
+                {props.svg}
+            </a>
                 <h1 className="text-3xl font-bold mb-4">Traverse a LinkedList in Java using Pointers</h1>
                 <p className="mb-4">
                 In Java, a <code>LinkedList</code> is a data structure that allows <code>dynamic insertion and removal</code> of elements.

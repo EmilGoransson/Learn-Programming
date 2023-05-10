@@ -107,13 +107,13 @@ function PinnedList() {
             return "Lab3/6";
           case "Creating Linked List":
             return "Lab3/7";
-          case "raverse Linked List":
+          case "Traverse Linked List":
             return "Lab3/8";
-          case "Linked List to Array":
+          case "Linkedlist to Array":
             return "Lab3/9";
           case "Null":
             return "Lab3/10";
-          case "Delete Linked List":
+          case "Delete Linkedlist":
             return "Lab3/11";
           case "Java Library":
             return "Lab3/12";
