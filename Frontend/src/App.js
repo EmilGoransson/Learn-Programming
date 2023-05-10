@@ -43,7 +43,7 @@ import Lab3a2 from "./pages/Assignments/Lab3Assignments/Assign30/Assignment30Pre
 import Lab3a3 from "./pages/Assignments/Lab3Assignments/Assign31/Assignment31Presenter";
 import Lab2a24 from "./pages/Assignments/Lab2Assignments/Assign24/Assignment24Presenter";
 import Lab2a25 from "./pages/Assignments/Lab2Assignments/Assign25/Assignment25Presenter";
-import Lab2a26 from "./pages/Assignments/Lab2Assignments/Assign26/Assignment25Presenter";
+import Lab2a26 from "./pages/Assignments/Lab2Assignments/Assign26/Assignment26Presenter";
 import Lab2a27 from "./pages/Assignments/Lab2Assignments/Assign27/Assignment27Presenter";
 import Lab3a42 from "./pages/Assignments/Lab3Assignments/Assign42/Assignment42Presenter";
 
@@ -74,7 +74,6 @@ import Lab1t10 from "./pages/Theory/Theoryparts/Lab1t10";
 import Lab1t11 from "./pages/Theory/Theoryparts/Lab1t11";
 import Lab1t12 from "./pages/Theory/Theoryparts/Lab1t12";
 import Lab1t13 from "./pages/Theory/Theoryparts/Lab1t13";
-import Lab1t14 from "./pages/Theory/Theoryparts/Lab1t14";
 import Lab2t1 from "./pages/Theory/Theoryparts/Lab2t1";
 import Lab2t2 from "./pages/Theory/Theoryparts/Lab2t2";
 import Lab2t3 from "./pages/Theory/Theoryparts/Lab2t3";
@@ -88,7 +87,6 @@ import Lab2t10 from "./pages/Theory/Theoryparts/Lab2t10";
 import Lab2t11 from "./pages/Theory/Theoryparts/Lab2t11";
 import Lab2t12 from "./pages/Theory/Theoryparts/Lab2t12";
 import Lab2t13 from "./pages/Theory/Theoryparts/Lab2t13";
-import Lab2t14 from "./pages/Theory/Theoryparts/Lab2t14";
 import Lab3t1 from "./pages/Theory/Theoryparts/Lab3t1";
 import Lab3t2 from "./pages/Theory/Theoryparts/Lab3t2";
 import Lab3t3 from "./pages/Theory/Theoryparts/Lab3t3";
@@ -102,7 +100,6 @@ import Lab3t10 from "./pages/Theory/Theoryparts/Lab3t10";
 import Lab3t11 from "./pages/Theory/Theoryparts/Lab3t11";
 import Lab3t12 from "./pages/Theory/Theoryparts/Lab3t12";
 import Lab3t13 from "./pages/Theory/Theoryparts/Lab3t13";
-import Lab3t14 from "./pages/Theory/Theoryparts/Lab3t14";
 import Lab3a40 from "./pages/Assignments/Lab3Assignments/Assign40/Assignment40Presenter";
 import Login from "./Components/LoginPage/Login";
 import CreateAccount from "./Components/SignupPage/SignupPage";
@@ -327,7 +324,6 @@ function App() {
             <Route path="/theory/Lab1/11" element={<Lab1t11 />} />
             <Route path="/theory/Lab1/12" element={<Lab1t12 />} />
             <Route path="/theory/Lab1/13" element={<Lab1t13 />} />
-            <Route path="/theory/Lab1/14" element={<Lab1t14 />} />
             <Route path="/theory/Lab2/1" element={<Lab2t1 />} />
             <Route path="/theory/Lab2/2" element={<Lab2t2 />} />
             <Route path="/theory/Lab2/3" element={<Lab2t3 />} />
@@ -341,7 +337,6 @@ function App() {
             <Route path="/theory/Lab2/11" element={<Lab2t11 />} />
             <Route path="/theory/Lab2/12" element={<Lab2t12 />} />
             <Route path="/theory/Lab2/13" element={<Lab2t13 />} />
-            <Route path="/theory/Lab2/14" element={<Lab2t14 />} />
             <Route path="/theory/Lab3/1" element={<Lab3t1 />} />
             <Route path="/theory/Lab3/2" element={<Lab3t2 />} />
             <Route path="/theory/Lab3/3" element={<Lab3t3 />} />
@@ -355,7 +350,6 @@ function App() {
             <Route path="/theory/Lab3/11" element={<Lab3t11 />} />
             <Route path="/theory/Lab3/12" element={<Lab3t12 />} />
             <Route path="/theory/Lab3/13" element={<Lab3t13 />} />
-            <Route path="/theory/Lab3/14" element={<Lab3t14 />} />
             <Route path="/theory/Lab1/IDE" element={<IDE />} />
 
             <Route path="/Lab3/10" element={<Lab3a38 />} />

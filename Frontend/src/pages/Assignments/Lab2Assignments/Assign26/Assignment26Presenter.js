@@ -1,5 +1,5 @@
 import React from "react";
-import Lab2a26View from "./Assignment25View";
+import Lab2a26View from "./Assignment26View";
 import useLevelStore from "../../../../Model/frontEndStore";
 import { useEffect } from "react";
 import { ReactComponent as LogoBookmark } from "../../bookmark.svg";

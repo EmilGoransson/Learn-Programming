@@ -41,7 +41,7 @@ function Lab2a25View(props) {
 
     
             
-          <h2 className="text-2xl font-bold mb-4">Exemple</h2>
+          <h2 className="text-2xl font-bold mb-4">Example</h2>
         
             <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
             <code className="text-sm font-mono">
@@ -77,7 +77,7 @@ function Lab2a25View(props) {
 </code>
 
       </pre>
-      <h2 className="text-2xl font-bold mb-4">Explainning the code exemple</h2>
+      <h2 className="text-2xl font-bold mb-4">Explaining the code exemple</h2>
       <p className="mb-4">
       <p>1.We start by defining an <code>array </code>with some initial values, and we specify the index <code>indexToDelete</code>of the element we want to delete.</p>
       <p>2.We print the array before the deletion using <code>Arrays.toString(array)</code> to convert the array into a string representation.</p>
