@@ -60,6 +60,7 @@ import Lab3a6 from "./pages/Assignments/Lab3Assignments/Assign34/Assignment34Pre
 import Lab3a36 from "./pages/Assignments/Lab3Assignments/Assign36/Assignment36Presenter";
 import Lab3a38 from "./pages/Assignments/Lab3Assignments/Assign38/Assignment38Presenter";
 
+import IDE from "./pages/Theory/Theoryparts/IDE";
 import Lab1t1 from "./pages/Theory/Theoryparts/Lab1t1";
 import Lab1t2 from "./pages/Theory/Theoryparts/Lab1t2";
 import Lab1t3 from "./pages/Theory/Theoryparts/Lab1t3";
@@ -355,6 +356,7 @@ function App() {
             <Route path="/theory/Lab3/12" element={<Lab3t12 />} />
             <Route path="/theory/Lab3/13" element={<Lab3t13 />} />
             <Route path="/theory/Lab3/14" element={<Lab3t14 />} />
+            <Route path="/theory/Lab1/IDE" element={<IDE />} />
 
             <Route path="/Lab3/10" element={<Lab3a38 />} />
 

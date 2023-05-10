@@ -18,24 +18,10 @@ function Lab3a7() {
   const preMadeText = `import java.util.Scanner;
 class Progman
 {  
-    public static void main(String[] args) {
+      public static void main(String[] args) {
       Scanner scanner = new Scanner(System.in);
-      int input = scanner.nextInt();
-
-      //Your code here
-
-      if(input == 1){
-        System.out.print("Before method call: x = " + x + ", y[0] = " + y[0]);
-        }
-
-      //call modifyValues() with x and y as parameters
-
-      if(input == 2){
-        System.out.print("After method call: x = " + x + ", y[0] = " + y[0]);
-        }
-    }
-    public static void modifyValues(int x, int[] y) {
-      //Your code here
+      //Create a Linked List that holds Strings
+      StringList.add(scanner.next());
   }
 }`;
   function IsDisabled() {

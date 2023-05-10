@@ -112,7 +112,7 @@ then both head and tail are set to the new node. Otherwise, the new node is adde
 
                 <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <p>
-            1. Create a new Linked List object that holds strings.
+            1. Create a new Linked List object that holds strings named StringList.
             <br></br><br></br>
             2. Add "Proglin", "Java" & "Arrays start at index 0" to the list.
             <br></br><br></br>
@@ -123,8 +123,11 @@ then both head and tail are set to the new node. Otherwise, the new node is adde
 </p>     </pre>
        
                     <CodeRunner
-                        testCases={"[Proglin, Java, Arrays start at index 0]"}
+                        testCases={"[Proglin, Java, Arrays start at index 0, Hello!]"}
+                        testCase2={"[Proglin, Java, Arrays start at index 0, Good bye!"}
                         preMadeText={props.preMadeText}
+                        input={"Hello!"}
+                        input2={"Good Bye!"}
                         shouldIncrement={true}
                         thisLevel={props.thisLevel}
                     />
