@@ -136,7 +136,7 @@ const ButtonContainer = (props) => {
                     }
                   >
                     <button className={color} key={buttonId} disabled={status}>
-                      <div>{number}</div>
+                      {number}
                     </button>
                   </OverlayTrigger>
                 </Link>
@@ -201,7 +201,7 @@ return (
                     }
                   >
                     <button className={color} key={buttonId} disabled={status}>
-                      <div>{line1}</div>
+                      {line1}
                     </button>
                   </OverlayTrigger>
   </Link>
