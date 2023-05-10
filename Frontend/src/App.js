@@ -12,7 +12,7 @@ import Profile from "./pages/profile";
 import PinnedList from "./Components/PinnedList/PinnedList";
 import Progress from "./Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import decode from "./decode_token";
-import useLevelStore, {IP} from "./Model/frontEndStore";
+import useLevelStore, { IP } from "./Model/frontEndStore";
 
 import Lab1a1 from "./pages/Assignments/Lab1Assignments/Assign1/Assignment1Presenter";
 import Lab1a2 from "./pages/Assignments/Lab1Assignments/Assign2/Assignment2Presenter";
@@ -28,7 +28,6 @@ import Lab1a11 from "./pages/Assignments/Lab1Assignments/Assign11/Assignment11Pr
 import Lab1a12 from "./pages/Assignments/Lab1Assignments/Assign12/Assignment12Presenter";
 import Lab1a13 from "./pages/Assignments/Lab1Assignments/Assign13/Assignment13Presenter";
 import Lab1a14 from "./pages/Assignments/Lab1Assignments/Assign14/Assignment14Presenter";
-
 
 import Lab2a15 from "./pages/Assignments/Lab2Assignments/Assign15/Assignment15Presenter";
 import Lab2a16 from "./pages/Assignments/Lab2Assignments/Assign16/Assignment16Presenter";
@@ -56,52 +55,90 @@ import Lab3a35 from "./pages/Assignments/Lab3Assignments/Assign35/Assignment35Pr
 import Lab3a41 from "./pages/Assignments/Lab3Assignments/Assign41/Assignment41Presenter";
 import Lab3a6 from "./pages/Assignments/Lab3Assignments/Assign34/Assignment34Presenter";
 
+import Lab1t1 from "./pages/Theory/Theoryparts/Lab1t1";
+import Lab1t2 from "./pages/Theory/Theoryparts/Lab1t2";
+import Lab1t3 from "./pages/Theory/Theoryparts/Lab1t3";
+import Lab1t4 from "./pages/Theory/Theoryparts/Lab1t4";
+import Lab1t5 from "./pages/Theory/Theoryparts/Lab1t5";
+import Lab1t6 from "./pages/Theory/Theoryparts/Lab1t6";
+import Lab1t7 from "./pages/Theory/Theoryparts/Lab1t7";
+import Lab1t8 from "./pages/Theory/Theoryparts/Lab1t8";
+import Lab1t9 from "./pages/Theory/Theoryparts/Lab1t9";
+import Lab1t10 from "./pages/Theory/Theoryparts/Lab1t10";
+import Lab1t11 from "./pages/Theory/Theoryparts/Lab1t11";
+import Lab1t12 from "./pages/Theory/Theoryparts/Lab1t12";
+import Lab1t13 from "./pages/Theory/Theoryparts/Lab1t13";
+import Lab1t14 from "./pages/Theory/Theoryparts/Lab1t14";
+import Lab2t1 from "./pages/Theory/Theoryparts/Lab2t1";
+import Lab2t2 from "./pages/Theory/Theoryparts/Lab2t2";
+import Lab2t3 from "./pages/Theory/Theoryparts/Lab2t3";
+import Lab2t4 from "./pages/Theory/Theoryparts/Lab2t4";
+import Lab2t5 from "./pages/Theory/Theoryparts/Lab2t5";
+import Lab2t6 from "./pages/Theory/Theoryparts/Lab2t6";
+import Lab2t7 from "./pages/Theory/Theoryparts/Lab2t7";
+import Lab2t8 from "./pages/Theory/Theoryparts/Lab2t8";
+import Lab2t9 from "./pages/Theory/Theoryparts/Lab2t9";
+import Lab2t10 from "./pages/Theory/Theoryparts/Lab2t10";
+import Lab2t11 from "./pages/Theory/Theoryparts/Lab2t11";
+import Lab2t12 from "./pages/Theory/Theoryparts/Lab2t12";
+import Lab2t13 from "./pages/Theory/Theoryparts/Lab2t13";
+import Lab2t14 from "./pages/Theory/Theoryparts/Lab2t14";
+import Lab3t1 from "./pages/Theory/Theoryparts/Lab3t1";
+import Lab3t2 from "./pages/Theory/Theoryparts/Lab3t2";
+import Lab3t3 from "./pages/Theory/Theoryparts/Lab3t3";
+import Lab3t4 from "./pages/Theory/Theoryparts/Lab3t4";
+import Lab3t5 from "./pages/Theory/Theoryparts/Lab3t5";
+import Lab3t6 from "./pages/Theory/Theoryparts/Lab3t6";
+import Lab3t7 from "./pages/Theory/Theoryparts/Lab3t7";
+import Lab3t8 from "./pages/Theory/Theoryparts/Lab3t8";
+import Lab3t9 from "./pages/Theory/Theoryparts/Lab3t9";
+import Lab3t10 from "./pages/Theory/Theoryparts/Lab3t10";
+import Lab3t11 from "./pages/Theory/Theoryparts/Lab3t11";
+import Lab3t12 from "./pages/Theory/Theoryparts/Lab3t12";
+import Lab3t13 from "./pages/Theory/Theoryparts/Lab3t13";
+import Lab3t14 from "./pages/Theory/Theoryparts/Lab3t14";
+
 import Login from "./Components/LoginPage/Login";
 import CreateAccount from "./Components/SignupPage/SignupPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import Scrollingbar from "./Components/Scrollingbar/scrollingbar";
 
-
 function App() {
+  const setLevel = useLevelStore((state) => state.setLevel);
+  const setName = useLevelStore((state) => state.setName);
+  const setID = useLevelStore((state) => state.setID);
+  const setProfilePicture = useLevelStore((state) => state.setProfilePic);
+  const setPinned = useLevelStore((state) => state.setPinned);
+  async function setData() {
+    try {
+      const res = await fetch(IP + "/authentication/getInfo", {
+        method: "GET",
+        headers: {
+          id: decode(localStorage.token).user.id,
+          token: localStorage.token,
+        },
+      });
+      const resJson = await res.json();
+      console.log(resJson.currentLevel);
+      setLevel(Number(resJson.currentLevel));
+      setName(String(resJson.firstName + " " + resJson.lastName));
+      setID(Number(resJson.id));
+      setPinned(resJson.pinnedItems);
 
-    const setLevel = useLevelStore((state) => state.setLevel);
-    const setName = useLevelStore((state) => state.setName);
-    const setID = useLevelStore((state) => state.setID);
-    const setProfilePicture = useLevelStore((state) => state.setProfilePic);
-    const setPinned = useLevelStore((state) => state.setPinned);
-    async function setData() {
-        try {
-            const res = await fetch(IP + "/authentication/getInfo", {
-                method: "GET",
-                headers: {
-                    id: decode(localStorage.token).user.id,
-                    token: localStorage.token,
-                },
-            });
-            const resJson = await res.json();
-            console.log(resJson.currentLevel);
-            setLevel(Number(resJson.currentLevel));
-            setName(String((resJson.firstName + " " + resJson.lastName)));
-            setID((Number(resJson.id)));
-            setPinned(resJson.pinnedItems);
+      setProfilePicture(resJson.profilePicture);
 
-            setProfilePicture(resJson.profilePicture);
-
-            console.log(resJson);
-        } catch (error) {
-            console.error(error);
-        }
+      console.log(resJson);
+    } catch (error) {
+      console.error(error);
     }
+  }
 
   const checkAuthenticated = async () => {
     try {
-      const res = await fetch(
-        IP + "/authentication/verify",
-        {
-          metod: "POST",
-          headers: { token: localStorage.token }, // Tries to find local token
-        }
-      );
+      const res = await fetch(IP + "/authentication/verify", {
+        metod: "POST",
+        headers: { token: localStorage.token }, // Tries to find local token
+      });
 
       const parseRespone = await res.json();
 
@@ -115,14 +152,13 @@ function App() {
     }
   };
 
-  useEffect(  () => {
-      checkAuthenticated();
-      if (isAuthenticated) {
-          setData();
-          const id = decode(localStorage.token).user.id;
-          setID(Number(id));
-      }
-  
+  useEffect(() => {
+    checkAuthenticated();
+    if (isAuthenticated) {
+      setData();
+      const id = decode(localStorage.token).user.id;
+      setID(Number(id));
+    }
   });
   // Default state of authentication is false
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
@@ -245,8 +281,8 @@ function App() {
             <Route path="/Lab2/8" element={<Lab2a22 />} />
             <Route path="/Lab2/9" element={<Lab2a23 />} />
             <Route path="/Lab2/10" element={<Lab2a24 />} />
-            <Route path="/Lab2/13" element={<Lab2a27 />} />     
-            <Route path="/Lab2/14" element={<Lab2a28 />} />  
+            <Route path="/Lab2/13" element={<Lab2a27 />} />
+            <Route path="/Lab2/14" element={<Lab2a28 />} />
 
             <Route path="/Lab3/6" element={<Lab3a6 />} />
 
@@ -254,9 +290,9 @@ function App() {
             <Route path="/Lab3/3" element={<Lab3a3 />} />
 
             <Route path="/Lab2/11" element={<Lab2a25 />} />
-            <Route path="/Lab2/12" element={<Lab2a26 />}/>
-            <Route path="/Lab2/13" element={<Lab2a27 />} />       
-       
+            <Route path="/Lab2/12" element={<Lab2a26 />} />
+            <Route path="/Lab2/13" element={<Lab2a27 />} />
+
             <Route path="/Lab3/1" element={<Lab3a29 />} />
             <Route path="/Lab3/2" element={<Lab3a30 />} />
             <Route path="/Lab3/3" element={<Lab3a31 />} />
@@ -264,7 +300,50 @@ function App() {
             <Route path="/Lab3/6" element={<Lab3a34 />} />
             <Route path="/Lab3/7" element={<Lab3a35 />} />
             <Route path="/Lab3/13" element={<Lab3a41 />} />
-            
+
+            <Route path="/theory/Lab1/1" element={<Lab1t1 />} />
+            <Route path="/theory/Lab1/2" element={<Lab1t2 />} />
+            <Route path="/theory/Lab1/3" element={<Lab1t3 />} />
+            <Route path="/theory/Lab1/4" element={<Lab1t4 />} />
+            <Route path="/theory/Lab1/5" element={<Lab1t5 />} />
+            <Route path="/theory/Lab1/6" element={<Lab1t6 />} />
+            <Route path="/theory/Lab1/7" element={<Lab1t7 />} />
+            <Route path="/theory/Lab1/8" element={<Lab1t8 />} />
+            <Route path="/theory/Lab1/9" element={<Lab1t9 />} />
+            <Route path="/theory/Lab1/10" element={<Lab1t10 />} />
+            <Route path="/theory/Lab1/11" element={<Lab1t11 />} />
+            <Route path="/theory/Lab1/12" element={<Lab1t12 />} />
+            <Route path="/theory/Lab1/13" element={<Lab1t13 />} />
+            <Route path="/theory/Lab1/14" element={<Lab1t14 />} />
+            <Route path="/theory/Lab2/1" element={<Lab2t1 />} />
+            <Route path="/theory/Lab2/2" element={<Lab2t2 />} />
+            <Route path="/theory/Lab2/3" element={<Lab2t3 />} />
+            <Route path="/theory/Lab2/4" element={<Lab2t4 />} />
+            <Route path="/theory/Lab2/5" element={<Lab2t5 />} />
+            <Route path="/theory/Lab2/6" element={<Lab2t6 />} />
+            <Route path="/theory/Lab2/7" element={<Lab2t7 />} />
+            <Route path="/theory/Lab2/8" element={<Lab2t8 />} />
+            <Route path="/theory/Lab2/9" element={<Lab2t9 />} />
+            <Route path="/theory/Lab2/10" element={<Lab2t10 />} />
+            <Route path="/theory/Lab2/11" element={<Lab2t11 />} />
+            <Route path="/theory/Lab2/12" element={<Lab2t12 />} />
+            <Route path="/theory/Lab2/13" element={<Lab2t13 />} />
+            <Route path="/theory/Lab2/14" element={<Lab2t14 />} />
+            <Route path="/theory/Lab3/1" element={<Lab3t1 />} />
+            <Route path="/theory/Lab3/2" element={<Lab3t2 />} />
+            <Route path="/theory/Lab3/3" element={<Lab3t3 />} />
+            <Route path="/theory/Lab3/4" element={<Lab3t4 />} />
+            <Route path="/theory/Lab3/5" element={<Lab3t5 />} />
+            <Route path="/theory/Lab3/6" element={<Lab3t6 />} />
+            <Route path="/theory/Lab3/7" element={<Lab3t7 />} />
+            <Route path="/theory/Lab3/8" element={<Lab3t8 />} />
+            <Route path="/theory/Lab3/9" element={<Lab3t9 />} />
+            <Route path="/theory/Lab3/10" element={<Lab3t10 />} />
+            <Route path="/theory/Lab3/11" element={<Lab3t11 />} />
+            <Route path="/theory/Lab3/12" element={<Lab3t12 />} />
+            <Route path="/theory/Lab3/13" element={<Lab3t13 />} />
+            <Route path="/theory/Lab3/14" element={<Lab3t14 />} />
+
             <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
           </Routes>
         </main>
