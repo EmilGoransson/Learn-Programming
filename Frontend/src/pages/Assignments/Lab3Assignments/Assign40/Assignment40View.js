@@ -73,8 +73,10 @@ As you continue your journey in Java programming, familiarizing yourself with th
                 </p>
                
 <h2 className="text-2xl font-bold mb-4">A Quiz</h2>
-            <Quiz quizData={quizData}/>
-            
+            <Quiz quizData={quizData}
+            shouldIncrement={true}
+            thisLevel={props.thisLevel}
+            />
 
        
                 <div>

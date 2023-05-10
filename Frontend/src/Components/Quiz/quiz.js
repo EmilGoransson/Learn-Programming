@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./quiz.css";
+import useLevelStore from "../../Model/frontEndStore";
 
 /*
 För att köra importera "import Quiz from "./Components/Quiz/quiz";"
@@ -24,6 +25,18 @@ const Quiz = (props) => {
     answerList: [0, 0, 0, 0],
     resultCounter: 0,
   });
+  const incrementCurrentLevel = useLevelStore((state) => state.incrementLevel);
+  const currentLevel = useLevelStore((state) => state.currentLevel);
+  console.log(result.answerList);
+  if (props.shouldIncrement && props.thisLevel) {
+    if (
+      result.answerList.reduce((total, num) => total + num) == 4 &&
+      props.shouldIncrement &&
+      props.thisLevel === currentLevel
+    ) {
+      incrementCurrentLevel();
+    }
+  }
 
   //const quizid = props.quizid; // Måste fixa så att importen beror på ett id som importeras
 
@@ -111,7 +124,9 @@ const Quiz = (props) => {
         <div className="result">
           <h1>Result</h1>
           <h4 className="result-totalScoreText">
-            Total Score: <span className="result-scoreNbr">{result.score}</span> / <span className="result-totalQuestionNbr">{questions.length}</span>
+            Total Score: <span className="result-scoreNbr">{result.score}</span>{" "}
+            /{" "}
+            <span className="result-totalQuestionNbr">{questions.length}</span>
           </h4>
           <p>
             Question 1:

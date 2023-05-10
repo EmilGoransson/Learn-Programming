@@ -13,7 +13,7 @@ const Login = ({ setAuth }) => {
   const getLevel = useLevelStore(state => state.getLevel);
   const [inputs, setInputs] = useState({
     email: "",
-    password: "",
+    password: "", 
   });
 
   const { email, password } = inputs;
@@ -40,7 +40,6 @@ const Login = ({ setAuth }) => {
       if (parseRes.token) {
 
         localStorage.setItem("token", parseRes.token);
-        localStorage.setItem("id", parseRes.id)
         localStorage.setItem("name", parseRes.userName)
         setAuth(true);
         toast.success("Logged in Successfully");
@@ -58,6 +57,7 @@ const Login = ({ setAuth }) => {
   return (
     <Fragment>
       <div class="container">
+      <img src="https://i.imgur.com/yLqZDJM.png" className="hej" />
         <div class="form-container">
           <div
             style={{

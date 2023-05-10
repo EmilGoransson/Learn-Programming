@@ -39,9 +39,9 @@ This loop prints out each element in the myArray array.
             Overall, string arrays are a useful data structure in Java for storing and manipulating collections of strings.
             </p>
            
-            <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
+            <h2 className="text-2xl font-bold mb-4">A Quiz</h2>  
      <Quiz quizData={quizData}/>
-      </pre>
+      
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>
             Write a program that takes each string element in the given string array and 

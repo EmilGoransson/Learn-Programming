@@ -1,34 +1,33 @@
 .progress-bar {
-background-color: #2DCB6C;
+  background-color: #2dcb6c;
 }
-.level-text{
-    font-size: 1.5vw;
-    position: fixed;
-    top: 14vh;
-    right: 8.6vw;
-}
-
-.star-container{
-    width: 10vw;
-    position: fixed;
-    right: 11vw;
-    top: 22vh;
-
+.level-text {
+  font-size: 1.5vw;
+  position: fixed;
+  top: 14vh;
+  right: 8.6vw;
 }
 
-.star{
-    width: 3vw;
-    height: 4vh;
-}
-.progressBar{
-    width: 10%;
-    position: fixed;
-    right: 2vw;
-    top: 18vh;
+.star-container {
+  width: 10vw;
+  position: fixed;
+  right: 11vw;
+  top: 22vh;
 }
 
-.test{
-    height:13vh;
-    width: 10vw;
-    margin-left: 9vw;
+.star {
+  width: 3vw;
+  height: width;
+}
+.progressBar {
+  width: 10%;
+  position: fixed;
+  right: 2vw;
+  top: 18vh;
+}
+
+.test {
+  width: 10vw;
+  aspect-ratio: 4/3;
+  margin-left: 9vw;
 }
