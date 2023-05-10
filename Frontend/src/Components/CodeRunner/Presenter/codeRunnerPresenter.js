@@ -24,7 +24,6 @@ Component works in the following way.
 
 import React, { useState } from "react";
 import axios from "axios";
-import { API_KEY } from "../apiKey";
 import CodeRunnerView from "../View/codeRunnerView";
 import { useEffect } from "react";
 import Spinner from "react-bootstrap/Spinner";
@@ -52,8 +51,6 @@ class Progman
   const [code, setCode] = useState("");
   const [data, setData] = useState("");
   const [data2, setData2] = useState("");
-  const [loading1, setLoading1] = useState(false);
-  const [loading2, setLoading2] = useState(false);
   const [compileCode, setCompileCode] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [passedTestOne, setPassedTestOne] = useState("");
@@ -80,49 +77,9 @@ class Progman
     const input2 = props.input2;
   }
   //SPECIFY THE "INPUT" HERE BY PASSING IT AS A PROP ex: <CodeRunner input="5" />
-
-  const options = {
-    method: "POST",
-    url: "https://code-compiler.p.rapidapi.com/v2",
-    headers: {
-      "content-type": "application/x-www-form-urlencoded",
-      "X-RapidAPI-Key": API_KEY,
-      "X-RapidAPI-Host": "code-compiler.p.rapidapi.com",
-    },
-    data: encodedParams,
-  };
-  const options2 = {
-    method: "POST",
-    url: "https://code-compiler.p.rapidapi.com/v2",
-    headers: {
-      "content-type": "application/x-www-form-urlencoded",
-      "X-RapidAPI-Key": API_KEY,
-      "X-RapidAPI-Host": "code-compiler.p.rapidapi.com",
-    },
-    data: JSON.stringify({
-      code: code,
-    }),
-  };
-  if (!props.testCase2) {
-  }
-  function startFetch() {
-    fetch(IP + "/authentication/codeRunner", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        id: decode(localStorage.token).user.id,
-        token: localStorage.token,
-      },
-      body: JSON.stringify({
-        data: code,
-      }),
-    });
-  }
-
   const getCompilerOutput = async () => {
     let count = 0;
     setIsLoading(true);
-
     //fetches the data from the API via a POST request
 
     const res = await fetch(IP + "/authentication/codeRunner", {
@@ -140,8 +97,7 @@ class Progman
       .then(async (response) => {
         console.log("data from server");
         const data = await response.json();
-        console.log("data");
-        console.log(data);
+        console.log(response.status);
         setData(data);
 
         //Here the test cases are compared to the response from the API
@@ -159,7 +115,7 @@ class Progman
         }
       })
       .catch(async (error) => {
-        console.log(error);
+        alert(error + " " + "please refresh the page and try again");
       })
       .then(async () => {
         if (props.testCase2) {
@@ -174,20 +130,24 @@ class Progman
               data: code,
               input: props.input2 ? props.input2 : "",
             }),
-          }).then(async (response) => {
-            const data2 = await response.json();
-            setData2(data2);
-            //Here the test cases are compared to the response from the API
-            if (data2.Result == props.testCase2) {
-              setPassedTest2("Passed");
-              setStyle2("text-ourGreen font-bold");
-              count++;
-            } else {
-              setPassedTest2("Failed");
-              setStyle2("text-redColor font-bold");
-            }
-            setIsLoading(false);
-          });
+          })
+            .then(async (response) => {
+              const data2 = await response.json();
+              setData2(data2);
+              //Here the test cases are compared to the response from the API
+              if (data2.Result == props.testCase2) {
+                setPassedTest2("Passed");
+                setStyle2("text-ourGreen font-bold");
+                count++;
+              } else {
+                setPassedTest2("Failed");
+                setStyle2("text-redColor font-bold");
+              }
+              setIsLoading(false);
+            })
+            .catch(async (error) => {
+              alert(error + " " + "please refresh the page and try again");
+            });
         }
       });
     if (count == 1 && !props.testCase2) {

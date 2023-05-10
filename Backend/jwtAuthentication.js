@@ -6,6 +6,8 @@ const jwtGenerator = require("./jwtGenerator");
 const authorization = require("./middleware/authorization");
 //DECLARE API_KEY INSIDE apiKey.js
 const API_KEY = require("./apiKey");
+
+console.log("test");
 router.post("/Signup", async (req, res) => {
   try {
     //1. destructure req.body (first_name, last_name, email, password)
@@ -323,15 +325,13 @@ router.post("/removePinnedItems", authorization, async (req, res) => {
     res.status(500);
   }
 });
-
+// API call counter
 router.post("/codeRunner", authorization, async (req, res) => {
+  // Resets callCount at 13:00 UTC
+  //MAKE IT SO THAT IT TRACKS THE DAY
   const id = req.headers.id;
   try {
     console.log("\nUser " + id + " codeRunner");
-    console.log(API_KEY.API_KEY);
-    console.log("data");
-    console.log(req.body.data);
-
     const url = "https://code-compiler.p.rapidapi.com/v2";
     const options = {
       method: "POST",
