@@ -31,7 +31,7 @@ function Lab2a20View(props) {
 
 <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
 <code className="text-sm font-mono">
-   { `fint i = 1;
+   { `int i = 1;
 
 while (i <= 10) {
     System.out.println(i);

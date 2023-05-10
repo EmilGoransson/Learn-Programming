@@ -39,6 +39,7 @@ and the code inside the loop (in this case, just printing out the number) gets e
 
 
             </p>
+            <h2 className="text-2xl font-bold mb-4">Summary</h2>
             <p>
             The great thing about "for each" loops is that they're really easy to use and read.
             You don't have to worry about keeping track of an index variable like you would with a traditional "for" loop.
