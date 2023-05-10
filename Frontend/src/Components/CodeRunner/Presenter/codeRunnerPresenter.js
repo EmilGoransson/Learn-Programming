@@ -69,6 +69,7 @@ class Progman
   encodedParams.append("Program", code);
   if (props.input1) {
     encodedParams.append("Input", props.input1);
+    const input1 = props.input1;
   }
 
   const encodedParams2 = new URLSearchParams();
@@ -76,6 +77,7 @@ class Progman
   encodedParams2.append("Program", code);
   if (props.input2) {
     encodedParams2.append("Input", props.input2);
+    const input2 = props.input2;
   }
   //SPECIFY THE "INPUT" HERE BY PASSING IT AS A PROP ex: <CodeRunner input="5" />
 
@@ -132,6 +134,7 @@ class Progman
       },
       body: JSON.stringify({
         data: code,
+        input: props.input1 ? props.input1 : "",
       }),
     })
       .then(async (response) => {
@@ -169,6 +172,7 @@ class Progman
             },
             body: JSON.stringify({
               data: code,
+              input: props.input2 ? props.input2 : "",
             }),
           }).then(async (response) => {
             const data2 = await response.json();

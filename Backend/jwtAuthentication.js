@@ -343,6 +343,7 @@ router.post("/codeRunner", authorization, async (req, res) => {
       body: new URLSearchParams({
         LanguageChoice: "4",
         Program: req.body.data,
+        Input: req.body.input ? req.body.input : "",
       }),
     };
     let result = "";
