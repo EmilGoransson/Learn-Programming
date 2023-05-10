@@ -12,7 +12,7 @@ export const quizData = {
   questions: [
     {
       question: "What is a linked list?",
-      choices: [" A data structure that stores data in a linear sequence", "A data structure that stores data in a non-linear sequence", "A data structure that stores data in a tabular format", "A data structure that stores data in a graph format"],
+      choices: ["A data structure that stores data in a linear sequence", "A data structure that stores data in a non-linear sequence", "A data structure that stores data in a tabular format", "A data structure that stores data in a graph format"],
       type: "MCQs",
       correctAnswer: "A data structure that stores data in a non-linear sequence",
     },

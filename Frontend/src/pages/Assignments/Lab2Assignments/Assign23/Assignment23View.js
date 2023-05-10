@@ -54,28 +54,12 @@ function Lab2a23View(props) {
 
 
     
-            <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
-     <Quiz quizData={quizData}/>
+            <pre className="text-2xl font-bold mb-4">
+     <Quiz quizData={quizData}
+        shouldIncrement={true}
+        thisLevel={props.thisLevel}
+    />
       </pre>
-            <h2 className="text-2xl font-bold mb-4">An exercise</h2>
-            <p>    
-Print 1
-            </p>
-            Remember:
-            <p>
-                <p>1. The code-checker is case sensitive.</p>
-                <p>
-                    2. Always use the semicolon <code>;</code> at the end of each
-                    statement in Java.
-                </p>
-                <CodeRunner
-                     testCases={1}
-                     preMadeText={props.preMadeText}
-                     input={1}
-                     shouldIncrement={true}
-                     thisLevel={props.thisLevel}
-                />
-            </p>
             <div>
                 <Link to={`/Lab2/8`}>
                     <button className="next-button text-black">Prev</button>

@@ -85,19 +85,12 @@ By analyzing the time complexity of an algorithm, we can determine how efficient
 </p>
                 
                 <h2 className="text-2xl font-bold mb-4">A Quiz</h2>
-                <Quiz quizData={quizData}/>
+                <Quiz quizData={quizData}
+                shouldIncrement={true}
+                thisLevel={props.thisLevel}
+                />
                 <p>                    <br></br>                    <br></br></p>
                 <p>
-
-                
-        
-                    <CodeRunner
-                        testCases={1}
-                        preMadeText={props.preMadeText}
-                        input1={1}
-                        shouldIncrement={true}
-                        thisLevel={props.thisLevel}
-                    />
                 </p>
                 <div>
                     <Link to={`/Lab2/12`}>
