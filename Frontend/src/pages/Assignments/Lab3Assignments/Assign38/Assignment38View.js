@@ -106,7 +106,7 @@ if (str != null) {
 <br></br><br></br>
             In this assignment do the following:
             <br></br><br></br>
-            1. Initiate a String variable called name to be initialized to null inside the try <br></br>statement
+            1. Initiate a String variable called name to be initialized to scanner.next(); inside <br></br>the try statement
             <br></br><br></br>
             2. Create an int variable called name_length and store name.length(); in name_length <br></br>inside the try statement
             <br></br><br></br>
