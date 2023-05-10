@@ -13,7 +13,7 @@ const Login = ({ setAuth }) => {
   const getLevel = useLevelStore(state => state.getLevel);
   const [inputs, setInputs] = useState({
     email: "",
-    password: "",
+    password: "", 
   });
 
   const { email, password } = inputs;
@@ -58,6 +58,7 @@ const Login = ({ setAuth }) => {
   return (
     <Fragment>
       <div class="container">
+      <img src="https://i.imgur.com/yLqZDJM.png" className="hej" />
         <div class="form-container">
           <div
             style={{
