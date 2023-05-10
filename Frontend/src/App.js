@@ -45,6 +45,7 @@ import Lab2a24 from "./pages/Assignments/Lab2Assignments/Assign24/Assignment24Pr
 import Lab2a25 from "./pages/Assignments/Lab2Assignments/Assign25/Assignment25Presenter";
 import Lab2a26 from "./pages/Assignments/Lab2Assignments/Assign26/Assignment25Presenter";
 import Lab2a27 from "./pages/Assignments/Lab2Assignments/Assign27/Assignment27Presenter";
+import Lab3a42 from "./pages/Assignments/Lab3Assignments/Assign42/Assignment42Presenter";
 
 import Lab3a29 from "./pages/Assignments/Lab3Assignments/Assign29/Assignment29Presenter";
 import Lab3a30 from "./pages/Assignments/Lab3Assignments/Assign30/Assignment30Presenter";
@@ -54,6 +55,7 @@ import Lab3a34 from "./pages/Assignments/Lab3Assignments/Assign34/Assignment34Pr
 import Lab3a35 from "./pages/Assignments/Lab3Assignments/Assign35/Assignment35Presenter";
 import Lab3a41 from "./pages/Assignments/Lab3Assignments/Assign41/Assignment41Presenter";
 import Lab3a6 from "./pages/Assignments/Lab3Assignments/Assign34/Assignment34Presenter";
+import Lab3a38 from "./pages/Assignments/Lab3Assignments/Assign38/Assignment38Presenter";
 
 import Lab1t1 from "./pages/Theory/Theoryparts/Lab1t1";
 import Lab1t2 from "./pages/Theory/Theoryparts/Lab1t2";
@@ -292,7 +294,7 @@ function App() {
             <Route path="/Lab2/11" element={<Lab2a25 />} />
             <Route path="/Lab2/12" element={<Lab2a26 />} />
             <Route path="/Lab2/13" element={<Lab2a27 />} />
-
+            <Route path="/Lab3/14" element={<Lab3a42 />} />
             <Route path="/Lab3/1" element={<Lab3a29 />} />
             <Route path="/Lab3/2" element={<Lab3a30 />} />
             <Route path="/Lab3/3" element={<Lab3a31 />} />
@@ -343,6 +345,8 @@ function App() {
             <Route path="/theory/Lab3/12" element={<Lab3t12 />} />
             <Route path="/theory/Lab3/13" element={<Lab3t13 />} />
             <Route path="/theory/Lab3/14" element={<Lab3t14 />} />
+
+            <Route path="/Lab3/10" element={<Lab3a38 />} />
 
             <Route path="/Arrays" element={[<Scrollingbar />, <Theory />]} />
           </Routes>
