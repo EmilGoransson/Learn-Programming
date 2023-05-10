@@ -4,10 +4,12 @@
     width: 13%;
     height: 100%;
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     background-color: #141B26;
     overflow: hidden;
+    padding-top: 20px;
     text-overflow: ellipsis;
     line-height: 1.2em;
 }
