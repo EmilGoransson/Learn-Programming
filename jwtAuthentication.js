@@ -352,7 +352,7 @@ router.post("/codeRunner", authorization, async (req, res) => {
         method: "POST",
         headers: {
           "content-type": "application/x-www-form-urlencoded",
-          "X-RapidAPI-Key": API_KEY.API_KEY,
+          "X-RapidAPI-Key": process.env.RAPID_API_KEY,
           "X-RapidAPI-Host": "code-compiler.p.rapidapi.com",
         },
         body: new URLSearchParams({
