@@ -88,7 +88,7 @@ for(int i=0; i<nums1.length; i++) {
 <br></br>
 3. Within the nested loop structure, calculate the product of the row 
 <br></br>and column indices for each element 
-and assign it to the corresponding element in the matrix.
+<br></br>and assign it to the corresponding element in the matrix.
 <br></br>
 <br></br>
 4. Calculate the sum of all elements in the matrix: Use a nested 
