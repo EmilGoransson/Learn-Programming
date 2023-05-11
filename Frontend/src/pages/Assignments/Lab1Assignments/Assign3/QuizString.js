@@ -30,15 +30,15 @@ export const quizData = {
           "17",
           "18",
         ],
-        type: "16",
+        type: "MCQs",
         correctAnswer:
-          "myMethod();",
+          "16",
       },
       {
-        question: "What is the output of the following code? String str1 = \"Java\"\; \nString str2 = \"Java\"\;",
-        choices: ["To declare the type of the method", "To indicate that the method has finished executing", "To specify the value that the method should return", "To define the parameters that the method should accept"],
+        question: "Which method is used to extract a substring from a given string in Java?",
+        choices: ["getSubstring()", "extractSubstring()", "substring()", "slice()"],
         type: "MCQs",
-        correctAnswer: "To specify the value that the method should return",
+        correctAnswer: "substring()",
       },
     ],
   };
