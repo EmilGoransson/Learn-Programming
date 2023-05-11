@@ -101,7 +101,7 @@
     border: none;
     right: 12%;
     top: 1%;
-    position: absolute;
+    position: fixed;
   }
 .WelcomePage .login:hover {
   background-color: #b9dec8;
@@ -113,7 +113,7 @@
     border: none;
     right: 2%;
     top: 1%;
-    position: absolute;
+    position: fixed;
   }
 .WelcomePage .signup:hover {
   background-color: #e897be;
