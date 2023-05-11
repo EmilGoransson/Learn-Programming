@@ -42,7 +42,7 @@ function Lab1a1() {
 {  
     public static void main(String[] args) {
         
-      //print "Hello World here"
+      //print "Hello World" here
         
     }
 }`;
