@@ -86,8 +86,8 @@ for(int i=0; i<nums1.length; i++) {
 <br></br>and the inner loop should iterate over the columns of the matrix. 
 <br></br>
 <br></br>
-3. Within the nested loop structure, calculate the product of the row 
-<br></br>and column indices for each element 
+3. Within the nested loop structure, calculate the product of  
+<br></br>the row and column indices for each element 
 <br></br>and assign it to the corresponding element in the matrix.
 <br></br>
 <br></br>
