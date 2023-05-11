@@ -8,7 +8,7 @@ function WelcomePage() {
     <div className="WelcomePage">
       <img src="https://i.imgur.com/yLqZDJM.png" className="logo" />
       <Link to={`/login`}>
-      <img
+        <img
           src="https://i.imgur.com/GfPVRJH.png"
           className="comp"
           alt="comp"
@@ -16,15 +16,18 @@ function WelcomePage() {
       </Link>
       <main>
         <h1>Welcome!</h1>
-        <h2 className="text-[#d63384]">Are you ready to <Typewriter
-            words={[" code?", " learn?", " improve?", "have fun!"]}
+        <h2 className="text-[#d63384]">
+          Are you ready to{" "}
+          <Typewriter
+            words={[" code?", " learn?", " improve?", "have fun?"]}
             loop={false}
             cursor
             cursorStyle="_"
             typeSpeed={100}
             deleteSpeed={50}
             delaySpeed={1200}
-          /></h2>
+          />
+        </h2>
         <p className="text-p">
           {" "}
           This web course is carefully designed to prepare the students for the

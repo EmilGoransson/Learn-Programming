@@ -64,9 +64,9 @@ const Login = ({ setAuth }) => {
     <Fragment>
       <div className="container">
         <Link to={`/`}>
-        <img src="https://i.imgur.com/yLqZDJM.png" className="hej" />
+          <img src="https://i.imgur.com/yLqZDJM.png" className="hej" />
         </Link>
-        <div class="form-container">
+        <div className="form-container">
           <div
             style={{
               display: "flex",
