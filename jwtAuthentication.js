@@ -132,28 +132,24 @@ router.get("/getInfo", authorization, async (req, res) => {
     var pinnedItems = info.rows[0].pinned_items;
     console.log("Sending information about user: " + id + "\n");
     if (pinnedItems != null && pinnedItems != undefined) {
-      res
-        .status(200)
-        .json({
-          firstName,
-          lastName,
-          currentLevel,
-          email,
-          profilePicture,
-          pinnedItems,
-        });
+      res.status(200).json({
+        firstName,
+        lastName,
+        currentLevel,
+        email,
+        profilePicture,
+        pinnedItems,
+      });
     } else {
       pinnedItems = [];
-      res
-        .status(200)
-        .json({
-          firstName,
-          lastName,
-          currentLevel,
-          email,
-          profilePicture,
-          pinnedItems,
-        });
+      res.status(200).json({
+        firstName,
+        lastName,
+        currentLevel,
+        email,
+        profilePicture,
+        pinnedItems,
+      });
     }
   } catch (error) {
     res.status(500).send("Server Error");
@@ -339,6 +335,48 @@ router.post("/removePinnedItems", authorization, async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(500);
+  }
+});
+
+counter = new Count();
+
+router.post("/codeRunner", authorization, async (req, res) => {
+  // Resets callCount at 13:00 UTC
+  //MAKE IT SO THAT IT TRACKS THE DAY
+  console.log("API-CALL-counter: " + counter.getValue());
+  if (counter.getValue() < 900) {
+    counter.increment();
+    try {
+      const url = "https://code-compiler.p.rapidapi.com/v2";
+      const options = {
+        method: "POST",
+        headers: {
+          "content-type": "application/x-www-form-urlencoded",
+          "X-RapidAPI-Key": API_KEY.API_KEY,
+          "X-RapidAPI-Host": "code-compiler.p.rapidapi.com",
+        },
+        body: new URLSearchParams({
+          LanguageChoice: "4",
+          Program: req.body.data,
+          Input: req.body.input ? req.body.input : "",
+        }),
+      };
+      let result = "";
+      try {
+        const response = await fetch(url, options);
+        result = await response.json();
+        console.log("result");
+        console.log(result);
+        res.status(200).send(result);
+      } catch (error) {
+        console.error(error);
+      }
+    } catch (error) {
+      console.log(error);
+      res.status(500);
+    }
+  } else {
+    res.status(500).send("API call limit reached");
   }
 });
 
