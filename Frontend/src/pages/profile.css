@@ -146,14 +146,15 @@ body{
     max-width: 100%;
     margin-right: 10%;
     margin-left: 1%;
+    color: #14161B;
 }
 
 .saveButton {
     padding: 0.5em;
     border-radius: 0.5em;
     border: none;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #2DCB6C;
+    color: black;
     font-size: 1em;
     cursor: pointer;
     width: 8em;

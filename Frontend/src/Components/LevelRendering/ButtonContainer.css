@@ -59,6 +59,11 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   font-size: 1.5vw;
   font-weight: bold;
+  transition: all 0.2s ease 0s;
+
+}
+.button-lab-gray:hover:disabled{
+  transform: scale(0.95);
 }
 
 .button-lab-green {

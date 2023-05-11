@@ -17,10 +17,10 @@ function Progress() {
   //array of stars
 
   //fetch from model
-  const numberOfLevels = 40;
+  const numberOfLevels = useLevelStore((state) => state.totalLevels);
   //hard-code unless cant be fetched from DB
   //for progressbar
-  const currentLevelPercentage = (currentLevel / numberOfLevels) * 100;
+  const currentLevelPercentage = (currentLevel / (numberOfLevels + 1)) * 100;
 
   function isLit(labAmount) {
     if (currentLevel - 1 >= labAmount) {
@@ -29,7 +29,7 @@ function Progress() {
       return star;
     }
   }
-  //array of stars
+  //returns the sidebar stars and checks if they should be lit
   const stars = [
     isLit(lab1Amount),
     isLit(lab1Amount + lab2Amount),

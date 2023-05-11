@@ -1,15 +1,8 @@
 /* READ ME!
 
-TLDR: <CodeRunner input1={2] input2={3} testCases={6} testCase2={3} shouldIncrement={true] />
-SETUP:
-the API_KEY is defined inside the file apiKey.js and is imported directly from the CodeRunner folder.
-Get the API-key here: https://rapidapi.com/abdheshnayak/api/code-compiler
-1. Sign up / register
-2. Go to https://rapidapi.com/abdheshnayak/api/code-compiler
-3. Press: Pricing
-4. Select "Basic"
-5. Now go to https://rapidapi.com/abdheshnayak/api/code-compiler and copy the X-RapidAPI-Key which can be found under "Code Snippet" to the right
-6. Paste the key in the apiKey.js file in the CodeRunner folder
+TLDR : <CodeRunner input1={2] input2={3} testCases={6} testCase2={3} shouldIncrement={true] />
+SETUP: NOW IS ROUTED VIA BACKEND, CHANGE API KEY IN THE BACKEND IN ORDER FOR CODERUNNER TO WORK!!
+
 
 
 Component works in the following way.
@@ -28,14 +21,12 @@ import CodeRunnerView from "../View/codeRunnerView";
 import { useEffect } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import useLevelStore, { IP } from "../../../Model/frontEndStore";
-import { v4 as uuidv4 } from "uuid";
 import decode from "../../../decode_token";
 
 function CodeRunner(props) {
-  const checkMark = "https://i.imgur.com/EC4wJV8.png";
-  const crossMark = "https://i.imgur.com/vZIJZoz.png";
   const incrementCurrentLevel = useLevelStore((state) => state.incrementLevel);
   const currentLevel = useLevelStore((state) => state.currentLevel);
+  //changing this changes what is prewritten in the coderunner console by default.
   const string = `
 class Progman
 {  
@@ -44,7 +35,6 @@ class Progman
         
     }
 }`;
-  //Change this in order to change the prewritten text in the editor, TODO: so it comes from props maybe?
   const [PreMadeText, setPreMadeText] = useState(
     props.preMadeText ? props.preMadeText : string
   );
@@ -60,22 +50,6 @@ class Progman
   const [style2, setStyle2] = useState("text-red-500 font-bold");
   const [bothStyle, setBothStyle] = useState("");
   const [bothMessage, setBothMessage] = useState("");
-
-  const encodedParams = new URLSearchParams();
-  encodedParams.append("LanguageChoice", "4");
-  encodedParams.append("Program", code);
-  if (props.input1) {
-    encodedParams.append("Input", props.input1);
-    const input1 = props.input1;
-  }
-
-  const encodedParams2 = new URLSearchParams();
-  encodedParams2.append("LanguageChoice", "4");
-  encodedParams2.append("Program", code);
-  if (props.input2) {
-    encodedParams2.append("Input", props.input2);
-    const input2 = props.input2;
-  }
   //SPECIFY THE "INPUT" HERE BY PASSING IT AS A PROP ex: <CodeRunner input="5" />
   const getCompilerOutput = async () => {
     let count = 0;
@@ -101,7 +75,6 @@ class Progman
         setData(data);
 
         //Here the test cases are compared to the response from the API
-
         if (
           data.Result == props.testCases ||
           data.Result == props.testCases + "\n"
@@ -157,6 +130,7 @@ class Progman
             });
         }
       });
+    //decides the styles for the coderunner result text
     if (count == 1 && !props.testCase2) {
       setBothStyle("text-ourGreen font-bold");
       setBothMessage("Test passed!");
