@@ -17,7 +17,7 @@ function WelcomePage() {
       <main>
         <h1>Welcome!</h1>
         <h2 className="text-[#d63384]">Are you ready to <Typewriter
-            words={[" code?", " learn?", " improve?"]}
+            words={[" code?", " learn?", " improve?", "have fun!"]}
             loop={false}
             cursor
             cursorStyle="_"
