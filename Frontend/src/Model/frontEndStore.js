@@ -2,7 +2,7 @@ import { create } from "zustand";
 import decode from "../decode_token";
 
 //SELECT IP FOR SERVER HERE
-export const IP="http://130.229.136.197:3003"
+export const IP = "";
 
 const useLevelStore = create((set) => ({
   currentLevel: 1,
@@ -15,17 +15,16 @@ const useLevelStore = create((set) => ({
   name: "",
   avatar: "https://i.imgur.com/PjqWEth.png",
 
-
   setName: (name) => {
     set(() => ({
       name: name,
     }));
   },
   setLevel: (cLevel) => {
-    set(() => ({currentLevel: cLevel}));
+    set(() => ({ currentLevel: cLevel }));
   },
   setPinned: (pinned) => {
-    set(() => ({pinnedTheory: pinned}));
+    set(() => ({ pinnedTheory: pinned }));
   },
 
   setProfilePic: (profileP) => {
@@ -35,13 +34,11 @@ const useLevelStore = create((set) => ({
         headers: {
           id: decode(localStorage.token).user.id,
           token: localStorage.token,
-          new_pic: profileP
-        }
+          new_pic: profileP,
+        },
       });
-      return {profilePic: profileP};
-
+      return { profilePic: profileP };
     });
-
   },
   setID: (id) => set(() => ({ id: id })),
   addPinned: (newPinned) => {
@@ -54,14 +51,15 @@ const useLevelStore = create((set) => ({
           token: localStorage.token,
         },
         body: JSON.stringify({
-          newPinned: newPinned
-        }
-        )
-      } );
-      console.log(JSON.stringify({
-        newPinned: newPinned
-      }))
-      return {pinnedTheory: [...state.pinnedTheory, newPinned]};
+          newPinned: newPinned,
+        }),
+      });
+      console.log(
+        JSON.stringify({
+          newPinned: newPinned,
+        })
+      );
+      return { pinnedTheory: [...state.pinnedTheory, newPinned] };
     });
   },
   incrementLevel: () => {
@@ -71,10 +69,9 @@ const useLevelStore = create((set) => ({
         headers: {
           id: decode(localStorage.token).user.id,
           token: localStorage.token,
-        }
+        },
       });
-      return {currentLevel: state.currentLevel + 1};
-
+      return { currentLevel: state.currentLevel + 1 };
     });
   },
   removePinned: (removePinned) => {
@@ -88,14 +85,12 @@ const useLevelStore = create((set) => ({
           token: localStorage.token,
         },
         body: JSON.stringify({
-              removePinned: removePinned
-            }
-
-        )
-      } );
+          removePinned: removePinned,
+        }),
+      });
       return {
         pinnedTheory: state.pinnedTheory.filter(
-            (item) => item !== removePinned
+          (item) => item !== removePinned
         ),
       };
     });
@@ -103,5 +98,3 @@ const useLevelStore = create((set) => ({
 }));
 
 export default useLevelStore;
-
-
