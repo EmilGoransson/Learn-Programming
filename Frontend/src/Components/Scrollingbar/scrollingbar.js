@@ -14,7 +14,6 @@ const Scrollingbar = () => {
         <li key={index}>
           <NavLink
             to={`/theory/Lab${currentLevel}/${index + 1}`}
-            activeClassName="active"
             className="my-link"
           >
             {string == "Final Boss" ? null : string}
