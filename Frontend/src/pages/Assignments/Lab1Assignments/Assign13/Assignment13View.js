@@ -70,15 +70,15 @@ if (score >= 90) {
                 <p>
                     
                 </p>
-                Write a Java program that takes in an integer from the user and prints out whether the integer is even, odd, or not a number.
+                Write a Java program that takes in an input from the user and prints out whether it is even, odd, or not a number.
                 Your program should include the following steps:
                 <p>
                     <br></br>
                     <p>1. Use the Scanner class to read the input.</p>
-                    <p>2. Check which number is greater using else-if statements.</p>
+                    <p>2. Check whether the number is even, odd or not valid using else-if statements.</p>
                     <p>3. Print either "Even", "Odd" or "Not valid" based on the comparison.
                     </p>
-                    <p>Hint: Use scanner.hasNextInt() to determine if the input is valid.</p>
+                    <p>Hint: Use <code>scanner.hasNextInt()</code> to determine if the input is valid.</p>
                     
                     <CodeRunner
                     testCases={"Odd"}

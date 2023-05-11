@@ -76,7 +76,7 @@ public class GroceryList {
             
             <h2 className="text-2xl font-bold mb-4">Done</h2>
             <p>
-                Or broke the honor system..
+                If you finished the assignment print "Done" to pass the level.
             </p>
             <p>
                 <CodeRunner
