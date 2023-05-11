@@ -4,7 +4,54 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8917fd65-ebac-457d-ac00-26ec4ef8f082" name="Changes" comment="" />
+    <list default="true" id="8917fd65-ebac-457d-ac00-26ec4ef8f082" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Frontend/build/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/css/main.5b8cf574.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/css/main.5b8cf574.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/js/787.04836579.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/js/787.04836579.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/js/main.8d9d302f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/js/main.8d9d302f.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/js/main.8d9d302f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/media/book.2c1d332f285ddee19288a12a96998806.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/media/bookmark.1ef3c22a3e3567424157d0d8ceb28a9b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/media/edit-2.ae2712897428e28a61bb102f2253ee14.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/media/filledBookmark.2e8fc149a67624c0cb5d12b5640741ce.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/media/mail.eee1baa73917a6ad8cc5ab655510875a.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/media/terminal.9d4cf2f77d73080d749704d35c2a59f3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/media/user.29301de58df7ec0125bbd3677ca603da.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/media/users.e6832836cd910644cd793d4d90df0ef4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/build/static/media/x-button.3585446cc5f39e82e5b1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.5b8cf574.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.5b8cf574.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/787.04836579.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/787.04836579.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.8d9d302f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.8d9d302f.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.8d9d302f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/book.2c1d332f285ddee19288a12a96998806.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/bookmark.1ef3c22a3e3567424157d0d8ceb28a9b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/edit-2.ae2712897428e28a61bb102f2253ee14.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/filledBookmark.2e8fc149a67624c0cb5d12b5640741ce.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/mail.eee1baa73917a6ad8cc5ab655510875a.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/terminal.9d4cf2f77d73080d749704d35c2a59f3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/user.29301de58df7ec0125bbd3677ca603da.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/users.e6832836cd910644cd793d4d90df0ef4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/x-button.3585446cc5f39e82e5b1.png" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,24 +75,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.16.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.16.0&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/emilg/Documents/GitHub/Learn-Programming/Frontend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\emilg\\Documents\\GitHub\\Learn-Programming\\Frontend\\node_modules\\prettier&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "javascript.nodejs.core.library.configured.version": "18.16.0",
+    "javascript.nodejs.core.library.typings.version": "18.16.0",
+    "last_opened_file_path": "C:/Users/emilg/Documents/GitHub/Learn-Programming/Frontend/build",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\emilg\\Documents\\GitHub\\Learn-Programming\\Frontend\\node_modules\\prettier",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\emilg\Documents\GitHub\Learn-Programming\Frontend\build" />
+      <recent name="C:\Users\emilg\Documents\GitHub\Learn-Programming\build" />
       <recent name="C:\Users\emilg\Documents\GitHub\Learn-Programming\Frontend" />
       <recent name="C:\Users\emilg\Documents\GitHub\Learn-Programming" />
       <recent name="C:\Users\emilg\Documents\GitHub\Learn-Programming\Backend" />
