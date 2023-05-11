@@ -9,7 +9,7 @@
   .WelcomePage {
     height: 100vh;
     margin-top: 0;
-    background-image: linear-gradient(to bottom, transparent 0%, #141B26 50%, #000 100%);
+    background-image: linear-gradient(to bottom, transparent 0%, #141B26 100%, #000 100%);
   }
 
   .logo {
@@ -64,7 +64,6 @@
     font-size: 150%;
     text-align: left;
     margin-bottom: 20px;
-    width: 55%;
     font-family: 'Lora';
     color:  #CECECE;;
     position: relative;
@@ -82,11 +81,11 @@
 
   .WelcomePage button {
     font-size: 1.5vw;
-    width: 8vw;
+    width: 9vw;
     height: 2.5em;
     padding: 10px 20px;
     border-radius: 5px;
-    margin: 0 10px;
+    margin: 10px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
 

@@ -27,7 +27,7 @@ function WelcomePage() {
           {" "}
           This web course is carefully designed to prepare the students for the
           programming assignments in ID1018. The web course includes both theory
-          on different programming subjects and also practice tests &ensp; &ensp;where the
+          on different programming subjects and also practice tests where the
           students get to practice coding.
         </p>
         <div className="buttons">
