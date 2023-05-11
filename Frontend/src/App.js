@@ -260,58 +260,488 @@ function App() {
                 )
               }
             />
-            <Route path="/Lab1/1" element={<Lab1a1 />} />
-            <Route path="/Lab1/2" element={<Lab1a2 />} />
-            <Route path="/Lab1/3" element={<Lab1a3 />} />
-            <Route path="/Lab1/4" element={<Lab1a4 />} />
-            <Route path="/Lab1/5" element={<Lab1a5 />} />
-            <Route path="/Lab1/6" element={<Lab1a6 />} />
-            <Route path="/Lab1/7" element={<Lab1a7 />} />
-            <Route path="/Lab1/8" element={<Lab1a8 />} />
-            <Route path="/Lab1/9" element={<Lab1a9 />} />
-            <Route path="/Lab1/10" element={<Lab1a10 />} />
-            <Route path="/Lab1/11" element={<Lab1a11 />} />
-            <Route path="/Lab1/12" element={<Lab1a12 />} />
-            <Route path="/Lab1/13" element={<Lab1a13 />} />
-            <Route path="/Lab1/14" element={<Lab1a14 />} />
+            <Route
+              path="/Lab1/1"
+              element={
+                isAuthenticated ? (
+                  <Lab1a1 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab1/2"
+              element={
+                isAuthenticated ? (
+                  <Lab1a2 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab1/3"
+              element={
+                isAuthenticated ? (
+                  <Lab1a3 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab1/4"
+              element={
+                isAuthenticated ? (
+                  <Lab1a4 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab1/5"
+              element={
+                isAuthenticated ? (
+                  <Lab1a5 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab1/6"
+              element={
+                isAuthenticated ? (
+                  <Lab1a6 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab1/7"
+              element={
+                isAuthenticated ? (
+                  <Lab1a7 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab1/8"
+              element={
+                isAuthenticated ? (
+                  <Lab1a8 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab1/9"
+              element={
+                isAuthenticated ? (
+                  <Lab1a9 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab1/10"
+              element={
+                isAuthenticated ? (
+                  <Lab1a10 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab1/11"
+              element={
+                isAuthenticated ? (
+                  <Lab1a11 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab1/12"
+              element={
+                isAuthenticated ? (
+                  <Lab1a12 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab1/13"
+              element={
+                isAuthenticated ? (
+                  <Lab1a13 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab1/14"
+              element={
+                isAuthenticated ? (
+                  <Lab1a14 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
 
-            <Route path="/Lab2/1" element={<Lab2a15 />} />
-            <Route path="/Lab2/2" element={<Lab2a16 />} />
-            <Route path="/Lab2/3" element={<Lab2a17 />} />
-            <Route path="/Lab2/4" element={<Lab2a18 />} />
-            <Route path="/Lab2/5" element={<Lab2a19 />} />
-            <Route path="/Lab2/6" element={<Lab2a20 />} />
-            <Route path="/Lab2/7" element={<Lab2a21 />} />
-            <Route path="/Lab2/8" element={<Lab2a22 />} />
-            <Route path="/Lab2/9" element={<Lab2a23 />} />
-            <Route path="/Lab2/10" element={<Lab2a24 />} />
-            <Route path="/Lab2/13" element={<Lab2a27 />} />
-            <Route path="/Lab2/11" element={<Lab2a25 />} />
-            <Route path="/Lab2/12" element={<Lab2a26 />}/>
-            <Route path="/Lab2/14" element={<Lab2a28 />} />
+            <Route
+              path="/Lab2/1"
+              element={
+                isAuthenticated ? (
+                  <Lab2a15 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/2"
+              element={
+                isAuthenticated ? (
+                  <Lab2a16 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/3"
+              element={
+                isAuthenticated ? (
+                  <Lab2a17 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/4"
+              element={
+                isAuthenticated ? (
+                  <Lab2a18 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/5"
+              element={
+                isAuthenticated ? (
+                  <Lab2a19 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/6"
+              element={
+                isAuthenticated ? (
+                  <Lab2a20 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/7"
+              element={
+                isAuthenticated ? (
+                  <Lab2a21 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/8"
+              element={
+                isAuthenticated ? (
+                  <Lab2a22 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/9"
+              element={
+                isAuthenticated ? (
+                  <Lab2a23 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/10"
+              element={
+                isAuthenticated ? (
+                  <Lab2a24 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/13"
+              element={
+                isAuthenticated ? (
+                  <Lab2a27 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/11"
+              element={
+                isAuthenticated ? (
+                  <Lab2a25 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/12"
+              element={
+                isAuthenticated ? (
+                  <Lab2a26 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/14"
+              element={
+                isAuthenticated ? (
+                  <Lab2a28 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
 
-            <Route path="/Lab3/6" element={<Lab3a6 />} />
-
-            <Route path="/Lab3/2" element={<Lab3a2 />} />
-            <Route path="/Lab3/3" element={<Lab3a3 />} />
-
-            <Route path="/Lab2/11" element={<Lab2a25 />} />
-            <Route path="/Lab2/12" element={<Lab2a26 />} />
-            <Route path="/Lab2/13" element={<Lab2a27 />} />
-            <Route path="/Lab3/14" element={<Lab3a42 />} />
-            <Route path="/Lab3/1" element={<Lab3a29 />} />
-            <Route path="/Lab3/2" element={<Lab3a30 />} />
-            <Route path="/Lab3/3" element={<Lab3a31 />} />
-            <Route path="/Lab3/4" element={<Lab3a32 />} />
-            <Route path="/Lab3/5" element={<Lab3a33 />} />
-            <Route path="/Lab3/6" element={<Lab3a34 />} />
-            <Route path="/Lab3/7" element={<Lab3a35 />} />
-            <Route path="/Lab3/9" element={<Lab3a37 />} />
-            <Route path="/Lab3/8" element={<Lab3a36 />} />
-            <Route path="/Lab3/10" element={<Lab3a38 />} />
-            <Route path="/Lab3/12" element={<Lab3a40 />} />
-            <Route path="/Lab3/13" element={<Lab3a41 />} />
-            <Route path="/Lab3/11" element={<Lab3a39 />} />
+            <Route
+              path="/Lab3/6"
+              element={
+                isAuthenticated ? (
+                  <Lab3a6 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/2"
+              element={
+                isAuthenticated ? (
+                  <Lab3a2 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/3"
+              element={
+                isAuthenticated ? (
+                  <Lab3a3 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/11"
+              element={
+                isAuthenticated ? (
+                  <Lab2a25 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/12"
+              element={
+                isAuthenticated ? (
+                  <Lab2a26 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab2/13"
+              element={
+                isAuthenticated ? (
+                  <Lab2a27 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/14"
+              element={
+                isAuthenticated ? (
+                  <Lab3a42 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/1"
+              element={
+                isAuthenticated ? (
+                  <Lab3a29 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/2"
+              element={
+                isAuthenticated ? (
+                  <Lab3a30 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/3"
+              element={
+                isAuthenticated ? (
+                  <Lab3a31 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/4"
+              element={
+                isAuthenticated ? (
+                  <Lab3a32 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/5"
+              element={
+                isAuthenticated ? (
+                  <Lab3a33 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/6"
+              element={
+                isAuthenticated ? (
+                  <Lab3a34 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/7"
+              element={
+                isAuthenticated ? (
+                  <Lab3a35 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/9"
+              element={
+                isAuthenticated ? (
+                  <Lab3a37 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/8"
+              element={
+                isAuthenticated ? (
+                  <Lab3a36 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/10"
+              element={
+                isAuthenticated ? (
+                  <Lab3a38 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/12"
+              element={
+                isAuthenticated ? (
+                  <Lab3a40 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/13"
+              element={
+                isAuthenticated ? (
+                  <Lab3a41 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/Lab3/11"
+              element={
+                isAuthenticated ? (
+                  <Lab3a39 setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
 
             <Route path="/theory/Lab1/1" element={<Lab1t1 />} />
             <Route path="/theory/Lab1/2" element={<Lab1t2 />} />
