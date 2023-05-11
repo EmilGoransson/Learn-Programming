@@ -7,11 +7,13 @@ function WelcomePage() {
   return (
     <div className="WelcomePage">
       <img src="https://i.imgur.com/yLqZDJM.png" className="logo" />
+      <Link to={`/login`}>
       <img
           src="https://i.imgur.com/GfPVRJH.png"
           className="comp"
           alt="comp"
         />
+      </Link>
       <main>
         <h1>Welcome!</h1>
         <h2 className="text-[#d63384]">Are you ready to <Typewriter
@@ -27,7 +29,7 @@ function WelcomePage() {
           {" "}
           This web course is carefully designed to prepare the students for the
           programming assignments in ID1018. The web course includes both theory
-          on different programming subjects and also practice tests &ensp; &ensp;where the
+          on different programming subjects and also practice tests where the
           students get to practice coding.
         </p>
         <div className="buttons">

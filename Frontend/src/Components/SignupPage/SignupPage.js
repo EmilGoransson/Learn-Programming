@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import "./SignupPage.css";
 import decode from "../../decode_token";
 import useLevelStore, { IP } from "../../Model/frontEndStore";
+import { Link, Redirect } from "react-router-dom";
 import Alert from "react-bootstrap/Alert";
 const SignupPage = ({ setAuth }) => {
   const setLevel = useLevelStore((state) => state.setLevel);
@@ -79,7 +80,9 @@ const SignupPage = ({ setAuth }) => {
   return (
     <Fragment>
       <div className="container">
+      <Link to={`/`}>
         <img src="https://i.imgur.com/yLqZDJM.png" className="hej" />
+      </Link>
 
         <div className="form-container">
           <h2 className="heading">Register</h2>
