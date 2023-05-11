@@ -136,14 +136,14 @@ for (int i = 0; i < 2; i++) {
                     <br></br>
                     <p>1. Use the <code>nextInt()</code> method of the Scanner class to read an <code>int</code> 
                         from the console and store it in an <code>int</code> variable named filler</p>
-                    <p>2.Create an <code>int</code>variable named <code>sum</code> and initialize it to zero. </p>
-                    <p>3. Create a two-dimensional integer array called <code>matrix</code> with two rows and two columns. </p>
-                    <p>4. Use a nested <code>for</code> loop to fill the array with values.
-                         The value at position <code>[i][j]</code> should be equal to the sum of 
-                         <code>filler</code>, <code>i</code>, and <code>j</code>.
+                    <p>2. Create an <code>int</code> variable named <code>sum</code> and initialize it to zero. </p>
+                    <p>3. Create a two-dimensional integer array called <code>matrix</code> with two rows and two columns </p>
+                    <p>4. Use a nested <code>for</code> loop to fill the array with values
+                         The value at position <code>[i][j]</code> should be equal to the sum 
+                         of <code>filler</code>, <code>i</code>, and <code>j</code>
                     </p>
                     <p>5. Use another nested <code>for</code> loop to calculate the sum of all the elements in the array. 
-                        Add each element to the <code>sum</code> variable.
+                        Add each element to the <code>sum</code> variable
                     </p>
                     <p>6. Print the sum</p>
           

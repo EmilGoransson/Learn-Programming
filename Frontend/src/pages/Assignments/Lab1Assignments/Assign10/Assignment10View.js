@@ -85,9 +85,9 @@ for (int i = 0; i < numbers.length; i++) {
                     <br></br>
                     <p>1. Store the number from scanner in an <code>int</code> holder</p>
                     <p>2. Create a placeholder for the sum of type <code>int</code> </p>
-                    <p>3. Create an array of the size that's given from the scanner </p>
+                    <p>3. Create an <code>int</code> array of the size that's given from the scanner </p>
                     <p>4. Create a for-loop which fills the arrays with numbers from 0 to the size of the array, 
-                        so each index has a value of its index. 
+                        so each index has a value of its index 
                     </p>
                     <p>5. In another for-loop caclulate the sum of all the elements in the array
                     </p>

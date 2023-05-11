@@ -17,7 +17,7 @@ function PinnedList() {
 
   if (pinnedTheory) {
     return (
-      <div className="Pinned-container h-80 -mt-32 w-40 rounded-xl">
+      <div className="Pinned-container h-80 -mt-24 w-40 rounded-xl">
         <h2 className="Pinned-title rounded-sm">Pinned</h2>
         <ul className="ui-test">
           {pinnedTheory.map((item) => (

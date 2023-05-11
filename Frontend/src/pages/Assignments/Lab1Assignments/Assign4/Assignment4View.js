@@ -61,7 +61,7 @@ function Lab1a4View(props) {
                 write:
             </p>
             <pre className="pre-Code rounded-md p-4 mb-4">
-        <code className="text-sm font-mono">scanner.next[Datatype];</code>
+        <code className="text-sm font-mono">scanner.next[Datatype]();</code>
       </pre>
             <h2 className="text-2xl font-bold mb-4">An exercise</h2>
             <p>

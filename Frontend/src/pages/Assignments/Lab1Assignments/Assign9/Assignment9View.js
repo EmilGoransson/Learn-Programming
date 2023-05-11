@@ -78,21 +78,22 @@ for(int i=0; i<nums1.length; i++) {
 
                 <pre className="bg-lightBlueGray rounded-md p-4 mb-4">
           <p>
-1. Use nested for-loops to generate the matrix: Use a nested for-loop structure to 
-<br></br>generate the matrix. 
+1. Use nested for-loops to generate the matrix: Use a nested  
+<br></br>for-loop structure to generate the matrix. 
 <br></br>
 <br></br>
 2. The outer loop should iterate over the rows of the matrix, 
 <br></br>and the inner loop should iterate over the columns of the matrix. 
 <br></br>
 <br></br>
-3. Within the nested loop structure, calculate the product of the row and column 
-<br></br>indices for each element 
+3. Within the nested loop structure, calculate the product of the row 
+<br></br>and column indices for each element 
 and assign it to the corresponding element in the matrix.
 <br></br>
 <br></br>
-4. Calculate the sum of all elements in the matrix: Use a nested for-loop structure 
-<br></br>again to iterate through the matrix and calculate the sum of all elements.
+4. Calculate the sum of all elements in the matrix: Use a nested 
+<br></br>for-loop structure again to iterate through the matrix
+<br></br> and calculate the sum of all elements.
 <br></br>
 <br></br>
 Example: <code>n = 3 </code> generates the matrix: <br></br><br></br>0 0 0<br></br>

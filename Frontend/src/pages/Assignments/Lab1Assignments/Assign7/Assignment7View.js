@@ -70,9 +70,10 @@ return a + b;
                 <h2 className="text-2xl font-bold mb-4">An exercise</h2>
                 <p>In this exercise you will:</p>
                 <p> 
-                    1. Create a Method called "fun" that takes an <code>int</code> as 
-                    parameter and returns a the the squared value.{" "}
+                    1. Create a static Method called "fun" that takes an <code>int</code> as 
+                    parameter and returns the squared value as an <code>int</code>.{" "}
                 </p>
+                
                 <p>
                     <CodeRunner
                         testCases={100}

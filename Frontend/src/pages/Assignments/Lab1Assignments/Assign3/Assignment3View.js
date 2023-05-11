@@ -83,8 +83,8 @@ boolean result = str1.equals(str2);
             To pass the exercise you need to
             <p>
                 <p>1. Declare two Strings named str1 and str2</p>
-                <p>2. st1 should equal "Merge ".</p>
-                <p>2. st2 should equal "conflict".</p>
+                <p>2. str1 should equal "Merge ".</p>
+                <p>2. str2 should equal "conflict".</p>
                 <CodeRunner
                     testCases={"Merge conflict"}
                     preMadeText={props.preMadeText}
