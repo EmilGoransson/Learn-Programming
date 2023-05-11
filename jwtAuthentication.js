@@ -247,21 +247,8 @@ router.get("/editProfilePicture", authorization, async (req, res) => {
 router.post("/edit", authorization, async (req, res) => {
   try {
     const id = Number(req.headers.id);
-    let { firstName, lastName, email, password } = req.body;
+    let { firstName, lastName, oldEmail, password } = req.body;
 
-    const existing_user = await client.query(
-      "SELECT email from student where email = $1",
-      [email]
-    );
-    if (existing_user.rows.length > 0) {
-      console.log(
-        "\nUser " +
-          id +
-          " attempted to change their email to an already existing one"
-      );
-      console.log("Change of credentials refused\n");
-      return res.status(403).send("An account with that email already exists");
-    }
     const salt = await bcrypt.genSalt(10);
     const encryptedPassword = await bcrypt.hash(password, salt);
     console.log("\nPreparing credential update for user: " + id + "\n");
@@ -271,8 +258,8 @@ router.post("/edit", authorization, async (req, res) => {
     );
     //Update DB with new account credientials
     await client.query(
-      "UPDATE student SET email = $1, password = $2, first_name = $3, last_name = $4 WHERE s_id = $5;",
-      [email, encryptedPassword, firstName, lastName, id]
+      "UPDATE student SET password = $1, first_name = $2, last_name = $3 WHERE s_id = $4;",
+      [encryptedPassword, firstName, lastName, id]
     );
     console.log(
       "\nUpdated user: " +
@@ -285,10 +272,6 @@ router.post("/edit", authorization, async (req, res) => {
         old.rows[0].last_name +
         " --> " +
         lastName +
-        "\n" +
-        old.rows[0].email +
-        " --> " +
-        email +
         "\n"
     );
 
@@ -296,7 +279,8 @@ router.post("/edit", authorization, async (req, res) => {
       id,
       firstName,
       lastName,
-      old.rows[0].current_level
+      old.rows[0].current_level,
+      old.rows[0].email
     );
     console.log("\nUpdated user new token: " + token + " \n");
     res.json({ token });
@@ -305,7 +289,6 @@ router.post("/edit", authorization, async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
-
 router.post("/pinnedItems", authorization, async (req, res) => {
   const id = req.headers.id;
   let newPinned = req.body.newPinned;
