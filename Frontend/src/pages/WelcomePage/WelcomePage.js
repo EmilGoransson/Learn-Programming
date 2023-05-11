@@ -7,11 +7,13 @@ function WelcomePage() {
   return (
     <div className="WelcomePage">
       <img src="https://i.imgur.com/yLqZDJM.png" className="logo" />
+      <Link to={`/login`}>
       <img
           src="https://i.imgur.com/GfPVRJH.png"
           className="comp"
           alt="comp"
         />
+      </Link>
       <main>
         <h1>Welcome!</h1>
         <h2 className="text-[#d63384]">Are you ready to <Typewriter
