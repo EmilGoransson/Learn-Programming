@@ -39,12 +39,14 @@ function Aboutus() {
             scrum method was used.
           </p>
           <h1>Contact</h1>
+          <p>
           <div class="contact-container">
             <div class="mail-container">
               <Mail className="mail" />
               <p class="mail-text">proglin@gmail.com</p>
             </div>
           </div>
+          </p>
         </main>
       </div>
     </div>
