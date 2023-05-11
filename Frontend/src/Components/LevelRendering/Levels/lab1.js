@@ -12,6 +12,6 @@ export const lab1Levels = [
   "11 \nMatrix",
   "12 \nIf-statement",
   "13 \nElse",
-  "14 \nBoss 1",
+  "14 \nFinal Boss",
   "1",
 ];
