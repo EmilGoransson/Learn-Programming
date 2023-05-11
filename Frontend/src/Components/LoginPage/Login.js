@@ -86,8 +86,8 @@ const Login = ({ setAuth }) => {
               padding: "4px",
             }}
           >
-            <Alert.Heading>
-              <p>Login failed, wrong E-mail or password.</p>
+            <Alert.Heading className="alert-log">
+              <p>Incorrect E-mail or password.</p>
             </Alert.Heading>
           </Alert>
           <h2>Log in</h2>

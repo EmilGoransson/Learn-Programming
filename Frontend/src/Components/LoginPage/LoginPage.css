@@ -14,6 +14,7 @@
   justify-content: center;
   background-color: #1B2432;
   color: white;
+  height: 55vh;
 }
 
 .form-container h2 {
@@ -51,4 +52,10 @@
 .form-container input[type='password'] {
   width: 100%;
   max-width: 400px;
+}
+
+.alert-log{
+  font-size: 250%;
+  position: absosute;
+  font-family: 'Lora';
 }
