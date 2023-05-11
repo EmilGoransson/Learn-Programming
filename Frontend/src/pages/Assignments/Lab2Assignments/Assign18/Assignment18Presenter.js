@@ -19,7 +19,7 @@ function Lab2a18() {
     const removePinned = useLevelStore((state) => state.removePinned);
     const getPinned = useLevelStore((state) => state.pinnedTheory);
     //update this variable if using this as template!!
-    const contentName = "Booleans";
+    const contentName = "Boolean";
     const thisLevel = 18;
     const [isFilled, setIsFilled] = React.useState(
         <LogoBookmarkFilled className="bookmark-icon"/>

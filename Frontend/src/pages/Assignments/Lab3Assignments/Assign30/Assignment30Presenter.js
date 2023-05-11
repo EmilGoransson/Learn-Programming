@@ -16,7 +16,7 @@ function Lab3a30() {
     const removePinned = useLevelStore((state) => state.removePinned);
     const getPinned = useLevelStore((state) => state.pinnedTheory);
     //update this variable if using this as template!!
-    const contentName = "String Concatation";
+    const contentName = "String Concatenation";
     const thisLevel = 30;
     const [isFilled, setIsFilled] = React.useState(
         <LogoBookmarkFilled className="bookmark-icon"/>

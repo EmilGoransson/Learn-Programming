@@ -26,6 +26,19 @@
     font-size: 1.5vw;
 }
 
+.custom-link{
+    color: #cecece;
+    text-decoration: none;
+    font-family: laura;
+    transition: all 0.2s ease 0s;
+    
+}
+.custom-link:hover{
+    color: #2dcb6c;
+}
+
+
+
 .x-button {
     width: 1.5vw;
     height: 1.5vw;
@@ -34,4 +47,9 @@
     display: inline-block;
     text-align: left;
     z-index: 200;
+    transition: all 0.2s ease 0s;
   }
+.x-button:hover + .custom-link{
+    color: #ff4a4a;
+
+}

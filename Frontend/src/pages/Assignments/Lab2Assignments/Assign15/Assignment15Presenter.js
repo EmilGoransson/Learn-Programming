@@ -17,7 +17,7 @@ function Lab2a15() {
   const getPinned = useLevelStore((state) => state.pinnedTheory);
   const removePinned = useLevelStore((state) => state.removePinned);
   //update this variable if using this as template!!
-  const contentName = "Buffered reader";
+  const contentName = "Buffered Reader";
   const thisLevel = 15;
   const [isFilled, setIsFilled] = React.useState(
       <LogoBookmarkFilled className="bookmark-icon"/>

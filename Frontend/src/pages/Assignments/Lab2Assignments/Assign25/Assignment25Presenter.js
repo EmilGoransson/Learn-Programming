@@ -15,23 +15,28 @@ function Lab2a25() {
   const currentLevel = useLevelStore((state) => state.currentLevel);
   const addPinned = useLevelStore((state) => state.addPinned);
   const getPinned = useLevelStore((state) => state.pinnedTheory);
+  const removePinned = useLevelStore((state) => state.removePinned);
   //update this variable if using this as template!!
-  const contentName = "Delete element in a array";
+  const contentName = "Delete";
   const thisLevel = 25;
   const [isFilled, setIsFilled] = React.useState(
-    <LogoBookmarkFilled className="bookmark-icon" />
+      <LogoBookmarkFilled className="bookmark-icon"/>
   );
 
   const [status, setStatus] = React.useState([true, "next-button-gray"]);
 
+  function scrollToTop() {
+    window.scrollTo(0, 0)
+  };
+
   function isPinned() {
     if (getPinned.includes(contentName)) {
       setIsFilled(
-        <LogoBookmarkFilled className="text-textGray h-6 w-6 fill-current" />
+          <LogoBookmarkFilled className="text-textGray h-6 w-6 fill-current"/>
       );
     } else {
       setIsFilled(
-        <LogoBookmark className="text-textGray h-6 w-6 fill-current" />
+          <LogoBookmark className="text-textGray h-6 w-6 fill-current"/>
       );
     }
   }
@@ -54,18 +59,17 @@ function Lab2a25() {
         //Print the array array after deletion 
         for (int i = 0; i < newArray.length; i++) {
           System.out.print(newArray[i] + ",");
-      }
-      
-       
-
-          
+        }   
       }
   }`;
   function addToPinned() {
     if (!getPinned.includes(contentName)) {
       addPinned(contentName);
+    } else {
+      removePinned(contentName);
     }
   }
+
   function IsDisabled() {
     if (thisLevel >= currentLevel) {
       setStatus([true, "next-button-gray"]);
@@ -73,6 +77,7 @@ function Lab2a25() {
       setStatus([false, "button-lab-cyan "]);
     }
   }
+
   useEffect(() => {
     IsDisabled();
     isPinned();

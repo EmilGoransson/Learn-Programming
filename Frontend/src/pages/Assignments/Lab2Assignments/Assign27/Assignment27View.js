@@ -9,6 +9,9 @@ function Lab2a13View(props) {
     return (
         <div className="mt-20">
             <div className="Lab-page max-w-3xl mx-auto text-left py-8 px-4 text-sans text-[#CECECE]">
+            <a onClick={props.addPinned} style={{cursor: "pointer"}}>
+                {props.svg}
+            </a>
                 <h1 className="text-3xl font-bold mb-4">Selection Sort, Complexity & Big-O-Notation</h1>
                 <p className="mb-4">
 <code>Big-O-Notation </code> is a way to describe the growth rate of a function in terms of its input size. 

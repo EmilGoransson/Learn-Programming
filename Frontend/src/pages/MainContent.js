@@ -3,7 +3,6 @@ import ButtonContainer from "../Components/LevelRendering/ButtonContainer.js";
 import { lab2Levels } from "../Components/LevelRendering/Levels/lab2";
 import { lab1Levels } from "../Components/LevelRendering/Levels/lab1";
 import { lab3Levels } from "../Components/LevelRendering/Levels/lab3";
-import ProgressStar from "../Components/ProgressInStar/Presenter/ProgressInStarPresenter";
 import Progress from "../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import RightSideBar from "../Components/rightSideBar/rightSideBarPresenter";
 import TopBar from "../Components/topBar/topBarPresenter";
@@ -17,10 +16,10 @@ function MainContent() {
         <RightSideBar></RightSideBar>
         <Sidebar></Sidebar>
         <Progress />
-        <PinnedList/>
+        <PinnedList />
         <TopBar></TopBar>
       </div>
-      
+
       <ButtonContainer
         title="Lab 1"
         buttonLabels={lab1Levels}

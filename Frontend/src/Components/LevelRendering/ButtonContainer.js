@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./ButtonContainer.css";
 import Button from "react-bootstrap/Button";
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 import {
   BrowserRouter,
@@ -30,12 +30,11 @@ const ButtonContainer = (props) => {
   const labNumberTracker = props.buttonLabels[props.buttonLabels.length - 1];
 
   const [message, setMessage] = useState([]);
-  const [loading, setLoading] = useState(false);
   const { title, linkTitle, buttonLabels } = props;
 
   let counter = 0;
-  let countLab = 0;
 
+  //calculates which stars should be lit
   function isLit(labAmount) {
     if (currentLevel - 1 >= labAmount) {
       return litStar;
@@ -50,12 +49,6 @@ const ButtonContainer = (props) => {
     isLit(lab1Amount + lab2Amount),
     isLit(lab1Amount + lab2Amount + lab3Amount),
   ];
-
-  const handleClick = () => {
-    //setLoading(true);
-    console.log("button clicked");
-  };
-  console.log(stars);
 
   <a>{linkTitle}</a>;
 
@@ -128,9 +121,8 @@ const ButtonContainer = (props) => {
 
               return (
                 <Link to={`/${linkTitle}/${index + 1}`}>
-                 <OverlayTrigger
-                 
-                 rootClose
+                  <OverlayTrigger
+                    rootClose
                     overlay={
                       <Tooltip id="tooltip-disabled">{moduleName}</Tooltip>
                     }
@@ -192,20 +184,18 @@ const ButtonContainer = (props) => {
               }
 
               const buttonId = `button-${index + 8}`;
-return (
-  <Link to={`/${linkTitle}/${index + 8}`}>
-    <OverlayTrigger
-    rootClose
-                    overlay={
-                      <Tooltip id="tooltip-disabled">{line2}</Tooltip>
-                    }
+              return (
+                <Link to={`/${linkTitle}/${index + 8}`}>
+                  <OverlayTrigger
+                    rootClose
+                    overlay={<Tooltip id="tooltip-disabled">{line2}</Tooltip>}
                   >
                     <button className={color} key={buttonId} disabled={status}>
                       {line1}
                     </button>
                   </OverlayTrigger>
-  </Link>
-);
+                </Link>
+              );
             })}
           </div>
           {message}

@@ -7,7 +7,7 @@ import PinnedList from "../Components/PinnedList/PinnedList";
 import Progress from "../Components/CurrentProgressBar/Presenter/currentProgressBarPresenter";
 import Sidebar from "../Components/Sidebar/Sidebar";
 import decode from "../decode_token";
-import {IP} from "../Model/frontEndStore";
+import { IP } from "../Model/frontEndStore";
 
 const Profile = (props) => {
   const litstar = "https://i.imgur.com/PO5mEkq.png";
@@ -18,7 +18,8 @@ const Profile = (props) => {
     password: "",
   });
   const { firstName, lastName, email, password } = inputs;
-  const body = { firstName, lastName, email, password };
+  const oldEmail = decode(localStorage.token).user.email;
+  const body = { firstName, lastName, oldEmail, password };
   const onChange = (e) =>
     setInputs({ ...inputs, [e.target.name]: e.target.value });
   // Sends a request to server to update record with user_id
@@ -62,18 +63,15 @@ const Profile = (props) => {
       );
       //130.229.172.67
       const user_id = decode(localStorage.token).user.id;
-      const res = await fetch(
-        IP + "/authentication/remove",
-        {
-          method: "GET",
-          headers: {
-            id: user_id,
-            token: localStorage.token,
-          },
-        }
-      );
+      const res = await fetch(IP + "/authentication/remove", {
+        method: "GET",
+        headers: {
+          id: user_id,
+          token: localStorage.token,
+        },
+      });
       localStorage.clear();
-        window.location.reload();
+      window.location.reload();
     }
   };
 
@@ -124,16 +122,6 @@ const Profile = (props) => {
                 type="text"
                 value={lastName}
                 name="lastName"
-                onChange={(event) => onChange(event)}
-                className="inputSquare"
-              />
-            </label>
-            <label className="profile-label">
-              <span className="profile-label-text">Change E-mail</span>
-              <input
-                type="text"
-                value={email}
-                name="email"
                 onChange={(event) => onChange(event)}
                 className="inputSquare"
               />
