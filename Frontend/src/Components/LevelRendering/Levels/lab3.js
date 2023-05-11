@@ -12,6 +12,6 @@ export const lab3Levels = [
   "39 \nDelete Linked List",
   "40 \nJava Library",
   "41 \nSwitch",
-  "42 \nBoss 3",
+  "42 \nFinal Boss",
   "3",
 ];

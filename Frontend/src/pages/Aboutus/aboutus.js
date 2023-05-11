@@ -43,7 +43,7 @@ function Aboutus() {
           <div class="contact-container">
             <div class="mail-container">
               <Mail className="mail" />
-              <p class="mail-text">proglin@gmail.com</p>
+              <p className="mail-text">proglin@gmail.com</p>
             </div>
           </div>
           </p>

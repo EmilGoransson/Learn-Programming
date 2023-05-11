@@ -38,6 +38,12 @@ function MainContent() {
         linkTitle="Lab3"
         labNumber="3"
       />
+      <div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+      </div>
     </div>
   );
 }

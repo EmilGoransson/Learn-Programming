@@ -123,15 +123,12 @@ function App() {
         },
       });
       const resJson = await res.json();
-      console.log(resJson.currentLevel);
       setLevel(Number(resJson.currentLevel));
       setName(String(resJson.firstName + " " + resJson.lastName));
       setID(Number(resJson.id));
       setPinned(resJson.pinnedItems);
 
       setProfilePicture(resJson.profilePicture);
-
-      console.log(resJson);
     } catch (error) {
       console.error(error);
     }

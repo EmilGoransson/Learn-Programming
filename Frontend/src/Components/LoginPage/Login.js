@@ -64,9 +64,9 @@ const Login = ({ setAuth }) => {
     <Fragment>
       <div className="container">
         <Link to={`/`}>
-        <img src="https://i.imgur.com/yLqZDJM.png" className="hej" />
+          <img src="https://i.imgur.com/yLqZDJM.png" className="hej" />
         </Link>
-        <div class="form-container">
+        <div className="form-container">
           <div
             style={{
               display: "flex",
@@ -86,8 +86,8 @@ const Login = ({ setAuth }) => {
               padding: "4px",
             }}
           >
-            <Alert.Heading>
-              <p>Login failed, wrong E-mail or password.</p>
+            <Alert.Heading className="alert-log">
+              <p>Incorrect E-mail or password.</p>
             </Alert.Heading>
           </Alert>
           <h2>Log in</h2>
