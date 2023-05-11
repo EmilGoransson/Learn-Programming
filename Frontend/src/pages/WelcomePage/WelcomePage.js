@@ -19,7 +19,7 @@ function WelcomePage() {
         <h2 className="text-[#d63384]">
           Are you ready to{" "}
           <Typewriter
-            words={[" code?", " learn?", " improve?", "have fun?"]}
+            words={[" code?", " learn?", " program?", " improve?", "have fun?"]}
             loop={false}
             cursor
             cursorStyle="_"
@@ -30,10 +30,11 @@ function WelcomePage() {
         </h2>
         <p className="text-p">
           {" "}
-          This web course is carefully designed to prepare the students for the
-          programming assignments in ID1018. The web course includes both theory
-          on different programming subjects and also practice tests where the
-          students get to practice coding.
+          This online course has been carefully designed to prepare students for
+          programming assignments in ID1018 and programming in general. The
+          course includes theoretical instruction on various programming
+          subjects as well as a hands-on online compiler, allowing students to
+          compile code directly in their browser.{" "}
         </p>
         <div className="buttons">
           <Link to={`/login`}>
