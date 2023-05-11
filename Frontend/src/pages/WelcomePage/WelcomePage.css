@@ -24,6 +24,10 @@
     color: #d63384;
     margin-bottom: 10px;
     font-family: 'Lora';
+    position:relative;
+  
+   
+    
   }
 
   .WelcomePage h2 {
@@ -31,6 +35,9 @@
     color: #d63384;
     margin-bottom: 20px;
     font-family: 'Lora';
+  
+   
+   
   }
 
   .WelcomePage p {
@@ -79,3 +86,5 @@
   color: black;
   border: none;
 }
+
+  
