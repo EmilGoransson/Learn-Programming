@@ -8,6 +8,7 @@ import Progress from "../Components/CurrentProgressBar/Presenter/currentProgress
 import Sidebar from "../Components/Sidebar/Sidebar";
 import decode from "../decode_token";
 import { IP } from "../Model/frontEndStore";
+import Alert from "react-bootstrap/Alert";
 
 const Profile = (props) => {
   const litstar = "https://i.imgur.com/PO5mEkq.png";
@@ -20,6 +21,8 @@ const Profile = (props) => {
   const { firstName, lastName, email, password } = inputs;
   const oldEmail = decode(localStorage.token).user.email;
   const body = { firstName, lastName, oldEmail, password };
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
   const onChange = (e) =>
     setInputs({ ...inputs, [e.target.name]: e.target.value });
   // Sends a request to server to update record with user_id
@@ -41,6 +44,21 @@ const Profile = (props) => {
       header: { token: localStorage.token, id: id },
       body: JSON.stringify(body),
     });
+
+    if (res.status === 500) {
+      setError(true);
+      console.log("Login Alert");
+      setTimeout(() => {
+        setError(false);
+      }, 5000);
+    }
+    if (res.status === 200) {
+      setSuccess(true);
+      setTimeout(() => {
+        setSuccess(false);
+      }, 5000);
+    }
+
     console.log("Successfully updated user credentials");
     // After updated credentials set new token and reload page to update model
     const parseRes = await res.json();
@@ -104,6 +122,34 @@ const Profile = (props) => {
 
         {/*<div className="edit-profile-container">*/}
         <div className="edit-profile-container">
+          <Alert
+            variant="danger"
+            show={error}
+            style={{
+              color: "#CECECE",
+              backgroundColor: "#1B2432",
+              fontSize: "8px",
+              padding: "4px",
+            }}
+          >
+            <Alert.Heading>
+              <p>Failed to change credentials</p>
+            </Alert.Heading>
+          </Alert>
+          <Alert
+            variant="danger"
+            show={success}
+            style={{
+              color: "#CECECE",
+              backgroundColor: "#1B2432",
+              fontSize: "8px",
+              padding: "4px",
+            }}
+          >
+            <Alert.Heading>
+              <p>Success</p>
+            </Alert.Heading>
+          </Alert>
           <p className="profile-heading">Edit Profile</p>
           <form onSubmit={updateAccount} className="form">
             <label className="profile-label">

@@ -3,12 +3,14 @@ import { toast } from "react-toastify";
 import "./SignupPage.css";
 import decode from "../../decode_token";
 import useLevelStore, { IP } from "../../Model/frontEndStore";
+import Alert from "react-bootstrap/Alert";
 const SignupPage = ({ setAuth }) => {
   const setLevel = useLevelStore((state) => state.setLevel);
   const setName = useLevelStore((state) => state.setName);
   const setID = useLevelStore((state) => state.setID);
   const setProfilePicture = useLevelStore((state) => state.setProfilePic);
   const setPinned = useLevelStore((state) => state.setPinned);
+  const [error, setError] = useState(false);
   const [inputs, setInputs] = useState({
     email: "",
     firstName: "",
@@ -30,6 +32,14 @@ const SignupPage = ({ setAuth }) => {
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(body),
       });
+
+      if (response.status === 409) {
+        setError(true);
+        console.log("Login Alert");
+        setTimeout(() => {
+          setError(false);
+        }, 5000);
+      }
 
       const parseRespone = await response.json();
       if (parseRespone.token) {
@@ -73,6 +83,20 @@ const SignupPage = ({ setAuth }) => {
 
         <div className="form-container">
           <h2 className="heading">Register</h2>
+          <Alert
+            variant="danger"
+            show={error}
+            style={{
+              color: "#CECECE",
+              backgroundColor: "#1B2432",
+              fontSize: "8px",
+              padding: "4px",
+            }}
+          >
+            <Alert.Heading>
+              <p>E-mail already in use</p>
+            </Alert.Heading>
+          </Alert>
           <br></br>
           <form onSubmit={onSubmitForm}>
             <input

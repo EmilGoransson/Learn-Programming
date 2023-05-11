@@ -12,7 +12,6 @@ body::-webkit-scrollbar {
 body.dark {
   --background-color: #222222;
   --text-color: #ffffff;
-  background-color: #000000;
 }
 
 .App {
