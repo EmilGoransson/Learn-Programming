@@ -10,7 +10,7 @@ function ProgressBarView(props) {
         // First star, bottom-right position
         styles = {
           position: "fixed",
-          top: "29%",
+          top: "29vh",
           right: "-17%",
           marginRight: "20%",
         };
@@ -18,7 +18,7 @@ function ProgressBarView(props) {
         // Second star, bottom-left position
         styles = {
           position: "fixed",
-          top: "29%",
+          top: "29vh",
           right: "-12%",
           marginRight: "20%",
         };
@@ -26,7 +26,7 @@ function ProgressBarView(props) {
         // Third star, top position
         styles = {
           position: "fixed",
-          top: "23%",
+          top: "23vh",
           right: "-14.5%",
           marginRight: "20%",
         };
