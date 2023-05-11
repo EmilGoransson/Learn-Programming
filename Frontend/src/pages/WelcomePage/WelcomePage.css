@@ -22,7 +22,7 @@
   .comp {
     width: 50%;
     height: 50%;
-    position: absolute;
+    position: fixed;
     right: -3%;
     top: 29%;
     transition: all 0.3s ease 0s;
